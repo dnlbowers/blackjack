@@ -1,5 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/**tempo to combat chrome dark theme**/
+body {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.875rem;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .logo {
     height: 40px;
     width: 40px;
+}
+
+/** Code taken and adapted from Love MAths project **/
+#game-table {
+    background-color: green;
+    box-sizing: border-box;
+    width: 95%;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 1%;
 }
 
