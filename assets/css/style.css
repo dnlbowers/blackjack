@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
 }
-/**tempo to combat chrome dark theme**/
+/**temporary to combat chrome dark theme**/
 body {
     background-color: white;
 }
 
+/** Header style rules **/
 header {
     align-items: center;
     display: flex;
@@ -25,6 +26,8 @@ header {
     width: 40px;
 }
 
+
+/** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
 #game-table {
     background-color: green;
@@ -37,6 +40,7 @@ header {
     width: 95%;   
 }
 
+/**footer styling**/
 /*style for the social media links*/
 .social-media {
     text-align: center;
