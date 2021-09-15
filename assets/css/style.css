@@ -37,3 +37,20 @@ header {
     width: 95%;   
 }
 
+/*style for the social media links*/
+.social-media {
+    text-align: center;
+}
+
+.social-media li {
+    display: inline;
+    list-style-type: none;
+}
+
+.social-media i {
+    font-size: 160%;
+    margin: 1%;
+    color: #000;
+    padding: 0.3125rem;
+}
+
