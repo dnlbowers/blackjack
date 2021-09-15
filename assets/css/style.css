@@ -8,16 +8,17 @@ body {
 }
 
 header {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 0.875rem;
 }
 
 #title {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 .logo {
     height: 40px;
@@ -28,9 +29,11 @@ header {
 #game-table {
     background-color: green;
     box-sizing: border-box;
-    width: 95%;
+    display: grid;
     height: 80vh;
+    justify-items: center;
     margin: 0 auto;
     padding: 1%;
+    width: 95%;   
 }
 
