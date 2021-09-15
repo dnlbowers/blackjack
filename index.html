@@ -8,27 +8,42 @@
     <title>Blackjack</title>
 </head>
 <body>
-    <h1 id="title"><img src="assets/images/logo.png" id="logo" alt="logo"> Blackjack</h1>
+    <header>
+        <h1 id="title"><img src="assets/images/logo-start.png" class="logo" alt="logo-start">Blackjack<img src="assets/images/logo-end.png" class="logo" alt="logo-end"></h1>
+        <nav>
+            <button class="btn" id="menu-btn">MENU</button>
+        </nav>
+    </header>
     
     <main id="game-table">
         
-        <div id="dealer-hand">
-
-        </div>
+        <section id="dealer-side">
+            <div class="card-container">
+                
+            </div>
+            <h2>House's hand</h2>    
+        </section>
 
         <div id="contols">
-
+            <button class="btn" id="hit-btn">HIT ME!</button>
+            <!--how do I make this a pop up modal-->
+            <a href="">Game Rules</a>
+            <button class="btn" id="stand-btn">STAND</button>
         </div>
 
-        <div id="user-hand">
+        <section id="user-side">
+            <h2>Player hand</h2>
+            <div class="card-container">
+                
+            </div>
+        </section>
 
-        </div>
-
-        <div id="score-board">
-
-        </div>
+        <section id="score-board">
+            <h2>Score board</h2>
+        </section>
 
     </main>
+    <button class="btn" id="reset-btn"></button>
 
 <script src="assets/js/script.js"></script>
 </body>
