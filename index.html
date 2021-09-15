@@ -8,42 +8,23 @@
     <title>Blackjack</title>
 </head>
 <body>
-    <header>
-        <div id="title">
-            <img src="assets/images/logo-start.png" class="logo" alt="logo-start">
-            <h1> Blackjack </h1>
-            <img src="assets/images/logo-end.png" class="logo" alt="logo-end">
-        </div>
-        <nav>
-            <button class="btn" id="menu-btn">MENU</button>
-        </nav>
+    <header id="title">
+        <img src="assets/images/logo-start.png" class="logo" alt="logo-start">
+        <h1> Blackjack </h1>
+        <img src="assets/images/logo-end.png" class="logo" alt="logo-end">
     </header>
     
     <main id="game-table">
         
         <section id="dealer-side">
-            <div class="card-container">
-                
-            </div>
-            <h2>House's hand</h2>    
-        </section>
-
-        <div id="contols">
-            <button class="btn" id="hit-btn">HIT ME!</button>
-            <!--how do I make this a pop up modal-->
-            <a href="">Game Rules</a>
-            <button class="btn" id="stand-btn">STAND</button>
-        </div>
-
-        <section id="user-side">
-            <h2>Player hand</h2>
+            <h2>House</h2>
             <div class="card-container">
                 
             </div>
         </section>
 
         <section id="score-board">
-            <h2>Score board</h2>
+            <h3>Score board</h2>
             <p class="tally">
                 Wins: <span id="wins">0</span>
             </p>
@@ -55,6 +36,25 @@
             </p>
             <button class="btn" id="reset-btn">Reset Scores</button>
         </section>
+
+        <section id="user-side">
+            <h2>Player</h2>
+            <div class="card-container">
+                
+            </div>
+        </section>
+
+        <section id="contols">
+            <h3>User controls</h2>
+            <button class="btn" id="hit-btn">HIT ME!</button>
+            <!--how do I make this a pop up modal-->
+            <a href="">Game Rules</a>
+            <button class="btn" id="stand-btn">STAND</button>
+        </section>
+
+        <nav>
+            <button class="btn" id="menu-btn">MENU</button>
+        </nav>
 
     </main>
     <footer>
