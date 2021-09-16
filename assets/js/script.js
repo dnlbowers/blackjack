@@ -1,10 +1,16 @@
 
+const jack = 10;
+const queen = 10;
+const king = 10;
+
 /**
  * Deals a random card on to the table.
  * This card will be assigned to the player or the house during playRound()
  */
 function dealCard() {
-//This is where my arrays will go
+let ace = 11;
+let suit = [hearts, clubs, spades, diamonds];
+let value = [2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king, ace]
 }
 
 /**
