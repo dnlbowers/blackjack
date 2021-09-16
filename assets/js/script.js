@@ -4,14 +4,18 @@
  * This card will be assigned to the player or the house during playRound()
  */
 function dealCard() {
-let ace = 11;
-const jack = 10;
-const queen = 10;
-const king = 10;
-let suitArray = [hearts, clubs, spades, diamonds];
-let valueArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king, ace];
-let randomSuit = Math.floor(Math.random()*4);
 
+let suitArray = ['hearts', 'clubs', 'spades', 'diamonds'];
+
+// numbers as string to make file path lateral work
+let valueArray = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+let randomSuit = Math.floor(Math.random() * 4);
+let randomValue = Math.floor(Math.random() * 13);
+let suit = suitArray[randomSuit];
+let value = valueArray[randomValue];
+
+// here I would use document.createElement('img/div') and place the card down within it 
+// file path for src would look something like this src="assets/images/suit/value"
 
 }
 
