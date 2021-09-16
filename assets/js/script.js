@@ -1,4 +1,5 @@
 
+//Could I put these in dealCard function?
 const jack = 10;
 const queen = 10;
 const king = 10;
