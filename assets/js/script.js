@@ -3,8 +3,8 @@ dealCard('player');
 dealCard('dealer')
 
 /**
- * Deals a random card on to the table.
- * This card will be assigned to the player or the house during playRound()
+ * Deals a random card on to the table and assigns it a value.
+ * places and image of the card in DOM according to the parameter passed.
  */
 function dealCard(dealtFor) {
 
