@@ -1,5 +1,5 @@
-const dealerCardContainer = document.getElementById('dealer-card-container');
-const playerCardContainer = document.getElementById('player-card-container');
+const dealerContainer = document.getElementById('dealer-card-container');
+const playerContainer = document.getElementById('player-card-container');
 
 
 /**
