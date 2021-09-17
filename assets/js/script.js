@@ -1,5 +1,3 @@
-const dealerContainer = document.getElementById('dealer-card-container');
-const playerContainer = document.getElementById('player-card-container');
 
 dealCard('player');
 dealCard('dealer')
@@ -27,9 +25,9 @@ card.alt = `${value} of ${suit}`;
 
 //Assigns the card image to the appropriate hand according to the parameter passed.
 if (dealtFor === 'player') {
-    playerContainer.appendChild(card);
+    document.getElementById('player-card-container').appendChild(card);
 } else if (dealtFor === 'dealer') {
-    dealerContainer.appendChild(card)
+    document.getElementById('dealer-card-container').appendChild(card)
 }
 // Returns picture cards as numerical values
 if (value === 'jack' || value === 'queen' || value === 'king') {
