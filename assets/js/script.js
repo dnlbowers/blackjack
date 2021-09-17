@@ -29,6 +29,7 @@ if (dealtFor === 'player') {
 } else if (dealtFor === 'dealer') {
     document.getElementById('dealer-card-container').appendChild(card)
 }
+
 // Returns picture cards as numerical values
 if (value === 'jack' || value === 'queen' || value === 'king') {
     return value = 10;
@@ -48,7 +49,10 @@ if (value === 'jack' || value === 'queen' || value === 'king') {
  * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
  */
 function checkHandValue(hand){
-
+let handValue = 0;
+for (card of hand) {
+    handValue += card;
+}
 }
 
 /**
