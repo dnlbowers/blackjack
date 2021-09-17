@@ -11,20 +11,21 @@ dealCard('dealer')
 function dealCard(dealtFor) {
 
 let suitArray = ['hearts', 'clubs', 'spades', 'diamonds'];
-
-// numbers as string to make file path lateral work
 let valueArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace'];
+
 let randomSuit = Math.floor(Math.random() * 4);
 let randomValue = Math.floor(Math.random() * 13);
+
 let suit = suitArray[randomSuit];
 let value = valueArray[randomValue];
 
-// here I would use document.createElement('img/div') and place the card down within it 
+// Create <img> with attributes to visually represent the value of the card in the DOM 
 let card = document.createElement('img');
 card.src = `assets/images/${suit}/${value}.svg`;
 card.className = 'card';
 card.alt = `${value} of ${suit}`;
 
+//Assigns the card to the appropriate hand according to the parameter passed.
 if (dealtFor === 'player') {
     playerContainer.appendChild(card);
 } else if (dealtFor === 'dealer') {

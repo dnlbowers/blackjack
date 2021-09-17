@@ -36,6 +36,11 @@ body {
     width: 95%;   
 }
 
+.card {
+    height: 100px;
+    width: 70px;
+}
+
 /**footer styling**/
 /*style for the social media links*/
 .social-media {
