@@ -25,15 +25,24 @@ card.src = `assets/images/${suit}/${value}.svg`;
 card.className = 'card';
 card.alt = `${value} of ${suit}`;
 
-//Assigns the card to the appropriate hand according to the parameter passed.
+//Assigns the card image to the appropriate hand according to the parameter passed.
 if (dealtFor === 'player') {
     playerContainer.appendChild(card);
 } else if (dealtFor === 'dealer') {
     dealerContainer.appendChild(card)
 }
-// value to be converted into int using if statement or maybe a switch (case 'king' value = 10) I think I can leave off default?
-//then this function will ditch the suit and return only the card value which will be added to an array of player/house hand
-return value; 
+// Returns picture cards as numerical values
+if (value === 'jack' || value === 'queen' || value === 'king') {
+    return value = 10;
+   console.log(value)
+} else if (value === 'ace') {
+    return value = 11;
+    console.log(value)
+} else {
+    return value;
+    console.log(value) 
+}
+
 }
 
 /**
