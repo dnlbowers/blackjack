@@ -1,3 +1,6 @@
+const dealerCardContainer = document.getElementById('dealer-card-container');
+const playerCardContainer = document.getElementById('player-card-container');
+
 
 /**
  * Deals a random card on to the table.
