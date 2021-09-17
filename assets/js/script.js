@@ -21,7 +21,7 @@ let value = valueArray[randomValue];
 
 // here I would use document.createElement('img/div') and place the card down within it 
 let card = document.createElement('img');
-card.src = `assets/images/${suit}/${value}`;
+card.src = `assets/images/${suit}/${value}.svg`;
 card.alt = `${value} of ${suit}`;
 
 if (dealtFor === 'player') {
