@@ -22,6 +22,10 @@ body {
     width: 2.5rem;
 }
 
+#menu-select{
+    text-align: center;
+}
+
 
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
