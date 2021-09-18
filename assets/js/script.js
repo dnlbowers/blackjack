@@ -53,9 +53,9 @@ for (card of hand) {
    handValue += card;
 }
 if (handValue === 21 && hand.length === 2){
-    return 'blackjack';
+    return 0;
 } else { 
-    return handValue
+    return handValue;
  //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
     // event listener on pop up buttons
     //handValue += response from confirmation pop up (1 for low 11 for high)
@@ -115,11 +115,7 @@ function playGame() {
                 }
                 else if (this.getAttribute('data-type') === 'stand') {
                     console.log('stand')
-                    while (checkHandValue(dealersHand) !== 'blackjack' && value <17){
-                        dealersHand.push(dealCard('dealer'));
-                           
-                    }
-    
+                    dealersHand.push(dealCard('dealer'));      
                 }
             })
         }
