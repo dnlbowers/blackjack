@@ -21,7 +21,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Visual Studio Light",
+   "workbench.colorTheme": "Abyss",
    "editor.defaultFormatter": "HookyQR.beautify",
    "workbench.preferredDarkColorTheme": "Abyss",
    "workbench.preferredHighContrastColorTheme": "Abyss",

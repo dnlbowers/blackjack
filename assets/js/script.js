@@ -1,6 +1,9 @@
-
-dealCard('player');
-dealCard('dealer')
+let playerHand = [];
+    let dealersHand = [];
+for (i = 0; i < 2; i++){
+    playerHand.push(dealCard('player'))
+    dealersHand.push(dealCard('dealer'))
+}
 
 /**
  * Deals a random card on to the table and assigns it a value.
@@ -90,6 +93,20 @@ function compareHands(playerHandValue, houseHandValue) {
         return "Congratulations! You beat the house!";
     } else {
         return "The House wins! Better luck next time!"
+    }
+}
+
+/**
+ * The place where the magic happens and each round is played out calling all required functions in the process.
+ */
+function playGame() {
+    let playerHand = [];
+    let dealersHand = [];
+
+    //figure out how to hide the computer first card but still get the value
+    for (i = 0; i < 2; i++){
+        playerHand.push(dealCard('player'))
+        dealersHand.push(dealCard('dealer'))
     }
 }
 
