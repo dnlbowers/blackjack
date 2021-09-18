@@ -74,8 +74,23 @@ function houseReveal(){
 /**
  * Compares final hands once both the house and the player have drawn all their desired cards
  */
-function compareHands(playerHand, houseHand) {
-
+function compareHands(playerHandValue, houseHandValue) {
+    //add a pop up box with result and ask to play again.
+    if (playerHandValue === houseHandValue) {
+        return "Draw";
+    } else if (houseHandValue === 'blackjack') {
+        return "House has black jack! You lose";
+    } else if (playerHandValue === 'blackjack') {
+        return "You have Blackjack! You Win!";
+    } else if (playerHandValue > 21){
+        return "Your bust! 21 is the limit";
+    } else if (houseHandValue > 21) {
+        return "House is bust! You win!";
+    } else if (playerHandValue > houseHandValue) {
+        return "Congratulations! You beat the house!";
+    } else {
+        return "The House wins! Better luck next time!"
+    }
 }
 
 
