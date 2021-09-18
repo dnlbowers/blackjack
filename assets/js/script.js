@@ -51,7 +51,12 @@ if (value === 'jack' || value === 'queen' || value === 'king') {
 function checkHandValue(hand){
 let handValue = 0;
 for (card of hand) {
-    //add if card === 11 confirm box "want to convert ace hig or low"
+   handValue += card;
+}
+if (handValue === 21 && hand.length === 2){
+    return 'blackjack';
+} else { 
+ //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
     // event listener on pop up buttons
     //handValue += response from confirmation pop up (1 for low 11 for high)
     //else
