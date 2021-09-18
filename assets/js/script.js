@@ -1,10 +1,6 @@
-let playerHand = [];
-    let dealersHand = [];
-for (i = 0; i < 2; i++){
-    playerHand.push(dealCard('player'))
-    dealersHand.push(dealCard('dealer'))
-}
+const buttons = document.getElementsByTagName('button');
 
+playGame();
 /**
  * Deals a random card on to the table and assigns it a value.
  * places and image of the card in DOM according to the parameter passed.
@@ -59,6 +55,7 @@ for (card of hand) {
 if (handValue === 21 && hand.length === 2){
     return 'blackjack';
 } else { 
+    return handValue
  //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
     // event listener on pop up buttons
     //handValue += response from confirmation pop up (1 for low 11 for high)
@@ -100,14 +97,33 @@ function compareHands(playerHandValue, houseHandValue) {
  * The place where the magic happens and each round is played out calling all required functions in the process.
  */
 function playGame() {
-    let playerHand = [];
-    let dealersHand = [];
+    console.log('startfunction')
+    document.addEventListener('DOMContentLoaded', function(){
+        let buttons = document.getElementsByTagName('button');
+        let playerHand = [];
+        let dealersHand = [];
 
-    //figure out how to hide the computer first card but still get the value
-    for (i = 0; i < 2; i++){
-        playerHand.push(dealCard('player'))
-        dealersHand.push(dealCard('dealer'))
-    }
+        for (i = 0; i < 2; i++){
+            playerHand.push(dealCard('player'))
+            dealersHand.push(dealCard('dealer'))
+        }
+
+        for (button of buttons){
+            button.addEventListener('click', function(){
+                if (this.getAttribute('data-type') === 'hit'){
+                    playerHand.push(dealCard('player'))
+                }
+                else if (this.getAttribute('data-type') === 'stand') {
+                    console.log('stand')
+                    while (checkHandValue(dealersHand) !== 'blackjack' && value <17){
+                        dealersHand.push(dealCard('dealer'));
+                           
+                    }
+    
+                }
+            })
+        }
+    })
+            
 }
-
 
