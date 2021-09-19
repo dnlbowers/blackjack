@@ -1,19 +1,26 @@
-document.addEventListener('DOMContentLoaded', function(){
-    let buttons = document.getElementsByTagName('button');
-    let score = playGame()
-    for (button of buttons){
-        button.addEventListener('click', function(){
-            if (this.getAttribute('data-type') === 'stand'){
-                dealCard('dealer')
-                console.log(score)
-            }
-            else if (this.getAttribute('data-type') === 'hit'){
-                dealCard('player');
-                console.log(score)
-            }
+let playerHand = []
+let dealersHand = [];
+
+initializeGameRound ()
+
+
+function initializeGameRound() {
+    let playerHand = [];
+    let dealersHand = [];
+
+    document.addEventListener('DOMContentLoaded', function(){
+        for (i = 0; i < 2; i++){
+            playerHand.push(dealCard('player'))
+            dealersHand.push(dealCard('dealer'))
+        } 
+        document.getElementById('hit-btn').addEventListener('click', function(){
+            playerHand.push(dealCard('player'))
+            console.log(playerHand);
         })
-    }
-})
+        
+    })
+}
+
 /**
  * Deals a random card on to the table and assigns it a value.
  * places and image of the card in DOM according to the parameter passed.
@@ -45,14 +52,18 @@ if (dealtFor === 'player') {
 
 // Returns picture cards as numerical values
 if (value === 'jack' || value === 'queen' || value === 'king') {
-    return value = 10;
-    
-} else if (value === 'ace') {
-    return value = 11;
+    value = 10;
     console.log(value)
+    return value
+} else if (value === 'ace') {
+    value = 11;
+    console.log(value)
+    return value
+    
 } else {
-    return value;
-    console.log(value) 
+    console.log(value)
+    return value    
+     
 }
 
 }
@@ -62,7 +73,7 @@ if (value === 'jack' || value === 'queen' || value === 'king') {
  * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
  */
 function checkHandValue(hand){
-    
+console.log(hand)    
 let handValue = 0;
 for (card of hand) {
    handValue += card;
@@ -122,13 +133,24 @@ function playGame() {
     
     let playerHand = [];
     let dealersHand = [];
-    
+    let roundOver = false;
 
-    for (i = 0; i < 2; i++){
-        playerHand.push(dealCard('player'))
-        dealersHand.push(dealCard('dealer'))
-    }
-    let playerValue = checkHandValue(playerHand); 
-    return playerValue         
+    
+    
+    // while (roundOver !== true) {
+    //     playerTotal = checkHandValue(playerHand); 
+    //     dealerTotal = checkHandValue(dealersHand);
+    //     console.log(playerTotal);
+    //     console.log(dealerTotal);
+    //     if (playerTotal === 0 || dealerTotal === 0 || playerTotal >21) {
+    //         console.log('blackjack or over 21')
+    //         roundOver = true;
+    //     } else {
+    //         hit
+    //         roundOver = true;
+    //     }
+
+    // }
+             
 }
 
