@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(){
-   playGame();
+    let buttons = document.getElementsByTagName('button');
+    let score = playGame()
+    for (button of buttons){
+        button.addEventListener('click', function(){
+            if (this.getAttribute('data-type') === 'stand'){
+                dealCard('dealer')
+                console.log(score)
+            }
+            else if (this.getAttribute('data-type') === 'hit'){
+                dealCard('player');
+
+            }
+        })
+    }
 })
 /**
  * Deals a random card on to the table and assigns it a value.
@@ -25,6 +38,7 @@ card.alt = `${value} of ${suit}`;
 //Assigns the card image to the appropriate hand according to the parameter passed.
 if (dealtFor === 'player') {
     document.getElementById('player-card-container').appendChild(card);
+    console.log(`${suit}${value}`)
 } else if (dealtFor === 'dealer') {
     document.getElementById('dealer-card-container').appendChild(card)
 }
@@ -32,7 +46,7 @@ if (dealtFor === 'player') {
 // Returns picture cards as numerical values
 if (value === 'jack' || value === 'queen' || value === 'king') {
     return value = 10;
-   console.log(value)
+    
 } else if (value === 'ace') {
     return value = 11;
     console.log(value)
@@ -49,10 +63,11 @@ if (value === 'jack' || value === 'queen' || value === 'king') {
  */
 function checkHandValue(hand){
     
-    let handValue = 0;
+let handValue = 0;
 for (card of hand) {
    handValue += card;
 }
+
 if (handValue === 21 && hand.length === 2){
     return 0;
 } else { 
@@ -107,30 +122,13 @@ function playGame() {
     
     let playerHand = [];
     let dealersHand = [];
-    let roundOver = false;
+    
 
     for (i = 0; i < 2; i++){
         playerHand.push(dealCard('player'))
         dealersHand.push(dealCard('dealer'))
     }
-
-    while (roundOver !== true){
-        console.log('in the loop')
-        let hit = document.getElementById('hit-btn').addEventListener('click', function(){ dealCard('player'); });
-        
-        let playerTotal = checkHandValue(playerHand);
-        let houseTotal = checkHandValue(dealersHand);
-        console.log(playerTotal)
-        if (playerTotal === 0 || houseTotal === 0 || playerTotal > 21) {
-            roundOver = true;  
-        } else {    
-            console.log(playerTotal)
-            
-        }
-    }
-
-       
-   
-            
+    let playerValue = checkHandValue(playerHand); 
+    return playerValue         
 }
 
