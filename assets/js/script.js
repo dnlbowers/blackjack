@@ -17,6 +17,13 @@ function initializeGameRound() {
             playerHand.push(dealCard('player'))
             console.log(playerHand);
         })
+        document.getElementById('stand-btn').addEventListener('click', function(){
+            document.getElementById('hit-btn').removeEventListener('click', dealCard);
+            let playerTotal = checkHandValue(playerHand);
+            let dealerTotal = checkHandValue(dealersHand);
+            console.log(playerTotal)
+            console.log(dealerTotal)
+        })
         
     })
 }
