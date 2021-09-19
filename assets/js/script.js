@@ -1,6 +1,6 @@
-const buttons = document.getElementsByTagName('button');
-
-playGame();
+document.addEventListener('DOMContentLoaded', function(){
+   playGame();
+})
 /**
  * Deals a random card on to the table and assigns it a value.
  * places and image of the card in DOM according to the parameter passed.
@@ -48,7 +48,8 @@ if (value === 'jack' || value === 'queen' || value === 'king') {
  * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
  */
 function checkHandValue(hand){
-let handValue = 0;
+    
+    let handValue = 0;
 for (card of hand) {
    handValue += card;
 }
@@ -78,9 +79,9 @@ function compareHands(playerHandValue, houseHandValue) {
     //add a pop up box with result and ask to play again.
     if (playerHandValue === houseHandValue) {
         return "Draw";
-    } else if (houseHandValue === 'blackjack') {
+    } else if (houseHandValue === 0) {
         return "House has black jack! You lose";
-    } else if (playerHandValue === 'blackjack') {
+    } else if (playerHandValue === 0) {
         return "You have Blackjack! You Win!";
     } else if (playerHandValue > 21){
         return "Your bust! 21 is the limit";
@@ -93,33 +94,43 @@ function compareHands(playerHandValue, houseHandValue) {
     }
 }
 
+function breakTurn() {
+    return roundOver = true;
+}
+
 /**
  * The place where the magic happens and each round is played out calling all required functions in the process.
  */
 function playGame() {
-    console.log('startfunction')
-    document.addEventListener('DOMContentLoaded', function(){
-        let buttons = document.getElementsByTagName('button');
-        let playerHand = [];
-        let dealersHand = [];
+    console.log('start function')
+    
+    
+    let playerHand = [];
+    let dealersHand = [];
+    let roundOver = false;
 
-        for (i = 0; i < 2; i++){
-            playerHand.push(dealCard('player'))
-            dealersHand.push(dealCard('dealer'))
-        }
+    for (i = 0; i < 2; i++){
+        playerHand.push(dealCard('player'))
+        dealersHand.push(dealCard('dealer'))
+    }
 
-        for (button of buttons){
-            button.addEventListener('click', function(){
-                if (this.getAttribute('data-type') === 'hit'){
-                    playerHand.push(dealCard('player'))
-                }
-                else if (this.getAttribute('data-type') === 'stand') {
-                    console.log('stand')
-                    dealersHand.push(dealCard('dealer'));      
-                }
-            })
+    while (roundOver !== true){
+        console.log('in the loop')
+        let hit = document.getElementById('hit-btn').addEventListener('click', function(){ dealCard('player'); });
+        
+        let playerTotal = checkHandValue(playerHand);
+        let houseTotal = checkHandValue(dealersHand);
+        console.log(playerTotal)
+        if (playerTotal === 0 || houseTotal === 0 || playerTotal > 21) {
+            roundOver = true;  
+        } else {    
+            console.log(playerTotal)
+            
         }
-    })
+    }
+
+       
+   
             
 }
 
