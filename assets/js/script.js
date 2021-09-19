@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             else if (this.getAttribute('data-type') === 'hit'){
                 dealCard('player');
-
+                console.log(score)
             }
         })
     }
