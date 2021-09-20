@@ -22,8 +22,8 @@ function initializeGameRound() {
 
     document.addEventListener('DOMContentLoaded', function(){
         for (i = 0; i < 2; i++){
-            playerHand.push(dealCard('player'))
-            dealersHand.push(dealCard('dealer'))
+            playerHand.push(dealCard('player'));
+            dealersHand.push(dealCard('dealer'));
         } 
 
         document.getElementById('hit-btn').addEventListener('click', function(){
@@ -35,14 +35,14 @@ function initializeGameRound() {
             document.getElementById('hit-btn').removeEventListener('click', dealCard);
             let playerTotal = checkHandValue(playerHand);
             let dealerTotal = checkHandValue(dealersHand);
-            console.log(playerTotal)
-            console.log(dealerTotal)
+            console.log(playerTotal);
+            console.log(dealerTotal);
             
             while (dealerTotal !== 0 && dealerTotal < 17){
-                dealersHand.push(dealCard('dealer'))
+                dealersHand.push(dealCard('dealer'));
                 let dealerTotal = checkHandValue(dealersHand);
                 if (dealerTotal > 17){
-                    break
+                    break;
                 }
             }
         })
