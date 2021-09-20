@@ -1,3 +1,15 @@
+//remove event listener from stand btn
+// compile the ace high to low function
+//compare hands
+//restart the game
+//add functionality to the menu
+//write the game rules
+//write win streak function with ability to reset
+// !! above the MVP plan !! 
+// add sound
+//add color choice for the game table
+
+
 let playerHand = []
 let dealersHand = [];
 
@@ -26,7 +38,6 @@ function initializeGameRound() {
             console.log(playerTotal)
             console.log(dealerTotal)
             
-            // This gets me stuck in an infinate loop
             while (dealerTotal !== 0 && dealerTotal < 17){
                 dealersHand.push(dealCard('dealer'))
                 let dealerTotal = checkHandValue(dealersHand);
