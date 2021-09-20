@@ -13,16 +13,27 @@ function initializeGameRound() {
             playerHand.push(dealCard('player'))
             dealersHand.push(dealCard('dealer'))
         } 
+
         document.getElementById('hit-btn').addEventListener('click', function(){
             playerHand.push(dealCard('player'))
             console.log(playerHand);
         })
+
         document.getElementById('stand-btn').addEventListener('click', function(){
             document.getElementById('hit-btn').removeEventListener('click', dealCard);
             let playerTotal = checkHandValue(playerHand);
             let dealerTotal = checkHandValue(dealersHand);
             console.log(playerTotal)
             console.log(dealerTotal)
+            
+            // This gets me stuck in an infinate loop
+            while (dealerTotal !== 0 && dealerTotal < 17){
+                dealersHand.push(dealCard('dealer'))
+                let dealerTotal = checkHandValue(dealersHand);
+                if (dealerTotal > 17){
+                    break
+                }
+            }
         })
         
     })
@@ -131,33 +142,5 @@ function breakTurn() {
     return roundOver = true;
 }
 
-/**
- * The place where the magic happens and each round is played out calling all required functions in the process.
- */
-function playGame() {
-    console.log('start function')
-    
-    
-    let playerHand = [];
-    let dealersHand = [];
-    let roundOver = false;
 
-    
-    
-    // while (roundOver !== true) {
-    //     playerTotal = checkHandValue(playerHand); 
-    //     dealerTotal = checkHandValue(dealersHand);
-    //     console.log(playerTotal);
-    //     console.log(dealerTotal);
-    //     if (playerTotal === 0 || dealerTotal === 0 || playerTotal >21) {
-    //         console.log('blackjack or over 21')
-    //         roundOver = true;
-    //     } else {
-    //         hit
-    //         roundOver = true;
-    //     }
-
-    // }
-             
-}
 
