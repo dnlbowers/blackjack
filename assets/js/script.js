@@ -9,6 +9,7 @@
 // add sound
 //add color choice for the game table
 
+
 let playerHand = []
 let dealersHand = [];
 
@@ -25,20 +26,20 @@ function initializeGameRound() {
             playerHand.push(dealCard('player'));
             dealersHand.push(dealCard('dealer'));
         } 
-
+        
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealersHand);
         console.log(playerTotal);
         console.log(dealerTotal);
+        
         if (playerTotal === 0 || dealerTotal === 0){
             //Need a pop up box asking to play again and declaring score.
-            compareHands(playerTotal, dealerTotal)
-
+            let result = compareHands(playerTotal, dealerTotal)
+            console.log(result)
         } else {
             document.getElementById('hit-btn').addEventListener('click', function(){
                 playerHand.push(dealCard('player'))
-                console.log(playerHand);
-
+                
             })
     
             document.getElementById('stand-btn').addEventListener('click', function(){
@@ -47,11 +48,17 @@ function initializeGameRound() {
                 let dealerTotal = checkHandValue(dealersHand);
                 console.log(playerTotal);
                 console.log(dealerTotal);
+                if (dealerTotal > 17){
+                    let result = compareHands(playerTotal, dealerTotal)
+                    console.log(result)
+                }
                 
                 while (dealerTotal !== 0 && dealerTotal < 17){
                     dealersHand.push(dealCard('dealer'));
                     let dealerTotal = checkHandValue(dealersHand);
                     if (dealerTotal > 17){
+                        let result = compareHands(playerTotal, dealerTotal)
+                        console.log(result)
                         break;
                     }
                 }
@@ -120,7 +127,8 @@ for (card of hand) {
    handValue += card;
 }
 
-if (handValue === 21 && hand.length === 2){
+if (handValue === 21 && hand.Length <= 2){
+    console.log(hand.Length)
     return 0;
 } else { 
     return handValue;
@@ -144,12 +152,10 @@ function houseReveal(){
  */
 function compareHands(playerHandValue, houseHandValue) {
     //add a pop up box with result and ask to play again.
-    let txt;
     if (playerHandValue === houseHandValue) {
         return "Draw";
     } else if (houseHandValue === 0) {
         return "House has black jack! You lose";
-    
     } else if (playerHandValue === 0) {
         return "You have Blackjack! You Win!";
     } else if (playerHandValue > 21){
