@@ -9,7 +9,6 @@
 // add sound
 //add color choice for the game table
 
-
 let playerHand = []
 let dealersHand = [];
 
@@ -21,31 +20,44 @@ function initializeGameRound() {
     let dealersHand = [];
 
     document.addEventListener('DOMContentLoaded', function(){
+        
         for (i = 0; i < 2; i++){
             playerHand.push(dealCard('player'));
             dealersHand.push(dealCard('dealer'));
         } 
 
-        document.getElementById('hit-btn').addEventListener('click', function(){
-            playerHand.push(dealCard('player'))
-            console.log(playerHand);
-        })
+        let playerTotal = checkHandValue(playerHand);
+        let dealerTotal = checkHandValue(dealersHand);
+        console.log(playerTotal);
+        console.log(dealerTotal);
+        if (playerTotal === 0 || dealerTotal === 0){
+            //Need a pop up box asking to play again and declaring score.
+            compareHands(playerTotal, dealerTotal)
 
-        document.getElementById('stand-btn').addEventListener('click', function(){
-            document.getElementById('hit-btn').removeEventListener('click', dealCard);
-            let playerTotal = checkHandValue(playerHand);
-            let dealerTotal = checkHandValue(dealersHand);
-            console.log(playerTotal);
-            console.log(dealerTotal);
-            
-            while (dealerTotal !== 0 && dealerTotal < 17){
-                dealersHand.push(dealCard('dealer'));
+        } else {
+            document.getElementById('hit-btn').addEventListener('click', function(){
+                playerHand.push(dealCard('player'))
+                console.log(playerHand);
+
+            })
+    
+            document.getElementById('stand-btn').addEventListener('click', function(){
+                document.getElementById('hit-btn').removeEventListener('click', dealCard);
+                let playerTotal = checkHandValue(playerHand);
                 let dealerTotal = checkHandValue(dealersHand);
-                if (dealerTotal > 17){
-                    break;
+                console.log(playerTotal);
+                console.log(dealerTotal);
+                
+                while (dealerTotal !== 0 && dealerTotal < 17){
+                    dealersHand.push(dealCard('dealer'));
+                    let dealerTotal = checkHandValue(dealersHand);
+                    if (dealerTotal > 17){
+                        break;
+                    }
                 }
-            }
-        })
+            })
+        }
+
         
     })
 }
@@ -132,10 +144,12 @@ function houseReveal(){
  */
 function compareHands(playerHandValue, houseHandValue) {
     //add a pop up box with result and ask to play again.
+    let txt;
     if (playerHandValue === houseHandValue) {
         return "Draw";
     } else if (houseHandValue === 0) {
         return "House has black jack! You lose";
+    
     } else if (playerHandValue === 0) {
         return "You have Blackjack! You Win!";
     } else if (playerHandValue > 21){
