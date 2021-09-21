@@ -45,6 +45,21 @@ body {
     width: 70px;
 }
 
+/** div to display results **/
+#result {
+    background-color: red;
+    display: none;
+    left: 50%;
+    height: 20%;
+    position: fixed; 
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: 10;
+    width: 70%;
+    
+}
+
+
 /**footer styling**/
 /*style for the social media links*/
 .social-media {
