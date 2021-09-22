@@ -9,26 +9,22 @@
 // add sound
 //add color choice for the game table
 
-
-let playerHand = []
-let dealersHand = [];
-
-initializeGameRound ()
-
+let playerHand = [];
+let dealerHand = [];
+initializeGameRound()
 
 function initializeGameRound() {
     let playerHand = [];
-    let dealersHand = [];
+    let dealerHand = [];
 
     document.addEventListener('DOMContentLoaded', function(){
-        
         for (i = 0; i < 2; i++){
             playerHand.push(dealCard('player'));
-            dealersHand.push(dealCard('dealer'));
+            dealerHand.push(dealCard('dealer'));
         } 
         
         let playerTotal = checkHandValue(playerHand);
-        let dealerTotal = checkHandValue(dealersHand);
+        let dealerTotal = checkHandValue(dealerHand);
         console.log(playerTotal);
         console.log(dealerTotal);
         
@@ -36,16 +32,15 @@ function initializeGameRound() {
             //Need a pop up box asking to play again and declaring score.
             let result = compareHands(playerTotal, dealerTotal)
             console.log(result)
+
         } else {
             document.getElementById('hit-btn').addEventListener('click', function(){
-                playerHand.push(dealCard('player'))
-                
+                playerHand.push(dealCard('player'))    
             })
-    
             document.getElementById('stand-btn').addEventListener('click', function(){
                 document.getElementById('hit-btn').removeEventListener('click', dealCard);
                 let playerTotal = checkHandValue(playerHand);
-                let dealerTotal = checkHandValue(dealersHand);
+                let dealerTotal = checkHandValue(dealerHand);
                 console.log(playerTotal);
                 console.log(dealerTotal);
                 if (dealerTotal > 17){
@@ -54,8 +49,8 @@ function initializeGameRound() {
                 }
                 
                 while (dealerTotal !== 0 && dealerTotal < 17){
-                    dealersHand.push(dealCard('dealer'));
-                    let dealerTotal = checkHandValue(dealersHand);
+                    dealerHand.push(dealCard('dealer'));
+                    let dealerTotal = checkHandValue(dealerHand);
                     if (dealerTotal > 17){
                         let result = compareHands(playerTotal, dealerTotal)
                         console.log(result)
@@ -63,10 +58,10 @@ function initializeGameRound() {
                     }
                 }
             })
+            
         }
-
-        
-    })
+    }) 
+    
 }
 
 /**
@@ -93,7 +88,7 @@ card.alt = `${value} of ${suit}`;
 //Assigns the card image to the appropriate hand according to the parameter passed.
 if (dealtFor === 'player') {
     document.getElementById('player-card-container').appendChild(card);
-    console.log(`${suit}${value}`)
+    
 } else if (dealtFor === 'dealer') {
     document.getElementById('dealer-card-container').appendChild(card)
 }
@@ -101,15 +96,15 @@ if (dealtFor === 'player') {
 // Returns picture cards as numerical values
 if (value === 'jack' || value === 'queen' || value === 'king') {
     value = 10;
-    console.log(value)
+    
     return value
 } else if (value === 'ace') {
     value = 11;
-    console.log(value)
+    
     return value
     
 } else {
-    console.log(value)
+    
     return value    
      
 }
