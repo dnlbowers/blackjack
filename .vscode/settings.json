@@ -25,5 +25,8 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "workbench.preferredDarkColorTheme": "Abyss",
    "workbench.preferredHighContrastColorTheme": "Abyss",
-   "workbench.preferredLightColorTheme": "Abyss"
+   "workbench.preferredLightColorTheme": "Abyss",
+   "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   }
 }
