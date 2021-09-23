@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
            hand.push(1)
        }
       }
-    return hand; 
+      return hand; 
     } else {
       return handValue;
       //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
