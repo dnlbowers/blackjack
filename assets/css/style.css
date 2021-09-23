@@ -22,10 +22,9 @@ body {
     width: 2.5rem;
 }
 
-#menu-select{
+#menu-select {
     text-align: center;
 }
-
 
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
@@ -37,7 +36,7 @@ body {
     justify-items: center;
     margin: 0 auto;
     padding: 1%;
-    width: 95%;   
+    width: 95%;
 }
 
 .card {
@@ -62,11 +61,11 @@ body {
     display: none;
     left: 50%;
     height: 20%;
-    position: fixed; 
+    position: fixed;
     transform: translate(-50%, -50%);
     top: 50%;
     z-index: 10;
-    width: 70%;    
+    width: 70%;
 }
 
 /**footer styling**/
@@ -86,4 +85,3 @@ body {
     color: #000;
     padding: 0.3125rem;
 }
-
