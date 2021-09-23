@@ -13,8 +13,11 @@ const standBtnRef = document.querySelector("#stand-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
   hitBtnRef.addEventListener("click", function () {
-    if (checkHandValue(playerHand) >= 21) {
-      return;
+    if (checkHandValue(playerHand) > 21) {
+      //ideally this would end the game completely prior to the button push
+      hitBtnRef.disabled = true; 
+      return computerTurn();
+      
     }
     playerHand.push(dealCard("player"));
   });
@@ -31,18 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let dealerTotal = checkHandValue(dealerHand);
     console.log(playerTotal);
     console.log(dealerTotal);
-    if (dealerTotal > 17) {
+    if (playerTotal === 0 || playerTotal > 21) {
       let result = compareHands(playerTotal, dealerTotal);
       console.log(result);
-    }
-
-    while (dealerTotal !== 0 && dealerTotal < 17) {
-      dealerHand.push(dealCard("dealer"));
-      let dealerTotal = checkHandValue(dealerHand);
-      if (dealerTotal > 17) {
-        let result = compareHands(playerTotal, dealerTotal);
-        console.log(result);
-        break;
+    } else if (dealerTotal >= 17) {
+      let result = compareHands(playerTotal, dealerTotal);
+      console.log(result);
+    } else {
+      while (dealerTotal !== 0 && dealerTotal < 17) {
+        dealerHand.push(dealCard("dealer"));
+        let dealerTotal = checkHandValue(dealerHand);
+        if (dealerTotal > 17) {
+          let result = compareHands(playerTotal, dealerTotal);
+          console.log(result);
+          break;
+        }
       }
     }
   }
