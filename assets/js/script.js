@@ -1,7 +1,6 @@
-//remove event listener from stand btn
 // compile the ace high to low function
-//compare hands
-//restart the game
+//compare hands and make modal functional to : -
+//   restart the game
 //add functionality to the menu
 //write the game rules
 //write win streak function with ability to reset
@@ -27,31 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let dealerHand = [];
 
   initializeGameRound();
-
-  function computerTurn() {
-    hitBtnRef.disabled = true;
-    let playerTotal = checkHandValue(playerHand);
-    let dealerTotal = checkHandValue(dealerHand);
-    console.log(playerTotal);
-    console.log(dealerTotal);
-    if (playerTotal === 0 || playerTotal > 21) {
-      let result = compareHands(playerTotal, dealerTotal);
-      console.log(result);
-    } else if (dealerTotal >= 17) {
-      let result = compareHands(playerTotal, dealerTotal);
-      console.log(result);
-    } else {
-      while (dealerTotal !== 0 && dealerTotal < 17) {
-        dealerHand.push(dealCard("dealer"));
-        let dealerTotal = checkHandValue(dealerHand);
-        if (dealerTotal > 17) {
-          let result = compareHands(playerTotal, dealerTotal);
-          console.log(result);
-          break;
-        }
-      }
-    }
-  }
 
   function initializeGameRound() {
 
@@ -148,6 +122,34 @@ document.addEventListener("DOMContentLoaded", function () {
       //handValue += response from confirmation pop up (1 for low 11 for high)
       //else
       //handValue += card;
+    }
+  }
+  /**
+   * Disables hit button and checks several conditions before deciding how the dealers should play it's hand and
+   * and calling the compareHands function.
+   */
+  function computerTurn() {
+    hitBtnRef.disabled = true;
+    let playerTotal = checkHandValue(playerHand);
+    let dealerTotal = checkHandValue(dealerHand);
+    console.log(playerTotal);
+    console.log(dealerTotal);
+    if (playerTotal === 0 || playerTotal > 21) {
+      let result = compareHands(playerTotal, dealerTotal);
+      console.log(result);
+    } else if (dealerTotal >= 17) {
+      let result = compareHands(playerTotal, dealerTotal);
+      console.log(result);
+    } else {
+      while (dealerTotal !== 0 && dealerTotal < 17) {
+        dealerHand.push(dealCard("dealer"));
+        let dealerTotal = checkHandValue(dealerHand);
+        if (dealerTotal > 17) {
+          let result = compareHands(playerTotal, dealerTotal);
+          console.log(result);
+          break;
+        }
+      }
     }
   }
 
