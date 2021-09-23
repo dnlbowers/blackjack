@@ -1,9 +1,12 @@
 // compile the ace high to low function
-//compare hands and make modal functional to : -
+//compare hands and make results appear in a modal  to : -
+//   display result
 //   restart the game
+//   enter the menu
 //add functionality to the menu
 //write the game rules
 //write win streak function with ability to reset
+// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // add sound
 //add color choice for the game table
