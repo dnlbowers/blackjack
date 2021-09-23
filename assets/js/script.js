@@ -12,7 +12,7 @@ const standBtnRef = document.querySelector("#stand-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
   hitBtnRef.addEventListener("click", function () {
-    if (checkHandValue(playerHand) > 21) {
+    if (checkHandValue(playerHand) >= 21) {
       //ideally this would end the game completely prior to the button push
       hitBtnRef.disabled = true; 
       return computerTurn();
@@ -115,6 +115,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (handValue === 21 && hand.Length <= 2) {
       console.log(hand.Length);
       return 0;
+    } else if (handValue > 21 && hand.includes(11)) {
+      for (i =0; i<= hand.length; i++) {
+       if (hand[i] === 11){
+           hand.splice(i,1)
+           hand.push(1)
+       }
+      }
+    return hand; 
     } else {
       return handValue;
       //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
