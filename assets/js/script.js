@@ -142,17 +142,17 @@ document.addEventListener('DOMContentLoaded', function () {
         let dealerTotal = checkHandValue(dealerHand);
         console.log(playerTotal);
         console.log(dealerTotal);
-        if (playerTotal === 0 || playerTotal > 21) {
-            let result = compareHands(playerTotal, dealerTotal);
-            console.log(result);
-        } else if (dealerTotal >= 17) {
+        if (dealerTotal >= 17) {
             let result = compareHands(playerTotal, dealerTotal);
             console.log(result);
         } else {
-            while (dealerTotal !== 0 && dealerTotal < 17) {
+            while (dealerTotal < 17) {
                 dealerHand.push(dealCard('dealer'));
                 let dealerTotal = checkHandValue(dealerHand);
-                if (dealerTotal > 17) {
+                if (dealerTotal >21){
+                    houseBust(dealerTotal);
+                    break;
+                } else if (dealerTotal > 17) {
                     let result = compareHands(playerTotal, dealerTotal);
                     console.log(result);
                     break;
@@ -174,15 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function compareHands(playerHandValue, houseHandValue) {
         //add a pop up box with result and ask to play again.
         if (playerHandValue === houseHandValue) {
-            return "Draw";
-        } else if (houseHandValue === 0) {
-            return "House has black jack! You lose";
-        } else if (playerHandValue === 0) {
-            return "You have Blackjack! You Win!";
-        } else if (playerHandValue > 21) {
-            return "Your bust! 21 is the limit";
-        } else if (houseHandValue > 21) {
-            return "House is bust! You win!";
+            draw();
         } else if (playerHandValue > houseHandValue) {
             return "Congratulations! You beat the house!";
         } else {
@@ -242,6 +234,40 @@ document.addEventListener('DOMContentLoaded', function () {
             <h2>You're Bust!</h2>
             <hr>
             <p>The limit is 21, your current score is ${handValue}.</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+
+    function draw(playerHandValue) {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>Draw</h2>
+            <hr>
+            <p>You and the house have equal hand values of ${playerHandValue}.</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+
+    function houseBust(houseHand) {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You Win!</h2>
+            <hr>
+            <p>The house went dust with a value of ${houseHand}.</p>
             <div>
                 <button class="btn redeal-btn">Deal Again</button>
                 <button class="btn menu-btn">Menu</button>
