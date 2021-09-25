@@ -10,8 +10,10 @@
 // !! above the MVP plan !!
 // add sound
 //add color choice for the game table
-const hitBtnRef = document.querySelector("#hit-btn");
-const standBtnRef = document.querySelector("#stand-btn");
+const hitBtnRef = document.querySelector('#hit-btn');
+const standBtnRef = document.querySelector('#stand-btn');
+const modalSurroundRef = document.querySelector('.modal-surround');
+const resultModalRef = document.querySelector('#result-modal');
 
 document.addEventListener("DOMContentLoaded", function () {
     hitBtnRef.addEventListener("click", function () {
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (hand === playerHand && handValue >= 22) {
             console.log('hand over 21 ski[ CPU turn')
             hitBtnRef.disabled = true;
-            // here I need to compare hands skipping the CPU turn
+            // here I need to copy the code for when a player is bust from compare hands skipping the CPU turn
         } else {
             return handValue;
         }
