@@ -12,10 +12,8 @@
 //add color choice for the game table
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
-const modalSurroundRef = document.getElementsByClassName('modal-surround');
-const resultModalRef = document.getElementById('result-modal');
-const resultHeadingRef = document.getElementById('result-heading');
-const resultStatementRef = document.getElementById('result-statement');
+const modalSurroundRef = document.getElementById('modal-surround');
+
 
 document.addEventListener('DOMContentLoaded', function () {
     
@@ -132,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('ace low')
             return hand;    
         } else if (hand === playerHand && handValue >= 22) {
-            playerBust();
+            playerBust(handValue)
             
         } else {
             return handValue;
@@ -193,16 +191,21 @@ document.addEventListener('DOMContentLoaded', function () {
             return "The House wins! Better luck next time!";
         }
     }
-
-    function playerBust() {
-        console.log('hand over 21 ski[ CPU turn')
-            hitBtnRef.disabled = true;
-            // here I need to copy the code for when a player is bust from compare hands skipping the CPU turn
-            resultHeadingRef.innerHTML = "You're Bust!";
-            resultStatementRef.innerHTML = `"The limit is 21, your current score is" ${handValue}.`;
-            
-            modalSurroundRef.style.removeProperty('display');
-            
-            resultModalRef.style.removeProperty( 'display' );
+    //functions to display the results modals
+    function playerBust(handValue) {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You're Bust!</h2>
+            <hr>
+            <p>The limit is 21, your current score is ${handValue}.</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
     }
 });

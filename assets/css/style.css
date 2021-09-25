@@ -45,7 +45,7 @@ body {
 }
 
 /** div to display results **/
-.modal-surround {
+#modal-surround {
     background: rgba(0, 0, 0, 0.2);
     display: none;
     height: 100vh;
@@ -58,7 +58,6 @@ body {
 
 #result-modal {
     background-color: red;
-    display: none;
     left: 50%;
     height: 20%;
     position: fixed;
