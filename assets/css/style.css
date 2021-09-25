@@ -56,7 +56,7 @@ body {
     width: 100vw;
 }
 
-#result {
+#result-modal {
     background-color: red;
     display: none;
     left: 50%;

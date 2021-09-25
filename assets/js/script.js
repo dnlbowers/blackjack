@@ -10,34 +10,33 @@
 // !! above the MVP plan !!
 // add sound
 //add color choice for the game table
-const hitBtnRef = document.querySelector('#hit-btn');
-const standBtnRef = document.querySelector('#stand-btn');
-const modalSurroundRef = document.querySelector('.modal-surround');
-const resultModalRef = document.querySelector('#result-modal');
+const hitBtnRef = document.getElementById('hit-btn');
+const standBtnRef = document.getElementById('stand-btn');
+const modalSurroundRef = document.getElementsByClassName('modal-surround');
+const resultModalRef = document.getElementById('result-modal');
+const resultHeadingRef = document.getElementById('result-heading');
+const resultStatementRef = document.getElementById('result-statement');
 
-document.addEventListener("DOMContentLoaded", function () {
-    hitBtnRef.addEventListener("click", function () {
-        let playerHandValue = checkHandValue(playerHand); 
+document.addEventListener('DOMContentLoaded', function () {
     
-        if (playerHandValue > 21) {
-            //ideally this would end the game completely prior to the button push
-            return computerTurn();
-        } else {
-            playerHand.push(dealCard("player"));
-            checkHandValue(playerHand);
-        }
+    hitBtnRef.addEventListener('click', function () {
+
+        playerHand.push(dealCard('player'));
+        checkHandValue(playerHand);
+        
     });
 
-    standBtnRef.addEventListener("click", computerTurn);
+    standBtnRef.addEventListener('click', computerTurn);
+
     let playerHand = [];
     let dealerHand = [];
 
-    firstTwoCards();
+    firstTwoCards();    
 
     function firstTwoCards() {
         for (i = 0; i < 2; i++) {
-            playerHand.push(dealCard("player"));
-            dealerHand.push(dealCard("dealer"));
+            playerHand.push(dealCard('player'));
+            dealerHand.push(dealCard('dealer'));
         }
 
         let playerTotal = checkHandValue(playerHand);
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * places and image of the card in DOM according to the parameter passed.
      */
     function dealCard(dealtFor) {
-        let suitArray = ["hearts", "clubs", "spades", "diamonds"];
+        let suitArray = ['hearts', 'clubs', 'spades', 'diamonds'];
         let valueArray = [
             2,
             3,
@@ -69,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
             8,
             9,
             10,
-            "jack",
-            "queen",
-            "king",
-            "ace",
+            'jack',
+            'queen',
+            'king',
+            'ace',
         ];
 
         let randomSuit = Math.floor(Math.random() * 4);
@@ -82,24 +81,24 @@ document.addEventListener("DOMContentLoaded", function () {
         let value = valueArray[randomValue];
 
         // Create <img> with attributes to visually represent the value of the card in the DOM
-        let card = document.createElement("img");
+        let card = document.createElement('img');
         card.src = `assets/images/${suit}/${value}.svg`;
-        card.className = "card";
+        card.className = 'card';
         card.alt = `${value} of ${suit}`;
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
-            document.getElementById("player-card-container").appendChild(card);
-        } else if (dealtFor === "dealer") {
-            document.getElementById("dealer-card-container").appendChild(card);
+            document.getElementById('player-card-container').appendChild(card);
+        } else if (dealtFor === 'dealer') {
+            document.getElementById('dealer-card-container').appendChild(card);
         }
 
         // Returns picture cards as numerical values
-        if (value === "jack" || value === "queen" || value === "king") {
+        if (value === 'jack' || value === 'queen' || value === 'king') {
             value = 10;
 
             return value;
-        } else if (value === "ace") {
+        } else if (value === 'ace') {
             value = 11;
 
             return value;
@@ -133,9 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('ace low')
             return hand;    
         } else if (hand === playerHand && handValue >= 22) {
-            console.log('hand over 21 ski[ CPU turn')
-            hitBtnRef.disabled = true;
-            // here I need to copy the code for when a player is bust from compare hands skipping the CPU turn
+            playerBust();
+            
         } else {
             return handValue;
         }
@@ -158,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(result);
         } else {
             while (dealerTotal !== 0 && dealerTotal < 17) {
-                dealerHand.push(dealCard("dealer"));
+                dealerHand.push(dealCard('dealer'));
                 let dealerTotal = checkHandValue(dealerHand);
                 if (dealerTotal > 17) {
                     let result = compareHands(playerTotal, dealerTotal);
@@ -196,7 +194,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function breakTurn() {
-        return (roundOver = true);
+    function playerBust() {
+        console.log('hand over 21 ski[ CPU turn')
+            hitBtnRef.disabled = true;
+            // here I need to copy the code for when a player is bust from compare hands skipping the CPU turn
+            resultHeadingRef.innerHTML = "You're Bust!";
+            resultStatementRef.innerHTML = `"The limit is 21, your current score is" ${handValue}.`;
+            
+            modalSurroundRef.style.removeProperty('display');
+            
+            resultModalRef.style.removeProperty( 'display' );
     }
 });
