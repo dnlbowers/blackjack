@@ -5,6 +5,7 @@
 // key board short cuts
 // add sound
 //add color choice for the game table
+//add player choice for ace high or low
 
 //Global constant references for elements in the DOM
 const hitBtnRef = document.getElementById('hit-btn');
@@ -17,8 +18,6 @@ const winTallyRef = document.getElementById('wins');
 const loseTallyRef = document.getElementById('loses');
 const drawTallyRef = document.getElementById('drawn');
 const resetScoreRef = document.getElementById('reset-btn');
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     

@@ -1,3 +1,9 @@
+/*
+- style buttons
+- space elements
+- add fonts
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +32,6 @@ body {
     height: 2.5rem;
     width: 2.5rem;
 }
-
 
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
@@ -69,16 +74,13 @@ body {
 
 /**footer styling**/
 /*style for the social media links*/
-.social-media {
-    text-align: center;
-}
 
-.social-media li {
+.social-media-li {
     display: inline;
     list-style-type: none;
 }
 
-.social-media i {
+.social-icon {
     font-size: 160%;
     margin: 1%;
     color: #000;
