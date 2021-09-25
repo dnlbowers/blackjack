@@ -15,21 +15,24 @@ const standBtnRef = document.querySelector("#stand-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
     hitBtnRef.addEventListener("click", function () {
-        if (checkHandValue(playerHand) >= 21) {
+        let playerHandValue = checkHandValue(playerHand); 
+    
+        if (playerHandValue > 21) {
             //ideally this would end the game completely prior to the button push
             hitBtnRef.disabled = true;
             return computerTurn();
+        } else {
+            playerHand.push(dealCard("player"));
         }
-        playerHand.push(dealCard("player"));
     });
 
     standBtnRef.addEventListener("click", computerTurn);
     let playerHand = [];
     let dealerHand = [];
 
-    initializeGameRound();
+    firstTwoCards();
 
-    function initializeGameRound() {
+    function firstTwoCards() {
         for (i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (playerTotal === 0 || dealerTotal === 0) {
             //Need a pop up box asking to play again and declaring score.
+            hitBtnRef.disabled = true;
             let result = compareHands(playerTotal, dealerTotal);
             console.log(result);
         }
@@ -108,13 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function checkHandValue(hand) {
         console.log(hand);
+        console.log('hand value check')
         let handValue = 0;
         for (card of hand) {
             handValue += card;
         }
 
-        if (handValue === 21 && hand.Length <= 2) {
-            console.log(hand.Length);
+        if (handValue === 21 && hand.length === 2) {
+            console.log('blackjack check');
             return 0;
         } else if (handValue > 21 && hand.includes(11)) {
             for (i = 0; i <= hand.length; i++) {
@@ -123,14 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     hand.push(1);
                 }
             }
+            console.log('ace low')
             return hand;
         } else {
             return handValue;
-            //add for of loop with if card === 11 confirm box "want to convert ace hig or low"
-            // event listener on pop up buttons
-            //handValue += response from confirmation pop up (1 for low 11 for high)
-            //else
-            //handValue += card;
         }
     }
     /**
