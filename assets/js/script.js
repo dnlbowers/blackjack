@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function compareHands(playerHandValue, houseHandValue) {
         //add a pop up box with result and ask to play again.
         if (playerHandValue === houseHandValue) {
-            draw();
+            draw(playerHandValue);
         } else if (playerHandValue > houseHandValue) {
             playerHandWins(playerHandValue, houseHandValue);
         } else {
@@ -197,42 +197,57 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = 'The house has Blackjack!';
+        incrementLoses()
     }
 
     function playerBlackjack() {
+
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = 'You Win!';
         document.getElementById('description').innerHTML = 'You have Blackjack!';
-        
+        incrementWins();
+
     }
     
     function playerBust(handValue) {
+        
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You're Bust!";
         document.getElementById('description').innerHTML = `The limit is 21, your current score is ${handValue}.`;
+        incrementLoses()
+
     }
 
     function draw(playerHandValue) {
+        
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "Draw!";
         document.getElementById('description').innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
+        incrementDraws()
+
     }
 
     function houseBust(houseHand) {
+        
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Win!";
         document.getElementById('description').innerHTML = `The house went bust with a value of ${houseHand}.`;
+        incrementWins();
+
     }
 
     function playerHandWins(playerHandValue, houseHandValue) {
+        
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Win!";
         document.getElementById('description').innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
+        incrementWins();
+
     }
 
     function houseHandWins(playerHandValue, houseHandValue) {
@@ -240,6 +255,29 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
+        incrementLoses()
+    }
+
+    //Scoreboard functions
+    function incrementWins() {
+
+        let wins = parseInt(document.getElementById('wins').innerText);
+        document.getElementById('wins').innerText = ++wins;
+    
+    }
+
+    function incrementLoses() {
+
+        let wins = parseInt(document.getElementById('loses').innerText);
+        document.getElementById('loses').innerText = ++wins;
+    
+    }
+
+    function incrementDraws() {
+
+        let wins = parseInt(document.getElementById('draws').innerText);
+        document.getElementById('draws').innerText = ++wins;
+    
     }
 
 });
