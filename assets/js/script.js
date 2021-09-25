@@ -1,13 +1,9 @@
-// compile the ace high to low function
-//compare hands and make results appear in a modal  to : -
-//   display result
-//   restart the game
-//   enter the menu
 //add functionality to the menu
 //write the game rules
 //write win streak function with ability to reset
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
+// key board short cuts
 // add sound
 //add color choice for the game table
 const hitBtnRef = document.getElementById('hit-btn');
@@ -31,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     redealBtnRef.addEventListener('click', function() {
         playerHand = [];
         dealerHand = [];
-        dealerCardContainerRef.innerHTML = `<h2>Dealer/House</h2>`;
-        playerCardContainerRef.innerHTML = `<h2>Player</h2>`;
+        dealerCardContainerRef.innerHTML = "";
+        playerCardContainerRef.innerHTML = "";
         modalSurroundRef.style.display = 'none';
         firstTwoCards();
     });
@@ -50,8 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
-        console.log(playerTotal);
-        console.log(dealerTotal);
 
         checkBlackjack(dealerTotal, playerTotal)
 
@@ -125,8 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
      * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
      */
     function checkHandValue(hand) {
-        console.log(hand);
-        console.log('hand value check')
         //adds the total hand value together
         let handValue = 0;
         for (card of hand) {
@@ -134,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
-            console.log('blackjack check');
             return 0;
         // converts ace to low (from 11 to 1)    
         } else if (handValue > 21 && hand.includes(11)) {
@@ -159,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
         hitBtnRef.disabled = true;
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
-        console.log(playerTotal);
-        console.log(dealerTotal);
+
         if (dealerTotal >= 17) {
+            
             let result = compareHands(playerTotal, dealerTotal);
-            console.log(result);
+
         } else {
             while (dealerTotal < 17) {
                 dealerHand.push(dealCard('dealer'));
@@ -173,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     break;
                 } else if (dealerTotal > 17) {
                     let result = compareHands(playerTotal, dealerTotal);
-                    console.log(result);
                     break;
                 }
             }
@@ -214,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = 'You Win!';
         document.getElementById('description').innerHTML = 'You have Blackjack!';
+        
     }
     
     function playerBust(handValue) {
