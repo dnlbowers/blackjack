@@ -184,9 +184,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (playerHandValue === houseHandValue) {
             draw();
         } else if (playerHandValue > houseHandValue) {
-            playerHandWins();
+            playerHandWins(playerHandValue, houseHandValue);
         } else {
-            houseHandWins();
+            houseHandWins(playerHandValue, houseHandValue);
         }
     }
 
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
             result.innerHTML = `
             <h2>You Win!</h2>
             <hr>
-            <p>Congratulations! Your hand of ${playerHandValue} wins over the house hand value of ${houseHandValue}.</p>
+            <p>Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.</p>
             <div>
                 <button class="btn redeal-btn">Deal Again</button>
                 <button class="btn menu-btn">Menu</button>
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
             result.innerHTML = `
             <h2>You Lose!</h2>
             <hr>
-            <p>Better luck next time! Your hand of ${playerHandValue} loses to the house hand value of ${houseHandValue}.</p>
+            <p>Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.</p>
             <div>
                 <button class="btn redeal-btn">Deal Again</button>
                 <button class="btn menu-btn">Menu</button>
