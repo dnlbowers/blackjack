@@ -33,9 +33,7 @@ body {
 #game-table {
     background-color: green;
     box-sizing: border-box;
-    display: grid;
     height: 80vh;
-    justify-items: center;
     margin: 0 auto;
     padding: 1%;
     width: 95%;
