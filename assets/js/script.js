@@ -42,12 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(playerTotal);
         console.log(dealerTotal);
 
-        if (playerTotal === 0 || dealerTotal === 0) {
-            //Need a pop up box asking to play again and declaring score.
-            hitBtnRef.disabled = true;
-            let result = compareHands(playerTotal, dealerTotal);
-            console.log(result);
-        }
+        checkBlackjack(dealerTotal, playerTotal)
+
     }
 
     /**
@@ -112,14 +108,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkHandValue(hand) {
         console.log(hand);
         console.log('hand value check')
+        //adds the total hand value together
         let handValue = 0;
         for (card of hand) {
             handValue += card;
         }
-
+        //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
             console.log('blackjack check');
             return 0;
+        // converts ace to low (from 11 to 1)    
         } else if (handValue > 21 && hand.includes(11)) {
             for (i = 0; i <= hand.length; i++) {
                 if (hand[i] === 11) {
@@ -127,11 +125,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     hand.push(1);
                 }
             }
-            console.log('ace low')
             return hand;    
         } else if (hand === playerHand && handValue >= 22) {
-            playerBust(handValue)
-            
+            playerBust(handValue);   
         } else {
             return handValue;
         }
@@ -168,7 +164,9 @@ document.addEventListener('DOMContentLoaded', function () {
     /**
      * Flips the houses hidden card face up once the players turn is over
      */
-    function houseReveal() {}
+    function houseReveal() {
+        
+    }
 
     /**
      * Compares final hands once both the house and the player have drawn all their desired cards
@@ -191,7 +189,50 @@ document.addEventListener('DOMContentLoaded', function () {
             return "The House wins! Better luck next time!";
         }
     }
+
+    function checkBlackjack(dealer, player){
+        if (dealer === 0) {
+            houseBlackjack();
+        } else if (player === 0) {
+            playerBlackjack();
+        }
+    }
+
     //functions to display the results modals
+    function houseBlackjack() {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You Lose!</h2>
+            <hr>
+            <p>The house has Blackjack!</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+
+    function playerBlackjack() {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You Win!</h2>
+            <hr>
+            <p>You have Blackjack!</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+    
     function playerBust(handValue) {
         hitBtnRef.disabled = true;
             modalSurroundRef.style.display = 'block';
