@@ -7,6 +7,11 @@ body {
     background-color: white;
 }
 
+/**Generalized classes**/
+.centre-element {
+    text-align: center;
+}
+
 /** Header style rules **/
 
 #title {
@@ -22,9 +27,6 @@ body {
     width: 2.5rem;
 }
 
-#menu-select {
-    text-align: center;
-}
 
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
