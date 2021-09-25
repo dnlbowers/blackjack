@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
         if (playerHandValue > 21) {
             //ideally this would end the game completely prior to the button push
-            hitBtnRef.disabled = true;
             return computerTurn();
         } else {
             playerHand.push(dealCard("player"));
+            checkHandValue(playerHand);
         }
     });
 
@@ -129,7 +129,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
             console.log('ace low')
-            return hand;
+            return hand;    
+        } else if (hand === playerHand && handValue >= 22) {
+            console.log('hand over 21 ski[ CPU turn')
+            hitBtnRef.disabled = true;
+            // here I need to compare hands skipping the CPU turn
         } else {
             return handValue;
         }
