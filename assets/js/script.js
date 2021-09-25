@@ -46,6 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    function checkBlackjack(dealer, player){
+        if (dealer === 0) {
+            houseBlackjack();
+        } else if (player === 0) {
+            playerBlackjack();
+        }
+    }
+
     /**
      * Deals a random card on to the table and assigns it a value.
      * places and image of the card in DOM according to the parameter passed.
@@ -176,17 +184,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (playerHandValue === houseHandValue) {
             draw();
         } else if (playerHandValue > houseHandValue) {
-            return "Congratulations! You beat the house!";
+            playerHandWins();
         } else {
-            return "The House wins! Better luck next time!";
-        }
-    }
-
-    function checkBlackjack(dealer, player){
-        if (dealer === 0) {
-            houseBlackjack();
-        } else if (player === 0) {
-            playerBlackjack();
+            houseHandWins();
         }
     }
 
@@ -275,4 +275,39 @@ document.addEventListener('DOMContentLoaded', function () {
             `
             modalSurroundRef.appendChild(result);
     }
+
+    function playerHandWins(playerHandValue, houseHandValue) {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You Win!</h2>
+            <hr>
+            <p>Congratulations! Your hand of ${playerHandValue} wins over the house hand value of ${houseHandValue}.</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+
+    function houseHandWins(playerHandValue, houseHandValue) {
+        hitBtnRef.disabled = true;
+            modalSurroundRef.style.display = 'block';
+            let result = document.createElement('section');
+            result.id = 'result-modal';
+            result.innerHTML = `
+            <h2>You Lose!</h2>
+            <hr>
+            <p>Better luck next time! Your hand of ${playerHandValue} loses to the house hand value of ${houseHandValue}.</p>
+            <div>
+                <button class="btn redeal-btn">Deal Again</button>
+                <button class="btn menu-btn">Menu</button>
+            </div>
+            `
+            modalSurroundRef.appendChild(result);
+    }
+
 });
