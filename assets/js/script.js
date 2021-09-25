@@ -13,7 +13,9 @@
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
-
+const redealBtnRef = document.getElementById('redeal-btn');
+const dealerCardContainerRef = document.getElementById('dealer-card-container');
+const playerCardContainerRef = document.getElementById('player-card-container');
 
 document.addEventListener('DOMContentLoaded', function () {
     
@@ -25,6 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     standBtnRef.addEventListener('click', computerTurn);
+    
+    redealBtnRef.addEventListener('click', function() {
+        playerHand = [];
+        dealerHand = [];
+        dealerCardContainerRef.innerHTML = `<h2>Dealer/House</h2>`;
+        playerCardContainerRef.innerHTML = `<h2>Player</h2>`;
+        modalSurroundRef.style.display = 'none';
+        firstTwoCards();
+    });
 
     let playerHand = [];
     let dealerHand = [];
@@ -192,122 +203,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //functions to display the results modals
     function houseBlackjack() {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You Lose!</h2>
-            <hr>
-            <p>The house has Blackjack!</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "You Lose!";
+        document.getElementById('description').innerHTML = 'The house has Blackjack!';
     }
 
     function playerBlackjack() {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You Win!</h2>
-            <hr>
-            <p>You have Blackjack!</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = 'You Win!';
+        document.getElementById('description').innerHTML = 'You have Blackjack!';
     }
     
     function playerBust(handValue) {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You're Bust!</h2>
-            <hr>
-            <p>The limit is 21, your current score is ${handValue}.</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "You're Bust!";
+        document.getElementById('description').innerHTML = `The limit is 21, your current score is ${handValue}.`;
     }
 
     function draw(playerHandValue) {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>Draw</h2>
-            <hr>
-            <p>You and the house have equal hand values of ${playerHandValue}.</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "Draw!";
+        document.getElementById('description').innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
     }
 
     function houseBust(houseHand) {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You Win!</h2>
-            <hr>
-            <p>The house went dust with a value of ${houseHand}.</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "You Win!";
+        document.getElementById('description').innerHTML = `The house went bust with a value of ${houseHand}.`;
     }
 
     function playerHandWins(playerHandValue, houseHandValue) {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You Win!</h2>
-            <hr>
-            <p>Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "You Win!";
+        document.getElementById('description').innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
     }
 
     function houseHandWins(playerHandValue, houseHandValue) {
-        hitBtnRef.disabled = true;
-            modalSurroundRef.style.display = 'block';
-            let result = document.createElement('section');
-            result.id = 'result-modal';
-            result.innerHTML = `
-            <h2>You Lose!</h2>
-            <hr>
-            <p>Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.</p>
-            <div>
-                <button class="btn redeal-btn">Deal Again</button>
-                <button class="btn menu-btn">Menu</button>
-            </div>
-            `
-            modalSurroundRef.appendChild(result);
+        hitBtnRef.disabled = false;
+        modalSurroundRef.style.display = 'block';
+        document.getElementById('result').innerHTML = "You Lose!";
+        document.getElementById('description').innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
     }
 
 });
