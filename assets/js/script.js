@@ -1,19 +1,28 @@
 //add functionality to the menu
 //write the game rules
-//write win streak function with ability to reset
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
 // add sound
 //add color choice for the game table
+
+//Global constant references for elements in the DOM
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
 const redealBtnRef = document.getElementById('redeal-btn');
 const dealerCardContainerRef = document.getElementById('dealer-card-container');
 const playerCardContainerRef = document.getElementById('player-card-container');
+const winTallyRef = document.getElementById('wins');
+const loseTallyRef = document.getElementById('loses');
+const drawTallyRef = document.getElementById('drawn');
+const resetScoreRef = document.getElementById('reset-btn');
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
+    
+    //button event listeners
     
     hitBtnRef.addEventListener('click', function () {
 
@@ -31,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
         playerCardContainerRef.innerHTML = "";
         modalSurroundRef.style.display = 'none';
         firstTwoCards();
+    });
+
+    resetScoreRef.addEventListener('click', function() {
+       winTallyRef.innerHTML = 0;
+       loseTallyRef.innerHTML = 0;
+       drawTallyRef.innerHTML = 0; 
     });
 
     let playerHand = [];
@@ -261,22 +276,22 @@ document.addEventListener('DOMContentLoaded', function () {
     //Scoreboard functions
     function incrementWins() {
 
-        let wins = parseInt(document.getElementById('wins').innerText);
-        document.getElementById('wins').innerText = ++wins;
+        let wins = parseInt(winTallyRef.innerText);
+        winTallyRef.innerText = ++wins;
     
     }
 
     function incrementLoses() {
 
-        let wins = parseInt(document.getElementById('loses').innerText);
-        document.getElementById('loses').innerText = ++wins;
+        let loses = parseInt(loseTallyRef.innerText);
+        loseTallyRef.innerText = ++loses;
     
     }
 
     function incrementDraws() {
 
-        let wins = parseInt(document.getElementById('draws').innerText);
-        document.getElementById('draws').innerText = ++wins;
+        let drawn = parseInt(drawTallyRef.innerText);
+        drawTallyRef.innerText = ++drawn;
     
     }
 
