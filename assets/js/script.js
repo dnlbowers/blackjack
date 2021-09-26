@@ -8,6 +8,7 @@
 //add player choice for ace high or low
 
 //Global constant references for elements in the DOM
+const menuBtnRef = document.getElementById('menu-btn');
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
