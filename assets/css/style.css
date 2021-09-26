@@ -38,7 +38,7 @@ body {
 #game-table {
     background-color: green;
     box-sizing: border-box;
-    height: 80vh;
+    height: 80%;
     margin: 0 auto;
     padding: 1%;
     width: 95%;
@@ -47,6 +47,12 @@ body {
 .card {
     height: 100px;
     width: 70px;
+}
+
+/** Scoreboard list items **/
+.score-tally {
+    display: inline;
+    list-style-type: none;
 }
 
 /** div to display results **/
