@@ -398,25 +398,61 @@ document.addEventListener('DOMContentLoaded', function () {
         
         let rules = `
             <h2>Game Rules:</h2>
-            <h3>Game Objective:</h3>
-            <p>The aim of the game is simple, get as close to 21 as possible without going over.</p>
-            <h3>How To Play:</h3>
-            <p>You and the house will compete in turns to play your hands, and the one with the highest value under 22 will win the round.</p>
-            <p>To draw another card from the deck, press the "HIT ME!"  button on the game table or the "H" key on the keyboard.</p>
-            <p>Careful though, as if you go over 21, the jig is up, and you lose! Go news is that this applies to the house's hand too.</p>
-            <p>Once content with your hand, press the "STAND" button on the game table or the "S" key on the keyboard to initiate the house's turn. The house will always stand on a hand value greater or equal to 17.</p>
-            <h3>Card Values:</h3>
-            <p>Each card is worth the same value as the number printed on it.</p>
-            <p>All picture cards (Jack, Queen, King) have a value of 10.</p>
-            <p>By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1 and allow you to keep hitting the deck until you stand or go bust.</p>
-            <h3>Blackjack:</h3>
-            <p>Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt.</p>
-            <p>If both the player and house have blackjack, the house will always win! Sorry but thems be the rules.</p>
-            <h3>Scoreboard:</h3>
-            <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
-        `
+            
+            <button class="rule-heading"><h3>Game Objective:</h3></button>
+            
+            <section class="rule-segment">   
+                <p>The aim of the game is simple, get as close to 21 as possible without going over.</p>
+            </section> 
+            
+            <button class="rule-heading"><h3>How To Play:</h3></button>
+            
+            <section class="rule-segment">
+                <p>You and the house will compete in turns to play your hands, and the one with the highest value under 22 will win the round.</p>
+                <p>To draw another card from the deck, press the "HIT ME!"  button on the game table or the "H" key on the keyboard.</p>
+                <p>Careful though, as if you go over 21, the jig is up, and you lose! Go news is that this applies to the house's hand too.</p>
+                <p>Once content with your hand, press the "STAND" button on the game table or the "S" key on the keyboard to initiate the house's turn. The house will always stand on a hand value greater or equal to 17.</p>
+            </section> 
+            
+            <button class="rule-heading"><h3>Card Values:</h3></button>
+            
+            <section class="rule-segment">
+                <p>Each card is worth the same value as the number printed on it.</p>
+                <p>All picture cards (Jack, Queen, King) have a value of 10.</p>
+                <p>By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1 and allow you to keep hitting the deck until you stand or go bust.</p>
+            </section> 
+            
+            <button class="rule-heading"><h3>Blackjack:</h3></button>
+            
+            <section class="rule-segment">
+                <p>Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt.</p>
+                <p>If both the player and house have blackjack, the house will always win! Sorry but thems be the rules.</p>
+            </section>
+
+            <button class="rule-heading"><h3>Scoreboard:</h3></button>
+            <section class="rule-segment">
+                <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
+            </section> 
+            `
         rulesContainerRef.innerHTML = rules;
-        
+
+        let ruleHeading = document.getElementsByClassName("rule-heading");
+
+        for (i = 0; i < ruleHeading.length; i++) {
+        ruleHeading[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            let ruleSegment = this.nextElementSibling;
+            if (ruleSegment.style.display === "block") {
+                ruleSegment.style.display = "none";
+            } else {
+                ruleSegment.style.display = "block";
+            }
+        }); 
+    }
     }
 
 });
