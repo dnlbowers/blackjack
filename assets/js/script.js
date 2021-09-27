@@ -1,5 +1,6 @@
 //add functionality to the menu
-//FINISH accordion menu add symbol and so only on can be open at a time
+//FINISH accordion menu so only one can be open at a time
+//CONSIDER SCROLL for rules on mobile device
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts

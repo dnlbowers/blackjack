@@ -2,6 +2,7 @@
 - style buttons
 - space elements
 - add fonts
+- think about different icons on accordion menu
 */
 
 * {
@@ -120,11 +121,11 @@ header {
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
     background-color: #eee;
-    border: none;
     color: #444;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
     outline: none;
-    padding: 18px;
     width: 100%;
     text-align: left;
     transition: 0.4s;
@@ -133,6 +134,17 @@ header {
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .rule-heading:hover {
     background-color: #ccc;
+  }
+
+  .rule-heading:after {
+    content: '\02795'; 
+    font-size: 13px;
+    color: #777;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; 
   }
   
   /* Style the accordion panel. Note: hidden by default */
