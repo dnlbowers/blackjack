@@ -38,9 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
     //Menu button event listeners
     playGameBtnRef.addEventListener('click', function() {
+
         mainMenuRef.style.display = 'none';
         gameTableRef.style.display = 'block';
         menuBtnRef.style.display = 'inline';
+
     });
 
     gameRulesBtnRef.addEventListener('click', function() {
@@ -49,20 +51,25 @@ document.addEventListener('DOMContentLoaded', function () {
         rulesPageRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
         gameRulesContent()
+
     });
 
     //gameRulesBtnRef.addEventListener('click', gameRulesContent);
 
     menuBtnRef.addEventListener('click', function() {
+
         gameTableRef.style.display = 'none';
         mainMenuRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
-        playGameBtnRef.innerHTML = 'RETURN TO GAME'
+        playGameBtnRef.innerHTML = 'RETURN TO GAME';
+
     })
 
     backToMenuRef.addEventListener('click', function() {
+
         rulesPageRef.style.display = 'none';
         mainMenuRef.style.display = 'block'
+    
     });
     
     
@@ -78,23 +85,30 @@ document.addEventListener('DOMContentLoaded', function () {
     standBtnRef.addEventListener('click', computerTurn);
     
     redealBtnRef.addEventListener('click', function() {
+
         playerHand = [];
         dealerHand = [];
         dealerCardContainerRef.innerHTML = "";
         playerCardContainerRef.innerHTML = "";
         modalSurroundRef.style.display = 'none';
         firstTwoCards();
+
     });
 
     resetScoreRef.addEventListener('click', function() {
+
        winTallyRef.innerHTML = 0;
        loseTallyRef.innerHTML = 0;
        drawTallyRef.innerHTML = 0; 
+
     });
 
     let playerHand = [];
     let dealerHand = [];
 
+    /**
+     * Deals the first two cards to the player and the house. 
+     **/    
     firstTwoCards();    
 
     function firstTwoCards() {
@@ -110,6 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    /**
+     * Checks if either of the initial hands have blackjack
+     */
     function checkBlackjack(dealer, player){
         if (dealer === 0) {
             houseBlackjack();
@@ -123,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * places and image of the card in DOM according to the parameter passed.
      */
     function dealCard(dealtFor) {
+        
         let suitArray = ['hearts', 'clubs', 'spades', 'diamonds'];
         let valueArray = [
             2,
@@ -162,11 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Returns picture cards as numerical values
         if (value === 'jack' || value === 'queen' || value === 'king') {
             value = 10;
-
             return value;
         } else if (value === 'ace') {
             value = 11;
-
             return value;
         } else {
             return value;
@@ -241,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Compares final hands once both the house and the player have drawn all their desired cards
      */
     function compareHands(playerHandValue, houseHandValue) {
-        //add a pop up box with result and ask to play again.
+        
         if (playerHandValue === houseHandValue) {
             draw(playerHandValue);
         } else if (playerHandValue > houseHandValue) {
@@ -249,17 +265,26 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             houseHandWins(playerHandValue, houseHandValue);
         }
-    }
 
+    }
     //functions to display the results modals
+    
+    /**
+     * Displays message when house has blackjack 
+     */
     function houseBlackjack() {
+
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = 'The house has Blackjack!';
         incrementLoses()
+
     }
 
+    /**
+     * Displays message when player has blackjack 
+     */
     function playerBlackjack() {
 
         hitBtnRef.disabled = false;
@@ -270,6 +295,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
     
+    /**
+     * Displays message when house has blackjack
+     */
     function playerBust(handValue) {
         
         hitBtnRef.disabled = false;
@@ -279,7 +307,10 @@ document.addEventListener('DOMContentLoaded', function () {
         incrementLoses()
 
     }
-
+    
+    /**
+     * Displays message for a draw
+     */
     function draw(playerHandValue) {
         
         hitBtnRef.disabled = false;
@@ -290,6 +321,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    /**
+     * Displays message for when the house goes bust
+     */
     function houseBust(houseHand) {
         
         hitBtnRef.disabled = false;
@@ -300,6 +334,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    /**
+     * Displays message for when the player wins
+     */    
     function playerHandWins(playerHandValue, houseHandValue) {
         
         hitBtnRef.disabled = false;
@@ -310,22 +347,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    /**
+     * Displays message for when the house wins
+     */
     function houseHandWins(playerHandValue, houseHandValue) {
+        
         hitBtnRef.disabled = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
-        incrementLoses()
+        incrementLoses();
+
     }
 
     //Scoreboard functions
+    /**
+     * Increases win tally on scoreboard
+     */
     function incrementWins() {
 
         let wins = parseInt(winTallyRef.innerText);
         winTallyRef.innerText = ++wins;
     
     }
-
+    
+    /**
+     * Increases loses tally on scoreboard
+     */
     function incrementLoses() {
 
         let loses = parseInt(loseTallyRef.innerText);
@@ -333,6 +381,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     }
 
+    /**
+     * Increases draw tally on scoreboard
+     */
     function incrementDraws() {
 
         let drawn = parseInt(drawTallyRef.innerText);
@@ -340,6 +391,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     }
 
+    /**
+     * Adds content to the game rules modal
+     */
     function gameRulesContent() {
         
         let rules = `
