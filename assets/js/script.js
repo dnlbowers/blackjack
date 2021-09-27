@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gameTableRef.style.display = 'none';
         mainMenuRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
+        playGameBtnRef.innerHTML = "RETURN TO GAME"
     })
     
     
