@@ -11,14 +11,23 @@
 /**temporary to combat chrome dark theme**/
 body {
     background-color: white;
+    height: 100vh;
 }
 
 /**Generalized classes**/
-.centre-element {
+.text-align-centre {
     text-align: center;
 }
 
+.center-margin {
+    margin: 0 auto;
+}
+
 /** Header style rules **/
+
+header {
+    height: 105px;
+}
 
 #title {
     align-items: center;
@@ -33,11 +42,29 @@ body {
     width: 2.5rem;
 }
 
+#menu-btn {
+    display: none;
+}
+
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
+#main-menu {
+    background-color: greenyellow;
+    box-sizing: border-box;
+    height: 80%;
+    padding: 1%;
+    width: 95%;
+}
+
+.menu-opt-btn {
+    display: block;
+    margin: 0 auto;
+}
+
 #game-table {
     background-color: green;
     box-sizing: border-box;
+    display: none;
     height: 80%;
     margin: 0 auto;
     padding: 1%;

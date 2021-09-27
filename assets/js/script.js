@@ -8,7 +8,10 @@
 //add player choice for ace high or low
 
 //Global constant references for elements in the DOM
+const mainMenuRef = document.getElementById('main-menu');
+const gameTableRef = document.getElementById('game-table');
 const menuBtnRef = document.getElementById('menu-btn');
+const playGameBtnRef = document.getElementById('play-game-btn');
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
@@ -22,9 +25,23 @@ const resetScoreRef = document.getElementById('reset-btn');
 
 document.addEventListener('DOMContentLoaded', function () {
     
-    //button event listeners
+    //Menu button event listeners
+    playGameBtnRef.addEventListener('click', function() {
+        mainMenuRef.style.display = 'none';
+        gameTableRef.style.display = 'block';
+        menuBtnRef.style.display = 'inline';
+    });
+
+    menuBtnRef.addEventListener('click', function() {
+        gameTableRef.style.display = 'none';
+        mainMenuRef.style.display = 'block';
+        menuBtnRef.style.display = 'none';
+    })
     
-    hitBtnRef.addEventListener('click', function () {
+    
+    //Game table button event listeners
+    
+    hitBtnRef.addEventListener('click', function() {
 
         playerHand.push(dealCard('player'));
         checkHandValue(playerHand);
