@@ -112,6 +112,10 @@ header {
     width: 70%;
 }
 
+#game-rules{
+    display: none;
+}
+
 /**footer styling**/
 /*style for the social media links*/
 
