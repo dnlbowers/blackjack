@@ -58,7 +58,9 @@ header {
 
 .menu-opt-btn {
     display: block;
-    margin: 0 auto;
+    height: 4.375rem;
+    margin: 1.875rem auto;
+    width: 80%;
 }
 
 #game-table {
