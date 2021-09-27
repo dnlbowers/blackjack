@@ -49,7 +49,7 @@ header {
 /** Style for within the game-table **/
 /** Code taken and adapted from Love MAths project **/
 #main-menu {
-    background-color: greenyellow;
+    background: transparent;
     box-sizing: border-box;
     height: 80%;
     padding: 1%;
