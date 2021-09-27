@@ -1,5 +1,5 @@
 //add functionality to the menu
-//write the game rules
+//FINISH accordion menu add symbol and so only on can be open at a time
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
@@ -436,22 +436,21 @@ document.addEventListener('DOMContentLoaded', function () {
             `
         rulesContainerRef.innerHTML = rules;
 
-        let ruleHeading = document.getElementsByClassName("rule-heading");
-
+        let ruleHeading = document.getElementsByClassName('rule-heading');
+        
         for (i = 0; i < ruleHeading.length; i++) {
-        ruleHeading[i].addEventListener("click", function() {
-            /* Toggle between adding and removing the "active" class,
-            to highlight the button that controls the panel */
+            ruleHeading[i].addEventListener("click", function() {
             this.classList.toggle("active");
 
-            /* Toggle between hiding and showing the active panel */
             let ruleSegment = this.nextElementSibling;
-            if (ruleSegment.style.display === "block") {
-                ruleSegment.style.display = "none";
+            if (ruleSegment.style.maxHeight) {
+                console.log('if')
+                ruleSegment.style.maxHeight = null;
             } else {
-                ruleSegment.style.display = "block";
+                console.log('else')
+                ruleSegment.style.maxHeight = ruleSegment.scrollHeight + "px";
             }
-        }); 
+        });
     }
     }
 
