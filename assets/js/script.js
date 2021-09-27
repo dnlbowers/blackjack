@@ -8,10 +8,20 @@
 //add player choice for ace high or low
 
 //Global constant references for elements in the DOM
+//reference to the module window frame
 const mainMenuRef = document.getElementById('main-menu');
 const gameTableRef = document.getElementById('game-table');
+const rulesPageRef = document.getElementById('game-rules');
+//Menu option button references
 const menuBtnRef = document.getElementById('menu-btn');
 const playGameBtnRef = document.getElementById('play-game-btn');
+const gameRulesBtnRef = document.getElementById('game-rules-btn');
+const backToMenuRef = document.querySelector('.back-to-menu');
+
+//containers to send HTML from Javascript
+const rulesContainerRef = document.getElementById('game-rules-content');
+
+//game table elements references
 const hitBtnRef = document.getElementById('hit-btn');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
@@ -23,6 +33,7 @@ const loseTallyRef = document.getElementById('loses');
 const drawTallyRef = document.getElementById('drawn');
 const resetScoreRef = document.getElementById('reset-btn');
 
+
 document.addEventListener('DOMContentLoaded', function () {
     
     //Menu button event listeners
@@ -32,12 +43,27 @@ document.addEventListener('DOMContentLoaded', function () {
         menuBtnRef.style.display = 'inline';
     });
 
+    gameRulesBtnRef.addEventListener('click', function() {
+        
+        mainMenuRef.style.display = 'none';
+        rulesPageRef.style.display = 'block';
+        menuBtnRef.style.display = 'none';
+        gameRulesContent()
+    });
+
+    //gameRulesBtnRef.addEventListener('click', gameRulesContent);
+
     menuBtnRef.addEventListener('click', function() {
         gameTableRef.style.display = 'none';
         mainMenuRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
-        playGameBtnRef.innerHTML = "RETURN TO GAME"
+        playGameBtnRef.innerHTML = 'RETURN TO GAME'
     })
+
+    backToMenuRef.addEventListener('click', function() {
+        rulesPageRef.style.display = 'none';
+        mainMenuRef.style.display = 'block'
+    });
     
     
     //Game table button event listeners
@@ -314,26 +340,29 @@ document.addEventListener('DOMContentLoaded', function () {
     
     }
 
-    function gameRulesContent {
-        let content = `
-        <h2>Game Rules</h2>
-        <h3>Game Objective:</h3>
-        <p>The aim of the game is simple, get as close to 21 as possible without going over.</p>
-        <h3>How To Play:</h3>
-        <p>You and the house will compete in turns to play your hands, and the one with the highest value under 22 will win the round.</p>
-        <p>To draw another card from the deck, press the "HIT ME!"  button on the game table or the "H" key on the keyboard.</p>
-        <p>Careful though, as if you go over 21, the jig is up, and you lose! Go news is that this applies to the house's hand too.</p>
-        <p>Once content with your hand, press the "STAND" button on the game table or the "S" key on the keyboard to initiate the house's turn. The house will always stand on a hand value greater or equal to 17.</p>
-        <h3>Card Values:</h3>
-        <p>Each card is worth the same value as the number printed on it.</p>
-        <p>All picture cards (Jack, Queen, King) have a value of 10.</p>
-        <p>By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1 and allow you to keep hitting the deck until you stand or go bust.</p>
-        <h3>Blackjack:</h3>
-        <p>Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt.</p>
-        <p>If both the player and house have blackjack, the house will always win! Sorry but thems be the rules.</p>
-        <h3>Scoreboard:</h3>
-        <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
+    function gameRulesContent() {
+        
+        let rules = `
+            <h2>Game Rules:</h2>
+            <h3>Game Objective:</h3>
+            <p>The aim of the game is simple, get as close to 21 as possible without going over.</p>
+            <h3>How To Play:</h3>
+            <p>You and the house will compete in turns to play your hands, and the one with the highest value under 22 will win the round.</p>
+            <p>To draw another card from the deck, press the "HIT ME!"  button on the game table or the "H" key on the keyboard.</p>
+            <p>Careful though, as if you go over 21, the jig is up, and you lose! Go news is that this applies to the house's hand too.</p>
+            <p>Once content with your hand, press the "STAND" button on the game table or the "S" key on the keyboard to initiate the house's turn. The house will always stand on a hand value greater or equal to 17.</p>
+            <h3>Card Values:</h3>
+            <p>Each card is worth the same value as the number printed on it.</p>
+            <p>All picture cards (Jack, Queen, King) have a value of 10.</p>
+            <p>By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1 and allow you to keep hitting the deck until you stand or go bust.</p>
+            <h3>Blackjack:</h3>
+            <p>Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt.</p>
+            <p>If both the player and house have blackjack, the house will always win! Sorry but thems be the rules.</p>
+            <h3>Scoreboard:</h3>
+            <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
         `
+        rulesContainerRef.innerHTML = rules;
+        
     }
 
 });
