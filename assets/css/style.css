@@ -46,14 +46,18 @@ header {
     display: none;
 }
 
-/** Style for within the game-table **/
-/** Code taken and adapted from Love MAths project **/
+
+/** Class to set the height of each module the same when it opens **/
+.main-window {
+    height: 80%;
+    width: 95%;
+}
+
+/** Menu styling **/
 #main-menu {
     background: transparent;
     box-sizing: border-box;
-    height: 80%;
     padding: 1%;
-    width: 95%;
 }
 
 .menu-opt-btn {
@@ -63,14 +67,14 @@ header {
     width: 80%;
 }
 
+/** Style for within the game-table **/
+
 #game-table {
     background-color: green;
     box-sizing: border-box;
     display: none;
-    height: 80%;
     margin: 0 auto;
     padding: 1%;
-    width: 95%;
 }
 
 .card {
@@ -84,7 +88,7 @@ header {
     list-style-type: none;
 }
 
-/** div to display results **/
+/** Styling for the background of the results pop up **/
 #modal-surround {
     background: rgba(0, 0, 0, 0.2);
     display: none;
@@ -96,6 +100,7 @@ header {
     width: 100vw;
 }
 
+/** Styling for the results pop up **/
 #result-modal {
     background-color: red;
     left: 50%;

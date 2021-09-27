@@ -166,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (hand[i] === 11) {
                     hand.splice(i, 1);
                     hand.push(1);
+                    console.log(handValue)
                 }
             }
             return hand;    
