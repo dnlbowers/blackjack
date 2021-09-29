@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mainMenuRef.style.display = 'none';
         subMenuContainerRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
-        gameRulesContent()
+        gameRulesContent();
 
     });
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mainMenuRef.style.display = 'none';
         subMenuContainerRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
-        responsibleGamingMenu()
+        responsibleGamingMenu();
 
     });
 
@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
         menuBtnRef.style.display = 'none';
         playGameBtnRef.innerHTML = 'RETURN TO GAME';
 
-    })
+    });
 
     backToMenuRef.addEventListener('click', function() {
 
         subMenuContainerRef.style.display = 'none';
-        mainMenuRef.style.display = 'block'
+        mainMenuRef.style.display = 'block';
     
     });
     
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
 
-        checkBlackjack(dealerTotal, playerTotal)
+        checkBlackjack(dealerTotal, playerTotal);
 
     }
 
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkHandValue(hand) {
         //adds the total hand value together
         let handValue = 0;
-        for (card of hand) {
+        for (let card of hand) {
             handValue += card;
         }
         //checks the initial two cards for blackjack
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You're Bust!";
         document.getElementById('description').innerHTML = `The limit is 21, your current score is ${handValue}.`;
-        incrementLoses()
+        incrementLoses();
 
     }
     
