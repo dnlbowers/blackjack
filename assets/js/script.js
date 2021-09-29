@@ -1,6 +1,4 @@
 //add functionality to the menu
-//FINISH accordion menu so only one can be open at a time
-//CONSIDER SCROLL for rules on mobile device
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
@@ -413,31 +411,56 @@ document.addEventListener('DOMContentLoaded', function () {
             <button class="rule-heading"><h3>Game Objective:</h3></button>
             
             <section class="rule-segment">   
-                <p>The aim of the game is simple, get as close to 21 as possible without going over.</p>
+                <p>
+                    The aim of the game is simple, get as close to 21 as possible without going over.
+                </p>
             </section> 
             
             <button class="rule-heading"><h3>How To Play:</h3></button>
             
             <section class="rule-segment">
-                <p>You and the house will compete in turns to play your hands, and the one with the highest value under 22 will win the round.</p>
-                <p>To draw another card from the deck, press the "HIT ME!"  button on the game table or the "H" key on the keyboard.</p>
-                <p>Careful though, as if you go over 21, the jig is up, and you lose! Go news is that this applies to the house's hand too.</p>
-                <p>Once content with your hand, press the "STAND" button on the game table or the "S" key on the keyboard to initiate the house's turn. The house will always stand on a hand value greater or equal to 17.</p>
+                <p>
+                    You will compete against the house, taking it in turns to play your hands. The one with the highest value under 22 will win the round.
+                </p>
+                <p>
+                    To draw another card from the deck, click the "HIT ME!" button on the game table or press the "H" key on the keyboard.
+                </p>
+                <p>
+                    Careful though, as if you go over 21, the jig is up, and you lose! The good news is that this applies to the house's hand too.
+                </p>
+                <p>
+                    Once content with your hand, click the "STAND" button on the game table or press the "S" key on the keyboard to initiate the house's turn.
+                </p>  
+                <p>
+                    The house will always stand on a hand value greater than or equal to 17.
+                </p>
             </section> 
             
             <button class="rule-heading"><h3>Card Values:</h3></button>
             
             <section class="rule-segment">
-                <p>Each card is worth the same value as the number printed on it.</p>
-                <p>All picture cards (Jack, Queen, King) have a value of 10.</p>
-                <p>By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1 and allow you to keep hitting the deck until you stand or go bust.</p>
+                <p>
+                    Each card is worth the same value as the number printed on it.
+                </p>
+                <p>
+                    All picture cards (Jack, Queen, King) have a value of 10.
+                </p>
+                <p>
+                    By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1, 
+                    which allows you to keep hitting the deck until you stand or go bust.
+                </p>
             </section> 
             
             <button class="rule-heading"><h3>Blackjack:</h3></button>
             
             <section class="rule-segment">
-                <p>Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt.</p>
-                <p>If both the player and house have blackjack, the house will always win! Sorry but thems be the rules.</p>
+                <p>
+                    Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
+                    Should this occur, the round is over automatically, and the one who possesses blackjack wins.
+                </p>
+                <p>
+                    Sadly if both the player and house have blackjack, the house will always win! Sorry, but those are the rules.
+                </p>
             </section>
 
             <button class="rule-heading"><h3>Scoreboard:</h3></button>
