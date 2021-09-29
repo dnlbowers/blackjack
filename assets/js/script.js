@@ -12,7 +12,7 @@
 //reference to the module window frame
 const mainMenuRef = document.getElementById('main-menu');
 const gameTableRef = document.getElementById('game-table');
-const rulesPageRef = document.getElementById('game-rules');
+const subMenuContainerRef = document.getElementById('sub-menu-container');
 //Menu option button references
 const menuBtnRef = document.getElementById('menu-btn');
 const playGameBtnRef = document.getElementById('play-game-btn');
@@ -20,7 +20,7 @@ const gameRulesBtnRef = document.getElementById('game-rules-btn');
 const backToMenuRef = document.querySelector('.back-to-menu');
 
 //containers to send HTML from Javascript
-const rulesContainerRef = document.getElementById('game-rules-content');
+const subMenuContentRef = document.getElementById('sub-menu-content');
 
 //game table elements references
 const hitBtnRef = document.getElementById('hit-btn');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     gameRulesBtnRef.addEventListener('click', function() {
         
         mainMenuRef.style.display = 'none';
-        rulesPageRef.style.display = 'block';
+        subMenuContainerRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
         gameRulesContent()
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     backToMenuRef.addEventListener('click', function() {
 
-        rulesPageRef.style.display = 'none';
+        subMenuContainerRef.style.display = 'none';
         mainMenuRef.style.display = 'block'
     
     });
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </section> 
             `
-        rulesContainerRef.innerHTML = rules;
+            subMenuContentRef.innerHTML = rules;
 
         let ruleHeading = document.querySelectorAll('.rule-heading');
         let ruleSegment = document.querySelectorAll('.rule-segment');
