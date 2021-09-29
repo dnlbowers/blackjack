@@ -1,4 +1,4 @@
-//add functionality to the menu
+// The dreaded card flip
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
@@ -217,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (hand[i] === 11) {
                     hand.splice(i, 1);
                     hand.push(1);
-                    console.log(handValue)
                 }
             }
             return hand;    
@@ -238,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (dealerTotal >= 17) {
             
-            let result = compareHands(playerTotal, dealerTotal);
+            compareHands(playerTotal, dealerTotal);
 
         } else {
             while (dealerTotal < 17) {
@@ -248,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     houseBust(dealerTotal);
                     break;
                 } else if (dealerTotal > 17) {
-                    let result = compareHands(playerTotal, dealerTotal);
+                    compareHands(playerTotal, dealerTotal);
                     break;
                 }
             }
