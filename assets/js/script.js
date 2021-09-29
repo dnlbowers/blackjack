@@ -437,22 +437,32 @@ document.addEventListener('DOMContentLoaded', function () {
             `
         rulesContainerRef.innerHTML = rules;
 
-        let ruleHeading = document.getElementsByClassName('rule-heading');
+        let ruleHeading = document.querySelectorAll('.rule-heading');
+        let ruleSegment = document.querySelectorAll('.rule-segment');
         
         for (i = 0; i < ruleHeading.length; i++) {
+           
             ruleHeading[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-
-            let ruleSegment = this.nextElementSibling;
-            if (ruleSegment.style.maxHeight) {
-                console.log('if')
-                ruleSegment.style.maxHeight = null;
-            } else {
-                console.log('else')
-                ruleSegment.style.maxHeight = ruleSegment.scrollHeight + "px";
+           
+                if (this.nextElementSibling.style.maxHeight) {
+                    hideRulePanels()
+                } else {
+                    extendRulePanel(this);
+                }
+            });
+        
+        }
+        function extendRulePanel(target) {
+            hideRulePanels()
+            target.classList.add("active");
+            target.nextElementSibling.style.maxHeight = target.nextElementSibling.scrollHeight + "px";  
+        }
+        function hideRulePanels() {
+            for (let i = 0; i < ruleSegment.length; i++) {
+                ruleSegment[i].style.maxHeight = null;
+                ruleHeading[i].classList.remove("active");
             }
-        });
-    }
+        }
     }
 
 });
