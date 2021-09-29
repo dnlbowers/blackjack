@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     firstTwoCards();    
 
     function firstTwoCards() {
-        for (i = 0; i < 2; i++) {
+        for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
         }
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return 0;
         // converts ace to low (from 11 to 1)    
         } else if (handValue > 21 && hand.includes(11)) {
-            for (i = 0; i <= hand.length; i++) {
+            for (let i = 0; i <= hand.length; i++) {
                 if (hand[i] === 11) {
                     hand.splice(i, 1);
                     hand.push(1);
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = 'The house has Blackjack!';
-        incrementLoses()
+        incrementLoses();
 
     }
 
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "Draw!";
         document.getElementById('description').innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
-        incrementDraws()
+        incrementDraws();
 
     }
 
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <section class="rule-segment">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </section> 
-            `
+            `;
             subMenuContentRef.innerHTML = rules;
             ruleMenuFunctionality();
     }
@@ -476,12 +476,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let ruleHeading = document.querySelectorAll('.rule-heading');
         let ruleSegment = document.querySelectorAll('.rule-segment');
         
-        for (i = 0; i < ruleHeading.length; i++) {
+        for (let i = 0; i < ruleHeading.length; i++) {
            
             ruleHeading[i].addEventListener("click", function() {
            
                 if (this.nextElementSibling.style.maxHeight) {
-                    hideRulePanels()
+                    hideRulePanels();
                 } else {
                     extendRulePanel(this);
                 }
@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         function extendRulePanel(target) {
-            hideRulePanels()
+            hideRulePanels();
             target.classList.add("active");
             target.nextElementSibling.style.maxHeight = target.nextElementSibling.scrollHeight + "px";  
         }
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>
             With that said, this game is free to play, so please enjoy it responsibly.
         </p>
-        `
+        `;
         subMenuContentRef.innerHTML = rgInfo;
     }
 });
