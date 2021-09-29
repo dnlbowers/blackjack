@@ -17,6 +17,7 @@ const subMenuContainerRef = document.getElementById('sub-menu-container');
 const menuBtnRef = document.getElementById('menu-btn');
 const playGameBtnRef = document.getElementById('play-game-btn');
 const gameRulesBtnRef = document.getElementById('game-rules-btn');
+const responsibleGamblingBtnRef = document.getElementById('rg-btn');
 const backToMenuRef = document.querySelector('.back-to-menu');
 
 //containers to send HTML from Javascript
@@ -52,6 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
         subMenuContainerRef.style.display = 'block';
         menuBtnRef.style.display = 'none';
         gameRulesContent()
+
+    });
+
+    responsibleGamblingBtnRef.addEventListener('click', function() {
+        
+        mainMenuRef.style.display = 'none';
+        subMenuContainerRef.style.display = 'block';
+        menuBtnRef.style.display = 'none';
+        responsibleGamingMenu()
 
     });
 
@@ -439,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ruleMenuFunctionality();
     }
 
-    
+
     function ruleMenuFunctionality() {
         let ruleHeading = document.querySelectorAll('.rule-heading');
         let ruleSegment = document.querySelectorAll('.rule-segment');
@@ -469,5 +479,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-
+    function responsibleGamingMenu() {
+        
+        let rgInfo = `
+        <h2>Responsible Gaming</h2>
+        <p>
+            You know I hate to be "that guy," but please remember that while games 
+            like this can be a lot of fun, gambling can become a severe problem for some.
+        </p>
+        <p>
+            Should you find yourself compulsively gambling without control, please seek help from 
+            your local health care provider, who can direct you to the support resources in your area. 
+        </p>
+        <p>
+            With that said, this game is free to play, so please enjoy it responsibly.
+        </p>
+        `
+        subMenuContentRef.innerHTML = rgInfo;
+    }
 });
