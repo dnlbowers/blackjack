@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let rgInfo = `
         <h2>Responsible Gaming</h2>
         <p>
-            You know I hate to be "that guy," but please remember that while games 
+            I hate to be "that guy," but please remember that while games 
             like this can be a lot of fun, gambling can become a severe problem for some.
         </p>
         <p>
