@@ -436,7 +436,11 @@ document.addEventListener('DOMContentLoaded', function () {
             </section> 
             `
             subMenuContentRef.innerHTML = rules;
+            ruleMenuFunctionality();
+    }
 
+    
+    function ruleMenuFunctionality() {
         let ruleHeading = document.querySelectorAll('.rule-heading');
         let ruleSegment = document.querySelectorAll('.rule-segment');
         
@@ -452,6 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         
         }
+        
         function extendRulePanel(target) {
             hideRulePanels()
             target.classList.add("active");
