@@ -1,4 +1,4 @@
-// The dreaded card flip
+// Flip the dealer card by hiding card back on black jack or stand and making the first child display inline again
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
@@ -32,7 +32,6 @@ const winTallyRef = document.getElementById('wins');
 const loseTallyRef = document.getElementById('loses');
 const drawTallyRef = document.getElementById('drawn');
 const resetScoreRef = document.getElementById('reset-btn');
-
 
 document.addEventListener('DOMContentLoaded', function () {
     
@@ -121,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
     firstTwoCards();    
 
     function firstTwoCards() {
+        let cardBack = document.createElement('img');
+        cardBack.src = "assets/images/decks/linux.svg";
+        cardBack.className = 'card card-back';
         
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
@@ -130,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             for (child of houseCards) {
                 if (child === houseCards[0]) {
                    child.style.display = "none";
+                   dealerCardContainerRef.appendChild(cardBack);
                 }
             }
         }
