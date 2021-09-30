@@ -13,16 +13,20 @@
 </head>
 <body>
     <header>
+        <!-- Page logo -->
         <div id="title">
             <img src="assets/images/logo-start.png" class="logo" alt="logo-start">
             <h1> Blackjack </h1>
             <img src="assets/images/logo-end.png" class="logo" alt="logo-end">
         </div>
+
+        <!-- Menu button in the header visible only from the game table to navigate to the menu -->
         <nav class ="text-align-centre">
             <button class="btn" id="menu-btn">MENU</button>
         </nav>
     </header>
 
+    <!-- Menu navigation menu -->
     <nav id="main-menu" class="center-margin main-window">
         <h2 class="text-align-centre">Main Menu</h2>
         <button id="play-game-btn" class="menu-opt-btn">PLAY GAME</button>
@@ -31,8 +35,21 @@
         <button id="rg-btn" class="menu-opt-btn">RESPONSIBLE GAMING</button>
     </nav>
 
-    <main id="game-table" class="text-align-centre main-window">
+    <!-- Container for sub menus -->
+    <article id="sub-menu-container" class="main-window center-margin text-align-centre">
+        <section id="sub-menu-content">
+            <h3>placeholder</h3>
+        </section>
+        <!-- Button to navigate back to the navigation menu -->
+        <nav>
+            <button class="back-to-menu">MAIN MENU</button>
+        </nav>
+    </article>
+    
+    <!-- Game area -->
+    <main id="game-table" class="text-align-centre main-window">       
         
+        <!-- Container for dealers cards-->
         <section id="dealer-side" class="table-section-pad">
             <h2>House Hand</h2>
             <div id="dealer-card-container">
@@ -40,6 +57,7 @@
             </div>
         </section>
 
+        <!-- Scoreboard -->
         <section id="score-board" class="table-section-pad">
             <h3>Score board</h3>
             <ul>    
@@ -56,7 +74,7 @@
             <button class="btn" id="reset-btn">Reset Scores</button>
         </section>
 
-        <!-- Here will contain a pop up with the result of the round -->
+        <!-- Results Modal with transparent back gorund -->
         <div id="modal-surround">
             <section id="result-modal">
                 <h2 id="result">
@@ -71,6 +89,8 @@
                 </div>
             </section>   
         </div>
+
+        <!-- Container for players hand -->
         <section id="player-side" class="table-section-pad">
             <h2>Player Hand</h2>
             <div id="player-card-container">
@@ -78,6 +98,7 @@
             </div>
         </section>
 
+        <!-- Users control section -->
         <section id="contols" class="table-section-pad">
             <h3>Player Controls</h3>
             <button class="btn" id="hit-btn">HIT ME!</button>
@@ -85,19 +106,9 @@
             <a href="">Game Rules</a>
             <button class="btn" id="stand-btn">STAND</button>
         </section>
-
     </main>
 
-    <article id="sub-menu-container" class="main-window center-margin text-align-centre">
-        <section id="sub-menu-content">
-            <h3>placeholder</h3>
-        </section>
-        <nav>
-            <button class="back-to-menu">MAIN MENU</button>
-        </nav>
-    </article>
-
-
+    <!-- Footer with social links and copyright -->
     <footer class="text-align-centre">
         <ul>
             <li class="social-media-li">
@@ -112,7 +123,10 @@
         </small>
     </footer>    
 
+<!-- Link to JavaScript file -->
 <script src="assets/js/script.js"></script>
+
+<!-- No script error -->
 <noscript>
     Your browser either does not support JavaScript, or it is not enabled! If you wish to play this game, then 
     either change your browser or enable it for the use of JavaScript.
