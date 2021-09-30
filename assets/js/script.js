@@ -121,9 +121,17 @@ document.addEventListener('DOMContentLoaded', function () {
     firstTwoCards();    
 
     function firstTwoCards() {
+        
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
+            let houseCards = document.getElementById('dealer-card-container').children;
+            console.log(houseCards)
+            for (child of houseCards) {
+                if (child === houseCards[0]) {
+                   child.style.display = "none";
+                }
+            }
         }
 
         let playerTotal = checkHandValue(playerHand);
