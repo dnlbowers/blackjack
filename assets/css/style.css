@@ -16,6 +16,10 @@ body {
     width: 100vw;
 }
 
+header {
+    height: 4.0625rem;
+}
+
 /**Generalized classes**/
 .text-align-centre {
     text-align: center;
@@ -45,21 +49,25 @@ body {
 
 /** Class to set the height of each module the same when it opens **/
 .main-window {
-    height: 80%;
-    width: 95%;
+    height: 74vh;
+    width: 95vw;
+    padding: 5%;
 }
 
 /** Menu styling **/
 #main-menu {
+    align-items: center;
     background: transparent;
     box-sizing: border-box;
-    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
 
 .menu-opt-btn {
     display: block;
     height: 4.375rem;
-    margin: 1.875rem auto;
     width: 80%;
 }
 
@@ -73,14 +81,12 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto;
-    padding: 1%;
 }
 
 .card {
     border-radius: 7px;
-    height: 80px;
-    width: 56px;
+    height: 100px;
+    width: 70px;
 }
 
 /** Scoreboard list items **/

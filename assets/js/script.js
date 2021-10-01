@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menuBtnRef.addEventListener('click', function() {
 
         gameTableRef.style.display = 'none';
-        mainMenuRef.style.display = 'block';
+        mainMenuRef.style.display = 'flex';
         menuBtnRef.style.display = 'none';
         playGameBtnRef.innerHTML = 'RETURN TO GAME';
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     backToMenuRef.addEventListener('click', function() {
 
         subMenuContainerRef.style.display = 'none';
-        mainMenuRef.style.display = 'block';
+        mainMenuRef.style.display = 'flex';
     
     });
     
