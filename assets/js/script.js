@@ -27,6 +27,7 @@ const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
 const redealBtnRef = document.getElementById('redeal-btn');
 const dealerCardContainerRef = document.getElementById('dealer-card-container');
+const houseCards = document.getElementById('dealer-card-container').children;;
 const playerCardContainerRef = document.getElementById('player-card-container');
 const winTallyRef = document.getElementById('wins');
 const loseTallyRef = document.getElementById('loses');
@@ -127,8 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
-            let houseCards = document.getElementById('dealer-card-container').children;
-            console.log(houseCards)
             for (child of houseCards) {
                 if (child === houseCards[0]) {
                    child.style.display = "none";
@@ -149,9 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function checkBlackjack(dealer, player){
         if (dealer === 0) {
-            
+            houseReveal()
             houseBlackjack();
         } else if (player === 0) {
+            houseReveal()
             playerBlackjack();
         }
     }
@@ -244,6 +244,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function computerTurn() {
         hitBtnRef.disabled = true;
+        houseCards[0].style.display = 'none';
+        houseCards[1].style.display = 'inline';
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
 
@@ -270,7 +272,8 @@ document.addEventListener('DOMContentLoaded', function () {
      * Flips the houses hidden card face up once the players turn is over
      */
     function houseReveal() {
-        
+        houseCards[0].style.display = 'none';
+        houseCards[1].style.display = 'inline';
     }
 
     /**
