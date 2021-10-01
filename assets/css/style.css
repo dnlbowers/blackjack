@@ -78,8 +78,9 @@ body {
 }
 
 .card {
-    height: 100px;
-    width: 70px;
+    border-radius: 7px;
+    height: 80px;
+    width: 56px;
 }
 
 /** Scoreboard list items **/
