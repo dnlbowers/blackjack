@@ -1,4 +1,3 @@
-// Flip the dealer card by hiding card back on black jack or stand and making the first child display inline again
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 // key board short cuts
@@ -40,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
     playGameBtnRef.addEventListener('click', function() {
 
         mainMenuRef.style.display = 'none';
-        gameTableRef.style.display = 'block';
-        menuBtnRef.style.display = 'inline';
+        gameTableRef.style.display = 'flex';
+        menuBtnRef.style.display = 'block';
 
     });
 
