@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             for (child of houseCards) {
                 if (child === houseCards[0]) {
                    child.style.display = "none";
-                   dealerCardContainerRef.appendChild(cardBack);
+                   dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
                 }
             }
         }
@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function checkBlackjack(dealer, player){
         if (dealer === 0) {
+            
             houseBlackjack();
         } else if (player === 0) {
             playerBlackjack();
