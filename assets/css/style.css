@@ -72,10 +72,13 @@ header {
 /** Style for within the game-table **/
 
 #game-table {
+    align-items: center;
     background-color: green;
     border-radius: 20px;
     box-sizing: border-box;
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0 auto;
     padding: 1%;
 }
