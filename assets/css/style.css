@@ -49,16 +49,17 @@ header {
 
 /** Class to set the height of each module the same when it opens **/
 .main-window {
+    background-color: #008000;
+    border-radius: 20px;
+    box-sizing: border-box;
     height: 74vh;
-    width: 95vw;
     padding: 5%;
+    width: 95vw;  
 }
 
 /** Menu styling **/
 #main-menu {
     align-items: center;
-    background: transparent;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -75,9 +76,6 @@ header {
 
 #game-table {
     align-items: center;
-    background-color: green;
-    border-radius: 20px;
-    box-sizing: border-box;
     display: none;
     flex-direction: column;
     justify-content: space-between;
