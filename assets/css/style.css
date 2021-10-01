@@ -26,17 +26,11 @@ body {
 }
 
 /** Header style rules **/
-
-header {
-    height: 105px;
-}
-
 #title {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0.875rem;
 }
 
 .logo {
@@ -175,4 +169,8 @@ header {
     font-size: 35px;
     margin: 1%;
     padding: 0.3125rem;
+}
+
+#copyright {
+    font-size: 6px;
 }
