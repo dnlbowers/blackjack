@@ -162,7 +162,7 @@ header {
 /*style for the social media links*/
 
 footer {
-    bottom: 0;
+    display: inline-grid;
     position: absolute;
     width: 100%;
 }
