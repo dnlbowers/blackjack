@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         mainMenuRef.style.display = 'none';
         gameTableRef.style.display = 'flex';
+        gameTableRef.style.justifyContent = 'center';
+        gameTableRef.style.flexDirection = 'column';
+        gameTableRef.style.alignItems = 'center';
         menuBtnRef.style.display = 'block';
 
     });

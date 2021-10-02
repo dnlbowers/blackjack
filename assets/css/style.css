@@ -75,10 +75,7 @@ header {
 /** Style for within the game-table **/
 
 #game-table {
-    align-items: center;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card {
@@ -163,6 +160,12 @@ header {
 
 /**footer styling**/
 /*style for the social media links*/
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
 
 .social-media-li {
     display: inline;
