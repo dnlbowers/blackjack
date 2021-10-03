@@ -206,27 +206,35 @@ document.addEventListener('DOMContentLoaded', function () {
         let value = valueArray[randomValue];
 
         // Create <img> with attributes to visually represent the value of the card in the DOM
+        
+        let cardBoxBox = document.createElement('div');
+        cardBoxBox.className = 'card-box-box';
+        let cardBox = document.createElement('div');
+        cardBox.className = 'card-box';
+        
         let card = document.createElement('img');
         card.src = `assets/images/${suit}/${value}.svg`;
         card.className = 'card';
         card.alt = `${value} of ${suit}`;
         card.style.position = 'absolute';
         card.style.right = '0';
+        cardBoxBox.appendChild(card);
+        cardBox.appendChild(cardBoxBox);
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
             let playerCards = document.getElementById('player-card-container');
-            playerCards.appendChild(card);
+            playerCards.appendChild(cardBox);
             let right = 0;
             let playerHand = playerCards.childNodes;
-            fanCards(playerHand, card);
+            fanCards(playerHand, cardBox);
             
             
         } else if (dealtFor === 'dealer') {
             let houseCards = document.getElementById('dealer-card-container');
-            houseCards.appendChild(card);
+            houseCards.appendChild(cardBox);
             let houseHand = houseCards.childNodes
-            fanCards(houseHand, card);
+            fanCards(houseHand, cardBox);
         }
 
         // Returns picture cards as numerical values

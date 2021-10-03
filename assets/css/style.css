@@ -60,7 +60,8 @@ header {
     box-sizing: border-box;
     height: 74vh;
     padding: 5%;
-    width: 95vw;  
+    width: 95vw; 
+    min-height: 470px; 
 }
 
 /** Menu styling **/
@@ -69,6 +70,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    
 }
 
 
@@ -86,6 +88,29 @@ header {
 
 .card-container {
     position: relative;
+}
+
+#dealer-side, #player-side {
+    height: 136px;
+}
+
+.card-box {
+    
+    background-color: aqua;
+    position: absolute;
+    height: 0;
+    width: 50.5%;
+    padding-bottom: 72.1%;
+
+}
+
+.card-box-box {
+    background-color: hotpink;
+    border-radius: 7px;
+    /* height: 0;
+    width: 50.5%;
+    padding-bottom: 72.1%; */
+    position: relative;  
 }
 
 .card {
