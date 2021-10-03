@@ -1,4 +1,4 @@
-/*
+/* 
 - style buttons
 - space elements
 - add fonts
@@ -61,7 +61,7 @@ header {
     height: 74vh;
     padding: 5%;
     width: 95vw; 
-    min-height: 470px; 
+    min-height: 485px; 
 }
 
 /** Menu styling **/
@@ -91,14 +91,15 @@ header {
 }
 
 #dealer-side, #player-side {
-    height: 136px;
+    height: 33%;
 }
 
 .card {
     border-radius: 7px;
-    height: 100px;
-    
-    width: 70px;
+    height: 120px;
+    width: 84px;
+    padding: 10px;
+    transform: translateX(25%);
 }
 
 /** Scoreboard list items **/
@@ -113,10 +114,11 @@ header {
     display: none;
     height: 100vh;
     left: 50%;
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100vw;
+    z-index: 10000;
 }
 
 /** Styling for the results pop up **/
@@ -186,11 +188,6 @@ header {
 /**footer styling**/
 /*style for the social media links*/
 
-footer {
-    display: inline-grid;
-    position: absolute;
-    width: 100%;
-}
 
 .social-media-li {
     display: inline;

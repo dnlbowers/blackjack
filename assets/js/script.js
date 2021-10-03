@@ -97,20 +97,21 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
-    window.addEventListener('keydown', function(event) {
-        if (event.key === 'h') {
-            playerHand.push(dealCard('player'));
-            checkHandValue(playerHand);
-        }
-    })
+    // window.addEventListener('keydown', function(event) {
+    //     if (playerHand > 21){
+    //         this.removeEventListener
+    //     } else if (event.key === 'h') {
+    //         playerHand.push(dealCard('player'));
+    //         checkHandValue(playerHand);
+
+    //     } else if (event.key === 's') {
+    //         computerTurn()
+    //         this.removeEventListener
+    //     }
+    // })
 
     standBtnRef.addEventListener('click', computerTurn);
     
-    window.addEventListener('keydown', function(event) {
-        if (event.key === 's') {
-            computerTurn()
-        }
-    })
     
     redealBtnRef.addEventListener('click', function() {
 
@@ -152,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
                    child.style.display = "none";
                    dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
                    cardBack.style.position = 'absolute';
+                   cardBack.style.right = '30px'
                 }
             }
         }
@@ -218,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dealtFor === "player") {
             let playerCards = document.getElementById('player-card-container');
             playerCards.appendChild(card);
-            let right = 0;
             let playerHand = playerCards.childNodes;
             fanCards(playerHand, card);
             
@@ -244,10 +245,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function fanCards(hand, card) {
         let value = 0;
-        for (let i = 0; i <= hand.length; ++i) {
+        for (let i = 0; i <= hand.length; i++) {
         
             card.style.right = value + 'px';
-            value += 11;
+            value += 15;
                 
         } 
     }
