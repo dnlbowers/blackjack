@@ -94,25 +94,6 @@ header {
     height: 136px;
 }
 
-.card-box {
-    
-    background-color: aqua;
-    position: absolute;
-    height: 0;
-    width: 50.5%;
-    padding-bottom: 72.1%;
-
-}
-
-.card-box-box {
-    background-color: hotpink;
-    border-radius: 7px;
-    /* height: 0;
-    width: 50.5%;
-    padding-bottom: 72.1%; */
-    position: relative;  
-}
-
 .card {
     border-radius: 7px;
     height: 100px;
