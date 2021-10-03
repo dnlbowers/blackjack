@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let rules = `
             <h3>Game Rules:</h3>
             
-            <button class="rule-heading"><h3>Game Objective:</h3></button>
+            <button class="rule-heading btn-bg"><h3>Game Objective:</h3></button>
             
             <section class="rule-segment">   
                 <p>
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </p>
             </section> 
             
-            <button class="rule-heading"><h3>How To Play:</h3></button>
+            <button class="rule-heading btn-bg"><h3>How To Play:</h3></button>
             
             <section class="rule-segment">
                 <p>
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </p>
             </section> 
             
-            <button class="rule-heading"><h3>Card Values:</h3></button>
+            <button class="rule-heading btn-bg"><h3>Card Values:</h3></button>
             
             <section class="rule-segment">
                 <p>
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </p>
             </section> 
             
-            <button class="rule-heading"><h3>Blackjack:</h3></button>
+            <button class="rule-heading btn-bg"><h3>Blackjack:</h3></button>
             
             <section class="rule-segment">
                 <p>
@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </p>
             </section>
 
-            <button class="rule-heading"><h3>Scoreboard:</h3></button>
+            <button class="rule-heading btn-bg"><h3>Scoreboard:</h3></button>
             <section class="rule-segment">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </section> 

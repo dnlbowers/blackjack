@@ -29,8 +29,8 @@ header {
     margin: 0 auto;
 }
 
-.btn-underline {
-    text-decoration: underline;
+.txt-white {
+    color: #fff;
 }
 
 /** Header style rules **/
@@ -73,11 +73,17 @@ header {
     
 }
 
-
 .menu-opt-btn {
     display: block;
     height: 4.375rem;
     width: 80%;
+}
+.btn-bg {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+}
+
+.btn-underline {
+    text-decoration: underline;
 }
 
 /** Style for within the game-table **/

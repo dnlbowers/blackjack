@@ -22,17 +22,17 @@
 
         <!-- Menu button in the header visible only from the game table to navigate to the menu -->
         <nav id="menu-wrap" class ="text-align-centre">
-            <button id="menu-btn" class="btn center-margin">MENU</button>
+            <button id="menu-btn" class="btn center-margin btn-bg">MENU</button>
         </nav>
     </header>
 
     <!-- Menu navigation menu -->
-    <nav id="main-menu" class="center-margin main-window">
+    <nav id="main-menu" class="center-margin main-window txt-white">
         <h2 class="text-align-centre">Main Menu</h2>
-        <button id="play-game-btn" class="menu-opt-btn">PLAY GAME</button>
-        <button id="game-rules-btn" class="menu-opt-btn">GAME RULES</button>
-        <button id="game-options-btn" class="menu-opt-btn">GAME OPTIONS</button>
-        <button id="rg-btn" class="menu-opt-btn">RESPONSIBLE GAMING</button>
+        <button id="play-game-btn" class="menu-opt-btn btn-bg">PLAY GAME</button>
+        <button id="game-rules-btn" class="menu-opt-btn btn-bg">GAME RULES</button>
+        <button id="game-options-btn" class="menu-opt-btn btn-bg">GAME OPTIONS</button>
+        <button id="rg-btn" class="menu-opt-btn btn-bg">RESPONSIBLE GAMING</button>
     </nav>
 
     <!-- Container for sub menus -->
@@ -42,12 +42,12 @@
         </section>
         <!-- Button to navigate back to the navigation menu -->
         <nav>
-            <button class="back-to-menu">MAIN MENU</button>
+            <button class="back-to-menu btn-bg">MAIN MENU</button>
         </nav>
     </article>
     
     <!-- Game area -->
-    <main id="game-table" class="text-align-centre main-window center-margin">       
+    <main id="game-table" class="text-align-centre main-window center-margin txt-white">       
         
         <!-- Container for dealers cards-->
         <section id="dealer-side">
@@ -71,7 +71,7 @@
                     Drawn: <span id="drawn">0</span>
                 </li>
             </ul>
-            <button class="btn" id="reset-btn">Reset Scores</button>
+            <button class="btn btn-bg" id="reset-btn">Reset Scores</button>
         </section>
 
         <!-- Results Modal with transparent back gorund -->
@@ -94,17 +94,17 @@
         <section id="player-side">
             <h2>Player Hand</h2>
             <div id="player-card-container" class="card-container">
-
+              
             </div>
         </section>
 
         <!-- Users control section -->
         <section id="contols">
             <h3>Player Controls</h3>
-            <button class="btn" id="hit-btn"><span class="btn-underline">H</span>IT ME!</button>
+            <button class="btn btn-bg" id="hit-btn"><span class="btn-underline">H</span>IT ME!</button>
             <!-- how do I make this a pop up modal? -->
             <a href="">Game Rules</a>
-            <button class="btn" id="stand-btn"><span class="btn-underline">S</span>TAND</button>
+            <button class="btn btn-bg" id="stand-btn"><span class="btn-underline">S</span>TAND</button>
         </section>
     </main>
 
