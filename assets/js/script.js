@@ -97,7 +97,20 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'h') {
+            playerHand.push(dealCard('player'));
+            checkHandValue(playerHand);
+        }
+    })
+
     standBtnRef.addEventListener('click', computerTurn);
+    
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 's') {
+            computerTurn()
+        }
+    })
     
     redealBtnRef.addEventListener('click', function() {
 
@@ -206,32 +219,14 @@ document.addEventListener('DOMContentLoaded', function () {
             playerCards.appendChild(card);
             let right = 0;
             let playerHand = playerCards.childNodes;
-            
-            for (let i = 0; i <= playerHand.length; i++) {
-                if ( i >= 1) {
-                    card.style.right = (right + 45) + 'px';
-                    right += 45;
-                    
-                } else {
-                    card.style.right = right + 'px';
-                }
-            } 
+            fanCards(playerHand, card);
             
             
         } else if (dealtFor === 'dealer') {
             let houseCards = document.getElementById('dealer-card-container');
             houseCards.appendChild(card);
             let houseHand = houseCards.childNodes
-            let prop = 0;
-            for (let i = 0; i <= houseHand.length; i++) {
-                if (i >= 2) {
-                    card.style.right = (prop + 45) + 'px'
-                    prop+=45;
-                    
-                } else {
-                    card.style.right = prop+ 'px';
-                }
-            } 
+            fanCards(houseHand, card);
         }
 
         // Returns picture cards as numerical values
@@ -244,6 +239,16 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             return value;
         }
+    }
+
+    function fanCards(hand, card) {
+        let right = 0;
+        for (let i = 0; i <= hand.length; ++i) {
+        
+            card.style.right = right + 'px';
+            right += 45;
+                
+        } 
     }
 
     /**
