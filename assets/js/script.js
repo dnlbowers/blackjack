@@ -15,7 +15,7 @@ const mainMenuRef = document.getElementById('main-menu');
 const gameTableRef = document.getElementById('game-table');
 const subMenuContainerRef = document.getElementById('sub-menu-container');
 //Menu option button references
-const menuBtnRef = document.getElementById('menu-btn');
+const menuBtnRef = document.getElementById('menu-wrap');
 const playGameBtnRef = document.getElementById('play-game-btn');
 const gameRulesBtnRef = document.getElementById('game-rules-btn');
 const responsibleGamblingBtnRef = document.getElementById('rg-btn');
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function gameRulesContent() {
         
         let rules = `
-            <h2>Game Rules:</h2>
+            <h3>Game Rules:</h3>
             
             <button class="rule-heading"><h3>Game Objective:</h3></button>
             

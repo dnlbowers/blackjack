@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    height: 4.0625rem;
+    height: 5.0625rem;
 }
 
 /**Generalized classes**/
@@ -35,6 +35,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 5px;
 }
 
 .logo {
@@ -42,8 +43,9 @@ header {
     width: 2.5rem;
 }
 
-#menu-btn {
+#menu-wrap {
     display: none;
+    padding: 5px;
 }
 
 
