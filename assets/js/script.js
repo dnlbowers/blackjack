@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         mainMenuRef.style.display = 'none';
         gameTableRef.style.display = 'flex';
-        gameTableRef.style.justifyContent = 'center';
+        gameTableRef.style.justifyContent = 'space-between';
         gameTableRef.style.flexDirection = 'column';
         gameTableRef.style.alignItems = 'center';
         menuBtnRef.style.display = 'block';
@@ -434,22 +434,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>
                     The aim of the game is simple, get as close to 21 as possible without going over.
                 </p>
+                <p>
+                    You will compete against the house, taking it in turns to play your hands. The one with the highest value under 22 will win the round.
+                </p>
             </section> 
             
             <button class="rule-heading"><h3>How To Play:</h3></button>
             
             <section class="rule-segment">
                 <p>
-                    You will compete against the house, taking it in turns to play your hands. The one with the highest value under 22 will win the round.
-                </p>
-                <p>
-                    To draw another card from the deck, click the "HIT ME!" button on the game table or press the "H" key on the keyboard.
+                    To draw another card from the deck, click the "HIT ME!" button on the game table.
                 </p>
                 <p>
                     Careful though, as if you go over 21, the jig is up, and you lose! The good news is that this applies to the house's hand too.
                 </p>
                 <p>
-                    Once content with your hand, click the "STAND" button on the game table or press the "S" key on the keyboard to initiate the house's turn.
+                    Once content with your hand, click the "STAND" button on the game table.
                 </p>  
                 <p>
                     The house will always stand on a hand value greater than or equal to 17.
