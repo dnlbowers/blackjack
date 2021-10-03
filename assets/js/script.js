@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                child.style.display = "none";
                dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
                cardBack.style.position = 'absolute';
-               cardBack.style.right = '15px'
+               cardBack.style.left = '15px'
             }
         }
         let playerTotal = checkHandValue(playerHand);
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.className = 'card';
         card.alt = `${value} of ${suit}`;
         card.style.position = 'absolute';
-        card.style.right = '0';
+        card.style.left = '0';
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let value = 15;
         for (let i = 0; i <= hand.length; i++) {
         
-            card.style.right = (value) * i + 'px';
+            card.style.left = (value) * i + 'px';
             
                 
         } 
