@@ -1,8 +1,9 @@
 /* 
-- style buttons
+- style buttons:hover
 - space elements
 - add fonts
 - think about different icons on accordion menu
+-Use card suits on game rules
 */
 
 * {
@@ -59,9 +60,10 @@ header {
     border-radius: 20px;
     box-sizing: border-box;
     height: 74vh;
-    padding: 5%;
-    width: 95vw; 
+    max-width: 1000px;
     min-height: 485px; 
+    padding: 5%;
+    width: 95vw;
 }
 
 /** Menu styling **/

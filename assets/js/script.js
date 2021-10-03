@@ -1,7 +1,6 @@
-// Layer cards using position relative  on .card, z-index needs to increase every card and right 45px needs to increase by 45 every card dealt.
-// center the above with transform: translateX(percentage value) 
+
 // break up the how to play section in the game rules
-// key board short cuts
+// key board short cuts - figure out how to stop hit button when over 21
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
 
