@@ -39,7 +39,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0.625rem;
+    padding-top: 0.625rem;
 }
 
 .logo {
@@ -74,10 +74,17 @@ header {
 }
 
 .menu-opt-btn {
+    border-radius: 15px;
     display: block;
     height: 4.375rem;
     width: 80%;
 }
+
+.btn {
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
 .btn-bg {
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
 }
@@ -183,7 +190,6 @@ header {
   
   /* Style the accordion panel. Note: hidden by default */
   .rule-segment {
-    background-color: white;
     max-height: 0;
     overflow: hidden;
     padding: 0 18px;
