@@ -117,6 +117,14 @@ header {
 
 #sub-menu-container{
     display: none;
+    position: relative;
+}
+
+.back-to-menu {
+    bottom: 10px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
