@@ -115,10 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     redealBtnRef.addEventListener('click', function() {
 
-        playerHand = [];
-        dealerHand = [];
-        dealerCardContainerRef.innerHTML = "";
-        playerCardContainerRef.innerHTML = "";
         modalSurroundRef.style.display = 'none';
         firstTwoCards();
 
@@ -141,6 +137,10 @@ document.addEventListener('DOMContentLoaded', function () {
     firstTwoCards();    
 
     function firstTwoCards() {
+        playerHand = [];
+        dealerHand = [];
+        dealerCardContainerRef.innerHTML = "";
+        playerCardContainerRef.innerHTML = "";
         let cardBack = document.createElement('img');
         cardBack.src = "assets/images/decks/linux.svg";
         cardBack.className = 'card card-back';
@@ -148,16 +148,17 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
-            for (child of houseCardsRef) {
-                if (child === houseCardsRef[0]) {
-                   child.style.display = "none";
-                   dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
-                   cardBack.style.position = 'absolute';
-                   cardBack.style.right = '30px'
-                }
-            }
+            
         }
 
+        for (child of houseCardsRef) {
+            if (child === houseCardsRef[0]) {
+               child.style.display = "none";
+               dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
+               cardBack.style.position = 'absolute';
+               cardBack.style.right = '15px'
+            }
+        }
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
 
@@ -244,11 +245,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function fanCards(hand, card) {
-        let value = 0;
+        let value = 15;
         for (let i = 0; i <= hand.length; i++) {
         
-            card.style.right = value + 'px';
-            value += 15;
+            card.style.right = (value) * i + 'px';
+            
                 
         } 
     }

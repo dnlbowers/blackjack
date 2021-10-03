@@ -112,7 +112,7 @@ header {
     height: 120px;
     width: 84px;
     padding: 10px;
-    transform: translateX(25%);
+    transform: translateX(10%);
 }
 
 /** Scoreboard list items **/
