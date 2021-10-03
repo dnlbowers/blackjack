@@ -97,16 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
-    // window.addEventListener('keydown', function(event) {
-    //     if (playerHand > 21){
-    //         this.removeEventListener
-    //     } else if (event.key === 'h') {
+    // let keydown = document.addEventListener('keydown', function(event) {
+
+    //     if (event.key === 'h') {
     //         playerHand.push(dealCard('player'));
     //         checkHandValue(playerHand);
-
+    //         keydown.removeEventListener;
     //     } else if (event.key === 's') {
     //         computerTurn()
-    //         this.removeEventListener
+    //         removeEventListener (event)
+            
     //     }
     // })
 

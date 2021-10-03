@@ -89,6 +89,7 @@ header {
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
 }
 
+
 .btn-underline {
     text-decoration: underline;
 }
@@ -137,14 +138,23 @@ header {
 /** Styling for the results pop up **/
 #result-modal {
     background-color: red;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
     left: 50%;
     height: 20%;
-    position: fixed;
+    justify-content: space-evenly;
+    position: relative;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
     z-index: 10;
     
+}
+
+#result {
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 13px;
 }
 
 #sub-menu-container{
