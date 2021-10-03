@@ -30,7 +30,7 @@ const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
 const redealBtnRef = document.getElementById('redeal-btn');
 const dealerCardContainerRef = document.getElementById('dealer-card-container');
-const houseCards = document.getElementById('dealer-card-container').children;;
+const houseCardsRef = document.getElementById('dealer-card-container').children;
 const playerCardContainerRef = document.getElementById('player-card-container');
 const winTallyRef = document.getElementById('wins');
 const loseTallyRef = document.getElementById('loses');
@@ -134,10 +134,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
-            for (child of houseCards) {
-                if (child === houseCards[0]) {
+            for (child of houseCardsRef) {
+                if (child === houseCardsRef[0]) {
                    child.style.display = "none";
                    dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
+                   cardBack.style.position = 'relative';
                 }
             }
         }
@@ -196,12 +197,41 @@ document.addEventListener('DOMContentLoaded', function () {
         card.src = `assets/images/${suit}/${value}.svg`;
         card.className = 'card';
         card.alt = `${value} of ${suit}`;
+        card.style.position = 'relative';
+        card.style.right = '0';
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
-            document.getElementById('player-card-container').appendChild(card);
+            let playerCards = document.getElementById('player-card-container');
+            playerCards.appendChild(card);
+            let right = 0;
+            let playerHand = playerCards.childNodes;
+            
+            for (let i = 0; i <= playerHand.length; i++) {
+                if ( i >= 1) {
+                    card.style.right = (right + 45) + 'px';
+                    right += 45;
+                    
+                } else {
+                    card.style.right = right + 'px';
+                }
+            } 
+            
+            
         } else if (dealtFor === 'dealer') {
-            document.getElementById('dealer-card-container').appendChild(card);
+            let houseCards = document.getElementById('dealer-card-container');
+            houseCards.appendChild(card);
+            let houseHand = houseCards.childNodes
+            let prop = 0;
+            for (let i = 0; i <= houseHand.length; i++) {
+                if (i >= 2) {
+                    card.style.right = (prop + 45) + 'px'
+                    prop+=45;
+                    
+                } else {
+                    card.style.right = prop+ 'px';
+                }
+            } 
         }
 
         // Returns picture cards as numerical values
@@ -250,8 +280,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function computerTurn() {
         hitBtnRef.disabled = true;
-        houseCards[0].style.display = 'none';
-        houseCards[1].style.display = 'inline';
+        houseCardsRef[0].style.display = 'none';
+        houseCardsRef[1].style.display = 'inline';
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
 
@@ -278,8 +308,8 @@ document.addEventListener('DOMContentLoaded', function () {
      * Flips the houses hidden card face up once the players turn is over
      */
     function houseReveal() {
-        houseCards[0].style.display = 'none';
-        houseCards[1].style.display = 'inline';
+        houseCardsRef[0].style.display = 'none';
+        houseCardsRef[1].style.display = 'inline';
     }
 
     /**

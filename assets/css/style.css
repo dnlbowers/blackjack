@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    height: 5.0625rem;
+    height: 5.625rem;
 }
 
 /**Generalized classes**/
@@ -35,7 +35,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 5px;
+    padding: 0.625rem;
 }
 
 .logo {
@@ -83,6 +83,7 @@ header {
 .card {
     border-radius: 7px;
     height: 100px;
+    transform: translateX(50%);
     width: 70px;
 }
 
