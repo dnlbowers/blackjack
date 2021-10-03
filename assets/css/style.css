@@ -29,6 +29,10 @@ header {
     margin: 0 auto;
 }
 
+.btn-underline {
+    text-decoration: underline;
+}
+
 /** Header style rules **/
 #title {
     align-items: center;
@@ -78,6 +82,10 @@ header {
 
 #game-table {
     display: none;
+}
+
+.card-container {
+    position: relative;
 }
 
 .card {

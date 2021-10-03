@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (child === houseCardsRef[0]) {
                    child.style.display = "none";
                    dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
-                   cardBack.style.position = 'relative';
+                   cardBack.style.position = 'absolute';
                 }
             }
         }
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.src = `assets/images/${suit}/${value}.svg`;
         card.className = 'card';
         card.alt = `${value} of ${suit}`;
-        card.style.position = 'relative';
+        card.style.position = 'absolute';
         card.style.right = '0';
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
@@ -242,11 +242,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function fanCards(hand, card) {
-        let right = 0;
+        let value = 0;
         for (let i = 0; i <= hand.length; ++i) {
         
-            card.style.right = right + 'px';
-            right += 45;
+            card.style.right = value + 'px';
+            value += 11;
                 
         } 
     }
