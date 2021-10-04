@@ -75,6 +75,19 @@ header {
     
 }
 
+#sub-menu-container{
+    display: none;
+    position: relative;
+}
+
+/** Button styling **/
+.back-to-menu {
+    bottom: 10px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
 .menu-opt-btn {
     border-radius: 15px;
     display: block;
@@ -87,6 +100,8 @@ header {
 .btn {
     border-radius: 10px;
     padding: 5px 10px;
+    box-shadow: 1px 1px 0px 1px #bf953f;
+    border: 1px solid #b38728;
 }
 
 .btn-bg {
@@ -160,7 +175,6 @@ header {
     transform: translate(-50%, -50%);
     width: 70%;
     z-index: 10;
-    
 }
 
 #result {
@@ -168,22 +182,8 @@ header {
     padding-bottom: 13px;
 }
 
-#sub-menu-container{
-    display: none;
-    position: relative;
-}
-
-.back-to-menu {
-    bottom: 10px;
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-}
-
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
-    background-color: #eee;
-    color: #444;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
