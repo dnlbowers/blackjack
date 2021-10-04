@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                child.style.display = "none";
                dealerCardContainerRef.insertBefore(cardBack, child).style.display = "inline";
                cardBack.style.position = 'absolute';
-               cardBack.style.left = '15px'
+               cardBack.style.left = '0'
             }
         }
         let playerTotal = checkHandValue(playerHand);
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let value = 15;
         for (let i = 0; i <= hand.length; i++) {
         
-            card.style.left = (value) * i + 'px';
+            card.style.left = (value * i) - 15 + 'px';
             
                 
         } 
