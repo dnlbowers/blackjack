@@ -62,7 +62,7 @@ header {
     height: 74vh;
     max-width: 1000px;
     min-height: 485px; 
-    padding: 5%;
+    padding: 0.625rem;
     width: 95vw;
 }
 
@@ -110,6 +110,7 @@ header {
 
 .card-container {
     position: relative;
+    height: 130px;
 }
 
 #dealer-side, #player-side {
