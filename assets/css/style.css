@@ -179,7 +179,7 @@ header {
     display: flex;
     flex-direction: column;
     left: 50%;
-    height: 20%;
+    height: 150px;
     justify-content: space-evenly;
     max-width: 740px;
     position: relative;
