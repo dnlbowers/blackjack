@@ -80,6 +80,8 @@ header {
     display: block;
     height: 4.375rem;
     width: 80%;
+    border: 2px solid #fbf5b7;
+    box-shadow: 4px 6px 19px 4px #bf953f;
 }
 
 .btn {
@@ -88,9 +90,13 @@ header {
 }
 
 .btn-bg {
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+    background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+
 }
 
+.btn-bg:hover {
+    background: linear-gradient(to top left, #fbf5b7, #b38728, #fcf6ba, #bf953f);
+}
 
 .btn-underline {
     text-decoration: underline;
