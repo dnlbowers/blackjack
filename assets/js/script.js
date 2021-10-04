@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dealerCardContainerRef.innerHTML = "";
         playerCardContainerRef.innerHTML = "";
         let cardBack = document.createElement('img');
-        cardBack.src = "assets/images/decks/linux.svg";
+        cardBack.src = "assets/images/decks/darkred.svg";
         cardBack.className = 'card card-back';
         
         for (let i = 0; i < 2; i++) {
