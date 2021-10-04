@@ -146,7 +146,8 @@ header {
 
 /** Styling for the results pop up **/
 #result-modal {
-    background-color: red;
+    background-color: #312b50;
+    border: 0.25rem solid #bf953f;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
