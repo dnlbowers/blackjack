@@ -105,18 +105,18 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
-    // let keydown = document.addEventListener('keydown', function(event) {
+    window.addEventListener('keydown', function(event) {
 
-    //     if (event.key === 'h') {
-    //         playerHand.push(dealCard('player'));
-    //         checkHandValue(playerHand);    
-    //         if (handValue > 21) {
-    //                 this.removeEventListener;
-    //             }
-    //     } else if (event.key === 's') {
-    //         computerTurn();
-    //     }
-    // })
+        if (event.key === 'h') {
+            playerHand.push(dealCard('player'));
+            let total =checkHandValue(playerHand);    
+            if (total > 21) {
+                    event.disabled = 'true';
+                }
+        } else if (event.key === 's') {
+            computerTurn();
+        }
+    })
 
     standBtnRef.addEventListener('click', computerTurn);
     

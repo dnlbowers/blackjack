@@ -145,6 +145,10 @@ header {
     padding: 5px 10px;   
 }
 
+.btn:hover {
+    box-shadow: inset 1px 1px 0px 1px #bf953f;
+}
+
 .btn-bg {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
     font-family: 'Acme', sans-serif;
@@ -227,6 +231,7 @@ header {
 
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
+    align-items: center;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -242,10 +247,10 @@ header {
   }
 
   .rule-heading:after {
-    content: '\02795'; 
-    font-size: 13px;
-    color: #777;
-    margin-left: 5px;
+    content: '\02660'; 
+    font-size: 20px;
+    color: #000;
+    margin-right: 5px;
   }
   
   .active:after {
