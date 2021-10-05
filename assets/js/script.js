@@ -142,8 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Deals the first two cards to the player and the house. 
      **/    
     firstTwoCards();    
-    console.log(playerHand);
-    console.log(dealerHand)
+    
     function firstTwoCards() {
         playerHand = [];
         dealerHand = [];
@@ -281,11 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (handValue > 21 && hand.includes(11)) {
             for (let i = 0; i <= hand.length; i++) {
                 if (hand[i] === 11) {
-                    hand.splice(i, 1);
+                    hand.splice( i , 1);
                     hand.push(1);
-                }
+                } 
             }
-            return hand;    
+            return hand;   
         } else if (hand === playerHand && handValue >= 22) {
             playerBust(handValue); 
   
