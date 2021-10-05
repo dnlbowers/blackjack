@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const containerWidth = container.offsetWidth;
         for (let i = 0; i <= hand.length; i++) {
         
-            card.style.left = ((containerWidth - 84) / 2) + (value * i) + 'px';
+            card.style.left = ((containerWidth / 84) / 2) + (value * i) - 10 + 'px';
                  
         } 
     }
