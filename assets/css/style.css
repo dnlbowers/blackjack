@@ -36,6 +36,10 @@ header {
     color: #fff;
 }
 
+.line-break-below {
+    padding-bottom: 14px;
+}
+
 /** Header style rules **/
 #title {
     align-items: center;
@@ -64,7 +68,7 @@ header {
     display: flex;
     height: 74vh;
     max-width: 1005px;
-    min-height: 490px;
+    min-height: 530px;
     padding: 15px;
     width: 80vw;
 }    
@@ -79,7 +83,7 @@ header {
     font-size: 13px;
     height: 74vh;
     max-width: 1000px;
-    min-height: 485px;
+    min-height: 530px;
     padding: 0.625rem;
     width: 95vw;
 }
@@ -113,6 +117,14 @@ header {
     width: 80%;
     border: 2px solid #000;
     box-shadow: 2px 2px 12px 0px #bf953f;
+}
+
+#hit-btn {
+    margin-right: 10px;
+}
+
+#stand-btn {
+    margin-left: 10px;
 }
 
 .btn {
