@@ -40,6 +40,11 @@ const resetScoreRef = document.getElementById('reset-btn');
 
 document.addEventListener('DOMContentLoaded', function () {
     
+    let playerHand = [];
+    let dealerHand = [];
+    let canPlay = true;
+
+    
     //Menu button event listeners
     playGameBtnRef.addEventListener('click', function() {
 
@@ -99,29 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
     //Game table button event listeners
     
     hitBtnRef.addEventListener('click', function() {
-
-        playerHand.push(dealCard('player'));
-        checkHandValue(playerHand);
-        
+        if (canPlay) {  
+            playerHand.push(dealCard('player'));
+            checkHandValue(playerHand);
+            // console.log(dealerHand)
+        } 
     });
 
     window.addEventListener('keydown', function(event) {
-
-        if (event.key === 'h') {
-            playerHand.push(dealCard('player'));
-            let total =checkHandValue(playerHand);    
-            if (total > 21) {
-                    event.disabled = 'true';
-                }
-        } else if (event.key === 's') {
-            computerTurn();
+        
+        if (canPlay) {  
+            if (event.key === 'h') {
+                playerHand.push(dealCard('player'));
+                let total =checkHandValue(playerHand); 
+                console.log("key" ,playerHand)
+                console.log("total: ", total);   
+                if (total > 21) {
+                        canPlay = false;
+                    }
+            } else if (event.key === 's') {
+                computerTurn();
+            }
         }
     })
 
     standBtnRef.addEventListener('click', computerTurn);
     
     redealBtnRef.addEventListener('click', function() {
-
+        hitBtnRef.disabled = false;
+        canPlay = true;
         modalSurroundRef.style.display = 'none';
         firstTwoCards();
 
@@ -135,14 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    let playerHand = [];
-    let dealerHand = [];
-
-    /**
-     * Deals the first two cards to the player and the house. 
-     **/    
+      
     firstTwoCards();    
     
+
+     /**
+     * Deals the first two cards to the player and the house. 
+     **/ 
     function firstTwoCards() {
         playerHand = [];
         dealerHand = [];
@@ -153,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cardBack.className = 'card card-back';
         
         for (let i = 0; i < 2; i++) {
+            
             playerHand.push(dealCard('player'));
             dealerHand.push(dealCard('dealer'));
             
@@ -229,6 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let playerCards = document.getElementById('player-card-container');
             playerCards.appendChild(card);
             let playerHand = playerCards.childNodes;
+            console.log(playerHand)
             fanCards(playerHand, card);
             
             
@@ -256,9 +268,11 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function fanCards(hand, card) {
         let value = 15;
+        const container = document.getElementById('player-card-container')
+        const containerWidth = container.offsetWidth;
         for (let i = 0; i <= hand.length; i++) {
         
-            card.style.left = (value * i) - 15 + 'px';
+            card.style.left = ((containerWidth - 84) / 2) + (value * i) + 'px';
                  
         } 
     }
@@ -268,11 +282,14 @@ document.addEventListener('DOMContentLoaded', function () {
      * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
      */
     function checkHandValue(hand) {
+        console.log("----------------------------'");
+        console.log("hand :", hand);
         //adds the total hand value together
         let handValue = 0;
         for (let card of hand) {
             handValue += card;
         }
+        console.log('handvalue :>> ', handValue);
         //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
             return 0;
@@ -280,13 +297,18 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (handValue > 21 && hand.includes(11)) {
             for (let i = 0; i <= hand.length; i++) {
                 if (hand[i] === 11) {
+                    console.log('splicing ace')
                     hand.splice( i , 1);
                     hand.push(1);
+                    handValue -= 10; 
+                    console.log("handvalue minus 10", handValue)  
                 } 
             }
-            return hand;   
+            console.log(hand)
+            console.log("within ace check handvalue", handValue);
+            return handValue 
         } else if (hand === playerHand && handValue >= 22) {
-            playerBust(handValue); 
+            return playerBust(handValue); 
   
         } else {
             return handValue;
@@ -298,10 +320,12 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function computerTurn() {
         hitBtnRef.disabled = true;
+        canPlay = false;
         houseCardsRef[0].style.display = 'none';
         houseCardsRef[1].style.display = 'inline';
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
+        console.log(dealerHand)
 
         if (dealerTotal >= 17) {
             
@@ -351,7 +375,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function houseBlackjack() {
 
-        hitBtnRef.disabled = false;
+        //hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = 'The house has Blackjack!';
@@ -364,7 +389,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function playerBlackjack() {
 
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = 'You Win!';
         document.getElementById('description').innerHTML = 'You have Blackjack!';
@@ -377,7 +403,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function playerBust(handValue) {
         
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You're Bust!";
         document.getElementById('description').innerHTML = `The limit is 21, your current score is ${handValue}.`;
@@ -390,7 +417,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function draw(playerHandValue) {
         
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "Draw!";
         document.getElementById('description').innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
@@ -403,7 +431,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function houseBust(houseHand) {
         
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Win!";
         document.getElementById('description').innerHTML = `The house went bust with a value of ${houseHand}.`;
@@ -416,7 +445,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */    
     function playerHandWins(playerHandValue, houseHandValue) {
         
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Win!";
         document.getElementById('description').innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
@@ -429,7 +459,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function houseHandWins(playerHandValue, houseHandValue) {
         
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
+        canPlay = false;
         modalSurroundRef.style.display = 'block';
         document.getElementById('result').innerHTML = "You Lose!";
         document.getElementById('description').innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;

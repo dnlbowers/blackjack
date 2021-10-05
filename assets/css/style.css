@@ -255,7 +255,7 @@ header {
   
   .active:after {
     content: '\2665'; 
-    color: red;
+    color: 	#ff0000;
   }
   
   /* Style the accordion panel. Note: hidden by default */
