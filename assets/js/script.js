@@ -20,11 +20,13 @@ const gameRulesBtnRef = document.getElementById('game-rules-btn');
 const responsibleGamblingBtnRef = document.getElementById('rg-btn');
 const backToMenuRef = document.querySelector('.back-to-menu');
 
+
 //containers to send HTML from Javascript
 const subMenuContentRef = document.getElementById('sub-menu-content');
 
 //game table elements references
 const hitBtnRef = document.getElementById('hit-btn');
+const gameRuleAnchorRef = document.getElementById('rules');
 const standBtnRef = document.getElementById('stand-btn');
 const modalSurroundRef = document.getElementById('modal-surround');
 const redealBtnRef = document.getElementById('redeal-btn');
@@ -84,6 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
         subMenuContainerRef.style.display = 'none';
         mainMenuRef.style.display = 'flex';
     
+    });
+
+    gameRuleAnchorRef.addEventListener('click', function() {
+        gameTableRef.style.display = 'none';
+        subMenuContainerRef.style.display = 'block';
+        menuBtnRef.style.display = 'none';
+        gameRulesContent();
     });
     
     

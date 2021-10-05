@@ -127,6 +127,15 @@ header {
     margin-left: 10px;
 }
 
+#rules {
+    text-decoration: underline;
+}
+
+#rules:hover {
+    cursor: pointer;
+    color: #312b50;
+}
+
 .btn {
     border-radius: 10px;
     padding: 5px 10px;
@@ -142,6 +151,7 @@ header {
 
 .btn-bg:hover {
     background: linear-gradient(to top left, #fbf5b7, #b38728, #fcf6ba, #bf953f);
+    cursor: pointer;
 }
 
 .btn-underline {
