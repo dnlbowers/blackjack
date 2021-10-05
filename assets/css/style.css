@@ -247,14 +247,15 @@ header {
   }
 
   .rule-heading:after {
+    color: #000;
     content: '\02660'; 
     font-size: 20px;
-    color: #000;
     margin-right: 5px;
   }
   
   .active:after {
-    content: "\2796"; 
+    content: '\2665'; 
+    color: red;
   }
   
   /* Style the accordion panel. Note: hidden by default */
