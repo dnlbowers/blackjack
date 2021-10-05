@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
      * Deals the first two cards to the player and the house. 
      **/    
     firstTwoCards();    
-
+    console.log(playerHand);
+    console.log(dealerHand)
     function firstTwoCards() {
         playerHand = [];
         dealerHand = [];
@@ -242,6 +243,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /**
+     * Positions the cards in a staggered fashion
+     */
     function fanCards(hand, card) {
         let value = 15;
         for (let i = 0; i <= hand.length; i++) {
@@ -456,6 +460,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     }
 
+    //Menu pages
     /**
      * Adds content to the game rules modal
      */
@@ -528,7 +533,9 @@ document.addEventListener('DOMContentLoaded', function () {
             ruleMenuFunctionality();
     }
 
-
+    /**
+     * Gives the accordion menu the functionality 
+     */
     function ruleMenuFunctionality() {
         let ruleHeading = document.querySelectorAll('.rule-heading');
         let ruleSegment = document.querySelectorAll('.rule-segment');
@@ -546,11 +553,18 @@ document.addEventListener('DOMContentLoaded', function () {
         
         }
         
+        /**
+         * Allows the game rules meu to extend
+         */
         function extendRulePanel(target) {
             hideRulePanels();
             target.classList.add("active");
             target.nextElementSibling.style.maxHeight = target.nextElementSibling.scrollHeight + "px";  
         }
+
+        /**
+         * Hides game rules segments when a new one is open
+         */
         function hideRulePanels() {
             for (let i = 0; i < ruleSegment.length; i++) {
                 ruleSegment[i].style.maxHeight = null;
@@ -558,6 +572,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+
+    /**
+     * Adds content to the responsible gaming modal
+     */
     function responsibleGamingMenu() {
         
         let rgInfo = `
