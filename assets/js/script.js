@@ -100,17 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //     if (event.key === 'h') {
     //         playerHand.push(dealCard('player'));
-    //         checkHandValue(playerHand);
-    //         keydown.removeEventListener;
+    //         checkHandValue(playerHand);    
+    //         if (handValue > 21) {
+    //                 this.removeEventListener;
+    //             }
     //     } else if (event.key === 's') {
-    //         computerTurn()
-    //         removeEventListener (event)
-            
+    //         computerTurn();
     //     }
     // })
 
     standBtnRef.addEventListener('click', computerTurn);
-    
     
     redealBtnRef.addEventListener('click', function() {
 
@@ -248,8 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i <= hand.length; i++) {
         
             card.style.left = (value * i) - 15 + 'px';
-            
-                
+                 
         } 
     }
 
@@ -276,7 +274,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             return hand;    
         } else if (hand === playerHand && handValue >= 22) {
-            playerBust(handValue);   
+            playerBust(handValue); 
+  
         } else {
             return handValue;
         }

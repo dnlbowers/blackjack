@@ -6,6 +6,8 @@
 -Use card suits on game rules
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +20,7 @@ body {
 }
 
 header {
-    height: 5.625rem;
+    height: 7.625rem;
 }
 
 /**Generalized classes**/
@@ -39,13 +41,15 @@ header {
     align-items: center;
     display: flex;
     flex-direction: row;
+    font-family: 'Akronim', cursive;
+    font-size: 23px;
     justify-content: center;
     padding-top: 0.625rem;
 }
 
 .logo {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 
 #menu-wrap {
@@ -71,6 +75,8 @@ header {
     border: 2px solid #000;
     border-radius: 25px;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
     height: 74vh;
     max-width: 1000px;
     min-height: 485px;
@@ -118,6 +124,7 @@ header {
 
 .btn-bg {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+    font-family: 'Acme', sans-serif;
 
 }
 
