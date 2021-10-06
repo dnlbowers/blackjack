@@ -121,11 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else if (canPlay === false) {
             if (event.key === "d") {
-                hitBtnRef.disabled = false;
-                canPlay = true;
-                modalSurroundRef.style.display = "none";
-
-                firstTwoCards();    
+                reDeal();   
             }
         }
          
@@ -134,11 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     standBtnRef.addEventListener("click", computerTurn);
 
     redealBtnRef.addEventListener("click", function () {
-        hitBtnRef.disabled = false;
-        canPlay = true;
-        modalSurroundRef.style.display = "none";
-
-        firstTwoCards();
+        reDeal();
     });
 
     resetScoreRef.addEventListener("click", function () {
@@ -299,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     hand.splice(i, 1);
                     hand.push(1);
                     handValue - 10;
+                    break;
                 }
             }
             return handValue;
@@ -502,6 +495,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let drawn = parseInt(drawTallyRef.innerText);
 
         drawTallyRef.innerText = ++drawn;
+    }
+
+    function reDeal() {
+        hitBtnRef.disabled = false;
+        canPlay = true;
+        modalSurroundRef.style.display = "none";
+
+        firstTwoCards();    
     }
 
     //Menu pages
