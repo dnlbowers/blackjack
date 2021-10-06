@@ -106,10 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("keydown", function (event) {
         if (canPlay) {
             if (event.key === "h") {
-                playerHand.push(dealCard("player"));
-                checkHandValue(playerHand);
-                let total = checkHandValue(playerHand);
-                document.getElementById("player-total").innerHTML = `${total}`;
+                hit(playerHand);
                 if (total > 21) {
                     canPlay = false;
                 }
