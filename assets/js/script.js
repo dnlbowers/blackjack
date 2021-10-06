@@ -96,7 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     hitBtnRef.addEventListener("click", function () {
         if (canPlay) {
             playerHand.push(dealCard("player"));
-            checkHandValue(playerHand);
+            let runningTotal = checkHandValue(playerHand);
+            document.getElementById("player-total").innerHTML = `${runningTotal}`;
         }
     });
 
@@ -106,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 playerHand.push(dealCard("player"));
 
                 let total = checkHandValue(playerHand);
-
+                document.getElementById("player-total").innerHTML = `${total}`;
                 if (total > 21) {
                     canPlay = false;
                 }
@@ -159,12 +160,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     child
                 ).style.display = "inline";
                 cardBack.style.position = "absolute";
-                cardBack.style.left = "0";
+                cardBack.style.left = "15px";
             }
         }
 
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
+        document.getElementById("player-total").innerHTML = `${playerTotal}`;
+
 
         checkBlackjack(dealerTotal, playerTotal);
     }
@@ -177,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             houseReveal();
             houseBlackjack();
         } else if (player === 0) {
+            document.getElementById("player-total").innerHTML = '21';
             houseReveal();
             playerBlackjack();
         }
@@ -217,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         card.className = "card";
         card.alt = `${value} of ${suit}`;
         card.style.position = "absolute";
-        card.style.left = "0";
+        
 
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
@@ -252,7 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById("player-card-container");
         const containerWidth = container.offsetWidth;
         for (let i = 0; i <= hand.length; i++) {
-            card.style.left = containerWidth / 84 / 2 + value * i - 10 + "px";
+            
+            card.style.left = (containerWidth / 84)/2 + (value * i) + "px";
+          
         }
     }
 
@@ -269,6 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
+            
             return 0;
 
             // converts ace to low (from 11 to 1)
@@ -277,12 +284,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (hand[i] === 11) {
                     hand.splice(i, 1);
                     hand.push(1);
-                    handValue;
+                    handValue - 10;
                 }
             }
             return handValue;
         } else if (hand === playerHand && handValue >= 22) {
-            return playerBust(handValue);
+            console.log('bust :>> ', handValue);
+            document.getElementById("player-total").innerHTML = `${handValue}`;
+            playerBust(handValue);
+            return (handValue)
         } else {
             return handValue;
         }
@@ -345,13 +355,12 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when house has blackjack
      */
     function houseBlackjack() {
-        //hitBtnRef.disabled = false;
+        hitBtnRef.disabled = true;
         canPlay = false;
         modalSurroundRef.style.display = "block";
 
         document.getElementById("result").innerHTML = "You Lose!";
-        document.getElementById("description").innerHTML =
-            "The house has Blackjack!";
+        document.getElementById("description").innerHTML = "The house has Blackjack!";
 
         incrementLoses();
     }
@@ -360,13 +369,12 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when player has blackjack
      */
     function playerBlackjack() {
-        // hitBtnRef.disabled = false;
+        hitBtnRef.disabled = true;
         canPlay = false;
         modalSurroundRef.style.display = "block";
 
         document.getElementById("result").innerHTML = "You Win!";
-        document.getElementById("description").innerHTML =
-            "You have Blackjack!";
+        document.getElementById("description").innerHTML = "You have Blackjack!";
 
         incrementWins();
     }
@@ -375,15 +383,16 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when house has blackjack
      */
     function playerBust(handValue) {
-        // hitBtnRef.disabled = false;
+        
+        hitBtnRef.disabled = true;
         canPlay = false;
-
+        document.getElementById("player-total").innerHTML = `${handValue}`;
         modalSurroundRef.style.display = "block";
 
         document.getElementById("result").innerHTML = "You're Bust!";
         let bustModal = document.getElementById("description");
         bustModal.innerHTML = `The limit is 21, your current score is ${handValue}.`;
-
+        
         incrementLoses();
     }
 
@@ -391,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for a draw
      */
     function draw(playerHandValue) {
-        // hitBtnRef.disabled = false;
+        hitBtnRef.disabled = true;
         canPlay = false;
 
         modalSurroundRef.style.display = "block";
@@ -408,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for when the house goes bust
      */
     function houseBust(houseHand) {
-        // hitBtnRef.disabled = false;
+        hitBtnRef.disabled = true;
         canPlay = false;
 
         modalSurroundRef.style.display = "block";

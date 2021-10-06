@@ -173,10 +173,12 @@ header {
 .card-container {
     position: relative;
     height: 130px;
+    width: 100%;
 }
 
 #dealer-side, #player-side {
     height: 33%;
+    width: 100%;
 }
 
 .card {
