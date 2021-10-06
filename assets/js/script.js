@@ -75,10 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //gameRulesBtnRef.addEventListener('click', gameRulesContent);
 
     menuBtnRef.addEventListener("click", function () {
-        gameTableRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
-        menuBtnRef.style.display = "none";
-        playGameBtnRef.innerHTML = "RETURN TO GAME";
+        accessMenu();
     });
 
     backToMenuRef.addEventListener("click", function () {
@@ -112,10 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } else if (event.key === "s") {
                 computerTurn();
+            } else if (event.key === "m") {
+                accessMenu()
             }
         } else if (canPlay === false) {
             if (event.key === "d") {
                 reDeal();   
+            } else if (event.key === "m") {
+                accessMenu()
             }
         }
          
@@ -492,6 +493,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //event related functions
+
+    function accessMenu() {
+        gameTableRef.style.display = "none";
+        mainMenuRef.style.display = "flex";
+        menuBtnRef.style.display = "none";
+        playGameBtnRef.innerHTML = "RETURN TO GAME";
+    }
 
     function reDeal() {
         hitBtnRef.disabled = false;
