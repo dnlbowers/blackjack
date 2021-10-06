@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gameRulesBtnRef.addEventListener("click", function () {
         mainMenuRef.style.display = "none";
-        subMenuContainerRef.style.display = "block";
-        menuBtnRef.style.display = "none";
+        // subMenuContainerRef.style.display = "block";
+        // menuBtnRef.style.display = "none";
 
         gameRulesContent();
     });
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     responsibleGamblingBtnRef.addEventListener("click", function () {
         mainMenuRef.style.display = "none";
         subMenuContainerRef.style.display = "block";
-        menuBtnRef.style.display = "none";
+        // menuBtnRef.style.display = "none";
 
         responsibleGamingMenu();
     });
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gameRuleAnchorRef.addEventListener("click", function () {
         gameTableRef.style.display = "none";
-        subMenuContainerRef.style.display = "block";
-        menuBtnRef.style.display = "none";
+        // subMenuContainerRef.style.display = "block";
+        // menuBtnRef.style.display = "none";
 
         gameRulesContent();
     });
@@ -254,11 +254,12 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function fanCards(hand, card) {
         let value = 15;
-        const container = document.getElementById("player-card-container");
-        const containerWidth = container.offsetWidth;
+        // const container = document.querySelector(".card-container");
+        // const containerWidth = container.offsetWidth;
         for (let i = 0; i <= hand.length; i++) {
             
-            card.style.left = (containerWidth / 84)/2 + (value * i) + "px";
+            //  card.style.left = (containerWidth / 84) / 2  + (value * i) + "px";
+            card.style.left =  (value * i) + "px";
           
         }
     }
@@ -586,7 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
         subMenuContentRef.innerHTML = rules;
-
+        subMenuContainerRef.style.display = "block";
         ruleMenuFunctionality();
     }
 

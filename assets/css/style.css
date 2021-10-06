@@ -79,7 +79,7 @@ header {
     display: flex;
     height: 74vh;
     max-width: 1005px;
-    min-height: 530px;
+    min-height: 550px;
     padding: 15px;
     width: 80vw;
 }    
@@ -94,7 +94,7 @@ header {
     font-size: 13px;
     height: 74vh;
     max-width: 1000px;
-    min-height: 530px;
+    min-height: 550px;
     padding: 0.625rem;
     width: 95vw;
 }
@@ -185,7 +185,7 @@ header {
 
 #dealer-side, #player-side {
     height: 33%;
-    width: 100%;
+    width: 80%;
 }
 
 .card {
