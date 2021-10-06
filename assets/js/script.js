@@ -98,10 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hitBtnRef.addEventListener("click", function () {
         if (canPlay) {
-            playerHand.push(dealCard("player"));
-            checkHandValue(playerHand);
-            let runningTotal = checkHandValue(playerHand);
-            document.getElementById("player-total").innerHTML = `${runningTotal}`;
+            hit(playerHand);
         }
     });
 
@@ -497,12 +494,21 @@ document.addEventListener("DOMContentLoaded", function () {
         drawTallyRef.innerText = ++drawn;
     }
 
+    //event related functions
+
     function reDeal() {
         hitBtnRef.disabled = false;
         canPlay = true;
         modalSurroundRef.style.display = "none";
 
         firstTwoCards();    
+    }
+
+    function hit(playerHand) {
+        playerHand.push(dealCard("player"));
+            checkHandValue(playerHand);
+            let runningTotal = checkHandValue(playerHand);
+            document.getElementById("player-total").innerHTML = `${runningTotal}`;
     }
 
     //Menu pages
