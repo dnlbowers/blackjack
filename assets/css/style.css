@@ -40,6 +40,10 @@ header {
     padding-bottom: 14px;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 /** Header style rules **/
 #title {
     align-items: center;

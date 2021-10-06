@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //Keyboard controls for on the game table
     window.addEventListener("keydown", function (event) {
         if (canPlay) {
             if (event.key === "h") {
@@ -118,7 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (event.key === "s") {
                 computerTurn();
             }
+        } else if (canPlay === false) {
+            if (event.key === "d") {
+                hitBtnRef.disabled = false;
+                canPlay = true;
+                modalSurroundRef.style.display = "none";
+
+                firstTwoCards();    
+            }
         }
+         
     });
 
     standBtnRef.addEventListener("click", computerTurn);
