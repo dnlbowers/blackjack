@@ -1,4 +1,5 @@
 <!--
+    - Look for all id'sa with text decoration = unbderline and make class
     - differentiate buttons on table and off table
 -->
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
 
         <!-- Menu button in the header visible only from the game table to navigate to the menu -->
         <nav id="menu-wrap" class ="text-align-centre">
-            <button id="menu-btn" class="btn center-margin btn-bg">MENU</button>
+            <button id="menu-btn" class="btn center-margin btn-bg"><span class="key-control-indicator">M</span>ENU</button>
         </nav>
     </header>
     
@@ -72,7 +73,7 @@
                         Drawn: <span id="drawn">0</span>
                     </li>
                 </ul>
-                <button class="btn btn-bg" id="reset-btn">Reset Scores</button>
+                <button class="btn btn-bg" id="reset-btn"><span class="key-control-indicator">R</span>eset Scores</button>
             </section>
 
             <!-- Results Modal with transparent back gorund -->
@@ -85,7 +86,7 @@
 
                     </p>
                     <div>
-                        <button class="btn btn-bg center-margin" id="redeal-btn"><span class="underline">D</span>eal Again</button>
+                        <button class="btn btn-bg center-margin" id="redeal-btn"><span class="key-control-indicator">D</span>eal Again</button>
                     </div>
                 </section>   
             </div>
@@ -102,10 +103,10 @@
             <!-- Users control section -->
             <section id="contols" class="line-break-below">
                 <h3 class="line-break-below">Player Controls</h3>
-                <button class="btn btn-bg" id="hit-btn"><span class="btn-underline">H</span>IT ME!</button>
+                <button class="btn btn-bg" id="hit-btn"><span class= "key-control-indicator">H</span>IT ME!</button>
                 <!-- how do I make this a pop up modal? -->
-                <a id="rules">Game Rules</a>
-                <button class="btn btn-bg" id="stand-btn"><span class="btn-underline">S</span>TAND</button>
+                <a id="rules-anchor">Game Rules</a>
+                <button class="btn btn-bg" id="stand-btn"><span class= "key-control-indicator">S</span>TAND</button>
             </section>
         </main>
     </div>

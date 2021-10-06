@@ -29,7 +29,7 @@ const subMenuContentRef = document.getElementById("sub-menu-content");
 
 //game table elements references
 const hitBtnRef = document.getElementById("hit-btn");
-const gameRuleAnchorRef = document.getElementById("rules");
+const gameRuleAnchorRef = document.getElementById("rules-anchor");
 const standBtnRef = document.getElementById("stand-btn");
 const redealBtnRef = document.getElementById("redeal-btn");
 const dealerCardContainerRef = document.getElementById("dealer-card-container");
