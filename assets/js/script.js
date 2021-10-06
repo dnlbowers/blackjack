@@ -1,3 +1,5 @@
+
+//Figure out why running total doesn't minus the ace
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // key board short cuts - for as many buttons as possible
@@ -13,6 +15,8 @@
 const mainMenuRef = document.getElementById("main-menu");
 const gameTableRef = document.getElementById("game-table");
 const subMenuContainerRef = document.getElementById("sub-menu-container");
+const modalSurroundRef = document.getElementById("modal-surround");
+
 //Menu option button references
 const menuBtnRef = document.getElementById("menu-wrap");
 const playGameBtnRef = document.getElementById("play-game-btn");
@@ -27,7 +31,6 @@ const subMenuContentRef = document.getElementById("sub-menu-content");
 const hitBtnRef = document.getElementById("hit-btn");
 const gameRuleAnchorRef = document.getElementById("rules");
 const standBtnRef = document.getElementById("stand-btn");
-const modalSurroundRef = document.getElementById("modal-surround");
 const redealBtnRef = document.getElementById("redeal-btn");
 const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
@@ -96,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hitBtnRef.addEventListener("click", function () {
         if (canPlay) {
             playerHand.push(dealCard("player"));
+            checkHandValue(playerHand);
             let runningTotal = checkHandValue(playerHand);
             document.getElementById("player-total").innerHTML = `${runningTotal}`;
         }
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (canPlay) {
             if (event.key === "h") {
                 playerHand.push(dealCard("player"));
-
+                checkHandValue(playerHand);
                 let total = checkHandValue(playerHand);
                 document.getElementById("player-total").innerHTML = `${total}`;
                 if (total > 21) {
@@ -289,8 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return handValue;
         } else if (hand === playerHand && handValue >= 22) {
-            console.log('bust :>> ', handValue);
-            document.getElementById("player-total").innerHTML = `${handValue}`;
             playerBust(handValue);
             return (handValue)
         } else {
