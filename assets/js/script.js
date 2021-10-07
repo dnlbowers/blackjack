@@ -302,15 +302,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // converts ace to low (from 11 to 1)
         } else if (handValue > 21 && hand.includes(11)) {
+            firstAce = hand.indexOf(11);
             for (let i = 0; i <= hand.length; i++) {
-                if (hand[i] === 11) {
+                
+                console.log('first ace index :>> ', firstAce);
+                if (i === firstAce ) {
+                    console.log('start' + hand);
                     hand.splice(i, 1);
                     hand.push(1);
-                    handValue - 10;
-                    break;
+                    console.log('end' + hand)
+                    return checkHandValue(hand);
                 }
             }
-            return handValue;
         } else if (hand === playerHand && handValue >= 22) {
             playerBust(handValue);
             return (handValue);
@@ -382,8 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("result").innerHTML = "You Lose!";
         document.getElementById("description").innerHTML = "The house has Blackjack!";
-        console.log('called from here');
-        
+
         incrementLoses();
     }
 
@@ -414,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("result").innerHTML = "You're Bust!";
         let bustModal = document.getElementById("description");
         bustModal.innerHTML = `The limit is 21, your current score is ${handValue}.`;
-        console.log('called from here');
+ 
         incrementLoses();
     }
 
@@ -482,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "description"
         ).innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
-        console.log('called from here');
+ 
         incrementLoses();
     }
 
@@ -500,9 +502,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * Increases loses tally on scoreboard
      */
     function incrementLoses() {
-        console.log('increase lose :>> ', 'increase lose');
+        
         let loses = parseInt(loseTallyRef.innerText);
-        console.log('loses :>> ', loses);
         loseTallyRef.innerText = ++loses;
     }
 
@@ -550,7 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function hit(playerHand) {
         playerHand.push(dealCard("player"));
-            checkHandValue(playerHand);
+            // checkHandValue(playerHand);
             let runningTotal = checkHandValue(playerHand);
             document.getElementById("player-total").innerHTML = `${runningTotal}`;
             if (playerHand > 21) {
