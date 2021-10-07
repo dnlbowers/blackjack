@@ -1,5 +1,5 @@
+//Why are the loses incrementing twice
 
-//Figure out why running total doesn't minus the ace
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // key board short cuts - for as many buttons as possible
@@ -48,16 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
-        mainMenuRef.style.display = "none";
-        gameTableRef.style.display = "flex";
-        gameTableRef.style.justifyContent = "space-between";
-        gameTableRef.style.flexDirection = "column";
-        gameTableRef.style.alignItems = "center";
-        menuBtnRef.style.display = "block";
+        displayGameTable()
     });
 
     gameRulesBtnRef.addEventListener("click", function () {
-        mainMenuRef.style.display = "none";
+        // mainMenuRef.style.display = "none";
         // subMenuContainerRef.style.display = "block";
         // menuBtnRef.style.display = "none";
 
@@ -65,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     responsibleGamblingBtnRef.addEventListener("click", function () {
-        mainMenuRef.style.display = "none";
-        subMenuContainerRef.style.display = "block";
+        // mainMenuRef.style.display = "none";
+        // subMenuContainerRef.style.display = "block";
         // menuBtnRef.style.display = "none";
 
         responsibleGamingMenu();
@@ -86,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gameRuleAnchorRef.addEventListener("click", function () {
         gameTableRef.style.display = "none";
         // subMenuContainerRef.style.display = "block";
-        // menuBtnRef.style.display = "none";
+        menuBtnRef.style.display = "none";
 
         gameRulesContent();
     });
@@ -101,17 +96,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Keyboard controls for on the game table
     window.addEventListener("keydown", function (event) {
-        if (canPlay) {
+        if (document.querySelector('#main-menu').style.display !== "none") {
+            if (event.key === "t") {
+                displayGameTable();
+            } else if (event.key === "r") {
+                gameRulesContent();
+            }
+            else if (event.key === "g") {
+                responsibleGamingMenu();
+            }
+        }else if (canPlay) {
             if (event.key === "h") {
                 hit(playerHand);
-                if (total > 21) {
-                    canPlay = false;
-                }
             } else if (event.key === "s") {
                 computerTurn();
             } else if (event.key === "m") {
                 accessMenu()
-            }
+            } else if (event.key === "c") {
+                clearTally();
+            } 
         } else if (canPlay === false) {
             if (event.key === "d") {
                 reDeal();   
@@ -119,6 +122,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 accessMenu()
             }
         }
+        
+        // switch (canPlay){
+        //     case event.key === "h":
+        //         hit(playerHand);
+        //         if (total > 21) {
+        //             canPlay = false;
+        //         }
+        //         break;
+        //     case event.key === "s":
+        //         computerTurn();
+        //         break;
+        // }
+
+        // switch (canPlay === false){
+        //     case event.key === "d":
+        //         reDeal();  
+        //         break;
+
+        // }
          
     });
 
@@ -129,9 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     resetScoreRef.addEventListener("click", function () {
-        winTallyRef.innerHTML = 0;
-        loseTallyRef.innerHTML = 0;
-        drawTallyRef.innerHTML = 0;
+        clearTally()
     });
 
     firstTwoCards();
@@ -293,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return handValue;
         } else if (hand === playerHand && handValue >= 22) {
             playerBust(handValue);
-            return (handValue)
+            return (handValue);
         } else {
             return handValue;
         }
@@ -362,7 +382,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("result").innerHTML = "You Lose!";
         document.getElementById("description").innerHTML = "The house has Blackjack!";
-
+        console.log('called from here');
+        
         incrementLoses();
     }
 
@@ -393,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("result").innerHTML = "You're Bust!";
         let bustModal = document.getElementById("description");
         bustModal.innerHTML = `The limit is 21, your current score is ${handValue}.`;
-        
+        console.log('called from here');
         incrementLoses();
     }
 
@@ -461,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "description"
         ).innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
-
+        console.log('called from here');
         incrementLoses();
     }
 
@@ -479,8 +500,9 @@ document.addEventListener("DOMContentLoaded", function () {
      * Increases loses tally on scoreboard
      */
     function incrementLoses() {
+        console.log('increase lose :>> ', 'increase lose');
         let loses = parseInt(loseTallyRef.innerText);
-
+        console.log('loses :>> ', loses);
         loseTallyRef.innerText = ++loses;
     }
 
@@ -495,11 +517,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //event related functions
 
+    function displayGameTable() {
+        mainMenuRef.style.display = "none";
+        gameTableRef.style.display = "flex";
+        gameTableRef.style.justifyContent = "space-between";
+        gameTableRef.style.flexDirection = "column";
+        gameTableRef.style.alignItems = "center";
+        menuBtnRef.style.display = "block";
+    }    
+
     function accessMenu() {
         gameTableRef.style.display = "none";
         mainMenuRef.style.display = "flex";
         menuBtnRef.style.display = "none";
-        playGameBtnRef.innerHTML = "RETURN TO GAME";
+        subMenuContainerRef.style.display = "none";
+        
     }
 
     function reDeal() {
@@ -510,11 +542,20 @@ document.addEventListener("DOMContentLoaded", function () {
         firstTwoCards();    
     }
 
+    function clearTally() {
+        winTallyRef.innerHTML = 0;
+        loseTallyRef.innerHTML = 0;
+        drawTallyRef.innerHTML = 0;
+    }
+
     function hit(playerHand) {
         playerHand.push(dealCard("player"));
             checkHandValue(playerHand);
             let runningTotal = checkHandValue(playerHand);
             document.getElementById("player-total").innerHTML = `${runningTotal}`;
+            if (playerHand > 21) {
+                canPlay = false;
+            }
     }
 
     //Menu pages
@@ -588,6 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         subMenuContentRef.innerHTML = rules;
         subMenuContainerRef.style.display = "block";
+        mainMenuRef.style.display = "none";
         ruleMenuFunctionality();
     }
 
@@ -650,5 +692,8 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
         subMenuContentRef.innerHTML = rgInfo;
+        mainMenuRef.style.display = "none";
+        subMenuContainerRef.style.display = "block";
+        menuBtnRef.style.display = "none";
     }
 });
