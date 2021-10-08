@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let cardBack = document.createElement("img");
         cardBack.src = "assets/images/decks/darkred.svg";
         cardBack.className = "card card-back";
+        cardBack.alt = "The houses first card face down on the table"
 
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));

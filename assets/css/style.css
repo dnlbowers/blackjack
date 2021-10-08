@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    height: 7.625rem;
+    height: 8.625rem;
 }
 
 /**Generalized classes**/
@@ -135,9 +135,10 @@ header {
     border-radius: 15px;
     box-shadow: 2px 2px 12px 0px #bf953f;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     height: 4.375rem;
+    padding: 10px;
     width: 80%;
 }
 
@@ -162,7 +163,7 @@ header {
     border: 1px solid #b38728;
     border-radius: 10px;
     box-shadow: 1px 1px 0px 1px #bf953f;
-    font-size: 15px;
+    font-size: 17px;
     padding: 5px 10px;   
 }
 
