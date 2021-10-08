@@ -6,7 +6,7 @@
 -Use card suits on game rules
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600;700&display=swap');
 
 * {
     margin: 0;
@@ -67,7 +67,7 @@ header {
     width: 4.5rem;
 }
 
-#menu-wrap {
+#menu-btn-wrap {
     display: none;
     padding: 5px;
 }
@@ -76,12 +76,14 @@ header {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
     border: 1px solid #000;
     border-radius: 40px;
+    box-sizing: border-box;
     display: flex;
-    height: 74vh;
-    max-width: 1005px;
-    min-height: 550px;
+    height: 78vh;
+    max-height: 664px;
+    max-width: 700px;
+    min-height: 583px;
     padding: 15px;
-    width: 80vw;
+    width: 95vw;
 }    
 
 /** Class to set the height of each module the same when it opens **/
@@ -93,7 +95,8 @@ header {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     height: 74vh;
-    max-width: 1000px;
+    max-height: 630px;
+    max-width: 670px;
     min-height: 550px;
     padding: 0.625rem;
     width: 95vw;
@@ -106,6 +109,12 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     
+}
+
+.menu-heading {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: underline;
 }
 
 #sub-menu-container{
@@ -185,14 +194,13 @@ header {
 
 #dealer-side, #player-side {
     height: 33%;
-    width: 80%;
+    width: 170px;
 }
 
 .card {
     border-radius: 7px;
     height: 120px;
     width: 84px;
-    padding: 10px;
     /* transform: translateX(10%); */
 }
 
@@ -278,7 +286,9 @@ header {
 
 /**footer styling**/
 /*style for the social media links*/
-
+footer {
+    width: 100%;
+ }
 
 .social-media-li {
     display: inline;
@@ -294,4 +304,31 @@ header {
 
 #copyright {
     font-size: 6px;
+}
+
+/** Media queries **/
+
+@media (min-width: 360px) {
+    #hit-btn {
+        margin-right: 18.75px;
+    }
+
+    #stand-btn {
+        margin-left: 18.75px;
+    }
+}
+
+@media (min-width: 420px) {
+    
+    header {
+        height: 150px;
+    }
+    
+    #title {
+        font-size: 32px;
+    }
+
+    #menu-btn-wrap {
+        padding: 10px;
+    }
 }

@@ -1,5 +1,3 @@
-//Why are the loses incrementing twice
-
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // key board short cuts - for as many buttons as possible
@@ -18,7 +16,7 @@ const subMenuContainerRef = document.getElementById("sub-menu-container");
 const modalSurroundRef = document.getElementById("modal-surround");
 
 //Menu option button references
-const menuBtnRef = document.getElementById("menu-wrap");
+const menuBtnRef = document.getElementById("menu-btn-wrap");
 const playGameBtnRef = document.getElementById("play-game-btn");
 const gameRulesBtnRef = document.getElementById("game-rules-btn");
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
@@ -338,14 +336,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dealerTotal >= 17) {
             compareHands(playerTotal, dealerTotal);
         } else {
-            while (dealerTotal < 17) {
+            while (dealerTotal <= 17) {
                 dealerHand.push(dealCard("dealer"));
                 let dealerTotal = checkHandValue(dealerHand);
 
                 if (dealerTotal > 21) {
                     houseBust(dealerTotal);
                     break;
-                } else if (dealerTotal > 17) {
+                } else if (dealerTotal >= 17) {
                     compareHands(playerTotal, dealerTotal);
                     break;
                 }
@@ -565,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function gameRulesContent() {
         let rules = `
-            <h3>Game Rules:</h3>
+            <h2 class="menu-heading">Game Rules</h2>
             
             <button class="rule-heading btn-bg"><h3>Game Objective:</h3></button>
             
@@ -678,7 +676,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function responsibleGamingMenu() {
         let rgInfo = `
-            <h2>Responsible Gaming</h2>
+            <h2 class="menu-heading">Responsible Gaming</h2>
             <p>
                 I hate to be "that guy," but please remember that while games 
                 like this can be a lot of fun, gambling can become a severe problem for some.
