@@ -1,6 +1,9 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
-//continue to figure out accodorion accessability aria tags. How to add and remove the different labels according to which is open and which is closed.
+// Add computer total = ? and fill the score at the end
+//mention infinate deck in the game rules
+//consider adding more decks and shuffle function
+//change score board to stake and pot with a double your stake on win
 // key board short cuts - for as many buttons as possible
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
