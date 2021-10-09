@@ -658,8 +658,12 @@ document.addEventListener("DOMContentLoaded", function () {
             hideRulePanels();
 
             target.classList.add("active");
+            target.removeAttribute("aria-expanded", "false");
+            target.setAttribute("aria-expanded", "true");
             target.nextElementSibling.style.maxHeight =
                 target.nextElementSibling.scrollHeight + "px";
+                target.nextElementSibling.removeAttribute("aria-hidden", "true");
+                target.nextElementSibling.setAttribute("aria-hidden", "false" )
         }
 
         /**
@@ -668,7 +672,9 @@ document.addEventListener("DOMContentLoaded", function () {
         function hideRulePanels() {
             for (let i = 0; i < ruleSegment.length; i++) {
                 ruleSegment[i].style.maxHeight = null;
+                ruleSegment[i].setAttribute("aria-hidden", "true")
                 ruleHeading[i].classList.remove("active");
+                ruleHeading[i].setAttribute("aria-expanded", "false");
             }
         }
     }
