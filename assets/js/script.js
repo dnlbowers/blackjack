@@ -569,18 +569,18 @@ document.addEventListener("DOMContentLoaded", function () {
             
             <button id="objective-accordion" class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
             
-            <section id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion">   
+            <div id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion" role="region">   
                 <p>
                     The aim of the game is simple, get as close to 21 as possible without going over.
                 </p>
                 <p>
                     You will compete against the house, taking it in turns to play your hands. The one with the highest value under 22 will win the round.
                 </p>
-            </section> 
+            </div> 
             
             <button id="how-to-accordion" class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
             
-            <section id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion">
+            <div id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion" role="region">
                 <p>
                     To draw another card from the deck, click the "HIT ME!" button on the game table.
                 </p>
@@ -593,11 +593,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>
                     The house will always stand on a hand value greater than or equal to 17.
                 </p>
-            </section> 
+            </div> 
             
             <button id="card-value-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
             
-            <section id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion">
+            <div id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion" role="region">
                 <p>
                     Each card is worth the same value as the number printed on it.
                 </p>
@@ -608,11 +608,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1, 
                     which allows you to keep hitting the deck until you stand or go bust.
                 </p>
-            </section> 
+            </div> 
             
             <button id="blackjack-accordion" class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
             
-            <section id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion">
+            <div id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion" role="region">
                 <p>
                     Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
                     Should this occur, the round is over automatically, and the one who possesses blackjack wins.
@@ -620,12 +620,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>
                     Sadly if both the player and house have blackjack, the house will always win! Sorry, but those are the rules.
                 </p>
-            </section>
+            </div>
 
             <button id="scoreboard-accordion" class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
-            <section id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion">
+            <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
-            </section> 
+            </div> 
         `;
 
         subMenuContentRef.innerHTML = rules;
