@@ -567,9 +567,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let rules = `
             <h2 class="menu-heading">Game Rules</h2>
             
-            <button class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
+            <button id="objective-accordion" class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
             
-            <section id="game-objective" class="rule-segment" aria-hidden="true">   
+            <section id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion">   
                 <p>
                     The aim of the game is simple, get as close to 21 as possible without going over.
                 </p>
@@ -578,9 +578,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
+            <button id="how-to-accordion" class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
             
-            <section id="how-to-play" class="rule-segment" aria-hidden="true">
+            <section id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion">
                 <p>
                     To draw another card from the deck, click the "HIT ME!" button on the game table.
                 </p>
@@ -595,9 +595,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
+            <button id="card-value-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
             
-            <section id="card-values" class="rule-segment" aria-hidden="true">
+            <section id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion">
                 <p>
                     Each card is worth the same value as the number printed on it.
                 </p>
@@ -610,9 +610,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
+            <button id="blackjack-accordion" class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
             
-            <section id="blackjack-rules" class="rule-segment" aria-hidden="true">
+            <section id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion">
                 <p>
                     Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
                     Should this occur, the round is over automatically, and the one who possesses blackjack wins.
@@ -622,8 +622,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section>
 
-            <button class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
-            <section id="scoreboard-rules" class="rule-segment" aria-hidden="true">
+            <button id="scoreboard-accordion" class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
+            <section id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </section> 
         `;
