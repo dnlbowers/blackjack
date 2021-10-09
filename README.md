@@ -1,8 +1,8 @@
 # **Blackjack**
 ## **Site Overview**
-Black jack is a classic game dating back to around the 1700's. This game is enjoyed by many in casinos across the world and well as kids on the school bus looking to pass the time with a simple game of cards.
+Blackjack is a classic game dating back to around the 1700s. This game is enjoyed by many forms, from casinos worldwide, to kids on the school bus looking to pass the time with a simple game of cards.
 
-My current line of work in in the online casino industry and hence I wanted to create something relevant to may daily life. My rendition it just a bit of harmless fun to pass the time much like those day spent on the back of the bus playing for pennies.
+My current line of work in the online casino industry and hence I wanted to create something relevant to my daily life. My rendition is intended as a bit of harmless fun to pass the time much like those days spent on the back of the bus playing for pennies.
 
 https://dnlbowers.github.io/blackjack/
 
@@ -10,22 +10,22 @@ https://dnlbowers.github.io/blackjack/
 
 ### **Target Audience:**
 * Adults who enjoy playing blackjack for the strategy but don't want to spend money playing.
-* Fans of of the classic card game blackjack.
-* People looking for an enjoyable way to spend some time away from a more concentrate task.
+* Fans of the classic card game blackjack.
+* People looking for an enjoyable way to spend some time away from a more concentrated task.
 * Visually impaired people who still want to join in the fun of playing blackjack for free online.
 
 ### **User Stories:**
-As a user I want to...
-* ...be able to play blackjack for free without the need to break the bank if I lose.
-* ...be able to navigate around the game controls and menu with as few clicks as possible.
-* ...use keyboard shortcuts instead of the mouse.
-* ...track the progress of each round in some way.
-* ...find a clear explanation of the game rules and how to play.
-* ...be able to toggle the sound on and off.
-* ...adjust the color settings of the game table and surrounding area.
+As a user, I want to: -
+* Be able to play blackjack for free without the need to break the bank if I lose.
+* Be able to navigate around the game controls and menu with as few clicks as possible.
+* Use keyboard shortcuts instead of the mouse.
+* Track the progress of each round in some way.
+* Find a clear explanation of the game rules and how to play.
+* Be able to toggle the sound on and off.
+* Adjust the color settings of the game table and surrounding area.
 
 ### **Site Aims:**
-1. To provide a free version of blackjack which can be enjoyed by anyone.
+1. To provide a free version of Blackjack, that anyone can enjoy.
 
 1. Be fully accessible to the visually impaired.
 

@@ -37,5 +37,29 @@
       "opyright",
       "redeal",
       "thems"
+   ],
+   "grammarly.overrides": [
+      {
+         "files": [
+            "**/README.md"
+         ],
+         "config": {
+            "audience": "knowledgeable",
+            "dialect": "american",
+            "domain": "general",
+            "emotions": [
+               "neutral",
+               "confident",
+               "joyful",
+               "friendly",
+               "analytical"
+            ],
+            "goals": [
+               "inform",
+               "describe",
+               "convince"
+            ]
+         }
+      }
    ]
 }
