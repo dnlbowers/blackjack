@@ -44,13 +44,6 @@ header {
     text-decoration: underline;
 }
 
-.key-control-indicator {
-    color: darkred;
-    font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #000;
-}
-
 /** Header style rules **/
 #title {
     align-items: center;
@@ -71,6 +64,8 @@ header {
     display: none;
     padding: 5px;
 }
+
+/** Golden surround to the main game area **/
 
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
@@ -122,7 +117,48 @@ header {
     position: relative;
 }
 
+/** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
+.rule-heading {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+  /* .active, .rule-heading:hover {
+    background-color: #ccc;
+  }
+
+  */
+  .rule-heading:after {
+    color: #000;
+    content: '\02660'; 
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .active:after {
+    content: '\2665'; 
+    color: 	#ff0000;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .rule-segment {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    text-align: left;
+    transition: max-height 0.4s ease-out;
+  }
+
 /** Button styling **/
+/** Menu buttons **/
 .back-to-menu {
     bottom: 10px;
     position: absolute;
@@ -142,6 +178,16 @@ header {
     width: 80%;
 }
 
+/** Highlights one letter on the button to indicate key controls **/
+.key-control-indicator {
+    color: #8B0000;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+}
+
+/** Game board control buttons **/
+
 #hit-btn {
     margin-right: 7.5px;
 }
@@ -150,14 +196,7 @@ header {
     margin-left: 7.5px;
 }
 
-#rules-anchor {
-    text-decoration: underline;
-}
-
-#rules:hover {
-    cursor: pointer;
-    color: #312b50;
-}
+/** universal button styles **/
 
 .btn {
     border: 1px solid #b38728;
@@ -182,7 +221,6 @@ header {
 }
 
 /** Style for within the game-table **/
-
 #game-table {
     display: none;
 }
@@ -194,7 +232,7 @@ header {
 }
 
 #dealer-side, #player-side {
-    height: 33%;
+    height: 25%;
     width: 170px;
 }
 
@@ -205,10 +243,30 @@ header {
     /* transform: translateX(10%); */
 }
 
-/** Scoreboard list items **/
+/** Scoreboard style **/
+#score-board {
+    height: 10%;
+}
+
 .score-tally {
     display: inline;
     list-style-type: none;
+    height: 25%;
+}
+
+/** Player control area **/
+#controls {
+    height: 10%;
+}
+
+/** on table link to game rules **/
+#rules-anchor {
+    text-decoration: underline;
+}
+
+#rules-anchor:hover {
+    cursor: pointer;
+    color: #312b50;
 }
 
 /** Styling for the background of the results pop up **/
@@ -243,47 +301,9 @@ header {
 }
 
 #result {
-    border-bottom: 2px solid lightgray;
+    border-bottom: 2px solid #d3d3d3;
     padding-bottom: 13px;
 }
-
-/** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
-.rule-heading {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    outline: none;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .rule-heading:hover {
-    background-color: #ccc;
-  }
-
-  .rule-heading:after {
-    color: #000;
-    content: '\02660'; 
-    font-size: 20px;
-    margin-right: 5px;
-  }
-  
-  .active:after {
-    content: '\2665'; 
-    color: 	#ff0000;
-  }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .rule-segment {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 18px;
-    text-align: left;
-    transition: max-height 0.4s ease-out;
-  }
 
 /**footer styling**/
 /*style for the social media links*/
@@ -331,5 +351,17 @@ footer {
 
     #menu-btn-wrap {
         padding: 10px;
+    }
+
+    .menu-opt-btn {
+        font-size: 25px;
+    }
+
+    .menu-heading {
+        font-size: 45px;
+    }
+
+    #dealer-side, #player-side {
+        width: 145px;
     }
 }
