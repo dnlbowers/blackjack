@@ -1,5 +1,6 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
+//continue to figure out accodorion accessability aria tags. How to add and remove the different labels according to which is open and which is closed.
 // key board short cuts - for as many buttons as possible
 // refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
 // !! above the MVP plan !!
@@ -566,9 +567,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let rules = `
             <h2 class="menu-heading">Game Rules</h2>
             
-            <button class="rule-heading btn-bg"><h3>Game Objective:</h3></button>
+            <button class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
             
-            <section class="rule-segment">   
+            <section id="game-objective" class="rule-segment" aria-hidden="true">   
                 <p>
                     The aim of the game is simple, get as close to 21 as possible without going over.
                 </p>
@@ -577,9 +578,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg"><h3>How To Play:</h3></button>
+            <button class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
             
-            <section class="rule-segment">
+            <section id="how-to-play" class="rule-segment" aria-hidden="true">
                 <p>
                     To draw another card from the deck, click the "HIT ME!" button on the game table.
                 </p>
@@ -594,9 +595,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg"><h3>Card Values:</h3></button>
+            <button class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
             
-            <section class="rule-segment">
+            <section id="card-values" class="rule-segment" aria-hidden="true">
                 <p>
                     Each card is worth the same value as the number printed on it.
                 </p>
@@ -609,9 +610,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section> 
             
-            <button class="rule-heading btn-bg"><h3>Blackjack:</h3></button>
+            <button class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
             
-            <section class="rule-segment">
+            <section id="blackjack-rules" class="rule-segment" aria-hidden="true">
                 <p>
                     Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
                     Should this occur, the round is over automatically, and the one who possesses blackjack wins.
@@ -621,8 +622,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </p>
             </section>
 
-            <button class="rule-heading btn-bg"><h3>Scoreboard:</h3></button>
-            <section class="rule-segment">
+            <button class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
+            <section id="scoreboard-rules" class="rule-segment" aria-hidden="true">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </section> 
         `;
