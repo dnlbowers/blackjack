@@ -1,7 +1,7 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
-//mention infinate deck in the game rules
+//mention infinite deck in the game rules
 //consider adding more decks and shuffle function
 //change score board to stake and pot with a double your stake on win
 // key board short cuts - for as many buttons as possible
