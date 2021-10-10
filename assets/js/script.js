@@ -1,7 +1,7 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
-//mention infinite deck in the game rules
+//mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
 //consider adding more decks and shuffle function
 //change score board to stake and pot with a double your stake on win
 // key board short cuts - for as many buttons as possible
@@ -158,18 +158,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     firstTwoCards();
 
-    /**
-     * Deals the first two cards to the player and the house.
-     **/
-    function firstTwoCards() {
+
+    function resetHands() {
         playerHand = [];
         dealerHand = [];
         dealerCardContainerRef.innerHTML = "";
         playerCardContainerRef.innerHTML = "";
+    }
+
+    function createCardBack() {
         let cardBack = document.createElement("img");
         cardBack.src = "assets/images/decks/darkred.svg";
         cardBack.className = "card card-back";
         cardBack.alt = "The houses first card face down on the table"
+        return cardBack;
+    }
+    /**
+     * Deals the first two cards to the player and the house.
+     **/
+    function firstTwoCards() {
+        
+        resetHands();
+        let firstHouseCard = createCardBack();
 
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
@@ -180,11 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (child === houseCardsRef[0]) {
                 child.style.display = "none";
                 dealerCardContainerRef.insertBefore(
-                    cardBack,
+                    firstHouseCard,
                     child
                 ).style.display = "inline";
-                cardBack.style.position = "absolute";
-                cardBack.style.left = "15px";
+                firstHouseCard.style.position = "absolute";
+                firstHouseCard.style.left = "15px";
             }
         }
 
@@ -239,14 +249,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let value = valueArray[randomValue];
 
         // Create <img> with attributes to visually represent the value of the card in the DOM
-
         let card = document.createElement("img");
         card.src = `assets/images/${suit}/${value}.svg`;
         card.className = "card";
         card.alt = `${value} of ${suit}`;
         card.style.position = "absolute";
         
-
         //Assigns the card image to the appropriate hand according to the parameter passed.
         if (dealtFor === "player") {
             let playerCards = document.getElementById("player-card-container");
@@ -305,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // converts ace to low (from 11 to 1)
         } else if (handValue > 21 && hand.includes(11)) {
-            firstAce = hand.indexOf(11);
+            let firstAce = hand.indexOf(11);
             for (let i = 0; i <= hand.length; i++) {
                 
                 console.log('first ace index :>> ', firstAce);
@@ -323,6 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             return handValue;
         }
+        
     }
     /**
      * Disables hit button and checks several conditions before deciding how the dealers should play it's hand and
@@ -557,8 +566,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // checkHandValue(playerHand);
             let runningTotal = checkHandValue(playerHand);
             document.getElementById("player-total").innerHTML = `${runningTotal}`;
-            if (playerHand > 21) {
-                canPlay = false;
+            // if (playerHand > 21) {
+            //     canPlay = false;
+            // } else 
+            if (runningTotal === 21) {
+                computerTurn();
             }
     }
 
