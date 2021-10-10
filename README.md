@@ -4,8 +4,6 @@ Blackjack is a classic game dating back to around the 1700s. This game is enjoye
 
 My current line of work in the online casino industry and hence I wanted to create something relevant to my daily life. My rendition is intended as a bit of harmless fun to pass the time much like those days spent on the back of the bus playing for pennies.
 
-https://dnlbowers.github.io/blackjack/
-
 ## **Planning Stage**
 
 ### **Target Audience:**
@@ -81,13 +79,41 @@ Along the way the design and menu options have changed slightly in order to impr
     * The title and surrounding logo's.
     * MEnu button visible from the game table but hidden when within the menu itself.
 
-Since this for this project wireframes are not required and were used only to structure my own creative process I did not feel the need to pre-design each of the sub menus in turn. For this reason I have omitted them. 
+Since this for this project wireframes are not required and were used only to structure my own creative process I did not feel the need to pre-design each of the sub-menus in turn. For this reason I have omitted them. 
 
 ### **Color Scheme:**
-When deciding the app's color scheme I first began with the classic green table and worked outwards from there with the aim of creating the regal feel of a casino and keeping my contrast scores as high as possible for accessibility purposes.
+When deciding the app's color scheme, I first began with the classic green table then worked outwards from there. My was to create the regal feeling of a casino, whilst keeping my contrast scores as high as possible for accessibility purposes.
  
 I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%2300FFBF%2C%20%20%0D%0A%23fff%2C%0D%0A%238B0000%2C%0D%0A%23000.%0D%0A%23bf953f%2C%20%0D%0A%23fcf6ba%2C%0D%0A%20%23b38728%2C%0D%0A%23fbf5b7%2C%0D%0A%23008000%0D%0A%23d3d3d3%0D%0A%23ff0000%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
 
+## **Current Features**
+###  **Header Element**
 
+
+## **Future-Enhancements**
+
+
+## **Testing Phase**
+
+***
+## **Deployment**
+I deployed the page on GitHub pages via the following procedure: -
+
+1. From the project's [repository](https://github.com/dnlbowers/modern-buddhism), go to the **Settings** tab.
+2. From the left-hand menu, select the **Pages** tab.
+3. Under the **Source** section, select the **Main** branch from the drop-down menu and click **Save**.
+4. A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
+
+You  can find the live site via the following URL - [Live Blackjack game](https://dnlbowers.github.io/blackjack)
+***
+
+## **Credits**
+### **Honorable mentions**
+Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped me and my family in more ways than I could ever decribe and I am proud to have him as a brother in law. 
+Bim - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue I had without taking over. This mans teaching style is skillful and caring! I could not have managed to get through this project without him seeing my distress and making sure to keep an eye on me from there on. He even pressured me into avoiding my avoidance and I am so glad he did.
+Richard - Mentor who gave me faith in myself throughout and calmed me down in moment of panic
+Simen - Was on my first call with BIM and also aided the tutorial on event listeners. Simen has repeatedly stepped in to guide me along the way and I am lucky to have such a skilled alumini on my side. 
+matt - A true friend and confidant. Matt is always close to the keyboard if I need him. His webinar of CSS positioning gave me the aha moment I needed when trying to work out how to fan the playing cards. Since I first met Matt in a random slack call I lnew he was someone I would be able to relate too easily. This man is turely one to watch in the realm of coding. 
+daisy - Within seconds of me posting the question about the W3c assesability guidelines for accordion menus she jump into a call with me and helped me rubber duck it out. She is truely a super women with a keyboard and I am luck to have had her be to willing to assist me. 
