@@ -1,3 +1,5 @@
+//WHY IS THE GAME MENU ONLY WORKING EVERY OTHER TIME?
+
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
@@ -32,7 +34,8 @@ const menuBtnRef = document.getElementById("menu-btn-wrap");
 const playGameBtnRef = document.getElementById("play-game-btn");
 const gameRulesBtnRef = document.getElementById("game-rules-btn");
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
-
+const ruleHeading = document.querySelectorAll(".rule-heading");
+const ruleSegment = document.querySelectorAll(".rule-segment");
 const exitRulesRef = document.getElementById("exit-rules");
 const exitRgRef = document.getElementById("exit-rg")
 
@@ -65,10 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     gameRulesBtnRef.addEventListener("click", function () {
-
+        ruleMenuFunctionality();
         rulesContainerRef.style.display = "block";
         mainMenuRef.style.display = "none";
-        ruleMenuFunctionality();
 
     });
 
@@ -92,16 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     gameRuleAnchorRef.addEventListener("click", function () {
-        gameTableRef.style.display = "none";
-        // subMenuContainerRef.style.display = "block";
-        menuBtnRef.style.display = "none";
-        mainMenuRef.style.display = "none";
-        rulesContainerRef.style.display = "block";
-
         ruleMenuFunctionality();
+        rulesContainerRef.style.display = "block";
+        gameTableRef.style.display = "none";
+        menuBtnRef.style.display = "none";
+
+        
     });
 
     exitRulesRef.addEventListener("click", function () {
+        
         rulesContainerRef.style.display = "none";
         mainMenuRef.style.display = "flex";
     });
@@ -145,25 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearTally();
             } 
         } 
-        
-        // switch (canPlay){
-        //     case event.key === "h":
-        //         hit(playerHand);
-        //         if (total > 21) {
-        //             canPlay = false;
-        //         }
-        //         break;
-        //     case event.key === "s":
-        //         computerTurn();
-        //         break;
-        // }
-
-        // switch (canPlay === false){
-        //     case event.key === "d":
-        //         reDeal();  
-        //         break;
-
-        // }
          
     });
 
@@ -565,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function reDeal() {
-        // hitBtnRef.disabled = false;
+        
         canPlay = true;
         modalSurroundRef.style.display = "none";
 
@@ -598,8 +581,8 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function ruleMenuFunctionality() {
         console.log("rules active")
-        let ruleHeading = document.querySelectorAll(".rule-heading");
-        let ruleSegment = document.querySelectorAll(".rule-segment");
+        // const ruleHeading = document.querySelectorAll(".rule-heading");
+        // const ruleSegment = document.querySelectorAll(".rule-segment");
 
         for (let i = 0; i < ruleHeading.length; i++) {
             ruleHeading[i].addEventListener("click", function () {
@@ -610,36 +593,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-
-    /**
-     * Allows the game rules meu to extend
-     */
-    function extendRulePanel(target) {
-        hideRulePanels();
-        console.log("extend");
-
-        target.classList.add("active");
-        target.removeAttribute("aria-expanded", "false");
-        target.setAttribute("aria-expanded", "true");
-        target.nextElementSibling.style.maxHeight =
-            target.nextElementSibling.scrollHeight + "px";
+        
+        
+        /**
+        * Allows the game rules meu to extend
+        */
+        function extendRulePanel(target) {
+            hideRulePanels();
+            
+            target.classList.add("active");
+            target.removeAttribute("aria-expanded", "false");
+            target.setAttribute("aria-expanded", "true");
             target.nextElementSibling.removeAttribute("aria-hidden", "true");
             target.nextElementSibling.setAttribute("aria-hidden", "false");
-    }
-
-    /**
-     * Hides game rules segments when a new one is open
-     */
-    function hideRulePanels() {
-        console.log("hide panel")
-        for (let i = 0; i < ruleSegment.length; i++) {
-            ruleSegment[i].style.maxHeight = null;
-            ruleSegment[i].setAttribute("aria-hidden", "true");
-            ruleHeading[i].classList.remove("active");
-            ruleHeading[i].setAttribute("aria-expanded", "false");
+            target.nextElementSibling.style.maxHeight =
+                target.nextElementSibling.scrollHeight + "px";
+        }
+        
+        /**
+        * Hides game rules segments when a new one is open
+        */    
+        function hideRulePanels() {
+            
+            for (let i = 0; i < ruleSegment.length; i++) {
+                ruleSegment[i].style.maxHeight = null;
+                ruleSegment[i].setAttribute("aria-hidden", "true");
+                ruleHeading[i].classList.remove("active");
+                ruleHeading[i].setAttribute("aria-expanded", "false");   
+            } 
         }
     }
-}
 
     /**
      * Adds content to the responsible gaming modal
@@ -648,6 +631,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
         mainMenuRef.style.display = "none";
         responsibleContainerRef.style.display = "block";
-        menuBtnRef.style.display = "none";
     }
 });

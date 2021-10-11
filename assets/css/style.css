@@ -108,7 +108,12 @@ header {
     text-decoration: underline;
 }
 
-#responsible-sub-menu, #rules-sub-menu{
+#responsible-sub-menu {
+    display: none;
+    position: relative;
+}
+
+#rules-sub-menu{
     display: none;
     position: relative;
 }
