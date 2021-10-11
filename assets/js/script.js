@@ -1,7 +1,7 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
-// create a way for player to initiate the first two cards being dealt on the very first trun
+
 //mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
 //consider a slight delay when computer turn is triggered automatically and before the result modal appearing
 //consider adding more decks and shuffle function
@@ -162,8 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
     resetScoreRef.addEventListener("click", function () {
         clearTally();
     });
-
-    // firstTwoCards();
 
 
     function resetHands() {

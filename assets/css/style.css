@@ -123,7 +123,7 @@ header {
     width: 100%;
     text-align: left;
     transition: 0.4s;
-  }
+}
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 
@@ -132,26 +132,30 @@ header {
   }
 
   */
-  .rule-heading:after {
+.rule-heading:after {
     color: #000;
     content: '\02660'; 
     font-size: 20px;
     margin-right: 5px;
-  }
+}
   
-  .active:after {
+.active:after {
     content: '\2665'; 
     color: 	#ff0000;
-  }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .rule-segment {
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.rule-segment {
     max-height: 0;
     overflow: hidden;
     padding: 0 18px;
     text-align: left;
     transition: max-height 0.4s ease-out;
-  }
+}
+
+.rule-segment > p {
+    padding-bottom: 7px;
+}
 
 /** Button styling **/
 /** Menu buttons **/
@@ -359,5 +363,17 @@ footer {
 
     #dealer-side, #player-side {
         width: 145px;
+    }
+
+    .rule-heading {
+       font-size: 18px; 
+    }
+
+    .rule-heading:after {
+        font-size: 28px;
+    }
+
+    .rule-segment > p {
+        font-size: 15px;
     }
 }
