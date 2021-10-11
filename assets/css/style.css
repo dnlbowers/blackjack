@@ -108,7 +108,7 @@ header {
     text-decoration: underline;
 }
 
-#sub-menu-container{
+#responsible-sub-menu, #rules-sub-menu{
     display: none;
     position: relative;
 }

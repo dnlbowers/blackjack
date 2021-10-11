@@ -18,7 +18,8 @@
 //reference to the module window frame
 const mainMenuRef = document.getElementById("main-menu");
 const gameTableRef = document.getElementById("game-table");
-const subMenuContainerRef = document.getElementById("sub-menu-container");
+const rulesContainerRef = document.getElementById("rules-sub-menu");
+const responsibleContainerRef = document.getElementById("responsible-sub-menu")
 
 //In game pop up references
 const modalSurroundRef = document.getElementById("result-modal");
@@ -31,10 +32,12 @@ const menuBtnRef = document.getElementById("menu-btn-wrap");
 const playGameBtnRef = document.getElementById("play-game-btn");
 const gameRulesBtnRef = document.getElementById("game-rules-btn");
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
-const backToMenuRef = document.querySelector(".back-to-menu");
+
+const exitRulesRef = document.getElementById("exit-rules");
+const exitRgRef = document.getElementById("exit-rg")
 
 //containers to send HTML from Javascript
-const subMenuContentRef = document.getElementById("sub-menu-content");
+// const subMenuContainerRef = document.querySelector(".sub-menu-container");
 
 //game table elements references
 const hitBtnRef = document.getElementById("hit-btn");
@@ -56,34 +59,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
+        
         displayGameTable();
+    
     });
 
     gameRulesBtnRef.addEventListener("click", function () {
-        // mainMenuRef.style.display = "none";
-        // subMenuContainerRef.style.display = "block";
-        // menuBtnRef.style.display = "none";
 
-        gameRulesContent();
+        rulesContainerRef.style.display = "block";
+        mainMenuRef.style.display = "none";
+        ruleMenuFunctionality();
+
     });
 
     responsibleGamblingBtnRef.addEventListener("click", function () {
-        // mainMenuRef.style.display = "none";
-        // subMenuContainerRef.style.display = "block";
-        // menuBtnRef.style.display = "none";
 
         responsibleGamingMenu();
+
     });
 
+    exitRgRef.addEventListener("click", function () {
+        
+        responsibleContainerRef.style.display = "none";
+        mainMenuRef.style.display = "flex";
+    
+    });
+    
     //gameRulesBtnRef.addEventListener('click', gameRulesContent);
 
     menuBtnRef.addEventListener("click", function () {
         accessMenu();
-    });
-
-    backToMenuRef.addEventListener("click", function () {
-        subMenuContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
     });
 
     gameRuleAnchorRef.addEventListener("click", function () {
@@ -91,7 +96,15 @@ document.addEventListener("DOMContentLoaded", function () {
         // subMenuContainerRef.style.display = "block";
         menuBtnRef.style.display = "none";
 
-        gameRulesContent();
+        // subMenuContentRef.innerHTML = rules;
+        rulesContainerRef.style.display = "block";
+        mainMenuRef.style.display = "none";
+        ruleMenuFunctionality();
+    });
+
+    exitRulesRef.addEventListener("click", function () {
+        rulesContainerRef.style.display = "none";
+        mainMenuRef.style.display = "flex";
     });
 
     //Game table button event listeners
@@ -108,7 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "t") {
                 displayGameTable();
             } else if (event.key === "r") {
-                gameRulesContent();
+                rulesContainerRef.style.display = "block";
+                mainMenuRef.style.display = "none";
+                ruleMenuFunctionality();
             }
             else if (event.key === "g") {
                 responsibleGamingMenu();
@@ -546,8 +561,8 @@ document.addEventListener("DOMContentLoaded", function () {
         gameTableRef.style.display = "none";
         mainMenuRef.style.display = "flex";
         menuBtnRef.style.display = "none";
-        subMenuContainerRef.style.display = "none";
-        
+        responsibleContainerRef.style.display = "none";
+        rulesContainerRef.style.display = "none";
     }
 
     function reDeal() {
@@ -578,93 +593,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //Menu pages
-    /**
-     * Adds content to the game rules modal
-     */
-    function gameRulesContent() {
-        let rules = `
-            <h2 class="menu-heading">Game Rules</h2>
-            
-            <button id="objective-accordion" class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
-            
-            <div id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion" role="region">   
-                <p>
-                    The aim of the game is simple, get as close to 21 as possible without going over.
-                </p>
-                <p>
-                    You will compete against the house, taking it in turns to play your hands. The one with the highest value under 22 will win the round.
-                </p>
-            </div> 
-            
-            <button id="how-to-accordion" class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
-            
-            <div id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion" role="region">
-                <p>
-                    To draw another card from the deck, click the "HIT ME!" button on the game table.
-                </p>
-                <p>
-                    Careful though, as if you go over 21, the jig is up, and you lose! The good news is that this applies to the house's hand too.
-                </p>
-                <p>
-                    Once content with your hand, click the "STAND" button on the game table.
-                </p>  
-                <p>
-                    The house will always stand on a hand value greater than or equal to 17.
-                </p>
-            </div> 
-            
-            <button id="card-value-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
-            
-            <div id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion" role="region">
-                <p>
-                    Each card is worth the same value as the number printed on it.
-                </p>
-                <p>
-                    All picture cards (Jack, Queen, King) have a value of 10.
-                </p>
-                <p>
-                    By default, Ace is high (equal to 11); however, if you go over 21, the system will automatically convert the Ace to have the value of 1, 
-                    which allows you to keep hitting the deck until you stand or go bust.
-                </p>
-            </div> 
-            
-            <button id="blackjack-accordion" class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
-            
-            <div id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion" role="region">
-                <p>
-                    Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
-                    Should this occur, the round is over automatically, and the one who possesses blackjack wins.
-                </p>
-                <p>
-                    Sadly if both the player and house have blackjack, the house will always win! Sorry, but those are the rules.
-                </p>
-            </div>
-
-            <button id="scoreboard-accordion" class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
-            <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
-                <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
-            </div> 
-
-            <button id="keyboard-controls-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Keyboard Controls:</h3></button>
-            
-            <div id="keyboard-controls-section" class="rule-segment" aria-hidden="true" aria-labelledby="keyboard-controls-accordion" role="region">
-                <p>
-                    The game can be play from the keyboard without the need of you mouse.
-                </p>
-                <p>
-                    All key controls as marked in read with a black underline on the relevant button i.e H = hit.
-                </p>
-                <p>
-                    The control keys will only works whilst the relevant control button is visible on the screen.
-                </p>
-            </div> 
-        `;
-
-        subMenuContentRef.innerHTML = rules;
-        subMenuContainerRef.style.display = "block";
-        mainMenuRef.style.display = "none";
-        ruleMenuFunctionality();
-    }
 
     /**
      * Gives the accordion menu the functionality
@@ -683,56 +611,41 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        /**
-         * Allows the game rules meu to extend
-         */
-        function extendRulePanel(target) {
-            hideRulePanels();
+    /**
+     * Allows the game rules meu to extend
+     */
+    function extendRulePanel(target) {
+        hideRulePanels();
 
-            target.classList.add("active");
-            target.removeAttribute("aria-expanded", "false");
-            target.setAttribute("aria-expanded", "true");
-            target.nextElementSibling.style.maxHeight =
-                target.nextElementSibling.scrollHeight + "px";
-                target.nextElementSibling.removeAttribute("aria-hidden", "true");
-                target.nextElementSibling.setAttribute("aria-hidden", "false");
-        }
+        target.classList.add("active");
+        target.removeAttribute("aria-expanded", "false");
+        target.setAttribute("aria-expanded", "true");
+        target.nextElementSibling.style.maxHeight =
+            target.nextElementSibling.scrollHeight + "px";
+            target.nextElementSibling.removeAttribute("aria-hidden", "true");
+            target.nextElementSibling.setAttribute("aria-hidden", "false");
+    }
 
-        /**
-         * Hides game rules segments when a new one is open
-         */
-        function hideRulePanels() {
-            for (let i = 0; i < ruleSegment.length; i++) {
-                ruleSegment[i].style.maxHeight = null;
-                ruleSegment[i].setAttribute("aria-hidden", "true");
-                ruleHeading[i].classList.remove("active");
-                ruleHeading[i].setAttribute("aria-expanded", "false");
-            }
+    /**
+     * Hides game rules segments when a new one is open
+     */
+    function hideRulePanels() {
+        for (let i = 0; i < ruleSegment.length; i++) {
+            ruleSegment[i].style.maxHeight = null;
+            ruleSegment[i].setAttribute("aria-hidden", "true");
+            ruleHeading[i].classList.remove("active");
+            ruleHeading[i].setAttribute("aria-expanded", "false");
         }
     }
+}
 
     /**
      * Adds content to the responsible gaming modal
      */
     function responsibleGamingMenu() {
-        let rgInfo = `
-            <h2 class="menu-heading">Responsible Gaming</h2>
-            <p class="rg-content">
-                I hate to be "that guy," but please remember that while games 
-                like this can be a lot of fun, gambling can become a severe problem for some.
-            </p>
-            <p class="rg-content">
-                Should you find yourself compulsively gambling without control, please seek help from 
-                your local health care provider, who can direct you to the support resources in your area. 
-            </p>
-            <p class="rg-content">
-                With that said, this game is free to play, so please enjoy it responsibly.
-            </p>
-        `;
 
-        subMenuContentRef.innerHTML = rgInfo;
         mainMenuRef.style.display = "none";
-        subMenuContainerRef.style.display = "block";
+        responsibleContainerRef.style.display = "block";
         menuBtnRef.style.display = "none";
     }
 });
