@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let playerHand = [];
     let dealerHand = [];
 
-    let canPlay = true;
+    let canPlay = false;
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
@@ -95,10 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
         gameTableRef.style.display = "none";
         // subMenuContainerRef.style.display = "block";
         menuBtnRef.style.display = "none";
-
-        // subMenuContentRef.innerHTML = rules;
-        rulesContainerRef.style.display = "block";
         mainMenuRef.style.display = "none";
+        rulesContainerRef.style.display = "block";
+
         ruleMenuFunctionality();
     });
 
@@ -358,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * and calling the compareHands function.
      */
     function computerTurn() {
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
 
         houseCardsRef[0].style.display = "none";
@@ -411,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when house has blackjack
      */
     function houseBlackjack() {
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
         modalSurroundRef.style.display = "flex";
 
@@ -426,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when player has blackjack
      */
     function playerBlackjack() {
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
         modalSurroundRef.style.display = "flex";
 
@@ -442,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function playerBust(handValue) {
         
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
         document.getElementById("player-total").innerHTML = `${handValue}`;
         modalSurroundRef.style.display = "flex"; 
@@ -458,7 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for a draw
      */
     function draw(playerHandValue) {
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -474,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for when the house goes bust
      */
     function houseBust(houseHand) {
-        hitBtnRef.disabled = true;
+        // hitBtnRef.disabled = true;
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -566,7 +565,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function reDeal() {
-        hitBtnRef.disabled = false;
+        // hitBtnRef.disabled = false;
         canPlay = true;
         modalSurroundRef.style.display = "none";
 
@@ -598,6 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Gives the accordion menu the functionality
      */
     function ruleMenuFunctionality() {
+        console.log("rules active")
         let ruleHeading = document.querySelectorAll(".rule-heading");
         let ruleSegment = document.querySelectorAll(".rule-segment");
 
@@ -616,6 +616,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function extendRulePanel(target) {
         hideRulePanels();
+        console.log("extend");
 
         target.classList.add("active");
         target.removeAttribute("aria-expanded", "false");
@@ -630,6 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Hides game rules segments when a new one is open
      */
     function hideRulePanels() {
+        console.log("hide panel")
         for (let i = 0; i < ruleSegment.length; i++) {
             ruleSegment[i].style.maxHeight = null;
             ruleSegment[i].setAttribute("aria-hidden", "true");
