@@ -230,8 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * places and image of the card in DOM according to the parameter passed.
      */
     function dealCard(dealtFor) {
-        let suitArray = ["hearts", "clubs", "spades", "diamonds"];
-        let valueArray = [
+        const suitArray = ["hearts", "clubs", "spades", "diamonds"];
+        const valueArray = [
             2,
             3,
             4,
@@ -717,15 +717,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function responsibleGamingMenu() {
         let rgInfo = `
             <h2 class="menu-heading">Responsible Gaming</h2>
-            <p>
+            <p class="rg-content">
                 I hate to be "that guy," but please remember that while games 
                 like this can be a lot of fun, gambling can become a severe problem for some.
             </p>
-            <p>
+            <p class="rg-content">
                 Should you find yourself compulsively gambling without control, please seek help from 
                 your local health care provider, who can direct you to the support resources in your area. 
             </p>
-            <p>
+            <p class="rg-content">
                 With that said, this game is free to play, so please enjoy it responsibly.
             </p>
         `;

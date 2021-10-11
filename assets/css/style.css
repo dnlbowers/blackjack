@@ -157,6 +157,10 @@ header {
     padding-bottom: 7px;
 }
 
+.rg-content {
+    padding-bottom: 7px;
+}
+
 /** Button styling **/
 /** Menu buttons **/
 .back-to-menu {
@@ -292,7 +296,7 @@ header {
     /* left: 50%; */
     height: 150px;
     justify-content: space-evenly;
-    max-width: 740px;
+    max-width: 600px;
     position: absolute;
     top: 330px;
     /* transform: translate(-50%, -50%); */
@@ -374,6 +378,10 @@ footer {
     }
 
     .rule-segment > p {
+        font-size: 15px;
+    }
+
+    .rg-content {
         font-size: 15px;
     }
 }
