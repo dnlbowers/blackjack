@@ -19,7 +19,12 @@
 const mainMenuRef = document.getElementById("main-menu");
 const gameTableRef = document.getElementById("game-table");
 const subMenuContainerRef = document.getElementById("sub-menu-container");
-const modalSurroundRef = document.getElementById("modal-surround");
+
+//In game pop up references
+const modalSurroundRef = document.getElementById("result-modal");
+const resultHeadingRef = document.getElementById("result");
+const resultContentRef = document.getElementById("description");
+const resultModalBtnRef = document.getElementById("redeal-btn");
 
 //Menu option button references
 const menuBtnRef = document.getElementById("menu-btn-wrap");
@@ -35,7 +40,6 @@ const subMenuContentRef = document.getElementById("sub-menu-content");
 const hitBtnRef = document.getElementById("hit-btn");
 const gameRuleAnchorRef = document.getElementById("rules-anchor");
 const standBtnRef = document.getElementById("stand-btn");
-const redealBtnRef = document.getElementById("redeal-btn");
 const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
 const playerCardContainerRef = document.getElementById("player-card-container");
@@ -109,7 +113,14 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (event.key === "g") {
                 responsibleGamingMenu();
             }
-        }else if (canPlay) {
+        } else if (modalSurroundRef.style.display !== "none") {
+            if (event.key === "d") {
+                reDeal();   
+            } else if (event.key === "m") {
+                accessMenu();
+            }
+
+        } else if (canPlay) {
             if (event.key === "h") {
                 hit(playerHand);
             } else if (event.key === "s") {
@@ -119,13 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (event.key === "c") {
                 clearTally();
             } 
-        } else if (canPlay === false) {
-            if (event.key === "d") {
-                reDeal();   
-            } else if (event.key === "m") {
-                accessMenu();
-            }
-        }
+        } 
         
         // switch (canPlay){
         //     case event.key === "h":
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     standBtnRef.addEventListener("click", computerTurn);
 
-    redealBtnRef.addEventListener("click", function () {
+    resultModalBtnRef.addEventListener("click", function () {
         reDeal();
     });
 
@@ -158,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTally();
     });
 
-    firstTwoCards();
+    // firstTwoCards();
 
 
     function resetHands() {
@@ -397,8 +402,9 @@ document.addEventListener("DOMContentLoaded", function () {
         canPlay = false;
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "You Lose!";
-        document.getElementById("description").innerHTML = "The house has Blackjack!";
+        resultHeadingRef.innerHTML = "You Lose!";
+        resultContentRef.innerHTML = "The house has Blackjack!";
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
 
         incrementLoses();
     }
@@ -411,8 +417,9 @@ document.addEventListener("DOMContentLoaded", function () {
         canPlay = false;
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "You Win!";
-        document.getElementById("description").innerHTML = "You have Blackjack!";
+        resultHeadingRef.innerHTML = "You Win!";
+        resultContentRef.innerHTML = "You have Blackjack!";
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
 
         incrementWins();
     }
@@ -425,11 +432,11 @@ document.addEventListener("DOMContentLoaded", function () {
         hitBtnRef.disabled = true;
         canPlay = false;
         document.getElementById("player-total").innerHTML = `${handValue}`;
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "block"; 
 
-        document.getElementById("result").innerHTML = "You're Bust!";
-        let bustModal = document.getElementById("description");
-        bustModal.innerHTML = `The limit is 21, your current score is ${handValue}.`;
+        resultHeadingRef.innerHTML = "You're Bust!";
+        resultContentRef.innerHTML = `The limit is 21, your current score is ${handValue}.`;
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
  
         incrementLoses();
     }
@@ -443,10 +450,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "Draw!";
-        document.getElementById(
-            "description"
-        ).innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
+        resultHeadingRef.innerHTML = "Draw!";
+        resultContentRef.innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
 
         incrementDraws();
     }
@@ -460,11 +466,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "You Win!";
-        document.getElementById(
-            "description"
-        ).innerHTML = `The house went bust with a value of ${houseHand}.`;
-
+        resultHeadingRef.innerHTML = "You Win!";
+        resultContentRef.innerHTML = `The house went bust with a value of ${houseHand}.`;
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
+        
         incrementWins();
     }
 
@@ -477,10 +482,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "You Win!";
-        document.getElementById(
-            "description"
-        ).innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
+        resultHeadingRef.innerHTML = "You Win!";
+        resultContentRef.innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
 
         incrementWins();
     }
@@ -494,10 +498,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalSurroundRef.style.display = "block";
 
-        document.getElementById("result").innerHTML = "You Lose!";
-        document.getElementById(
-            "description"
-        ).innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
+        resultHeadingRef.innerHTML = "You Lose!";
+        resultContentRef.innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
+        resultModalBtnRef.innerHTML = `<span class="key-control-indicator">D</span>eal Again`;
  
         incrementLoses();
     }
@@ -642,6 +645,20 @@ document.addEventListener("DOMContentLoaded", function () {
             <button id="scoreboard-accordion" class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
+            </div> 
+
+            <button id="keyboard-controls-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Keyboard Controls:</h3></button>
+            
+            <div id="keyboard-controls-section" class="rule-segment" aria-hidden="true" aria-labelledby="keyboard-controls-accordion" role="region">
+                <p>
+                    The game can be play from the keyboard without the need of you mouse.
+                </p>
+                <p>
+                    All key controls as marked in read with a black underline on the relevant button i.e H = hit.
+                </p>
+                <p>
+                    The control keys will only works whilst the relevant control button is visible on the screen.
+                </p>
             </div> 
         `;
 
