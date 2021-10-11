@@ -1,7 +1,9 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
+// create a way for player to initiate the first two cards being dealt on the very first trun
 //mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
+//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
 //consider adding more decks and shuffle function
 //change score board to stake and pot with a double your stake on win
 // key board short cuts - for as many buttons as possible
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
-        displayGameTable()
+        displayGameTable();
     });
 
     gameRulesBtnRef.addEventListener("click", function () {
@@ -113,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (event.key === "s") {
                 computerTurn();
             } else if (event.key === "m") {
-                accessMenu()
+                accessMenu();
             } else if (event.key === "c") {
                 clearTally();
             } 
@@ -121,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "d") {
                 reDeal();   
             } else if (event.key === "m") {
-                accessMenu()
+                accessMenu();
             }
         }
         
@@ -153,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     resetScoreRef.addEventListener("click", function () {
-        clearTally()
+        clearTally();
     });
 
     firstTwoCards();
@@ -170,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let cardBack = document.createElement("img");
         cardBack.src = "assets/images/decks/darkred.svg";
         cardBack.className = "card card-back";
-        cardBack.alt = "The houses first card face down on the table"
+        cardBack.alt = "The houses first card face down on the table";
         return cardBack;
     }
     /**
@@ -186,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dealerHand.push(dealCard("dealer"));
         }
 
-        for (child of houseCardsRef) {
+        for (let child of houseCardsRef) {
             if (child === houseCardsRef[0]) {
                 child.style.display = "none";
                 dealerCardContainerRef.insertBefore(
@@ -321,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log('start' + hand);
                     hand.splice(i, 1);
                     hand.push(1);
-                    console.log('end' + hand)
+                    console.log('end' + hand);
                     return checkHandValue(hand);
                 }
             }
@@ -678,7 +680,7 @@ document.addEventListener("DOMContentLoaded", function () {
             target.nextElementSibling.style.maxHeight =
                 target.nextElementSibling.scrollHeight + "px";
                 target.nextElementSibling.removeAttribute("aria-hidden", "true");
-                target.nextElementSibling.setAttribute("aria-hidden", "false" )
+                target.nextElementSibling.setAttribute("aria-hidden", "false");
         }
 
         /**
@@ -687,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function hideRulePanels() {
             for (let i = 0; i < ruleSegment.length; i++) {
                 ruleSegment[i].style.maxHeight = null;
-                ruleSegment[i].setAttribute("aria-hidden", "true")
+                ruleSegment[i].setAttribute("aria-hidden", "true");
                 ruleHeading[i].classList.remove("active");
                 ruleHeading[i].setAttribute("aria-expanded", "false");
             }
