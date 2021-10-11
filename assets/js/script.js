@@ -67,17 +67,38 @@ document.addEventListener("DOMContentLoaded", function () {
     
     });
 
+    //rule related event listeners
+    //Main Menu Rules button
     gameRulesBtnRef.addEventListener("click", function () {
+        
         ruleMenuFunctionality();
         rulesContainerRef.style.display = "block";
         mainMenuRef.style.display = "none";
 
     });
-
+    
+    //Games table anchor for the game rules
+    gameRuleAnchorRef.addEventListener("click", function () {
+        
+        ruleMenuFunctionality();
+        rulesContainerRef.style.display = "block";
+        gameTableRef.style.display = "none";
+        menuBtnRef.style.display = "none";
+        
+    });
+    
+    //Main Menu button for RG page
     responsibleGamblingBtnRef.addEventListener("click", function () {
 
         responsibleGamingMenu();
 
+    });
+
+    // return to main menu from sub menu buttons
+    exitRulesRef.addEventListener("click", function () {
+    
+        rulesContainerRef.style.display = "none";
+        mainMenuRef.style.display = "flex";
     });
 
     exitRgRef.addEventListener("click", function () {
@@ -86,26 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
         mainMenuRef.style.display = "flex";
     
     });
-    
-    //gameRulesBtnRef.addEventListener('click', gameRulesContent);
 
+    //Menu btn on game table
     menuBtnRef.addEventListener("click", function () {
         accessMenu();
-    });
-
-    gameRuleAnchorRef.addEventListener("click", function () {
-        ruleMenuFunctionality();
-        rulesContainerRef.style.display = "block";
-        gameTableRef.style.display = "none";
-        menuBtnRef.style.display = "none";
-
-        
-    });
-
-    exitRulesRef.addEventListener("click", function () {
-        
-        rulesContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
     });
 
     //Game table button event listeners
@@ -115,6 +120,17 @@ document.addEventListener("DOMContentLoaded", function () {
             hit(playerHand);
         }
     });
+
+    standBtnRef.addEventListener("click", computerTurn);
+
+    resultModalBtnRef.addEventListener("click", function () {
+        reDeal();
+    });
+
+    resetScoreRef.addEventListener("click", function () {
+        clearTally();
+    });
+
 
     //Keyboard controls for on the game table
     window.addEventListener("keydown", function (event) {
@@ -150,24 +166,19 @@ document.addEventListener("DOMContentLoaded", function () {
          
     });
 
-    standBtnRef.addEventListener("click", computerTurn);
-
-    resultModalBtnRef.addEventListener("click", function () {
-        reDeal();
-    });
-
-    resetScoreRef.addEventListener("click", function () {
-        clearTally();
-    });
-
-
+    /**
+     * Resets both hands on the table to zero
+     */
     function resetHands() {
         playerHand = [];
         dealerHand = [];
         dealerCardContainerRef.innerHTML = "";
         playerCardContainerRef.innerHTML = "";
     }
-
+    
+    /**
+     * Creates the img of a card back for the first house card dealt
+     */
     function createCardBack() {
         let cardBack = document.createElement("img");
         cardBack.src = "assets/images/decks/darkred.svg";
@@ -176,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return cardBack;
     }
     /**
-     * Deals the first two cards to the player and the house.
+     * Deals the first two cards to the player and the house, adds up the hand total and triggers a check for blackjack.
      **/
     function firstTwoCards() {
         
@@ -227,8 +238,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * places and image of the card in DOM according to the parameter passed.
      */
     function dealCard(dealtFor) {
-        const suitArray = ["hearts", "clubs", "spades", "diamonds"];
-        const valueArray = [
+        const allSuits = ["hearts", "clubs", "spades", "diamonds"];
+        const allCardValues = [
             2,
             3,
             4,
@@ -247,8 +258,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let randomSuit = Math.floor(Math.random() * 4);
         let randomValue = Math.floor(Math.random() * 13);
 
-        let suit = suitArray[randomSuit];
-        let value = valueArray[randomValue];
+        let suit = allSuits[randomSuit];
+        let value = allCardValues[randomValue];
 
         // Create <img> with attributes to visually represent the value of the card in the DOM
         let card = document.createElement("img");
@@ -336,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }
     /**
-     * Disables hit button and checks several conditions before deciding how the dealers should play it's hand and
+     * ends players ability to play and triggers computers turn
      * and calling the compareHands function.
      */
     function computerTurn() {
@@ -371,14 +382,17 @@ document.addEventListener("DOMContentLoaded", function () {
      * Flips the houses hidden card face up once the players turn is over
      */
     function houseReveal() {
+        
         houseCardsRef[0].style.display = "none";
         houseCardsRef[1].style.display = "inline";
+    
     }
 
     /**
      * Compares final hands once both the house and the player have drawn all their desired cards
      */
     function compareHands(playerHandValue, houseHandValue) {
+        
         if (playerHandValue === houseHandValue) {
             draw(playerHandValue);
         } else if (playerHandValue > houseHandValue) {
@@ -386,14 +400,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             houseHandWins(playerHandValue, houseHandValue);
         }
-    }
-    //functions to display the results modals
 
+    }
+    
+    //functions to display the results modals
     /**
      * Displays message when house has blackjack
      */
     function houseBlackjack() {
-        // hitBtnRef.disabled = true;
+        
         canPlay = false;
         modalSurroundRef.style.display = "flex";
 
@@ -408,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message when player has blackjack
      */
     function playerBlackjack() {
-        // hitBtnRef.disabled = true;
+        
         canPlay = false;
         modalSurroundRef.style.display = "flex";
 
@@ -424,7 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function playerBust(handValue) {
         
-        // hitBtnRef.disabled = true;
+       
         canPlay = false;
         document.getElementById("player-total").innerHTML = `${handValue}`;
         modalSurroundRef.style.display = "flex"; 
@@ -440,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for a draw
      */
     function draw(playerHandValue) {
-        // hitBtnRef.disabled = true;
+        
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -456,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for when the house goes bust
      */
     function houseBust(houseHand) {
-        // hitBtnRef.disabled = true;
+        
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -472,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for when the player wins
      */
     function playerHandWins(playerHandValue, houseHandValue) {
-        // hitBtnRef.disabled = false;
+       
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -488,7 +503,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays message for when the house wins
      */
     function houseHandWins(playerHandValue, houseHandValue) {
-        // hitBtnRef.disabled = false;
+       
         canPlay = false;
 
         modalSurroundRef.style.display = "flex";
@@ -556,6 +571,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function clearTally() {
+        
         winTallyRef.innerHTML = 0;
         loseTallyRef.innerHTML = 0;
         drawTallyRef.innerHTML = 0;
@@ -563,12 +579,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function hit(playerHand) {
         playerHand.push(dealCard("player"));
-            // checkHandValue(playerHand);
+ 
             let runningTotal = checkHandValue(playerHand);
             document.getElementById("player-total").innerHTML = `${runningTotal}`;
-            // if (playerHand > 21) {
-            //     canPlay = false;
-            // } else 
+
             if (runningTotal === 21) {
                 computerTurn();
             }
@@ -586,14 +600,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < ruleHeading.length; i++) {
             ruleHeading[i].addEventListener("click", function () {
+                //this is trigger only to close the one segment form the last visit and then stops 
                 if (this.nextElementSibling.style.maxHeight) {
                     hideRulePanels();
+                    console.log("triggered");
+                //this is always triggered
                 } else {
                     extendRulePanel(this);
                 }
             });
         }
-        
         
         /**
         * Allows the game rules meu to extend
@@ -609,7 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
             target.nextElementSibling.style.maxHeight =
                 target.nextElementSibling.scrollHeight + "px";
         }
-        
+
         /**
         * Hides game rules segments when a new one is open
         */    
@@ -618,8 +634,9 @@ document.addEventListener("DOMContentLoaded", function () {
             for (let i = 0; i < ruleSegment.length; i++) {
                 ruleSegment[i].style.maxHeight = null;
                 ruleSegment[i].setAttribute("aria-hidden", "true");
+                ruleHeading[i].setAttribute("aria-expanded", "false"); 
                 ruleHeading[i].classList.remove("active");
-                ruleHeading[i].setAttribute("aria-expanded", "false");   
+                  
             } 
         }
     }
