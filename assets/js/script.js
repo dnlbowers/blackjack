@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function houseBlackjack() {
         hitBtnRef.disabled = true;
         canPlay = false;
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "You Lose!";
         resultContentRef.innerHTML = "The house has Blackjack!";
@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function playerBlackjack() {
         hitBtnRef.disabled = true;
         canPlay = false;
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "You Win!";
         resultContentRef.innerHTML = "You have Blackjack!";
@@ -445,7 +445,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hitBtnRef.disabled = true;
         canPlay = false;
         document.getElementById("player-total").innerHTML = `${handValue}`;
-        modalSurroundRef.style.display = "block"; 
+        modalSurroundRef.style.display = "flex"; 
 
         resultHeadingRef.innerHTML = "You're Bust!";
         resultContentRef.innerHTML = `The limit is 21, your current score is ${handValue}.`;
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hitBtnRef.disabled = true;
         canPlay = false;
 
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "Draw!";
         resultContentRef.innerHTML = `You and the house have equal hand values of ${playerHandValue}.`;
@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hitBtnRef.disabled = true;
         canPlay = false;
 
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "You Win!";
         resultContentRef.innerHTML = `The house went bust with a value of ${houseHand}.`;
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // hitBtnRef.disabled = false;
         canPlay = false;
 
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "You Win!";
         resultContentRef.innerHTML = `Congratulations! Your hand value of ${playerHandValue} wins over the house's hand value of ${houseHandValue}.`;
@@ -509,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // hitBtnRef.disabled = false;
         canPlay = false;
 
-        modalSurroundRef.style.display = "block";
+        modalSurroundRef.style.display = "flex";
 
         resultHeadingRef.innerHTML = "You Lose!";
         resultContentRef.innerHTML = `Better luck next time! Your hand value of ${playerHandValue} loses to the house's hand value of ${houseHandValue}.`;
