@@ -29,7 +29,7 @@
     </header>
     
     <!-- Background div acting as a boarder for the main area -->
-    <div id="main-surround" class="center-margin">
+    <main id="main-surround" class="center-margin">
         <!-- Menu navigation (Main menu) -->
         <nav id="main-menu" class="center-margin main-window txt-white">
             <h2 class="text-align-centre menu-heading">Main Menu</h2>
@@ -44,7 +44,7 @@
         <section id="rules-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Game Rules</h2>
             
-            <button id="objective-accordion" class="rule-heading btn-bg" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
+            <button id="objective-accordion" class="rule-heading" aria-controls="game-objective" aria-expanded="false"><h3>Game Objective:</h3></button>
             
             <div id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion" role="region">   
                 <p>
@@ -55,7 +55,7 @@
                 </p>
             </div> 
             
-            <button id="how-to-accordion" class="rule-heading btn-bg" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
+            <button id="how-to-accordion" class="rule-heading" aria-controls="how-to-play" aria-expanded="false"><h3>How To Play:</h3></button>
             
             <div id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion" role="region">
                 <p>
@@ -72,7 +72,7 @@
                 </p>
             </div> 
             
-            <button id="card-value-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
+            <button id="card-value-accordion" class="rule-heading" aria-controls="card-values" aria-expanded="false"><h3>Card Values:</h3></button>
             
             <div id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion" role="region">
                 <p>
@@ -87,7 +87,7 @@
                 </p>
             </div> 
             
-            <button id="blackjack-accordion" class="rule-heading btn-bg" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
+            <button id="blackjack-accordion" class="rule-heading" aria-controls="blackjack-rules" aria-expanded="false"><h3>Blackjack:</h3></button>
             
             <div id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion" role="region">
                 <p>
@@ -99,12 +99,12 @@
                 </p>
             </div>
 
-            <button id="scoreboard-accordion" class="rule-heading btn-bg" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
+            <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </div> 
 
-            <button id="keyboard-controls-accordion" class="rule-heading btn-bg" aria-controls="card-values" aria-expanded="false"><h3>Keyboard Controls:</h3></button>
+            <button id="keyboard-controls-accordion" class="rule-heading" aria-controls="card-values" aria-expanded="false"><h3>Keyboard Controls:</h3></button>
             
             <div id="keyboard-controls-section" class="rule-segment" aria-hidden="true" aria-labelledby="keyboard-controls-accordion" role="region">
                 <p>
@@ -120,6 +120,18 @@
             <!-- Button to navigate back to the navigation menu -->
             <nav>
                 <button id="exit-rules" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
+            </nav>
+        </section>
+
+        <section id="options-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
+            <h2 class="main-heading">Game Options</h2>
+            <h3>Color Theme</h3>
+            <div id="green" class="color-theme"></div>
+            <div id="blue" class="color-theme"></div>
+            <div id="neon" class="color-theme"></div>
+
+            <nav>
+                <button id="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
 
@@ -144,7 +156,7 @@
 
         
         <!-- Game area -->
-        <main id="game-table" class="text-align-centre main-window center-margin txt-white">       
+        <section id="game-table" class="text-align-centre main-window center-margin txt-white">       
             
             <!-- Container for dealers cards-->
             <section id="dealer-side" class="line-break-below">
@@ -203,8 +215,8 @@
                 <a id="rules-anchor" aria-label = "Takes you to the game rules">Game Rules</a>
                 <button class="btn btn-bg" id="stand-btn"><span class= "key-control-indicator">S</span>TAND</button>
             </section>
-        </main>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer with social links and copyright -->
     <footer class="text-align-centre">

@@ -108,35 +108,35 @@ header {
     text-decoration: underline;
 }
 
-#responsible-sub-menu {
+#responsible-sub-menu, #options-sub-menu, #rules-sub-menu {
     display: none;
     position: relative;
 }
 
-#rules-sub-menu{
-    display: none;
-    position: relative;
-}
 
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
     align-items: center;
+    background: linear-gradient(to top left, #fbf5b7, #b38728, #fcf6ba, #bf953f);
     cursor: pointer;
     display: flex;
+    font-family: 'Acme', sans-serif;
     justify-content: space-between;
     outline: none;
+    padding: 0 7px;
     width: 100%;
     text-align: left;
     transition: 0.4s;
 }
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 
-  /* .active, .rule-heading:hover {
-    background-color: #ccc;
-  }
+.active, .rule-heading:hover {
+background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7);
+text-shadow: 3px 2px 2px #fbf5b7;
+}
 
-  */
+ 
 .rule-heading:after {
     color: #000;
     content: '\02660'; 
@@ -162,9 +162,6 @@ header {
     padding-bottom: 7px;
 }
 
-.rg-content {
-    padding-bottom: 7px;
-}
 
 /** Button styling **/
 /** Menu buttons **/
@@ -277,19 +274,6 @@ header {
     cursor: pointer;
     color: #312b50;
 }
-
-/** Styling for the background of the results pop up **/
-/* #modal-surround {
-    background: rgba(0, 0, 0, 0.2);
-    display: none;
-    height: 100vh;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    z-index: 10000;
-} */
 
 /** Styling for the results pop up **/
 #result-modal {

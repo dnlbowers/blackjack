@@ -593,10 +593,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < ruleHeading.length; i++) {
             ruleHeading[i].addEventListener("click", function () {
-                //this is trigger only to close the one segment form the last visit and then stops 
                 if (this.nextElementSibling.style.maxHeight) {
                     hideRulePanels();
-                //this is always triggered
                 } else {
                     extendRulePanel(this);
                 }
