@@ -19,6 +19,7 @@
 const mainMenuRef = document.getElementById("main-menu");
 const gameTableRef = document.getElementById("game-table");
 const rulesContainerRef = document.getElementById("rules-sub-menu");
+const optionsContainerRef = document.getElementById("options-sub-menu");
 const responsibleContainerRef = document.getElementById("responsible-sub-menu")
 
 //In game pop up references
@@ -31,11 +32,14 @@ const resultModalBtnRef = document.getElementById("redeal-btn");
 const menuBtnRef = document.getElementById("menu-btn-wrap");
 const playGameBtnRef = document.getElementById("play-game-btn");
 const gameRulesBtnRef = document.getElementById("game-rules-btn");
-const responsibleGamblingBtnRef = document.getElementById("rg-btn");
+
 const ruleHeading = document.querySelectorAll(".rule-heading");
 const ruleSegment = document.querySelectorAll(".rule-segment");
+const optionsBtnRef = document.getElementById("game-options-btn")
+const responsibleGamblingBtnRef = document.getElementById("rg-btn");
 const exitRulesRef = document.getElementById("exit-rules");
-const exitRgRef = document.getElementById("exit-rg")
+const exitOptionsRef = document.getElementById("exit-options");
+const exitRgRef = document.getElementById("exit-rg");
 
 //containers to send HTML from Javascript
 // const subMenuContainerRef = document.querySelector(".sub-menu-container");
@@ -78,11 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
     //Games table anchor for the game rules
     gameRuleAnchorRef.addEventListener("click", function () {
         
-        
         rulesContainerRef.style.display = "block";
         gameTableRef.style.display = "none";
         menuBtnRef.style.display = "none";
         
+    });
+
+    //Main Menu button for options page
+    optionsBtnRef.addEventListener("click", function () {
+
+        optionsContainerRef.style.display = "block";
+        mainMenuRef.style.display = "none";
+
     });
     
     //Main Menu button for RG page
@@ -97,6 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
         rulesContainerRef.style.display = "none";
         mainMenuRef.style.display = "flex";
+
+    });
+
+    exitOptionsRef.addEventListener("click", function () {
+        
+        optionsContainerRef.style.display = "none";
+        mainMenuRef.style.display = "flex";
+
     });
 
     exitRgRef.addEventListener("click", function () {
@@ -285,9 +304,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (value === "ace") {
             value = 11;
             return value;
-        } else {
-            return value;
-        }
+        } 
+        
+        return value; 
     }
 
     /**

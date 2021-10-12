@@ -104,7 +104,12 @@ header {
 .menu-heading {
     font-size: 32px;
     font-weight: 700;
+    padding-bottom: 30px;
     text-decoration: underline;
+}
+
+.menu-sub-heading {
+    padding-bottom: 14px;
 }
 
 #responsible-sub-menu, #options-sub-menu, #rules-sub-menu {
@@ -112,6 +117,7 @@ header {
     position: relative;
 }
 
+/** Rule sub menu style **/
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
     align-items: center;
@@ -157,6 +163,17 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 .rule-segment > p {
     padding-bottom: 7px;
+}
+
+/** options sub menu **/
+#green, #blue, #neon {
+    padding-right: 24px;
+    background: #ff0000;
+    display: inline;
+    margin: 7px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    border: 1px solid;
 }
 
 
@@ -270,6 +287,11 @@ text-shadow: 3px 2px 2px #fbf5b7;
 #rules-anchor:hover {
     cursor: pointer;
     color: #312b50;
+}
+
+.rg-content {
+    padding-bottom: 15px;
+    text-align: left;
 }
 
 /** Styling for the results pop up **/
