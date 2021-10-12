@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Games table anchor for the game rules
     gameRuleAnchorRef.addEventListener("click", function () {
         
-        ruleMenuFunctionality();
+        
         rulesContainerRef.style.display = "block";
         gameTableRef.style.display = "none";
         menuBtnRef.style.display = "none";

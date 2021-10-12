@@ -98,8 +98,7 @@ header {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    
+    justify-content: space-evenly;  
 }
 
 .menu-heading {
@@ -112,7 +111,6 @@ header {
     display: none;
     position: relative;
 }
-
 
 /** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
 .rule-heading {
@@ -130,7 +128,6 @@ header {
 }
   
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-
 .active, .rule-heading:hover {
 background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7);
 text-shadow: 3px 2px 2px #fbf5b7;
