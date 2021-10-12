@@ -1,5 +1,3 @@
-//WHY IS THE GAME MENU ONLY WORKING EVERY OTHER TIME?
-
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
@@ -59,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let dealerHand = [];
 
     let canPlay = false;
+    ruleMenuFunctionality();
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
@@ -71,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //Main Menu Rules button
     gameRulesBtnRef.addEventListener("click", function () {
         
-        ruleMenuFunctionality();
         rulesContainerRef.style.display = "block";
         mainMenuRef.style.display = "none";
 
@@ -140,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (event.key === "r") {
                 rulesContainerRef.style.display = "block";
                 mainMenuRef.style.display = "none";
-                ruleMenuFunctionality();
             }
             else if (event.key === "g") {
                 responsibleGamingMenu();
@@ -329,12 +326,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let firstAce = hand.indexOf(11);
             for (let i = 0; i <= hand.length; i++) {
                 
-                console.log('first ace index :>> ', firstAce);
                 if (i === firstAce ) {
-                    console.log('start' + hand);
                     hand.splice(i, 1);
                     hand.push(1);
-                    console.log('end' + hand);
                     return checkHandValue(hand);
                 }
             }
@@ -594,7 +588,6 @@ document.addEventListener("DOMContentLoaded", function () {
      * Gives the accordion menu the functionality
      */
     function ruleMenuFunctionality() {
-        console.log("rules active")
         // const ruleHeading = document.querySelectorAll(".rule-heading");
         // const ruleSegment = document.querySelectorAll(".rule-segment");
 
@@ -603,43 +596,42 @@ document.addEventListener("DOMContentLoaded", function () {
                 //this is trigger only to close the one segment form the last visit and then stops 
                 if (this.nextElementSibling.style.maxHeight) {
                     hideRulePanels();
-                    console.log("triggered");
                 //this is always triggered
                 } else {
                     extendRulePanel(this);
                 }
             });
         }
+    }    
+    /**
+    * Allows the game rules meu to extend
+    */
+    function extendRulePanel(target) {
+        hideRulePanels();
         
-        /**
-        * Allows the game rules meu to extend
-        */
-        function extendRulePanel(target) {
-            hideRulePanels();
-            
-            target.classList.add("active");
-            target.removeAttribute("aria-expanded", "false");
-            target.setAttribute("aria-expanded", "true");
-            target.nextElementSibling.removeAttribute("aria-hidden", "true");
-            target.nextElementSibling.setAttribute("aria-hidden", "false");
-            target.nextElementSibling.style.maxHeight =
-                target.nextElementSibling.scrollHeight + "px";
-        }
-
-        /**
-        * Hides game rules segments when a new one is open
-        */    
-        function hideRulePanels() {
-            
-            for (let i = 0; i < ruleSegment.length; i++) {
-                ruleSegment[i].style.maxHeight = null;
-                ruleSegment[i].setAttribute("aria-hidden", "true");
-                ruleHeading[i].setAttribute("aria-expanded", "false"); 
-                ruleHeading[i].classList.remove("active");
-                  
-            } 
-        }
+        target.classList.add("active");
+        target.removeAttribute("aria-expanded", "false");
+        target.setAttribute("aria-expanded", "true");
+        target.nextElementSibling.removeAttribute("aria-hidden", "true");
+        target.nextElementSibling.setAttribute("aria-hidden", "false");
+        target.nextElementSibling.style.maxHeight =
+            target.nextElementSibling.scrollHeight + "px";
     }
+
+    /**
+    * Hides game rules segments when a new one is open
+    */    
+    function hideRulePanels() {
+        
+        for (let i = 0; i < ruleSegment.length; i++) {
+            ruleSegment[i].style.maxHeight = null;
+            ruleSegment[i].setAttribute("aria-hidden", "true");
+            ruleHeading[i].setAttribute("aria-expanded", "false"); 
+            ruleHeading[i].classList.remove("active");
+                
+        } 
+    }
+    
 
     /**
      * Adds content to the responsible gaming modal
