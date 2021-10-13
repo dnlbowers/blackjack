@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * and calling the compareHands function.
      */
     function computerTurn() {
-        // hitBtnRef.disabled = true;
+        
         canPlay = false;
 
         houseCardsRef[0].style.display = "none";
@@ -452,7 +452,6 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function playerBust(handValue) {
         
-       
         canPlay = false;
         document.getElementById("player-total").innerHTML = `${handValue}`;
         modalSurroundRef.style.display = "flex"; 
@@ -533,9 +532,11 @@ document.addEventListener("DOMContentLoaded", function () {
      * Increases win tally on scoreboard
      */
     function incrementWins() {
+
         let wins = parseInt(winTallyRef.innerText);
 
         winTallyRef.innerText = ++wins;
+
     }
 
     /**
@@ -641,6 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideRulePanels() {
         
         for (let i = 0; i < ruleSegment.length; i++) {
+            
             ruleSegment[i].style.maxHeight = null;
             ruleSegment[i].setAttribute("aria-hidden", "true");
             ruleHeading[i].setAttribute("aria-expanded", "false"); 
@@ -657,5 +659,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         mainMenuRef.style.display = "none";
         responsibleContainerRef.style.display = "block";
+
     }
 });

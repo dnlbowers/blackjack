@@ -166,14 +166,33 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 /** options sub menu **/
-#green, #blue, #neon {
+#green, #blue, #purple {
     padding-right: 24px;
     background: #ff0000;
     display: inline;
     margin: 7px;
     padding-bottom: 30px;
     padding-left: 24px;
-    border: 1px solid;
+}
+
+.alt-theme-border {
+    border: 4px solid;
+}
+
+.active-theme {
+    border: 4px dotted #FFD700;
+}
+
+#green {
+    background: #008000;
+}
+
+#blue {
+    background: #00008B;
+}
+
+#purple {
+    background: #663399;
 }
 
 
