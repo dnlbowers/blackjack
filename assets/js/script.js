@@ -37,7 +37,7 @@ const ruleHeading = document.querySelectorAll(".rule-heading");
 const ruleSegment = document.querySelectorAll(".rule-segment");
 const optionsBtnRef = document.getElementById("game-options-btn")
 const colorThemeRef = document.getElementsByClassName('color-theme');
-const mainWindowRef = document.querySelector('.main-window');
+const mainWindowRef = document.querySelectorAll('.main-window');
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
 const exitRulesRef = document.getElementById("exit-rules");
 const exitOptionsRef = document.getElementById("exit-options");
@@ -699,20 +699,26 @@ document.addEventListener("DOMContentLoaded", function () {
         removeActiveTheme();
         target.classList.add("active-theme");
         document.body.style.backgroundColor = "lightblue";
-        mainWindowRef.style.backgroundColor = "#00008B";
+        for (let i = 0; i < mainWindowRef.length; i++) {
+            mainWindowRef[i].style.backgroundColor = "#00008B";
+        }
     }
 
     function greenTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
         document.body.style.backgroundColor = "#00FFBF";
-        mainWindowRef.style.backgroundColor = "#008000";
+        for (let i = 0; i < mainWindowRef.length; i++) {
+            mainWindowRef[i].style.backgroundColor = "#008000";
+        }
     }
 
     function purpleTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
         document.body.style.backgroundColor = "violet";
-        mainWindowRef.style.backgroundColor = "#663399";
+        for (let i = 0; i < mainWindowRef.length; i++) {
+            mainWindowRef[i].style.backgroundColor = "#663399";
+        }
     }
 });
