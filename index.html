@@ -1,7 +1,3 @@
-<!--
-    - Look for all id'sa with text decoration = unbderline and make class
-    - differentiate buttons on table and off table
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +23,6 @@
             <button id="menu-btn" class="btn center-margin btn-bg"><span class="key-control-indicator">M</span>ENU</button>
         </nav>
     </header>
-    
     <!-- Background div acting as a boarder for the main area -->
     <main id="main-surround" class="center-margin">
         <!-- Menu navigation (Main menu) -->
@@ -38,7 +33,6 @@
             <button id="game-options-btn" class="menu-opt-btn btn-bg"><span class="key-control-indicator">O</span>PTIONS</button>
             <button id="rg-btn" class="menu-opt-btn btn-bg">RESPONSIBLE <span class="key-control-indicator">G</span>AMING</button>
         </nav>
-
         <!-- Sub Menu Containers -->
         <!-- Game Rules Sub Menu -->
         <section id="rules-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
@@ -100,6 +94,7 @@
             </div>
 
             <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
+
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
             </div> 
@@ -122,7 +117,7 @@
                 <button id="exit-rules" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
-
+        <!-- Options Sub Menu -->
         <section id="options-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Game Options</h2>
             <h3 class="menu-sub-heading">Color Theme:</h3>
@@ -134,7 +129,6 @@
                 <button id="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
-
         <!-- Responsible Gaming sub Menu -->
         <section id="responsible-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Responsible Gaming</h2>
@@ -153,11 +147,8 @@
                 <button id="exit-rg" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
-
-        
         <!-- Game area -->
-        <section id="game-table" class="text-align-centre main-window center-margin txt-white">       
-            
+        <section id="game-table" class="text-align-centre main-window center-margin txt-white">        
             <!-- Container for dealers cards-->
             <section id="dealer-side" class="line-break-below">
                 <h2>House Hand</h2>
@@ -165,7 +156,6 @@
 
                 </div>
             </section>
-
             <!-- Scoreboard -->
             <section id="score-board" class="line-break-below">
                 <h3 class="line-break-below">Score board</h3>
@@ -182,8 +172,7 @@
                 </ul>
                 <button class="btn btn-bg" id="reset-btn"><span class="key-control-indicator">C</span>LEAR TALLY</button>
             </section>
-
-            <!-- Results Modal with transparent back gorund -->
+            <!-- Results Modal surround with golden back gorund -->
             <div id="modal-surround">
                 <section id="result-modal">
                     <h2 id="result">
@@ -197,7 +186,6 @@
                     </div>
                 </section>   
             </div>
-
             <!-- Container for players hand -->
             <section id="player-side">
                 <h2>Player Hand</h2>
@@ -206,7 +194,6 @@
                 </div>
                 <p>Total Hand Value = <span id="player-total">0</span></p>
             </section>
-
             <!-- Users control section -->
             <section id="controls" class="line-break-below">
                 <h3 class="line-break-below">Player Controls</h3>
@@ -217,7 +204,6 @@
             </section>
         </section>
     </main>
-
     <!-- Footer with social links and copyright -->
     <footer class="text-align-centre">
         <ul>
@@ -232,10 +218,8 @@
             <i class="fa-solid fa-copyright">opyright of dnlbowers</i>
         </small>
     </footer>    
-
 <!-- Link to JavaScript file -->
 <script src="assets/js/script.js"></script>
-
 <!-- No script error -->
 <noscript>
     Your browser either does not support JavaScript, or it is not enabled! If you wish to play this game, then 

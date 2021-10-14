@@ -1,14 +1,10 @@
-/* 
-- space elements
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
 }
-/**temporary to combat chrome dark theme**/
+
+/*temporary to combat chrome dark theme*/
 body {
     background-color: 	#00FFBF;
     height: 100vh;
@@ -19,7 +15,7 @@ header {
     height: 8.625rem;
 }
 
-/**Generalized classes**/
+/*Generalized classes*/
 .text-align-centre {
     text-align: center;
 }
@@ -40,7 +36,7 @@ header {
     text-decoration: underline;
 }
 
-/** Header style rules **/
+/* Header style rules */
 #title {
     align-items: center;
     display: flex;
@@ -61,8 +57,7 @@ header {
     padding: 5px;
 }
 
-/** Golden surround to the main game area **/
-
+/* Golden surround to the main game area */
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
     border: 1px solid #000;
@@ -77,7 +72,7 @@ header {
     width: 95vw;
 }    
 
-/** Class to set the height of each module the same when it opens **/
+/* Class to set the height of each module the same when it opens */
 .main-window {
     background-color: #006400;
     border: 2px solid #000;
@@ -93,7 +88,7 @@ header {
     width: 95vw;
 }
 
-/** Menu styling **/
+/* Menu styling */
 #main-menu {
     align-items: center;
     display: flex;
@@ -117,8 +112,8 @@ header {
     position: relative;
 }
 
-/** Rule sub menu style **/
-/** Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp **/
+/* Rule sub menu style */
+/* Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp */
 .rule-heading {
     align-items: center;
     background: linear-gradient(to top left, #fbf5b7, #b38728, #fcf6ba, #bf953f);
@@ -139,7 +134,6 @@ background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7);
 text-shadow: 3px 2px 2px #fbf5b7;
 }
 
- 
 .rule-heading:after {
     color: #000;
     content: '\02660'; 
@@ -195,9 +189,8 @@ text-shadow: 3px 2px 2px #fbf5b7;
     background: #663399;
 }
 
-
-/** Button styling **/
-/** Menu buttons **/
+/* Button styling */
+/* Menu buttons */
 .back-to-menu {
     bottom: 10px;
     position: absolute;
@@ -217,7 +210,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     width: 80%;
 }
 
-/** Highlights one letter on the button to indicate key controls **/
+/* Highlights one letter on the button to indicate key controls */
 .key-control-indicator {
     color: #8B0000;
     font-weight: bold;
@@ -225,8 +218,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     text-decoration-color: #000;
 }
 
-/** Game board control buttons **/
-
+/* Game board control buttons */
 #hit-btn {
     margin-right: 7.5px;
 }
@@ -235,8 +227,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     margin-left: 7.5px;
 }
 
-/** universal button styles **/
-
+/* universal button styles */
 .btn {
     border: 1px solid #b38728;
     border-radius: 10px;
@@ -259,7 +250,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     cursor: pointer;
 }
 
-/** Style for within the game-table **/
+/* Style for within the game-table */
 #game-table {
     display: none;
 }
@@ -279,7 +270,6 @@ text-shadow: 3px 2px 2px #fbf5b7;
     border-radius: 7px;
     height: 120px;
     width: 84px;
-    /* transform: translateX(10%); */
 }
 
 /* Scoreboard style */
@@ -325,6 +315,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     max-width: 600px;
     z-index: 5;
 }
+
 #result-modal { 
     background-color: #008080;
     border-radius: 20px;
@@ -363,8 +354,7 @@ footer {
     font-size: 6px;
 }
 
-/** Media queries **/
-
+/* Media queries */
 @media (min-width: 360px) {
     #hit-btn {
         margin-right: 18.75px;
