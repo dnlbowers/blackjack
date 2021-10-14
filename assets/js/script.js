@@ -1,6 +1,7 @@
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
+// Make sure to add keydown event on main menu for options
 
 //mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
 //consider a slight delay when computer turn is triggered automatically and before the result modal appearing
@@ -503,6 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gameTableRef.style.display = "none";
         mainMenuRef.style.display = "flex";
         menuBtnRef.style.display = "none";
+        optionsContainerRef.style.display ="none";
         responsibleContainerRef.style.display = "none";
         rulesContainerRef.style.display = "none";
     }
