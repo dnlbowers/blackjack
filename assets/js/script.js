@@ -36,6 +36,8 @@ const gameRulesBtnRef = document.getElementById("game-rules-btn");
 const ruleHeading = document.querySelectorAll(".rule-heading");
 const ruleSegment = document.querySelectorAll(".rule-segment");
 const optionsBtnRef = document.getElementById("game-options-btn")
+const colorThemeRef = document.getElementsByClassName('color-theme');
+const mainWindowRef = document.querySelector('.main-window');
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
 const exitRulesRef = document.getElementById("exit-rules");
 const exitOptionsRef = document.getElementById("exit-options");
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let canPlay = false;
     ruleMenuFunctionality();
+    colorTheme();
 
     //Menu button event listeners
     playGameBtnRef.addEventListener("click", function () {
@@ -373,23 +376,25 @@ document.addEventListener("DOMContentLoaded", function () {
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
 
-        if (dealerTotal >= 17) {
-            compareHands(playerTotal, dealerTotal);
-        } else {
-            while (dealerTotal <= 17) {
-                dealerHand.push(dealCard("dealer"));
-                let dealerTotal = checkHandValue(dealerHand);
+        // if (dealerTotal >= 17) {
+        //     compareHands(playerTotal, dealerTotal);
+        // } else {
+        while (dealerTotal < 17) {
+            dealerHand.push(dealCard("dealer"));
+            let dealerTotal = checkHandValue(dealerHand);
 
-                if (dealerTotal > 21) {
-                    houseBust(dealerTotal);
-                    break;
-                } else if (dealerTotal >= 17) {
-                    compareHands(playerTotal, dealerTotal);
-                    break;
-                }
-            }
+            if (dealerTotal > 21) {
+                return houseBust(dealerTotal);
+                // break;
+            } 
+            // else if (dealerTotal >= 17) {
+            //     return compareHands(playerTotal, dealerTotal);
+            //     // break;
         }
-    }
+        
+        return compareHands(playerTotal, dealerTotal);
+    }    
+    
 
     /**
      * Flips the houses hidden card face up once the players turn is over
@@ -660,5 +665,54 @@ document.addEventListener("DOMContentLoaded", function () {
         mainMenuRef.style.display = "none";
         responsibleContainerRef.style.display = "block";
 
+    }
+
+    function colorTheme(){
+        for (let theme of colorThemeRef ) {
+            theme.addEventListener('click', function() {
+                if (this.getAttribute('data-type') === 'blue') {
+                    theme.classList.add("active-theme");
+                    blueTheme(this);
+                } else if (this.getAttribute('data-type') === 'green') {
+                    theme.classList.add("active-theme");
+                    greenTheme(this);
+                } else if (this.getAttribute('data-type') === 'purple') {
+                    theme.classList.add("active-theme");
+                    purpleTheme(this);
+                }
+ 
+            });
+        }
+    }
+
+    function removeActiveTheme() {
+        
+        for (let i = 0; i < colorThemeRef.length; i++) {
+            
+            console.log("first" +colorThemeRef[i].classList);
+            colorThemeRef[i].classList.remove("active-theme");
+            console.log("second" + colorThemeRef[i].classList);
+        } 
+    }
+
+    function blueTheme(target) {
+        removeActiveTheme();
+        target.classList.add("active-theme");
+        document.body.style.backgroundColor = "lightblue";
+        mainWindowRef.style.backgroundColor = "#00008B";
+    }
+
+    function greenTheme(target) {
+        removeActiveTheme();
+        target.classList.add("active-theme");
+        document.body.style.backgroundColor = "#00FFBF";
+        mainWindowRef.style.backgroundColor = "#008000";
+    }
+
+    function purpleTheme(target) {
+        removeActiveTheme();
+        target.classList.add("active-theme");
+        document.body.style.backgroundColor = "violet";
+        mainWindowRef.style.backgroundColor = "#663399";
     }
 });
