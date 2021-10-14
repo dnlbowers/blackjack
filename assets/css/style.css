@@ -79,7 +79,7 @@ header {
 
 /** Class to set the height of each module the same when it opens **/
 .main-window {
-    background-color: #008000;
+    background-color: #006400;
     border: 2px solid #000;
     border-radius: 25px;
     box-sizing: border-box;
@@ -184,7 +184,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 #green {
-    background: #008000;
+    background: #006400;
 }
 
 #blue {
@@ -282,7 +282,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     /* transform: translateX(10%); */
 }
 
-/** Scoreboard style **/
+/* Scoreboard style */
 #score-board {
     height: 10%;
 }
@@ -293,12 +293,12 @@ text-shadow: 3px 2px 2px #fbf5b7;
     height: 25%;
 }
 
-/** Player control area **/
+/* Player control area */
 #controls {
     height: 10%;
 }
 
-/** on table link to game rules **/
+/* on table link to game rules */
 #rules-anchor {
     text-decoration: underline;
 }
@@ -313,21 +313,26 @@ text-shadow: 3px 2px 2px #fbf5b7;
     text-align: left;
 }
 
-/** Styling for the results pop up **/
-#result-modal {
-    background-color: #312b50;
-    border: 0.25rem solid #bf953f;
+/* Styling for the results pop up */
+#modal-surround {
+    background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+    border-radius: 25px;
+    height: 150px;
+    padding: 5px;
+    position: absolute;
+    top: 330px;
+    width: 70%;
+    max-width: 600px;
+    z-index: 5;
+}
+#result-modal { 
+    background-color: #008080;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    /* left: 50%; */
     height: 150px;
     justify-content: space-evenly;
-    max-width: 600px;
-    position: absolute;
-    top: 330px;
-    /* transform: translate(-50%, -50%); */
-    width: 70%;
+    width: 100%;
     z-index: 10;
 }
 
@@ -336,7 +341,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     padding-bottom: 13px;
 }
 
-/**footer styling**/
+/*footer styling*/
 /*style for the social media links*/
 footer {
     width: 100%;

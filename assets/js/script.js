@@ -23,7 +23,8 @@ const optionsContainerRef = document.getElementById("options-sub-menu");
 const responsibleContainerRef = document.getElementById("responsible-sub-menu")
 
 //In game pop up references
-const modalSurroundRef = document.getElementById("result-modal");
+const modalSurroundRef = document.getElementById("modal-surround");
+const resultSurroundRef = document.getElementById("result-modal");
 const resultHeadingRef = document.getElementById("result");
 const resultContentRef = document.getElementById("description");
 const resultModalBtnRef = document.getElementById("redeal-btn");
@@ -698,7 +699,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function blueTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
-        document.body.style.backgroundColor = "lightblue";
+        document.body.style.backgroundColor = "#00BFFF";
+        resultSurroundRef.style.backgroundColor = "#4682B4";
+        // modalSurroundRef.style.color = "#000";
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#00008B";
         }
@@ -708,17 +711,21 @@ document.addEventListener("DOMContentLoaded", function () {
         removeActiveTheme();
         target.classList.add("active-theme");
         document.body.style.backgroundColor = "#00FFBF";
+        resultSurroundRef.style.backgroundColor = "#008080";
+        // modalSurroundRef.style.color = "#fff";
         for (let i = 0; i < mainWindowRef.length; i++) {
-            mainWindowRef[i].style.backgroundColor = "#008000";
+            mainWindowRef[i].style.backgroundColor = "#006400";
         }
     }
 
     function purpleTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
-        document.body.style.backgroundColor = "violet";
+        document.body.style.backgroundColor = "#EE82EE";
+        resultSurroundRef.style.backgroundColor = "#312b50";
+        // modalSurroundRef.style.color = "#fff";
         for (let i = 0; i < mainWindowRef.length; i++) {
-            mainWindowRef[i].style.backgroundColor = "#663399";
+            mainWindowRef[i].style.backgroundColor = "#4B0082";
         }
     }
 });
