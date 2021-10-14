@@ -63,7 +63,8 @@ As a user, I want to: -
 1. Providing a simple, appealing, and accessible interface.
    
 ### **Wireframes:**
-To give my project structure and work out the best intended flow of information, I created the below wireframes as a guide.
+
+To give my project structure and work out the best-intended flow of information, I created the below wireframes as a guide.
     
     *Mobile Wireframes:
         * [Game Table and Main Menu.](docs/wireframes/mobile-gameboard-menu.png)
@@ -72,19 +73,19 @@ To give my project structure and work out the best intended flow of information,
         * [Desktop Game Table.](docs/wireframes/desktop-gameboard.png)
         * [Desktop Main Menu.](docs/wireframes/desktop-menu.png)
 
-Along the way the design and menu options have changed slightly in order to improve he user experience of the app. The changes included: -
+Along the way, the design and menu options have changed slightly to improve the app's user experience. The changes included: -
 
-* User controls and score board switched positions in order to make the game control more accessible for the user.
-* The removal of the contact option in the menu in favor of social link in the footer.
-* I decided it was better overall visually if all game elements with contained within the main area of the app. The only exceptions to the were: 
-    * Social media links to gitHub and linked in.
-    * The title and surrounding logo's.
-    * MEnu button visible from the game table but hidden when within the menu itself.
+* User controls and scoreboard switched positions to make the game control more accessible for the user.
+* The removal of the contact form option in the menu. This feature was not necessary since I decided to add the social links in the footer.
+* All game elements moved within the app's central area. The only exceptions to the were: 
+    * Social media links to GitHub and linked in.
+    * The title and surrounding images.
+    * Menu button visible from the game table but hidden when within the menu itself.
 
-Since this for this project wireframes are not required and were used only to structure my own creative process I did not feel the need to pre-design each of the sub-menus in turn. For this reason I have omitted them. 
+Since this for this project, wireframes are not required and were used only to structure my creative process, I did not feel the need to pre-design each of the sub-menus in turn. For this reason, I have omitted them. 
 
 ### **Color Scheme:**
-When deciding the app's color scheme, I first began with the classic green table then worked outwards from there. My was to create the regal feeling of a casino, whilst keeping my contrast scores as high as possible for accessibility purposes.
+When deciding the app's color scheme, I first began with the classic green table then worked outwards from there. I wanted the app to feel regal like a casino while keeping my contrast scores as high as possible for accessibility purposes.
  
 I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%0D%0A%23fff%2C%0D%0A%0D%0A%23000.%0D%0A%23bf953f%2C%20%0D%0A%23fcf6ba%2C%0D%0A%23b38728%0D%0A%20%23b38728%2C%0D%0A%23fbf5b7%2C%0D%0A%0D%0A%23d3d3d3%0D%0A%238B0000%2C%0D%0A%23ff0000%2C%0D%0A%23FFD700%2C%0D%0A%2300008B%2C%0D%0A%234682b4%2C%0D%0A%2300bfff%2C%0D%0A%234b0082%2C%0D%0A%23312b50%2C%0D%0A%23312b50%2C%0D%0A%23ee82ee%2C%0D%0A%23006400%2C%0D%0A%23008080%2C%0D%0A%2300FFBF%2C%20%20%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
