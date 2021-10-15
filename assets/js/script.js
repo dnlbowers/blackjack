@@ -299,12 +299,15 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function fanCards(hand, card) {
         let value = 15;
+        console.log('before loop :>> ', value);
         // const container = document.querySelector(".card-container");
         // const containerWidth = container.offsetWidth;
-        for (let i = 0; i <= hand.length; i++) {
+        for (let i = 1; i <= hand.length; i++) {
             //  card.style.left = (containerWidth / 84) / 2  + (value * i) + "px";
             card.style.left =  (value * i) + "px";
+            console.log('inside loop :>> ', value);
         }
+        console.log(' loop :>> ', value);
     }
 
     /**
