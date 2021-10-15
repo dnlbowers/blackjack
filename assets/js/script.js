@@ -198,7 +198,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function firstTwoCards() { 
         resetHands();
         let firstHouseCard = createCardBack();
+        // let shuffledSuits = shuffleSuits();
+        // let shuffledValues = shuffleValues();
         
+        // if implement a shuffle then add shuffledSuits, shuffledValues as parameters to the deal card call function below
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));
@@ -234,6 +237,46 @@ document.addEventListener("DOMContentLoaded", function () {
             playerBlackjack();
         }
     }
+
+
+//shuffle functions ready to go
+    // function shuffleSuits() {
+    //     let allSuits = ["hearts", "clubs", "spades", "diamonds"];
+    //     for(let i = allSuits.length - 1; i > 0; i--){
+    //         const j = Math.floor(Math.random() * i)
+    //         const temp = allSuits[i]
+    //         allSuits[i] = allSuits[j]
+    //         allSuits[j] = temp
+    //     }
+    //     return allSuits;
+    // }
+
+    // function shuffleValues() {
+    //     let allCardValues = [
+    //         2,
+    //         3,
+    //         4,
+    //         5,
+    //         6,
+    //         7,
+    //         8,
+    //         9,
+    //         10,
+    //         "jack",
+    //         "queen",
+    //         "king",
+    //         "ace",
+    //     ];
+    //     for(let i = allCardValues.length - 1; i > 0; i--){
+    //         const j = Math.floor(Math.random() * i)
+    //         const temp = allCardValues[i]
+    //         allCardValues[i] = allCardValues[j]
+    //         allCardValues[j] = temp
+    //     }
+    //     return allCardValues;
+    // }
+
+    //if decide to go for the shuffle may need to add  suits, cardValues as parameters
 
     /**
      * Deals a random card on to the table and assigns it a value.
@@ -274,12 +317,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let playerCards = document.getElementById("player-card-container");
             playerCards.appendChild(card);
             let playerHand = playerCards.childNodes;
-            fanCards(playerHand, card);
+            fanCards("player",playerHand, card);
         } else if (dealtFor === "dealer") {
             let houseCards = document.getElementById("dealer-card-container");
             houseCards.appendChild(card);
             let houseHand = houseCards.childNodes;
-            fanCards(houseHand, card);
+            fanCards("dealer", houseHand, card);
         }
 
         // Returns picture cards as numerical values
@@ -296,15 +339,16 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Positions the cards in a staggered fashion
      */
-    function fanCards(hand, card) {
+    function fanCards(side, hand, card) {
         let value = 15;
-        console.log('before loop :>> ', value);
-        // const container = document.querySelector(".card-container");
-        // const containerWidth = container.offsetWidth;
+        
+
         for (let i = 1; i <= hand.length; i++) {
-            //  card.style.left = (containerWidth / 84) / 2  + (value * i) + "px";
-            card.style.left =  (value * i) + "px";
-            console.log('inside loop :>> ', value);
+            if (side === "player"){
+                card.style.left =  (value * i) + "px";
+            } else if (side === "dealer") {
+                card.style.left =  (value * i) - 15 + "px";
+            }
         }
         console.log(' loop :>> ', value);
     }
@@ -349,6 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
         canPlay = false;
 
         houseCardsRef[0].style.display = "none";
+        houseCardsRef[1].style.left = "15px";
         houseCardsRef[1].style.display = "inline";
 
         let playerTotal = checkHandValue(playerHand);
@@ -370,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function houseReveal() {    
         houseCardsRef[0].style.display = "none";
+        houseCardsRef[1].style.left = "15px";
         houseCardsRef[1].style.display = "inline";
     }
 
