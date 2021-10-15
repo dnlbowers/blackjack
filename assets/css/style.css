@@ -170,7 +170,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 .alt-theme-border {
-    border: 4px solid;
+    border: 4px solid #fff;
 }
 
 .active-theme, .alt-theme-border:hover {
@@ -405,5 +405,41 @@ footer {
 
     .rg-content {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 600px) {
+    #modal-surround {
+        height: 160px;
+    }
+
+    #result-modal {
+        height: 160px;
+    }
+    
+    #result {
+        font-size: 24px;
+    }
+
+    #description {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 700px) {
+    #modal-surround {
+        height: 170px;
+    }
+
+    #result-modal {
+        height: 170px;
+    }
+    
+    #result {
+        font-size: 30px;
+    }
+
+    #description {
+        font-size: 20px;
     }
 }

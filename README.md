@@ -66,12 +66,12 @@ As a user, I want to: -
 
 To give my project structure and work out the best-intended flow of information, I created the below wireframes as a guide.
     
-    *Mobile Wireframes:
-        * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
-    
-    *Desktop Wireframes:
-        * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
-        * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
+*Mobile Wireframes:
+ * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
+
+*Desktop Wireframes:
+ * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
+ * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
 
 Along the way, the design and menu options have changed slightly to improve the app's user experience. The changes included: -
 
@@ -93,24 +93,24 @@ I have created the below color grid using [https://contrast-grid.eightshapes.com
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
 
 ## **Current Features**
-###  **Header Element**
+###  ***Header Element***
 The header element contains the following: -
 
-#### ***Title:***
+### ***Title:***
 
 * The title servers to make it clear to the user from the first instance what the game will be. Since the app is all one page and the menu is easily accessible through out gameplay I felt there was no need to include a navigation anchor in the title on this project.
-* 
+
 ![Game Title](docs/screenshots/title.jpg)
 
-#### ***Main Menu button:***
+### ***Main Menu button (navigation tag):***
 * This navigation button toggles between hidding and visible. 
 * When the main menu is already visible the button is set to display none. 
 * When the card table is visible it allows the user to navigate back to the menu.
 * 
 ![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
 
-### **Main Window**
-#### ***Main Menu:***
+## **Main Window:**
+### ***Main Menu (navigation tag):***
 * Acts as a landing page for the user. Allowing them: -
   * To proceed directly to the card table.
   * Quick access to the game rules.
@@ -120,7 +120,7 @@ The header element contains the following: -
 ![Main Menu](docs/screenshots/main-menu.jpg)
 
 ### **Sub Menus**
-#### ***Game Rules***
+### ***Game Rules***
 On this sub menu I decide to use an accordion menu to seperate and display the different game rules. The reasons and fatures of this are as follows: -
   * Prevents the user getting lost in large reems of text. 
   * With only one section being open at a time this made sure that on smaller screen sizes the game rules did not spill over the edge of the main-window.
@@ -129,16 +129,32 @@ On this sub menu I decide to use an accordion menu to seperate and display the d
 
 ![Rules Sub-Menu](docs/screenshots/rules-sub-menu.jpg)
 
-#### ***Options***
+### ***Options:***
 On this sub menu the player is able to change the color theme to one of three choices for: -
-    * Green (default)
-    ![Green Theme](docs/screenshots/green-theme.jpg)
-    * Blue
-    ![Blue Theme](docs/screenshots/blue-theme.jpg)
-    * Purple
-    ![Purple Theme](docs/screenshots/purple-theme.jpg)
+#### **Green (default) Theme**
+![Green Theme](docs/screenshots/green-theme.jpg)
+#### **Blue Theme**
+![Blue Theme](docs/screenshots/blue-theme.jpg)
+#### **Purple Theme**
+![Purple Theme](docs/screenshots/purple-theme.jpg)
 
-Each Theme has a complimentary surround color for the body and all three div's have Aria labels to make them accessible to the visually impaired.
+ * Each Theme has a complimentary surround color for the body.
+ * All three div's have Aria labels to make them accessible to the visually impaired.
+ * Active class toggled with the JS file to ensure only the active theme shows as active in the following ways: -
+   * Each div has a white border to make it stand out when not active.
+   * The active theme and hover have a dotted yellow border to make it clear which theme has the active class. 
+
+### ***Responsible Gaming:***
+Working In the industry I reconsie the importance of this statement on any gmabling related game. Although there is no money involved in my version of the game at present the thrill of the chase can still be present. In fact one feedback from every tester who tried it for me was how addictive the game was. I included this as a warning to those who may feel they have a problem to seek help.
+![Responsible Gaming Disclaimer](docs/screenshots/rg-page.jpg)
+
+### ***Back to Main menu Button (navigation tag)***
+Each sub menu Has a "Main Menu" button at the bottom of the page to navigate back to the root menu.
+
+![Return to Main Menu Navigation](docs/screenshots/sub-menu-exit-btn.jpg)
+
+
+
 
    
 
