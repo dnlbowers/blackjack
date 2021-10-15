@@ -97,16 +97,40 @@ I have created the below color grid using [https://contrast-grid.eightshapes.com
 The header element contains the following: -
 
 #### ***Title:***
-![Game Title](docs/screenshots/title.jpg)
 
 * The title servers to make it clear to the user from the first instance what the game will be. Since the app is all one page and the menu is easily accessible through out gameplay I felt there was no need to include a navigation anchor in the title on this project.
+* 
+![Game Title](docs/screenshots/title.jpg)
 
-#### ***Main Menu button***
-![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
-
+#### ***Main Menu button:***
 * This navigation button toggles between hidding and visible. 
 * When the main menu is already visible the button is set to display none. 
 * When the card table is visible it allows the user to navigate back to the menu.
+* 
+![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
+
+### **Main Window**
+#### ***Main Menu:***
+* Acts as a landing page for the user. Allowing them: -
+  * To proceed directly to the card table.
+  * Quick access to the game rules.
+  * Access to the options menu.
+  * Providing them the industry requirement of a responsible gaming statement.
+  
+![Main Menu](docs/screenshots/main-menu.jpg)
+
+### **Sub Menus**
+#### ***Game Rules***
+On this sub menu I decide to use an accordion menu to seperate and display the different game rules. The reasons and fatures of this are as follows: -
+  * Prevents the user getting lost in large reems of text. 
+  * With only one section being open at a time this made sure that on smaller screen sizes the game rules did not spill over the edge of the main-window.
+  * The accodion buttons show spades pointing up when closed and hearts pointing down when open.
+  * Fully accessible with the relevant Aria tags and role assigned and toggled as the user interacts with the relevant sections.
+
+![Rules Sub-Menu](docs/screenshots/rules-sub-menu.jpg)
+   
+
+
   
 
 
