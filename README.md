@@ -87,7 +87,7 @@ Since this for this project, wireframes are not required and were used only to s
 ### **Color Scheme:**
 When deciding the app's color scheme, I first began with the classic green table then worked outwards from there. I wanted the app to feel regal like a casino while keeping my contrast scores as high as possible for accessibility purposes.
  
-I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=fff%2C%0D%0A000.%0D%0Abf953f%2C%20%0D%0Afcf6ba%2C%0D%0Ab38728%0D%0Ab38728%2C%0D%0Afbf5b7%2C%0D%0Ad3d3d3%0D%0A8B0000%2C%0D%0Aff0000%2C%0D%0AFFD700%2C%0D%0A00008B%2C%0D%0A4682b4%2C%0D%0A00bfff%2C%0D%0A4b0082%2C%0D%0A312b50%2C%0D%0A312b50%2C%0D%0Aee82ee%2C%0D%0A3006400%2C%0D%0A008080%2C%0D%0A00FFBF%2C%20%20&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
+I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFF%0D%0A%23000%0D%0A%23BF953F%0D%0A%23FCF6BA%0D%0A%23B38728%0D%0A%23FBF5B7%0D%0A%23D3D3D3%0D%0A%238B0000%0D%0A%23FF0000%0D%0A%23FFD700%0D%0A%2300008B%0D%0A%234682B4%0D%0A%2300BFFF%0D%0A%23312B50%0D%0A%23EE82EE%0D%0A%23300640%0D%0A%23008080%0D%0A%2300FFBF%0D%0A%23006400%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 # **Retake screenshot and delete the heading**
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
@@ -128,6 +128,18 @@ On this sub menu I decide to use an accordion menu to seperate and display the d
   * Fully accessible with the relevant Aria tags and role assigned and toggled as the user interacts with the relevant sections.
 
 ![Rules Sub-Menu](docs/screenshots/rules-sub-menu.jpg)
+
+#### ***Options***
+On this sub menu the player is able to change the color theme to one of three choices for: -
+    * Green (default)
+    ![Green Theme](docs/screenshots/green-theme.jpg)
+    * Blue
+    ![Blue Theme](docs/screenshots/blue-theme.jpg)
+    * Purple
+    ![Purple Theme](docs/screenshots/purple-theme.jpg)
+
+Each Theme has a complimentary surround color for the body and all three div's have Aria labels to make them accessible to the visually impaired.
+
    
 
 

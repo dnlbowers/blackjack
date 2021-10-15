@@ -173,7 +173,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     border: 4px solid;
 }
 
-.active-theme {
+.active-theme, .alt-theme-border:hover {
     border: 4px dotted #FFD700;
 }
 
@@ -186,7 +186,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 #purple {
-    background: #663399;
+    background: #300640;
 }
 
 /* Button styling */

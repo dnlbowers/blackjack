@@ -631,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.backgroundColor = "#EE82EE";
         resultSurroundRef.style.backgroundColor = "#312b50";
         for (let i = 0; i < mainWindowRef.length; i++) {
-            mainWindowRef[i].style.backgroundColor = "#4B0082";
+            mainWindowRef[i].style.backgroundColor = "#300640";
         }
     }
 });
