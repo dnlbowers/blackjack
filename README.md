@@ -1,4 +1,4 @@
-Redo color grid with new colors
+/*check why wireframes are not showing as link to images*/
 
 # **Blackjack**
 ## **Site Overview**
@@ -67,11 +67,11 @@ As a user, I want to: -
 To give my project structure and work out the best-intended flow of information, I created the below wireframes as a guide.
     
     *Mobile Wireframes:
-        * [Game Table and Main Menu.](docs/wireframes/mobile-gameboard-menu.png)
+        * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
     
     *Desktop Wireframes:
-        * [Desktop Game Table.](docs/wireframes/desktop-gameboard.png)
-        * [Desktop Main Menu.](docs/wireframes/desktop-menu.png)
+        * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
+        * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
 
 Along the way, the design and menu options have changed slightly to improve the app's user experience. The changes included: -
 
@@ -94,6 +94,22 @@ I have created the below color grid using [https://contrast-grid.eightshapes.com
 
 ## **Current Features**
 ###  **Header Element**
+The header element contains the following: -
+
+#### ***Title:***
+![Game Title](docs/screenshots/title.jpg)
+
+* The title servers to make it clear to the user from the first instance what the game will be. Since the app is all one page and the menu is easily accessible through out gameplay I felt there was no need to include a navigation anchor in the title on this project.
+
+#### ***Main Menu button***
+![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
+
+* This navigation button toggles between hidding and visible. 
+* When the main menu is already visible the button is set to display none. 
+* When the card table is visible it allows the user to navigate back to the menu.
+  
+
+
 
 
 ## **Future-Enhancements**
