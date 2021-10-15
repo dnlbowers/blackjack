@@ -89,12 +89,12 @@ header {
 }
 
 /* Menu styling */
-#main-menu {
+/* #main-menu {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;  
-}
+} */
 
 .menu-heading {
     font-size: 32px;
@@ -206,6 +206,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     font-size: 18px;
     font-weight: bold;
     height: 4.375rem;
+    margin: 40px auto;
     padding: 10px;
     width: 80%;
 }

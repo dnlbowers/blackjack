@@ -100,17 +100,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // return to main menu from sub menu buttons
     exitRulesRef.addEventListener("click", function () {
         rulesContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     exitOptionsRef.addEventListener("click", function () {
         optionsContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     exitRgRef.addEventListener("click", function () {
         responsibleContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     //Menu btn on game table
@@ -148,8 +148,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (event.key === "r") {
                 rulesContainerRef.style.display = "block";
                 mainMenuRef.style.display = "none";
-            }
-            else if (event.key === "g") {
+            } else if (event.key === "o"){
+                optionsContainerRef.style.display = "block";
+                mainMenuRef.style.display = "none";
+            } else if (event.key === "g") {
                 responsibleGamingMenu();
             }
         } else if (modalSurroundRef.style.display !== "none") {
@@ -555,7 +557,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function accessMenu() {
         gameTableRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
         menuBtnRef.style.display = "none";
         optionsContainerRef.style.display ="none";
         responsibleContainerRef.style.display = "none";
