@@ -1,20 +1,22 @@
 
-// REMOVE ALL CONSOLE LOGS AND BLANK LINES
+//MUST DO's
+// REMOVE ALL CONSOLE LOGS, COMMENTED OUT CODE AND BLANK LINES
+
 // break up the how to play section in the game rules
-// Add computer total = ? and fill the score at the end
-// Make sure to add keydown event on main menu for options
 
 //mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
-//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
-//consider adding more decks and shuffle function
-//change score board to stake and pot with a double your stake on win
-// key board short cuts - for as many buttons as possible
-// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
-// !! above the MVP plan !!
 
+// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
+
+// !! above the MVP plan !!
+//animate cards with keyframes
+//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
 // add sound- default off
-//add color choice for the game table
 //add player choice for ace high or low
+// if time look into shuffle 
+//consider adding more decks and shuffle function
+//change score board to stake and pot with a double your stake on win (fun money;)
+
 
 //Global constant references for elements in the DOM
 //reference to the module window frame

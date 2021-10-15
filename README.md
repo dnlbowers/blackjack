@@ -169,7 +169,9 @@ Each sub menu Has a "Main Menu" button at the bottom of the page to navigate bac
 * Card animation
 * Neon color theme
 * use for loop to create an array of objects and create an algorythm to shuffle the hand every turn.
-* shuffle and create a deck as array of objects
+* shuffle and create a deck as array of objects.
+* Give player the choice over ace high or low.
+* Fun money the ability to wager and chosen stake amount.
 
 ## **Testing Phase**
 
