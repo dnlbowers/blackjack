@@ -1,3 +1,4 @@
+
 // REMOVE ALL CONSOLE LOGS AND BLANK LINES
 // break up the how to play section in the game rules
 // Add computer total = ? and fill the score at the end
@@ -124,7 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    standBtnRef.addEventListener("click", computerTurn);
+    standBtnRef.addEventListener("click", function() {
+        if (canPlay) {
+            computerTurn();
+        } 
+    });
 
     resultModalBtnRef.addEventListener("click", function () {
         reDeal();
