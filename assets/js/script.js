@@ -202,17 +202,16 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));
-        }
-        
-        for (let child of houseCardsRef) {
-            if (child === houseCardsRef[0]) {
-                child.style.display = "none";
-                dealerCardContainerRef.insertBefore(
-                    firstHouseCard,
-                    child
-                ).style.display = "inline";
-                firstHouseCard.style.position = "absolute";
-                firstHouseCard.style.left = "15px";
+            for (let child of houseCardsRef) {
+                if (child === houseCardsRef[0]) {
+                    child.style.display = "none";
+                    dealerCardContainerRef.insertBefore(
+                        firstHouseCard,
+                        child
+                    ).style.display = "inline";
+                    firstHouseCard.style.position = "absolute";
+                    firstHouseCard.style.left = "15px";
+                }
             }
         }
         
