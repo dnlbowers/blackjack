@@ -345,8 +345,6 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function fanCards(side, hand, card) {
         let value = 15;
-        
-
         for (let i = 1; i <= hand.length; i++) {
             if (side === "player"){
                 card.style.left =  (value * i) + "px";
@@ -354,7 +352,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 card.style.left =  (value * i) - 15 + "px";
             }
         }
-        console.log(' loop :>> ', value);
     }
 
     /**
@@ -395,14 +392,11 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function computerTurn() {
         canPlay = false;
-
         houseCardsRef[0].style.display = "none";
         houseCardsRef[1].style.left = "15px";
         houseCardsRef[1].style.display = "inline";
-
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
-
         while (dealerTotal < 17) {
             dealerHand.push(dealCard("dealer"));
             let dealerTotal = checkHandValue(dealerHand);
@@ -414,7 +408,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         return compareHands(playerTotal, dealerTotal);
-
     }    
     
     /**
@@ -607,7 +600,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
 
     /**
-    * Allows the game rules meu to extend
+    * Allows the game rules menu to extend
     */
     function extendRulePanel(target) {
         hideRulePanels();
@@ -621,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-    * Hides game rules segments when a new one is open
+    * Hides all game rules segments when a new one is open
     */    
     function hideRulePanels() {
         for (let i = 0; i < ruleSegment.length; i++) {
@@ -633,7 +626,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     /**
-     * Adds content to the responsible gaming modal
+     * hides main menu and reveals the responsible gaming sub menu
      */
     function responsibleGamingMenu() {
         mainMenuRef.style.display = "none";

@@ -1,4 +1,5 @@
 /*retake screenshots of options/colorthemes an check remining screenshots*/
+/* Make sure to get a screenshot of the results modal for both house blackjack, player black jack and draw results */
 
 # **Blackjack**
 ## **Site Overview**
@@ -160,7 +161,7 @@ Each sub menu Has a "Main Menu" button at the bottom of the page to navigate bac
 
 The card table table consist of multiple chidren elements and provided a space for the game logic to display its out puts.
 
-### **Dealer side of the table:**
+### **Dealer Side of the Table:**
 #### ***House Hand:***
 * First card is dealt face down.  
   ![Initial House Hand](docs/screenshots/house-hand-first.jpg)
@@ -171,7 +172,7 @@ The card table table consist of multiple chidren elements and provided a space f
 The score board keeps a tally of all wins, loses and draws. And can be reset at anytime with the "Clear Tally button". This is just to give the user something gague their progress in the absence of pot of fun money (See future developments.).  
 ![Scoreboard](docs/screenshots/scoreboard.jpg)
 
-### **Player side of the table**
+### **Player Side of the Table**
 The player side of the table consists of two sections: -
   * Player hand.
    *Player controls.
@@ -185,6 +186,28 @@ The player control section comprises of three controls: -
   * Hit Me Button - Draws a random card from the deck and adds it to the players hand.
   * Stand Button - End the players turn and initiates the computers turn.
   * Game rules anchor tage - Takes the user to directly to the game rules.
+
+![Player Controls Section](docs/screenshots/player-controls.jpg)
+
+### **Game Table Pop up Modal**
+### **Game Initiation Modal:**
+I included this to allow for all actions to first be initiated by the user. When the user first views the table he is greated with the below modal:   
+![Game Inititation Modal](docs/screenshots/deal-me-in.jpg)
+
+### **Results Modals:**
+This same modal is used to display the result and a brief summary. The inner HTML is change via the javascript file dependant of the result.
+#### ***Win:***
+![Win Modal](docs/screenshots/win.jpg)
+
+#### ***Lose:***
+![Lose Modal](docs/screenshots/lose.jpg)
+
+#### ***Player Bust:***
+![Player Bust](docs/screenshots/player-bust.jpg)
+
+#### ***House Bust:***
+![House Bust](docs/screenshots/house-bust.jpg)
+
 
 
 
