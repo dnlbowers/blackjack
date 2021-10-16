@@ -145,31 +145,31 @@ document.addEventListener("DOMContentLoaded", function () {
     //Keyboard controls for on the game table
     window.addEventListener("keydown", function (event) {
         if (document.querySelector('#main-menu').style.display !== "none") {
-            if (event.key === "t") {
+            if (event.key === "T" || event.key === "t") {
                 displayGameTable();
-            } else if (event.key === "r") {
+            } else if (event.key === "R" || event.key === "r") {
                 rulesContainerRef.style.display = "block";
                 mainMenuRef.style.display = "none";
-            } else if (event.key === "o"){
+            } else if (event.key === "O" || event.key === "o"){
                 optionsContainerRef.style.display = "block";
                 mainMenuRef.style.display = "none";
-            } else if (event.key === "g") {
+            } else if (event.key === "G" || event.key === "g") {
                 responsibleGamingMenu();
             }
         } else if (modalSurroundRef.style.display !== "none") {
-            if (event.key === "d") {
+            if (event.key === "D" || event.key === "d") {
                 reDeal();   
-            } else if (event.key === "m") {
+            } else if (event.key === "M" || event.key === "m") {
                 accessMenu();
             }
         } else if (canPlay) {
-            if (event.key === "h") {
+            if (event.key === "H" || event.key === "h") {
                 hit(playerHand);
-            } else if (event.key === "s") {
+            } else if (event.key === "S" || event.key === "s") {
                 computerTurn();
-            } else if (event.key === "m") {
+            } else if (event.key === "M" || event.key === "m") {
                 accessMenu();
-            } else if (event.key === "c") {
+            } else if (event.key === "C" || event.key === "c") {
                 clearTally();
             } 
         }      
