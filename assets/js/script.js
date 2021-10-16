@@ -406,12 +406,15 @@ document.addEventListener("DOMContentLoaded", function () {
         while (dealerTotal < 17) {
             dealerHand.push(dealCard("dealer"));
             let dealerTotal = checkHandValue(dealerHand);
-
+            console.log(dealerTotal);
             if (dealerTotal > 21) {
                 return houseBust(dealerTotal);
-            } 
+            } else if (dealerTotal >= 17) {
+                return compareHands(playerTotal, dealerTotal);
+            }
         }
         return compareHands(playerTotal, dealerTotal);
+
     }    
     
     /**
