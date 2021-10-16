@@ -161,12 +161,11 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /** options sub menu **/
 #green, #blue, #purple {
-    padding-right: 24px;
-    background: #ff0000;
-    display: inline;
-    margin: 7px;
-    padding-bottom: 30px;
-    padding-left: 24px;
+    border-radius: 20px;
+    display: block;
+    height: 100px;
+    margin: 22px auto;
+    width: 100px;
 }
 
 .alt-theme-border {

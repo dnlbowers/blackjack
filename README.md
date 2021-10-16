@@ -92,8 +92,8 @@ I have created the below color grid using [https://contrast-grid.eightshapes.com
 # **Retake screenshot and delete the heading**
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
 
-## **Current Features**
-###  ***Header Element***
+# **Current Features**
+##  ***Header Element***
 The header element contains the following: -
 
 ### ***Title:***
@@ -109,8 +109,8 @@ The header element contains the following: -
 * 
 ![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
 
-## **Main Window:**
-### ***Main Menu (navigation tag):***
+# **Main Window:**
+## ***Main Menu (navigation tag):***
 * Acts as a landing page for the user. Allowing them: -
   * To proceed directly to the card table.
   * Quick access to the game rules.
@@ -119,7 +119,7 @@ The header element contains the following: -
   
 ![Main Menu](docs/screenshots/main-menu.jpg)
 
-### **Sub Menus**
+## **Sub Menus**
 ### ***Game Rules***
 On this sub menu I decide to use an accordion menu to seperate and display the different game rules. The reasons and fatures of this are as follows: -
   * Prevents the user getting lost in large reems of text. 
@@ -152,6 +152,7 @@ Working In the industry I reconsie the importance of this statement on any gmabl
 Each sub menu Has a "Main Menu" button at the bottom of the page to navigate back to the root menu.
 
 ![Return to Main Menu Navigation](docs/screenshots/sub-menu-exit-btn.jpg)
+
 
 
 
