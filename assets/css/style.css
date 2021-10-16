@@ -161,7 +161,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /** options sub menu **/
 #green, #blue, #purple {
-    border-radius: ;
+    border-radius: 20px;
     display: block;
     height: 100px;
     margin: 22px auto;
