@@ -208,7 +208,9 @@ This same modal is used to display the result and a brief summary. The inner HTM
 #### ***House Bust:***
 ![House Bust](docs/screenshots/house-bust.jpg)
 
-
+### **Card Positioning**
+Each card is placed on top of each other spaced 15px from left edge to left edge. This allows the suit and value to be visible, whilst minimising the required space for the hand it also looks neater and simulates how a hand would be dealt by a casino croupier.  
+![Card positioning](docs/screenshots/card-fan.jpg)
 
 
    
@@ -220,13 +222,20 @@ This same modal is used to display the result and a brief summary. The inner HTM
 
 
 ## **Future-Enhancements**
-* game sound
-* Card animation
-* Neon color theme
-* use for loop to create an array of objects and create an algorythm to shuffle the hand every turn.
-* shuffle and create a deck as array of objects.
-* Give player the choice over ace high or low.
-* Fun money the ability to wager and chosen stake amount.
+This game became a bit of a passion project, but due to the steep learning curve involved with learning Javscript in a short amount of time and the fast approaching deadline, I deemed the below to be above and beyond the required MVP needed to initially release the game into the 
+
+public domain: -
+
+  * Game sounds - shuffle noise, card being dealt and lobby sounds/music. The user would be gien the change to toggle these on or off.
+  * Card animation - Each card delt would slide into position as if being dealt from a deck. This would also give a bit of time between each card dealt during the computers turn and thus add to the users enjoyment.
+  * Neon color theme which chages even the button color and the gold surround.
+  * Create a deck as array of objects to include the card image, value, and card description (suit and value). rater than using to seperate arrays. This would also give me the ability to control the number of decks in the stack rather than having an infinate deck. This would also allow me to refactor my code and stremeline it in several places.
+  * Give player the choice over ace high or low.
+  * Result modal time out. To save the user a click an auto time out on the resut modal could be introudced. This would save the user having to to click re-deal eveytime and they could instead wait for the specified period of time for the pop up to close byt itself.
+  * Fun money - the ability to wager and chosen stake amount. This would potentially replace the scoreboard as a way of the user gauging their progress.
+  
+
+Once the Code Institute Diploma is complete I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
 
 ## **Testing Phase**
 
