@@ -173,7 +173,7 @@ The card table consists of multiple elements and provides a space for the game l
 #### ***Scoreboard:***
   * The scoreboard keeps a tally of all wins, losses, and draws. 
   * The user can reset the tally at any time with the "Clear Tally" button.
-  * It gives the user something to gauge their progress without a pot of fun money (See future developments.). 
+  * It gives the user something to gauge their progress without a pot of fun money (See future developments.).   
 ![Scoreboard](docs/screenshots/scoreboard.jpg)
 
 ### **Player Side of the Table**
@@ -182,7 +182,7 @@ The player side of the table consists of two sections: -
    *Player controls.
 
 #### ***Player Hand:***
-Underneath the player's hand, there is a running total to help the user make quick decisions based on the total hand value of their current hand.
+Underneath the player's hand, there is a running total to help the user make quick decisions based on the total hand value of their current hand.  
 ![Player Hand](docs/screenshots/player-hand.jpg)
 
 #### ***Player Contols***
@@ -206,11 +206,22 @@ Upon the conclusion of the round, the results display in the same modal with a s
 #### ***Lose:***
 ![Lose Modal](docs/screenshots/lose.jpg)
 
+#### ***Draw:***
+![Draw Modal](docs/screenshots/draw.jpg)
+
 #### ***Player Bust:***
 ![Player Bust](docs/screenshots/player-bust.jpg)
 
 #### ***House Bust:***
 ![House Bust](docs/screenshots/house-bust.jpg)
+
+#### ***House Blackjack:***
+![House Bust](docs/screenshots/house-bj.jpg)
+
+#### ***Player Blackjack:***
+![Player Bust](docs/screenshots/player-bj.jpg)
+
+
 
 ### **Card Positioning**
 Each card is placed on top of the other, spaced 15px from the left edge to the left edge. Fanning the cards allow the suit and value to be visible while minimizing the required space for the hand. It also looks neater and simulates how a casino croupier would deal a hand.  
