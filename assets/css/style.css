@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:wght@600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +41,7 @@ header {
     align-items: center;
     display: flex;
     flex-direction: row;
-    font-family: 'Akronim', cursive;
+    font-family: 'Acme', sans-serif;
     font-size: 23px;
     justify-content: center;
     padding-top: 0.625rem;
@@ -97,10 +97,10 @@ header {
 } */
 
 .menu-heading {
+    font-family: 'Acme', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    padding-bottom: 30px;
-    text-decoration: underline;
+    padding: 15px 0;
 }
 
 .menu-sub-heading {
@@ -161,7 +161,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /** options sub menu **/
 #green, #blue, #purple {
-    border-radius: 20px;
+    border-radius: ;
     display: block;
     height: 100px;
     margin: 22px auto;
@@ -328,12 +328,14 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 #result {
     border-bottom: 2px solid #d3d3d3;
+    font-family: 'Acme', sans-serif;
     padding-bottom: 13px;
 }
 
 /*footer styling*/
 /*style for the social media links*/
 footer {
+    padding-top: 15px;
     width: 100%;
  }
 
