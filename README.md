@@ -1,4 +1,4 @@
-/*check why wireframes are not showing as link to images*/
+/*retake screenshots of options/colorthemes an check remining screenshots*/
 
 # **Blackjack**
 ## **Site Overview**
@@ -89,7 +89,6 @@ When deciding the app's color scheme, I first began with the classic green table
  
 I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFF%0D%0A%23000%0D%0A%23BF953F%0D%0A%23FCF6BA%0D%0A%23B38728%0D%0A%23FBF5B7%0D%0A%23D3D3D3%0D%0A%238B0000%0D%0A%23FF0000%0D%0A%23FFD700%0D%0A%2300008B%0D%0A%234682B4%0D%0A%2300BFFF%0D%0A%23312B50%0D%0A%23EE82EE%0D%0A%23300640%0D%0A%23008080%0D%0A%2300FFBF%0D%0A%23006400%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
-# **Retake screenshot and delete the heading**
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
 
 # **Current Features**
@@ -98,20 +97,20 @@ The header element contains the following: -
 
 ### ***Title:***
 
-* The title servers to make it clear to the user from the first instance what the game will be. Since the app is all one page and the menu is easily accessible through out gameplay I felt there was no need to include a navigation anchor in the title on this project.
+The title servers to make it clear to the user from the first instance what the game will be. Since the app is all one page and the menu is easily accessible through out gameplay I felt there was no need to include a navigation anchor in the title on this project.
 
 ![Game Title](docs/screenshots/title.jpg)
 
 ### ***Main Menu button (navigation tag):***
-* This navigation button toggles between hidding and visible. 
-* When the main menu is already visible the button is set to display none. 
-* When the card table is visible it allows the user to navigate back to the menu.
-* 
+  * This navigation button toggles between hidding and visible. 
+  * When the main menu is already visible the button is set to display none. 
+  * When the card table is visible it allows the user to navigate back to the menu.
+ 
 ![Menu navigation button](docs/screenshots/header-menu-btn.jpg)
 
 # **Main Window:**
-## ***Main Menu (navigation tag):***
-* Acts as a landing page for the user. Allowing them: -
+## **Main Menu (navigation tag):**
+Acts as a landing page for the user. Allowing them: -
   * To proceed directly to the card table.
   * Quick access to the game rules.
   * Access to the options menu.
@@ -132,6 +131,12 @@ On this sub menu I decide to use an accordion menu to seperate and display the d
 ### ***Options:***
 On this sub menu the player is able to change the color theme to one of three choices. The first two are standard colors for a casino card table with a surround to suit it. The third was tribute to pink october and breat cancer awareness. To make the table pink would have ruined the UX of the app so I added a dark purple color for the table and gave it a pink color for the document body.
 
+ * Each Theme has a complimentary surround color for the body.
+ * All three blank buttons have Aria labels to make them accessible to the visually impaired.
+ * Active class toggled with the JS file to ensure only the active theme shows as active in the following ways: -
+   * Each button has a white border to make it stand out when not active.
+   * The active theme and hover have a dotted yellow border to make it clear which theme has the active class. 
+
 #### **Green (default) Theme**
 ![Green Theme](docs/screenshots/green-theme.jpg)
 #### **Blue Theme**
@@ -139,11 +144,6 @@ On this sub menu the player is able to change the color theme to one of three ch
 #### **Purple Theme**
 ![Purple Theme](docs/screenshots/purple-theme.jpg)
 
- * Each Theme has a complimentary surround color for the body.
- * All three blank buttons have Aria labels to make them accessible to the visually impaired.
- * Active class toggled with the JS file to ensure only the active theme shows as active in the following ways: -
-   * Each button has a white border to make it stand out when not active.
-   * The active theme and hover have a dotted yellow border to make it clear which theme has the active class. 
 
 ### ***Responsible Gaming:***
 Working In the industry I reconsie the importance of this statement on any gmabling related game. Although there is no money involved in my version of the game at present the thrill of the chase can still be present. In fact one feedback from every tester who tried it for me was how addictive the game was. I included this as a warning to those who may feel they have a problem to seek help.
@@ -154,7 +154,37 @@ Each sub menu Has a "Main Menu" button at the bottom of the page to navigate bac
 
 ![Return to Main Menu Navigation](docs/screenshots/sub-menu-exit-btn.jpg)
 
+## **Card Table**
 
+![Game Table](docs/screenshots/card-table.jpg)
+
+The card table table consist of multiple chidren elements and provided a space for the game logic to display its out puts.
+
+### **Dealer side of the table:**
+#### ***House Hand:***
+* First card is dealt face down.  
+  ![Initial House Hand](docs/screenshots/house-hand-first.jpg)
+* This same card is then later revealed when the conputer turn is triggered.  
+  ![Initial House Hand](docs/screenshots/house-hand-reveal.jpg)
+
+#### ***Scoreboard:***
+The score board keeps a tally of all wins, loses and draws. And can be reset at anytime with the "Clear Tally button". This is just to give the user something gague their progress in the absence of pot of fun money (See future developments.).  
+![Scoreboard](docs/screenshots/scoreboard.jpg)
+
+### **Player side of the table**
+The player side of the table consists of two sections: -
+  * Player hand.
+   *Player controls.
+
+#### ***Player Hand:***
+Underneath the player hand there is a running total to help the user make quick decisions based on the totl hand value of their current hand.
+![Player Hand](docs/screenshots/player-hand.jpg)
+
+#### ***Player Contols***
+The player control section comprises of three controls: -
+  * Hit Me Button - Draws a random card from the deck and adds it to the players hand.
+  * Stand Button - End the players turn and initiates the computers turn.
+  * Game rules anchor tage - Takes the user to directly to the game rules.
 
 
 
