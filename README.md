@@ -130,7 +130,8 @@ On this sub menu I decide to use an accordion menu to seperate and display the d
 ![Rules Sub-Menu](docs/screenshots/rules-sub-menu.jpg)
 
 ### ***Options:***
-On this sub menu the player is able to change the color theme to one of three choices for: -
+On this sub menu the player is able to change the color theme to one of three choices. The first two are standard colors for a casino card table with a surround to suit it. The third was tribute to pink october and breat cancer awareness. To make the table pink would have ruined the UX of the app so I added a dark purple color for the table and gave it a pink color for the document body.
+
 #### **Green (default) Theme**
 ![Green Theme](docs/screenshots/green-theme.jpg)
 #### **Blue Theme**
@@ -139,9 +140,9 @@ On this sub menu the player is able to change the color theme to one of three ch
 ![Purple Theme](docs/screenshots/purple-theme.jpg)
 
  * Each Theme has a complimentary surround color for the body.
- * All three div's have Aria labels to make them accessible to the visually impaired.
+ * All three blank buttons have Aria labels to make them accessible to the visually impaired.
  * Active class toggled with the JS file to ensure only the active theme shows as active in the following ways: -
-   * Each div has a white border to make it stand out when not active.
+   * Each button has a white border to make it stand out when not active.
    * The active theme and hover have a dotted yellow border to make it clear which theme has the active class. 
 
 ### ***Responsible Gaming:***
