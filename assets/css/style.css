@@ -7,8 +7,6 @@
 /*temporary to combat chrome dark theme*/
 body {
     background-color: 	#00FFBF;
-    height: 100vh;
-    width: 100vw;
 }
 
 header {
@@ -60,14 +58,12 @@ header {
 /* Golden surround to the main game area */
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-    border: 2px solid #000;
+    border: 3px solid #000;
     border-radius: 40px;
     box-sizing: border-box;
     display: flex;
-    height: 78vh;
-    max-height: 664px;
+    height: 595px;
     max-width: 875px;
-    min-height: 615px;
     padding: 15px;
     width: 95vw;
 }    
@@ -75,15 +71,12 @@ header {
 /* Class to set the height of each module the same when it opens */
 .main-window {
     background-color: #006400;
-    border: 1px solid #000;
+    border: 3px solid #000;
     border-radius: 25px;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    height: 74vh;
     letter-spacing: 0.5px;
-    max-height: 630px;
-    min-height: 583px;
     padding: 0.625rem;
     width: 95vw;
 }
@@ -219,11 +212,11 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /* Game board control buttons */
 #hit-btn {
-    margin-right: 5px;
+    margin-right: 3.5px;
 }
 
 #stand-btn {
-    margin-left: 5px;
+    margin-left: 3.5px;
 }
 
 /* universal button styles */
@@ -261,7 +254,6 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 #dealer-side, #player-side {
-    height: 25%;
     width: 170px;
 }
 
@@ -273,7 +265,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /* Scoreboard style */
 #score-board {
-    height: 10%;
+    height: 16%;
 }
 
 .score-tally {
@@ -357,6 +349,10 @@ footer {
 
 /* Media queries */
 @media (min-width: 360px) {
+    #main-surround {
+        height: 625px;
+    }
+    
     #hit-btn {
         margin-right: 18.75px;
     }

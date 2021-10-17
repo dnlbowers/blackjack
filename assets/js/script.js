@@ -364,7 +364,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let card of hand) {
             handValue += card;
         }
-
         //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
             return 0;
@@ -384,7 +383,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             return handValue;
         }
-        
     }
     /**
      * ends players ability to play and triggers computers turn
@@ -547,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayGameTable() {
         mainMenuRef.style.display = "none";
         gameTableRef.style.display = "flex";
-        gameTableRef.style.justifyContent = "space-between";
+        gameTableRef.style.justifyContent = "space-evenly";
         gameTableRef.style.flexDirection = "column";
         gameTableRef.style.alignItems = "center";
         menuBtnRef.style.display = "block";
