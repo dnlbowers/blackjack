@@ -66,7 +66,7 @@ header {
     display: flex;
     height: 78vh;
     max-height: 664px;
-    max-width: 700px;
+    max-width: 875px;
     min-height: 615px;
     padding: 15px;
     width: 95vw;
@@ -81,8 +81,8 @@ header {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     height: 74vh;
+    letter-spacing: 0.5px;
     max-height: 630px;
-    max-width: 670px;
     min-height: 583px;
     padding: 0.625rem;
     width: 95vw;
@@ -219,11 +219,11 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /* Game board control buttons */
 #hit-btn {
-    margin-right: 7.5px;
+    margin-right: 5px;
 }
 
 #stand-btn {
-    margin-left: 7.5px;
+    margin-left: 5px;
 }
 
 /* universal button styles */
@@ -388,9 +388,9 @@ footer {
         font-size: 45px;
     }
 
-    #dealer-side, #player-side {
+    /* #dealer-side, #player-side {
         width: 145px;
-    }
+    } */
 
     .rule-heading {
        font-size: 18px; 
