@@ -7,6 +7,8 @@ Blackjack is a classic game dating back to around the 1700s. My first introducti
 
 My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me during my childhood, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
 
+![Demonstration of Site Responsiveness](docs/screenshots/responsive.jpg)
+
 ## **Planning Stage**
 
 ### **Target Audience:**
