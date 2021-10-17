@@ -60,7 +60,7 @@ header {
 /* Golden surround to the main game area */
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 40px;
     box-sizing: border-box;
     display: flex;
@@ -75,7 +75,7 @@ header {
 /* Class to set the height of each module the same when it opens */
 .main-window {
     background-color: #006400;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 25px;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;

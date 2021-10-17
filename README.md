@@ -234,21 +234,22 @@ Each card is placed on top of the other, spaced 15px from the left edge to the l
     ![Created By](docs/screenshots/copyright.jpg)
    
 # **Typography**
-
+I imported all fonts using the google fonts API.
+  *The primary font used throughout was Acme. I chose this font because it was bold and had a strong presence for the title, headings, and buttons.
+  *For the smaller text of the sub-menus content and the card table, Open Sans was used. My reasoning behind this was because Acme looked unclear when using Acme and these two styles compliment each other well.
 
 ## **Future-Enhancements**
-This game became a bit of a passion project, but due to the steep learning curve involved with learning Javscript in a short amount of time and the fast approaching deadline, I deemed the below to be above and beyond the required MVP needed to initially release the game into the public domain: -
+This game became a bit of a passion project, but due to the steep learning curve involved with learning Javascript in a short amount of time and the fast-approaching deadline, I deemed the below to be above and beyond the required MVP needed to release the game into the public domain initially: -
 
-  * Game sounds - shuffle noise, card being dealt and lobby sounds/music. The user would be gien the change to toggle these on or off.
-  * Card animation - Each card delt would slide into position as if being dealt from a deck. This would also give a bit of time between each card dealt during the computers turn and thus add to the users enjoyment.
-  * Neon color theme which chages even the button color and the gold surround.
-  * Create a deck as array of objects to include the card image, value, and card description (suit and value). rater than using to seperate arrays. This would also give me the ability to control the number of decks in the stack rather than having an infinate deck. This would also allow me to refactor my code and stremeline it in several places.
-  * Give player the choice over ace high or low.
-  * Result modal time out. To save the user a click an auto time out on the resut modal could be introudced. This would save the user having to to click re-deal eveytime and they could instead wait for the specified period of time for the pop up to close byt itself.
-  * Fun money - the ability to wager and chosen stake amount. This would potentially replace the scoreboard as a way of the user gauging their progress.
-  
+  * Game sounds - shuffle noise on clicking the re-deal button, when each card dealt a single card noise and lobby sounds/music. The sounds could be toggled on or off via the options page.
+  * Card animation - Each card dealt would slide into position as if being dealt from a deck. Card animation would also allow the user to see each card dealt, thus add to the user's enjoyment.
+  * Neon color theme, which changes even the button color and the gold surround.
+  * Create a deck as an array of objects to include the card image, value, and card description (suit and value). Creating a whole deck in this way would also allow me to control the number of decks in the stack rather than having an infinite deck. 
+  * Give the player a choice over ace high or low.
+  * Auto time out on the results modal could be introduced. The timeout would save the user having to click re-deal every time, and they could wait for the specified period for the pop-up to close by itself.
+  * Fun money - the ability to wager and chosen stake amount, potentially replacing the scoreboard as a way of the user gauging their progress.
 
-Once the Code Institute Diploma is complete I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
+Once the Code Institute Diploma is complete, I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
 
 ## **Testing Phase**
 
