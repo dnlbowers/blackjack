@@ -50,10 +50,10 @@ As a user, I want to: -
 1. Ensuring the use of semantic elements, alternate text, and aria labels where appropriate.
 
 1. The landing page will be the main menu. Access to the main menu can also be done throughout the game using the menu button or pressing m on the keyboard. This menu will contain links to:
-  * Game rules.
-  * Game options menu. 
-  * Card table.
-  * Responsible Gaming Statement.
+    * Game rules.
+    * Game options menu. 
+    * Card table.
+    * Responsible Gaming Statement.
 
 1. The relevant game rules are divided into clearly marked sections of the rules sub-menu. 
 
@@ -69,21 +69,21 @@ As a user, I want to: -
 
 To give my project structure and work out the best-intended flow of information, I created the below wireframes as a guide.
     
-*Mobile Wireframes:
-  * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
+* Mobile Wireframes:
+    * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
 
-*Desktop Wireframes:
-  * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
-  * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
+* Desktop Wireframes:  
+    * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
+    * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
 
 Along the way, the design and menu options have changed slightly to improve the app's user experience. The changes included: -
 
-   * User controls and scoreboard switched positions to make the game control more accessible for the user.
-   * The removal of the contact form option in the menu. This feature was not necessary since I decided to add the social links in the footer.
-   * All game elements moved within the app's central area. The only exceptions to the were: 
-       * Social media links to GitHub and linked in.
-       * The title and surrounding images.
-       * Menu button visible from the game table but hidden when within the menu itself.
+  * User controls and scoreboard switched positions to make the game control more accessible for the user.
+  * The removal of the contact form option in the menu. This feature was not necessary since I decided to add the social links in the footer.
+  * All game elements moved within the app's central area. The only exceptions to the were: 
+      * Social media links to GitHub and linked in.
+      * The title and surrounding images.
+      * Menu button visible from the game table but hidden when within the menu itself.
 
 Since this for this project, wireframes are not required and were used only to structure my creative process, I did not feel the need to pre-design each of the sub-menus in turn. For this reason, I have omitted them. 
 
