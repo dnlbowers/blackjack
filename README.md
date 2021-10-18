@@ -161,14 +161,14 @@ Each sub-menu has a "Main Menu" button at the bottom of the page to navigate bac
 
 ## **Card Table**
 
-![Game Table](docs/screenshots/card-table.jpg)
+![Game Table](docs\screenshots\card-table.jpg)
 
 The card table consists of multiple elements and provides a space for the game logic to take inputs from the user display its feedback.
 
 ### **Dealer Side of the Table:**
 #### ***House Hand:***
   * The first card is dealt for the house and hidden (to be revealed later), only to be replaced with a card image face down on the table.  
-  ![Initial House Hand](docs/screenshots/house-hand-first.jpg)
+  ![Initial House Hand](docs\screenshots\house-hand-first.jpg)
   * When the computer turn is triggered, it reveals the first card and hides the image of the facedown card.  
   ![Initial House Hand](docs/screenshots/house-hand-reveal.jpg)
 
@@ -176,7 +176,7 @@ The card table consists of multiple elements and provides a space for the game l
   * The scoreboard keeps a tally of all wins, losses, and draws. 
   * The user can reset the tally at any time with the "Clear Tally" button.
   * It gives the user something to gauge their progress without a pot of fun money (See future developments.).   
-![Scoreboard](docs/screenshots/scoreboard.jpg)
+![Scoreboard](docs\screenshots\scoreboard.jpg)
 
 ### **Player Side of the Table**
 The player side of the table consists of two sections: -
@@ -185,7 +185,7 @@ The player side of the table consists of two sections: -
 
 #### ***Player Hand:***
 Underneath the player's hand, there is a running total to help the user make quick decisions based on the total hand value of their current hand.  
-![Player Hand](docs/screenshots/player-hand.jpg)
+![Player Hand](docs\screenshots\player-hand.jpg)
 
 #### ***Player Contols***
 The player control section comprises of three controls: -
