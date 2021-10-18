@@ -24,7 +24,7 @@ const mainMenuRef = document.getElementById("main-menu");
 const gameTableRef = document.getElementById("game-table");
 const rulesContainerRef = document.getElementById("rules-sub-menu");
 const optionsContainerRef = document.getElementById("options-sub-menu");
-const responsibleContainerRef = document.getElementById("responsible-sub-menu")
+const responsibleContainerRef = document.getElementById("responsible-sub-menu");
 
 //In game pop up references
 const modalSurroundRef = document.getElementById("modal-surround");
@@ -40,7 +40,7 @@ const gameRulesBtnRef = document.getElementById("game-rules-btn");
 
 const ruleHeading = document.querySelectorAll(".rule-heading");
 const ruleSegment = document.querySelectorAll(".rule-segment");
-const optionsBtnRef = document.getElementById("game-options-btn")
+const optionsBtnRef = document.getElementById("game-options-btn");
 const colorThemeRef = document.getElementsByClassName('color-theme');
 const mainWindowRef = document.querySelectorAll('.main-window');
 const responsibleGamblingBtnRef = document.getElementById("rg-btn");
