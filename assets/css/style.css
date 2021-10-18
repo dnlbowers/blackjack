@@ -93,7 +93,7 @@ header {
     font-family: 'Acme', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    padding: 15px 0;
+    padding: 15px 0 0;
 }
 
 .menu-sub-heading {
@@ -149,7 +149,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 .rule-segment > p {
-    padding-bottom: 7px;
+    padding-bottom: 5px;
 }
 
 /** options sub menu **/
@@ -184,7 +184,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 /* Button styling */
 /* Menu buttons */
 .back-to-menu {
-    bottom: 10px;
+    bottom: 5px;
     position: absolute;
     right: 50%;
     transform: translateX(50%);
