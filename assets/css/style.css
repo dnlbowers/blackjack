@@ -113,6 +113,7 @@ header {
     cursor: pointer;
     display: flex;
     font-family: 'Acme', sans-serif;
+    font-weight: bold;
     justify-content: space-between;
     outline: none;
     padding: 1px 7px;
