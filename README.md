@@ -70,11 +70,11 @@ As a user, I want to: -
 To give my project structure and work out the best-intended flow of information, I created the below wireframes as a guide.
     
 * Mobile Wireframes:
-    * [Game Table and Main Menu.](docs\wireframes\mobile-gameboard-menu.png)
+    * [Game Table and Main Menu.](docs/wireframes/mobile-gameboard-menu.png)
 
 * Desktop Wireframes:  
-    * [Desktop Game Table](docs\wireframes\desktop-gameboard.png)
-    * [Desktop Main Menu](docs\wireframes\desktop-menu.png)
+    * [Desktop Game Table](docs/wireframes/desktop-gameboard.png)
+    * [Desktop Main Menu](docs/wireframes/desktop-menu.png)
 
 Along the way, the design and menu options have changed slightly to improve the app's user experience. The changes included: -
 
