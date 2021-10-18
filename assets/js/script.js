@@ -56,8 +56,8 @@ const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
 const playerCardContainerRef = document.getElementById("player-card-container");
 const winTallyRef = document.getElementById("wins");
-const loseTallyRef = document.getElementById("loses");
-const drawTallyRef = document.getElementById("drawn");
+const loseTallyRef = document.getElementById("losses");
+const drawTallyRef = document.getElementById("draws");
 const resetScoreRef = document.getElementById("reset-btn");
 const playerTotalRef = document.getElementById("player-total");
 

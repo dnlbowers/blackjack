@@ -4,7 +4,7 @@
 
 ### ***Manual Testing:***
 
-###***Bugs and Fixes:***
+### ***Bugs and Fixes:***
 
 1. **Intended Outcome** - A game play that looped continuously once initiated and takes the appropriate actions based on the users input
     * ***Issue Found:***
