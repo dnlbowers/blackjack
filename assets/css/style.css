@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Akronim&family=Open+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:wght@600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,6 @@
 /*temporary to combat chrome dark theme*/
 body {
     background-color: 	#00FFBF;
-    height: 100vh;
-    width: 100vw;
 }
 
 header {
@@ -41,7 +39,7 @@ header {
     align-items: center;
     display: flex;
     flex-direction: row;
-    font-family: 'Akronim', cursive;
+    font-family: 'Acme', sans-serif;
     font-size: 23px;
     justify-content: center;
     padding-top: 0.625rem;
@@ -60,14 +58,12 @@ header {
 /* Golden surround to the main game area */
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-    border: 1px solid #000;
+    border: 3px solid #000;
     border-radius: 40px;
     box-sizing: border-box;
     display: flex;
-    height: 78vh;
-    max-height: 664px;
-    max-width: 700px;
-    min-height: 615px;
+    height: 595px;
+    max-width: 875px;
     padding: 15px;
     width: 95vw;
 }    
@@ -75,32 +71,29 @@ header {
 /* Class to set the height of each module the same when it opens */
 .main-window {
     background-color: #006400;
-    border: 2px solid #000;
+    border: 3px solid #000;
     border-radius: 25px;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    height: 74vh;
-    max-height: 630px;
-    max-width: 670px;
-    min-height: 583px;
+    letter-spacing: 0.5px;
     padding: 0.625rem;
     width: 95vw;
 }
 
 /* Menu styling */
-#main-menu {
+/* #main-menu {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;  
-}
+} */
 
 .menu-heading {
+    font-family: 'Acme', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    padding-bottom: 30px;
-    text-decoration: underline;
+    padding: 15px 0;
 }
 
 .menu-sub-heading {
@@ -161,12 +154,11 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /** options sub menu **/
 #green, #blue, #purple {
-    padding-right: 24px;
-    background: #ff0000;
-    display: inline;
-    margin: 7px;
-    padding-bottom: 30px;
-    padding-left: 24px;
+    border-radius: 20px;
+    display: block;
+    height: 100px;
+    margin: 22px auto;
+    width: 100px;
 }
 
 .alt-theme-border {
@@ -206,6 +198,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
     font-size: 18px;
     font-weight: bold;
     height: 4.375rem;
+    margin: 40px auto;
     padding: 10px;
     width: 80%;
 }
@@ -214,17 +207,16 @@ text-shadow: 3px 2px 2px #fbf5b7;
 .key-control-indicator {
     color: #8B0000;
     font-weight: bold;
-    text-decoration-line: underline;
     text-decoration-color: #000;
 }
 
 /* Game board control buttons */
 #hit-btn {
-    margin-right: 7.5px;
+    margin-right: 3.5px;
 }
 
 #stand-btn {
-    margin-left: 7.5px;
+    margin-left: 3.5px;
 }
 
 /* universal button styles */
@@ -262,7 +254,6 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 #dealer-side, #player-side {
-    height: 25%;
     width: 170px;
 }
 
@@ -274,7 +265,7 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 /* Scoreboard style */
 #score-board {
-    height: 10%;
+    height: 16%;
 }
 
 .score-tally {
@@ -329,12 +320,14 @@ text-shadow: 3px 2px 2px #fbf5b7;
 
 #result {
     border-bottom: 2px solid #d3d3d3;
+    font-family: 'Acme', sans-serif;
     padding-bottom: 13px;
 }
 
 /*footer styling*/
 /*style for the social media links*/
 footer {
+    padding-top: 15px;
     width: 100%;
  }
 
@@ -356,6 +349,10 @@ footer {
 
 /* Media queries */
 @media (min-width: 360px) {
+    #main-surround {
+        height: 625px;
+    }
+    
     #hit-btn {
         margin-right: 18.75px;
     }
@@ -387,9 +384,9 @@ footer {
         font-size: 45px;
     }
 
-    #dealer-side, #player-side {
+    /* #dealer-side, #player-side {
         width: 145px;
-    }
+    } */
 
     .rule-heading {
        font-size: 18px; 
@@ -428,18 +425,18 @@ footer {
 
 @media (min-width: 700px) {
     #modal-surround {
-        height: 170px;
+        height: 165px;
     }
 
     #result-modal {
-        height: 170px;
+        height: 165px;
     }
     
     #result {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     #description {
-        font-size: 20px;
+        font-size: 17px;
     }
 }

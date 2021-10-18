@@ -96,7 +96,7 @@
             <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules" aria-expanded="false"><h3>Scoreboard:</h3></button>
 
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
-                <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "R" key on the keyboard.</p>
+                <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "RESET SCORE" button or the "C" key on the keyboard.</p>
             </div> 
 
             <button id="keyboard-controls-accordion" class="rule-heading" aria-controls="card-values" aria-expanded="false"><h3>Keyboard Controls:</h3></button>
@@ -106,7 +106,7 @@
                     The game can be play from the keyboard without the need of you mouse.
                 </p>
                 <p>
-                    All key controls as marked in read with a black underline on the relevant button i.e H = hit.
+                    All keyboard controls as marked with red letters on the relevant button i.e H = Hit Me and S = Stand.
                 </p>
                 <p>
                     The control keys will only works whilst the relevant control button is visible on the screen.
@@ -121,9 +121,9 @@
         <section id="options-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Game Options</h2>
             <h3 class="menu-sub-heading">Color Theme:</h3>
-            <div id="green" data-type="green" class="color-theme alt-theme-border active-theme" aria-label="green/default theme"></div>
-            <div id="blue" data-type="blue" class="color-theme alt-theme-border" aria-label="blue theme"></div>
-            <div id="purple" data-type="purple" class="color-theme alt-theme-border" aria-label="purple/pink theme"></div>
+            <button id="green" data-type="green" class="color-theme alt-theme-border active-theme" aria-label="green/default theme"></button>
+            <button id="blue" data-type="blue" class="color-theme alt-theme-border" aria-label="blue theme"></button>
+            <button id="purple" data-type="purple" class="color-theme alt-theme-border" aria-label="purple/pink theme"></button>
 
             <nav>
                 <button id="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
@@ -150,8 +150,8 @@
         <!-- Game area -->
         <section id="game-table" class="text-align-centre main-window center-margin txt-white">        
             <!-- Container for dealers cards-->
-            <section id="dealer-side" class="line-break-below">
-                <h2>House Hand</h2>
+            <section id="dealer-side">
+                <h2 class="line-break-below">House Hand</h2>
                 <div id="dealer-card-container" class="card-container">
 
                 </div>
@@ -164,10 +164,10 @@
                         Wins: <span id="wins">0</span>
                     </li>
                     <li class="score-tally">
-                        Loses: <span id="loses">0</span>
+                        Losses: <span id="losses">0</span>
                     </li>
                     <li class="score-tally">
-                        Drawn: <span id="drawn">0</span>
+                        Draws: <span id="draws">0</span>
                     </li>
                 </ul>
                 <button class="btn btn-bg" id="reset-btn"><span class="key-control-indicator">C</span>LEAR TALLY</button>
@@ -188,7 +188,7 @@
             </div>
             <!-- Container for players hand -->
             <section id="player-side">
-                <h2>Player Hand</h2>
+                <h2 class="line-break-below">Player Hand</h2>
                 <div id="player-card-container" class="card-container">
                 
                 </div>
@@ -208,22 +208,22 @@
     <footer class="text-align-centre">
         <ul>
             <li class="social-media-li">
-                <a href="https://www.github.com/dnlbowers" target="_blank" rel="noopener" aria-label="Connect with me via GitHub (opens new tab on third party site)"><i class="fa-brands fa-github-square social-icon"></i></a>
+                <a href="https://www.github.com/dnlbowers" class="social-icon" target="_blank" rel="noopener" aria-label="Connect with me via GitHub (opens new tab on third party site)"><i class="fa-brands fa-github-square"></i></a>
             </li>
             <li class="social-media-li">
-                <a href="https://www.linkedin.com/in/dnlbowers/" target="_blank" rel="noopener" aria-label="Connect with me via linked in (opens new tab on third party site)"><i class="fa-brands fa-linkedin social-icon"></i></a>
+                <a href="https://www.linkedin.com/in/dnlbowers/" class="social-icon" target="_blank" rel="noopener" aria-label="Connect with me via linked in (opens new tab on third party site)"><i class="fa-brands fa-linkedin"></i></a>
             </li>
         </ul>
         <small id="copyright">
-            <i class="fa-solid fa-copyright">opyright of dnlbowers</i>
+            <i class="fa-solid fa-copyright">reated by dnlbowers</i>
         </small>
-    </footer>    
-<!-- Link to JavaScript file -->
-<script src="assets/js/script.js"></script>
-<!-- No script error -->
-<noscript>
-    Your browser either does not support JavaScript, or it is not enabled! If you wish to play this game, then 
-    either change your browser or enable it for the use of JavaScript.
-  </noscript>
+    </footer>   
+    <!-- Link to JavaScript file -->
+    <script src="assets/js/script.js"></script>
+    <!-- No script error -->
+    <noscript>
+        Your browser either does not support JavaScript, or it is not enabled! If you wish to play this game, then 
+        either change your browser or enable it for the use of JavaScript.
+    </noscript>
 </body>
 </html>

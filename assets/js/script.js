@@ -1,20 +1,22 @@
 
-// REMOVE ALL CONSOLE LOGS AND BLANK LINES
+//MUST DO's
+// REMOVE ALL CONSOLE LOGS, COMMENTED OUT CODE AND BLANK LINES
+
 // break up the how to play section in the game rules
-// Add computer total = ? and fill the score at the end
-// Make sure to add keydown event on main menu for options
 
 //mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
-//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
-//consider adding more decks and shuffle function
-//change score board to stake and pot with a double your stake on win
-// key board short cuts - for as many buttons as possible
-// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
-// !! above the MVP plan !!
 
+// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
+
+// !! above the MVP plan !!
+//animate cards with keyframes
+//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
 // add sound- default off
-//add color choice for the game table
 //add player choice for ace high or low
+// if time look into shuffle 
+//consider adding more decks and shuffle function
+//change score board to stake and pot with a double your stake on win (fun money;)
+
 
 //Global constant references for elements in the DOM
 //reference to the module window frame
@@ -54,8 +56,8 @@ const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
 const playerCardContainerRef = document.getElementById("player-card-container");
 const winTallyRef = document.getElementById("wins");
-const loseTallyRef = document.getElementById("loses");
-const drawTallyRef = document.getElementById("drawn");
+const loseTallyRef = document.getElementById("losses");
+const drawTallyRef = document.getElementById("draws");
 const resetScoreRef = document.getElementById("reset-btn");
 const playerTotalRef = document.getElementById("player-total");
 
@@ -100,17 +102,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // return to main menu from sub menu buttons
     exitRulesRef.addEventListener("click", function () {
         rulesContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     exitOptionsRef.addEventListener("click", function () {
         optionsContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     exitRgRef.addEventListener("click", function () {
         responsibleContainerRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
     });
 
     //Menu btn on game table
@@ -143,29 +145,31 @@ document.addEventListener("DOMContentLoaded", function () {
     //Keyboard controls for on the game table
     window.addEventListener("keydown", function (event) {
         if (document.querySelector('#main-menu').style.display !== "none") {
-            if (event.key === "t") {
+            if (event.key.toLowerCase() === "t") {
                 displayGameTable();
-            } else if (event.key === "r") {
+            } else if (event.key.toLowerCase() === "r") {
                 rulesContainerRef.style.display = "block";
                 mainMenuRef.style.display = "none";
-            }
-            else if (event.key === "g") {
+            } else if (event.key.toLowerCase() === "o"){
+                optionsContainerRef.style.display = "block";
+                mainMenuRef.style.display = "none";
+            } else if (event.key.toLowerCase() === "g") {
                 responsibleGamingMenu();
             }
         } else if (modalSurroundRef.style.display !== "none") {
-            if (event.key === "d") {
+            if (event.key.toLowerCase() === "d") {
                 reDeal();   
-            } else if (event.key === "m") {
+            } else if (event.key.toLowerCase() === "m") {
                 accessMenu();
             }
         } else if (canPlay) {
-            if (event.key === "h") {
+            if (event.key.toLowerCase() === "h") {
                 hit(playerHand);
-            } else if (event.key === "s") {
+            } else if (event.key.toLowerCase() === "s") {
                 computerTurn();
-            } else if (event.key === "m") {
+            } else if (event.key.toLowerCase() === "m") {
                 accessMenu();
-            } else if (event.key === "c") {
+            } else if (event.key.toLowerCase() === "c") {
                 clearTally();
             } 
         }      
@@ -198,22 +202,24 @@ document.addEventListener("DOMContentLoaded", function () {
     function firstTwoCards() { 
         resetHands();
         let firstHouseCard = createCardBack();
+        // let shuffledSuits = shuffleSuits();
+        // let shuffledValues = shuffleValues();
         
+        // if implement a shuffle then add shuffledSuits, shuffledValues as parameters to the deal card call function below
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));
-        }
-        
-        for (let child of houseCardsRef) {
-            if (child === houseCardsRef[0]) {
-                child.style.display = "none";
+            // for (let child of houseCardsRef) {
+            if (houseCardsRef[0]) {
+                houseCardsRef[0].style.display = "none";
                 dealerCardContainerRef.insertBefore(
                     firstHouseCard,
-                    child
+                    houseCardsRef[0]
                 ).style.display = "inline";
                 firstHouseCard.style.position = "absolute";
                 firstHouseCard.style.left = "15px";
             }
+            // }
         }
         
         let playerTotal = checkHandValue(playerHand);
@@ -235,6 +241,46 @@ document.addEventListener("DOMContentLoaded", function () {
             playerBlackjack();
         }
     }
+
+
+//shuffle functions ready to go
+    // function shuffleSuits() {
+    //     let allSuits = ["hearts", "clubs", "spades", "diamonds"];
+    //     for(let i = allSuits.length - 1; i > 0; i--){
+    //         const j = Math.floor(Math.random() * i)
+    //         const temp = allSuits[i]
+    //         allSuits[i] = allSuits[j]
+    //         allSuits[j] = temp
+    //     }
+    //     return allSuits;
+    // }
+
+    // function shuffleValues() {
+    //     let allCardValues = [
+    //         2,
+    //         3,
+    //         4,
+    //         5,
+    //         6,
+    //         7,
+    //         8,
+    //         9,
+    //         10,
+    //         "jack",
+    //         "queen",
+    //         "king",
+    //         "ace",
+    //     ];
+    //     for(let i = allCardValues.length - 1; i > 0; i--){
+    //         const j = Math.floor(Math.random() * i)
+    //         const temp = allCardValues[i]
+    //         allCardValues[i] = allCardValues[j]
+    //         allCardValues[j] = temp
+    //     }
+    //     return allCardValues;
+    // }
+
+    //if decide to go for the shuffle may need to add  suits, cardValues as parameters
 
     /**
      * Deals a random card on to the table and assigns it a value.
@@ -275,12 +321,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let playerCards = document.getElementById("player-card-container");
             playerCards.appendChild(card);
             let playerHand = playerCards.childNodes;
-            fanCards(playerHand, card);
+            fanCards("player",playerHand, card);
         } else if (dealtFor === "dealer") {
             let houseCards = document.getElementById("dealer-card-container");
             houseCards.appendChild(card);
             let houseHand = houseCards.childNodes;
-            fanCards(houseHand, card);
+            fanCards("dealer", houseHand, card);
         }
 
         // Returns picture cards as numerical values
@@ -297,13 +343,14 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Positions the cards in a staggered fashion
      */
-    function fanCards(hand, card) {
+    function fanCards(side, hand, card) {
         let value = 15;
-        // const container = document.querySelector(".card-container");
-        // const containerWidth = container.offsetWidth;
-        for (let i = 0; i <= hand.length; i++) {
-            //  card.style.left = (containerWidth / 84) / 2  + (value * i) + "px";
-            card.style.left =  (value * i) + "px";
+        for (let i = 1; i <= hand.length; i++) {
+            if (side === "player"){
+                card.style.left =  (value * i) + "px";
+            } else if (side === "dealer") {
+                card.style.left =  (value * i) - 15 + "px";
+            }
         }
     }
 
@@ -317,7 +364,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let card of hand) {
             handValue += card;
         }
-
         //checks the initial two cards for blackjack
         if (handValue === 21 && hand.length === 2) {
             return 0;
@@ -337,7 +383,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             return handValue;
         }
-        
     }
     /**
      * ends players ability to play and triggers computers turn
@@ -345,20 +390,20 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function computerTurn() {
         canPlay = false;
-
         houseCardsRef[0].style.display = "none";
+        houseCardsRef[1].style.left = "15px";
         houseCardsRef[1].style.display = "inline";
-
         let playerTotal = checkHandValue(playerHand);
         let dealerTotal = checkHandValue(dealerHand);
-
         while (dealerTotal < 17) {
             dealerHand.push(dealCard("dealer"));
             let dealerTotal = checkHandValue(dealerHand);
-
+            console.log(dealerTotal);
             if (dealerTotal > 21) {
                 return houseBust(dealerTotal);
-            } 
+            } else if (dealerTotal >= 17) {
+                return compareHands(playerTotal, dealerTotal);
+            }
         }
         return compareHands(playerTotal, dealerTotal);
     }    
@@ -368,6 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function houseReveal() {    
         houseCardsRef[0].style.display = "none";
+        houseCardsRef[1].style.left = "15px";
         houseCardsRef[1].style.display = "inline";
     }
 
@@ -499,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayGameTable() {
         mainMenuRef.style.display = "none";
         gameTableRef.style.display = "flex";
-        gameTableRef.style.justifyContent = "space-between";
+        gameTableRef.style.justifyContent = "space-evenly";
         gameTableRef.style.flexDirection = "column";
         gameTableRef.style.alignItems = "center";
         menuBtnRef.style.display = "block";
@@ -507,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function accessMenu() {
         gameTableRef.style.display = "none";
-        mainMenuRef.style.display = "flex";
+        mainMenuRef.style.display = "block";
         menuBtnRef.style.display = "none";
         optionsContainerRef.style.display ="none";
         responsibleContainerRef.style.display = "none";
@@ -552,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
 
     /**
-    * Allows the game rules meu to extend
+    * Allows the game rules menu to extend
     */
     function extendRulePanel(target) {
         hideRulePanels();
@@ -566,7 +612,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-    * Hides game rules segments when a new one is open
+    * Hides all game rules segments when a new one is open
     */    
     function hideRulePanels() {
         for (let i = 0; i < ruleSegment.length; i++) {
@@ -578,7 +624,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     /**
-     * Adds content to the responsible gaming modal
+     * hides main menu and reveals the responsible gaming sub menu
      */
     function responsibleGamingMenu() {
         mainMenuRef.style.display = "none";
