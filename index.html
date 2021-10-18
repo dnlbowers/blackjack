@@ -24,7 +24,7 @@
         </nav>
     </header>
     <!-- Background div acting as a boarder for the main area -->
-    <main id="main-surround" class="center-margin">
+    <div id="main-surround" class="center-margin">
         <!-- Menu navigation (Main menu) -->
         <nav id="main-menu" class="center-margin main-window txt-white">
             <h2 class="text-align-centre menu-heading">Main Menu</h2>
@@ -38,7 +38,7 @@
         <section id="rules-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Game Rules</h2>
             
-            <button id="objective-accordion" class="rule-heading" aria-controls="game-objective" aria-expanded="false">Game Objective:</button>
+            <button id="objective-accordion" class="rule-heading" aria-controls="game-objective-section" aria-expanded="false">Game Objective:</button>
             
             <div id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion" role="region">   
                 <p>
@@ -49,7 +49,7 @@
                 </p>
             </div> 
             
-            <button id="how-to-accordion" class="rule-heading" aria-controls="how-to-play" aria-expanded="false">How To Play:</button>
+            <button id="how-to-accordion" class="rule-heading" aria-controls="how-to-play-section" aria-expanded="false">How To Play:</button>
             
             <div id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion" role="region">
                 <p>
@@ -66,7 +66,7 @@
                 </p>
             </div> 
             
-            <button id="card-value-accordion" class="rule-heading" aria-controls="card-values" aria-expanded="false">Card Values:</button>
+            <button id="card-value-accordion" class="rule-heading" aria-controls="card-values-section" aria-expanded="false">Card Values:</button>
             
             <div id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion" role="region">
                 <p>
@@ -81,7 +81,7 @@
                 </p>
             </div> 
             
-            <button id="blackjack-accordion" class="rule-heading" aria-controls="blackjack-rules" aria-expanded="false">Blackjack:</button>
+            <button id="blackjack-accordion" class="rule-heading" aria-controls="blackjack-rules-section" aria-expanded="false">Blackjack:</button>
             
             <div id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion" role="region">
                 <p>
@@ -93,7 +93,7 @@
                 </p>
             </div>
 
-            <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules" aria-expanded="false">Scoreboard:</button>
+            <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules-section" aria-expanded="false">Scoreboard:</button>
 
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "CLEAR TALLY" button or the "C" key on the keyboard.</p>
@@ -148,7 +148,7 @@
             </nav>
         </section>
         <!-- Game area -->
-        <article id="game-table" class="text-align-centre main-window center-margin txt-white">        
+        <main id="game-table" class="text-align-centre main-window center-margin txt-white">        
             <!-- Container for dealers cards-->
             <section id="dealer-side">
                 <h2 class="line-break-below">House Hand</h2>
@@ -202,8 +202,8 @@
                 <a id="rules-anchor" aria-label = "Takes you to the game rules">Game Rules</a>
                 <button class="btn btn-bg" id="stand-btn"><span class= "key-control-indicator">S</span>TAND</button>
             </section>
-        </article>
-    </main>
+        </main>
+    </div>
     <!-- Footer with social links and copyright -->
     <footer class="text-align-centre">
         <ul>
