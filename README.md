@@ -161,14 +161,14 @@ Each sub-menu has a "Main Menu" button at the bottom of the page to navigate bac
 
 ## **Card Table**
 
-![Game Table](docs\screenshots\card-table.JPG)
+![Game Table](docs/screenshots/card-table.JPG)
 
 The card table consists of multiple elements and provides a space for the game logic to take inputs from the user display its feedback.
 
 ### **Dealer Side of the Table:**
 #### ***House Hand:***
   * The first card is dealt for the house and hidden (to be revealed later), only to be replaced with a card image face down on the table.  
-  ![Initial House Hand](docs\screenshots\house-hand-first.JPG)
+  ![Initial House Hand](docs/screenshots/house-hand-first.JPG)
   * When the computer turn is triggered, it reveals the first card and hides the image of the facedown card.  
   ![Initial House Hand](docs/screenshots/house-hand-reveal.jpg)
 
@@ -176,7 +176,7 @@ The card table consists of multiple elements and provides a space for the game l
   * The scoreboard keeps a tally of all wins, losses, and draws. 
   * The user can reset the tally at any time with the "Clear Tally" button.
   * It gives the user something to gauge their progress without a pot of fun money (See future developments.).   
-![Scoreboard](docs\screenshots\scoreboard.JPG)
+![Scoreboard](docs/screenshots/scoreboard.JPG)
 
 ### **Player Side of the Table**
 The player side of the table consists of two sections: -
@@ -185,43 +185,43 @@ The player side of the table consists of two sections: -
 
 #### ***Player Hand:***
 Underneath the player's hand, there is a running total to help the user make quick decisions based on the total hand value of their current hand.  
-![Player Hand](docs\screenshots\player-hand.jpg)
+![Player Hand](docs/screenshots/player-hand.JPG)
 
-#### ***Player Contols***
+#### ***Player Controls***
 The player control section comprises of three controls: -
   * Hit Me Button - Draws a random card from the deck and adds it to the player's hand.
   * Stand Button - End the player's turn and initiates the computer's turn.
   * Game rules anchor tag - Takes the user directly to the game rules.
 
-![Player Controls Section](docs/screenshots/player-controls.jpg)
+![Player Controls Section](docs/screenshots/player-controls.JPG)
 
 ### **Game Table Pop up Modal**
 ### **Game Initiation Modal:**
 I included this to allow for all actions first to be initiated by the user. The user is greeted with the below modal hen first accessing the card table:  
-![Game Inititation Modal](docs/screenshots/deal-me-in.jpg)
+![Game Inititation Modal](docs/screenshots/deal-me-in.JPG)
 
 ### **Results Modals:**
 Upon the conclusion of the round, the results display in the same modal with a summary of the outcome. 
 #### ***Win:***
-![Win Modal](docs/screenshots/win.jpg)
+![Win Modal](docs/screenshots/win.JPG)
 
 #### ***Lose:***
-![Lose Modal](docs/screenshots/lose.jpg)
+![Lose Modal](docs/screenshots/lose.JPG)
 
 #### ***Draw:***
-![Draw Modal](docs/screenshots/draw.jpg)
+![Draw Modal](docs/screenshots/draw.JPG)
 
 #### ***Player Bust:***
-![Player Bust](docs/screenshots/player-bust.jpg)
+![Player Bust](docs/screenshots/player-bust.JPG)
 
 #### ***House Bust:***
-![House Bust](docs/screenshots/house-bust.jpg)
+![House Bust](docs/screenshots/house-bust.JPG)
 
 #### ***House Blackjack:***
-![House Bust](docs/screenshots/house-bj.jpg)
+![House Bust](docs/screenshots/house-bj.JPG)
 
 #### ***Player Blackjack:***
-![Player Bust](docs/screenshots/player-bj.jpg)
+![Player Bust](docs/screenshots/player-bj.JPG)
 
 
 
