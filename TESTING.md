@@ -102,3 +102,18 @@
         * Whilst refactoring the computerTurn() function I removed the check for dealerTotal >= 17. 
     * ***Solution Found:***
         * Re-added a conditional check that when the dealer total exceeds 17 the compareHands() function is called with a return statement.
+
+## **Post Development Testing**
+### **Validators**
+
+#### ***HTML*** - [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdnlbowers.github.io%2Fblackjack%2F)
+
+No errors returned when checking the HTML document.
+
+![Validator result](docs/screenshots/hmtl-validator.jpg)
+
+#### ***CSS*** - [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdnlbowers.github.io%2Fblackjack%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+All pages tested, no issues found via URL or file upload.  
+  
+![CSS validator result](docs/screenshots/css-validator.jpg)
