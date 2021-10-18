@@ -7,7 +7,7 @@ Blackjack is a classic game dating back to around the 1700s. My first introducti
 
 My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me during my childhood, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
 
-![Demonstration of Site Responsiveness](docs/screenshots/responsive.jpg)
+![Demonstration of Site Responsiveness](docs/screenshots/responsive.JPG)
 
 ## **Planning Stage**
 
@@ -161,14 +161,14 @@ Each sub-menu has a "Main Menu" button at the bottom of the page to navigate bac
 
 ## **Card Table**
 
-![Game Table](docs\screenshots\card-table.jpg)
+![Game Table](docs\screenshots\card-table.JPG)
 
 The card table consists of multiple elements and provides a space for the game logic to take inputs from the user display its feedback.
 
 ### **Dealer Side of the Table:**
 #### ***House Hand:***
   * The first card is dealt for the house and hidden (to be revealed later), only to be replaced with a card image face down on the table.  
-  ![Initial House Hand](docs\screenshots\house-hand-first.jpg)
+  ![Initial House Hand](docs\screenshots\house-hand-first.JPG)
   * When the computer turn is triggered, it reveals the first card and hides the image of the facedown card.  
   ![Initial House Hand](docs/screenshots/house-hand-reveal.jpg)
 
@@ -176,7 +176,7 @@ The card table consists of multiple elements and provides a space for the game l
   * The scoreboard keeps a tally of all wins, losses, and draws. 
   * The user can reset the tally at any time with the "Clear Tally" button.
   * It gives the user something to gauge their progress without a pot of fun money (See future developments.).   
-![Scoreboard](docs\screenshots\scoreboard.jpg)
+![Scoreboard](docs\screenshots\scoreboard.JPG)
 
 ### **Player Side of the Table**
 The player side of the table consists of two sections: -
