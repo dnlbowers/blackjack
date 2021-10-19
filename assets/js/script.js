@@ -20,57 +20,55 @@
 
 //Global constant references for elements in the DOM
 //reference to the module window frame
-const mainMenuRef = document.getElementById("main-menu");
-const gameTableRef = document.getElementById("game-table");
-const rulesContainerRef = document.getElementById("rules-sub-menu");
-const optionsContainerRef = document.getElementById("options-sub-menu");
 const responsibleContainerRef = document.getElementById("responsible-sub-menu");
-
+const optionsContainerRef = document.getElementById("options-sub-menu");
+const rulesContainerRef = document.getElementById("rules-sub-menu");
+const gameTableRef = document.getElementById("game-table");
+const mainMenuRef = document.getElementById("main-menu");
 //In game pop up references
 const modalSurroundRef = document.getElementById("modal-surround");
 const resultSurroundRef = document.getElementById("result-modal");
-const resultHeadingRef = document.getElementById("result");
-const resultContentRef = document.getElementById("description");
 const resultModalBtnRef = document.getElementById("redeal-btn");
-
-//Menu option button references
-const menuBtnRef = document.getElementById("menu-btn-wrap");
-const playGameBtnRef = document.getElementById("play-game-btn");
+const resultContentRef = document.getElementById("description");
+const resultHeadingRef = document.getElementById("result");
+//Main menu option button references
 const gameRulesBtnRef = document.getElementById("game-rules-btn");
-
-const ruleHeading = document.querySelectorAll(".rule-heading");
-const ruleSegment = document.querySelectorAll(".rule-segment");
 const optionsBtnRef = document.getElementById("game-options-btn");
+const accessTableBtnRef = document.getElementById("play-game-btn");
+const menuBtnRef = document.getElementById("menu-btn-wrap");
+const responsibleBtnRef = document.getElementById("rg-btn");
+// Sub-menu references
 const colorThemeRef = document.getElementsByClassName('color-theme');
-const mainWindowRef = document.querySelectorAll('.main-window');
-const responsibleGamblingBtnRef = document.getElementById("rg-btn");
-const exitRulesRef = document.getElementById("exit-rules");
+const ruleSegment = document.querySelectorAll(".rule-segment");
 const exitOptionsRef = document.getElementById("exit-options");
+const ruleHeading = document.querySelectorAll(".rule-heading");
+const exitRulesRef = document.getElementById("exit-rules");
 const exitRgRef = document.getElementById("exit-rg");
-
+// Reference to all modals acting as the centre display area,
+const mainWindowRef = document.querySelectorAll('.main-window');
 //game table elements references
-const hitBtnRef = document.getElementById("hit-btn");
-const gameRuleAnchorRef = document.getElementById("rules-anchor");
-const standBtnRef = document.getElementById("stand-btn");
+const playerCardContainerRef = document.getElementById("player-card-container");
 const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
-const playerCardContainerRef = document.getElementById("player-card-container");
-const winTallyRef = document.getElementById("wins");
-const loseTallyRef = document.getElementById("losses");
-const drawTallyRef = document.getElementById("draws");
-const resetScoreRef = document.getElementById("reset-btn");
+const gameRuleAnchorRef = document.getElementById("rules-anchor");
 const playerTotalRef = document.getElementById("player-total");
+const resetScoreRef = document.getElementById("reset-btn");
+const standBtnRef = document.getElementById("stand-btn");
+const drawTallyRef = document.getElementById("draws");
+const loseTallyRef = document.getElementById("losses");
+const winTallyRef = document.getElementById("wins");
+const hitBtnRef = document.getElementById("hit-btn");
 
 document.addEventListener("DOMContentLoaded", function () {
     let playerHand = [];
     let dealerHand = [];
     let canPlay = false;
-
+    // Call functions to give sub-menus functionality
     ruleMenuFunctionality();
     colorTheme();
-
+    
     //Menu button event listeners
-    playGameBtnRef.addEventListener("click", function () {
+    accessTableBtnRef.addEventListener("click", function () {
         displayGameTable();
     });
 
@@ -95,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
     //Main Menu button for RG page
-    responsibleGamblingBtnRef.addEventListener("click", function () {
+    responsibleBtnRef.addEventListener("click", function () {
         responsibleGamingMenu();
     });
 
@@ -115,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mainMenuRef.style.display = "block";
     });
 
-    //Menu btn on game table
+    //Menu btn for access from the game table
     menuBtnRef.addEventListener("click", function () {
         accessMenu();
     });
@@ -132,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             computerTurn();
         } 
     });
-
+    
     resultModalBtnRef.addEventListener("click", function () {
         reDeal();
     });
@@ -355,8 +353,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-     * Checks the hand value for blackjack and then loops through array to total score
-     * if Ace found user will be prompted to decide if they want ace to = 1 or 11. 11(default)
+     * Checks the following
+     * if the passed hand has blackjack.
+     * if the user score has gone over 21 and an Ace found the ace value will be lowered
+     * If the player goes bust, his turn will end.
+     * if none of the above conditions are met then it will simple return the current value of the passed hand
      */
     function checkHandValue(hand) {
         //adds the total hand value together
@@ -385,8 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     /**
-     * ends players ability to play and triggers computers turn
-     * and calling the compareHands function.
+     * ends players ability to play and triggers computers turn before comparing the hands
      */
     function computerTurn() {
         canPlay = false;
@@ -408,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }    
     
     /**
-     * Flips the houses hidden card face up once the players turn is over
+     * Reveals the first house card, and hides card back
      */
     function houseReveal() {    
         houseCardsRef[0].style.display = "none";
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-     * Compares final hands once both the house and the player have drawn all their desired cards
+     * Compares final hand values
      */
     function compareHands(playerHandValue, houseHandValue) {
         if (playerHandValue === houseHandValue) {
@@ -431,7 +431,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     //functions to display the results modals
     /**
-     * Displays message when house has blackjack
+     * Displays message when house has blackjack 
+     * calls for losses tally to increase by 1
      */
     function houseBlackjack() {
         canPlay = false;
@@ -444,6 +445,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Displays message when player has blackjack
+     * Calls for wins tally to increase by 1 
      */
     function playerBlackjack() {
         canPlay = false;
@@ -455,7 +457,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-     * Displays message when house has blackjack
+     * Player bust message
+     * Calls for losses tally to increase by 1
      */
     function playerBust(handValue) {
         canPlay = false;
@@ -468,7 +471,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-     * Displays message for a draw
+     * Displays message for a draw in hand values
+     * calls for draw tally to increase by 1
      */
     function draw(playerHandValue) {
         canPlay = false;
@@ -481,6 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Displays message for when the house goes bust
+     * Calls for win tally to increase by one
      */
     function houseBust(houseHand) {
         canPlay = false;
@@ -493,6 +498,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Displays message for when the player wins
+     * Calls for win tally to increase by one
      */
     function playerHandWins(playerHandValue, houseHandValue) {
         canPlay = false;
@@ -505,6 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Displays message for when the house wins
+     * calls for losses tally to be increase by 1
      */
     function houseHandWins(playerHandValue, houseHandValue) {
         canPlay = false;
@@ -541,6 +548,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //event related functions
+    /**
+     * Makes card table visible, hides all other elements
+    */
     function displayGameTable() {
         mainMenuRef.style.display = "none";
         gameTableRef.style.display = "flex";
@@ -549,7 +559,10 @@ document.addEventListener("DOMContentLoaded", function () {
         gameTableRef.style.alignItems = "center";
         menuBtnRef.style.display = "block";
     }    
-
+    
+    /**
+     * Make amin menu visible and hides all other modals
+     */
     function accessMenu() {
         gameTableRef.style.display = "none";
         mainMenuRef.style.display = "block";
@@ -558,19 +571,28 @@ document.addEventListener("DOMContentLoaded", function () {
         responsibleContainerRef.style.display = "none";
         rulesContainerRef.style.display = "none";
     }
-
+    
+    /**
+     * Initiates each game round
+     */
     function reDeal() {
         canPlay = true;
         modalSurroundRef.style.display = "none";
         firstTwoCards();    
     }
 
+    /**
+     * Clears the scoreboard
+     */
     function clearTally() {
         winTallyRef.innerHTML = 0;
         loseTallyRef.innerHTML = 0;
         drawTallyRef.innerHTML = 0;
     }
 
+    /**
+     * Draws a card for the user 
+     */
     function hit(playerHand) {
         playerHand.push(dealCard("player"));
             let runningTotal = checkHandValue(playerHand);
@@ -630,6 +652,9 @@ document.addEventListener("DOMContentLoaded", function () {
         responsibleContainerRef.style.display = "block";
     }
 
+    /**
+     * give functionality to the color theme selection buttons
+     */
     function colorTheme(){
         for (let theme of colorThemeRef ) {
             theme.addEventListener('click', function() {
@@ -647,6 +672,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Removes active theme when new one selected
+     */
     function removeActiveTheme() {
         for (let i = 0; i < colorThemeRef.length; i++) {
             console.log("first" +colorThemeRef[i].classList);
@@ -655,6 +683,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } 
     }
 
+    /**
+     * Set Blue color Theme
+     */
     function blueTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
@@ -665,6 +696,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Set green color Theme
+     */
     function greenTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
@@ -675,6 +709,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Set purple color Theme
+     */
     function purpleTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
