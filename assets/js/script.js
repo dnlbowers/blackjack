@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function blueTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
-        document.body.style.backgroundColor = "#00BFFF";
+        document.body.style.backgroundColor = "#87CEFA";
         resultSurroundRef.style.backgroundColor = "#4682B4";
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#00008B";
@@ -702,7 +702,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function greenTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
-        document.body.style.backgroundColor = "#00FFBF";
+        document.body.style.backgroundColor = "#98FB98";
         resultSurroundRef.style.backgroundColor = "#008080";
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#006400";
@@ -715,7 +715,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function purpleTheme(target) {
         removeActiveTheme();
         target.classList.add("active-theme");
-        document.body.style.backgroundColor = "#EE82EE";
+        document.body.style.backgroundColor = "#FFE0E5";
         resultSurroundRef.style.backgroundColor = "#312b50";
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#300640";
