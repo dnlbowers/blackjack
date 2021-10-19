@@ -1,6 +1,3 @@
-/*retake screenshots due to font change*/
-/* Make sure to get a screenshot of the results modal for both house blackjack, player blackjack and draw results */
-
 # **Blackjack**
 ## **Site Overview**
 Blackjack is a classic game dating back to around the 1700s. My first introduction to it was as pontoon (a common name for blackjack in the UK). My mum and I would spend hours playing short rounds for fun while traveling or simply sitting around watching TV. 
@@ -8,6 +5,59 @@ Blackjack is a classic game dating back to around the 1700s. My first introducti
 My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me during my childhood, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
 
 ![Demonstration of Site Responsiveness](docs/screenshots/responsive.JPG)
+
+## Table of contents:
+* [**Blackjack**](#blackjack)
+  * [**Site Overview**](#site-overview)
+  * [**Planning Stage**](#planning-stage)
+    * [**Target Audience:**](#target-audience)
+    * [**User Stories:**](#user-stories)
+    * [**Site Aims:**](#site-aims)
+    * [**How Will This Be Achieved:**](#how-will-this-be-achieved)
+    * [**Wireframes:**](#wireframes)
+    * [**Color Scheme:**](#color-scheme)
+* [**Current Features**](#current-features)
+  * [***Header Element***](#header-element)
+    * [***Title:***](#title)
+    * [***Main Menu button (navigation tag):***](#main-menu-button-navigation-tag)
+* [**Main Window:**](#main-window)
+  * [**Main Menu (navigation tag):**](#main-menu-navigation-tag)
+  * [**Sub Menus**](#sub-menus)
+    * [***Game Rules***](#game-rules)
+    * [***Options:***](#options)
+      * [**Green (default) Theme**](#green-default-theme)
+      * [**Blue Theme**](#blue-theme)
+      * [**Purple Theme**](#purple-theme)
+    * [***Responsible Gaming:***](#responsible-gaming)
+    * [***Back to Main menu Button (navigation tag)***](#back-to-main-menu-button-navigation-tag)
+  * [**Card Table**](#card-table)
+    * [**Dealer Side of the Table:**](#dealer-side-of-the-table)
+      * [***House Hand:***](#house-hand)
+      * [***Scoreboard:***](#scoreboard)
+    * [**Player Side of the Table**](#player-side-of-the-table)
+      * [***Player Hand:***](#player-hand)
+      * [***Player Controls***](#player-controls)
+    * [**Game Table Pop up Modal**](#game-table-pop-up-modal)
+    * [**Game Initiation Modal:**](#game-initiation-modal)
+    * [**Results Modals:**](#results-modals)
+      * [***Win:***](#win)
+      * [***Lose:***](#lose)
+      * [***Draw:***](#draw)
+      * [***Player Bust:***](#player-bust)
+      * [***House Bust:***](#house-bust)
+      * [***House Blackjack:***](#house-blackjack)
+      * [***Player Blackjack:***](#player-blackjack)
+    * [**Card Positioning**](#card-positioning)
+* [**Footer**](#footer)
+* [**Typography**](#typography)
+  * [**Future-Enhancements**](#future-enhancements)
+  * [**Testing Phase**](#testing-phase)
+  * [**Deployment**](#deployment)
+  * [**Credits**](#credits)
+    * [**Honorable mentions:**](#honorable-mentions)
+    * [**General reference:**](#general-reference)
+    * [**Content:**](#content)
+    * [**Media:**](#media)
 
 ## **Planning Stage**
 
@@ -190,7 +240,7 @@ Underneath the player's hand, there is a running total to help the user make qui
 #### ***Player Controls***
 The player control section comprises of three controls: -
   * Hit Me Button - Draws a random card from the deck and adds it to the player's hand.
-  * Stand Button - End the player's turn and initiates the computer's turn.
+  * Stand Button - End the player's turn and initiate the computer's turn.
   * Game rules anchor tag - Takes the user directly to the game rules.
 
 ![Player Controls Section](docs/screenshots/player-controls.JPG)
@@ -201,7 +251,7 @@ I included this to allow for all actions first to be initiated by the user. The 
 ![Game Inititation Modal](docs/screenshots/deal-me-in.JPG)
 
 ### **Results Modals:**
-Upon the conclusion of the round, the results display in the same modal with a summary of the outcome. 
+Results get displayed after each round in a modal with a summary of the outcome. 
 #### ***Win:***
 ![Win Modal](docs/screenshots/win.JPG)
 
@@ -223,8 +273,6 @@ Upon the conclusion of the round, the results display in the same modal with a s
 #### ***Player Blackjack:***
 ![Player Bust](docs/screenshots/player-bj.JPG)
 
-
-
 ### **Card Positioning**
 Each card is placed on top of the other, spaced 15px from the left edge to the left edge. Fanning the cards allow the suit and value to be visible while minimizing the required space for the hand. It also looks neater and simulates how a casino croupier would deal a hand.  
 ![Card positioning](docs/screenshots/card-fan.jpg)
@@ -244,7 +292,7 @@ I imported all fonts using the google fonts API.
 This game became a bit of a passion project, but due to the steep learning curve involved with learning Javascript in a short amount of time and the fast-approaching deadline, I deemed the below to be above and beyond the required MVP needed to release the game into the public domain initially: -
 
   * Game sounds - shuffle noise on clicking the re-deal button, when each card dealt a single card noise and lobby sounds/music. The sounds could be toggled on or off via the options page.
-  * Card animation - Each card dealt would slide into position as if being dealt from a deck. Card animation would also allow the user to see each card dealt, thus add to the user's enjoyment.
+  * Card animation - Each card dealt would slide into position as if being dealt from a deck. Card animation would also allow the user to see each card dealt, thus adding to the user's enjoyment.
   * Neon color theme, which changes even the button color and the gold surround.
   * Create a deck as an array of objects to include the card image, value, and card description (suit and value). Creating a whole deck in this way would also allow me to control the number of decks in the stack rather than having an infinite deck. 
   * Give the player a choice over ace high or low.
@@ -253,9 +301,13 @@ This game became a bit of a passion project, but due to the steep learning curve
 
 Once the Code Institute Diploma is complete, I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
 
+***
+
 ## **Testing Phase**
+I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
 
 ***
+
 ## **Deployment**
 I deployed the page on GitHub pages via the following procedure: -
 
@@ -270,24 +322,39 @@ You  can find the live site via the following URL - [Live Blackjack game](https:
 ## **Credits**
 ### **Honorable mentions:**
 
-The project broke me many times over. Without the support following people I would have made it through. The below are in no specific order.
+The project broke me many times over. Without the support of the following people, I would not have made it through. The below list is in no specific order.
 
 * [Richard Wells](https://github.com/D0nni387) - Code Institute Mentor who gave me faith in myself throughout and calmed me down in moments of panic. He saw I was struggling and took the time to help me work through the logic.
 
-
-* [Mark Cutajar](https://github.com/markcutajar) Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped me and my family in more ways than I could ever describe and I am proud to have him as a brother in law. 
+* [Mark Cutajar](https://github.com/markcutajar) Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped my family and me in more ways than I could ever describe. I am proud to have him as a brother-in-law. 
   
 
-* Mr_Bim_alumni (No github provided) - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue I had without taking over. This mans teaching style is skillful and caring! I could not have managed to get through this project without him seeing my distress and making sure to keep an eye on me from there on. He even pressured me into avoiding my avoidance and I am so glad he did.
+* Mr_Bim_alumni (No GitHub provided) - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue without taking over. Bim's teaching style is skillful and caring! I could not have managed to get through this project without him seeing my distress and keeping an eye on me from thereon. He even pressured me into avoiding my avoidance, and I am so glad he did.
 
-* [Simen Daehlin](https://github.com/Eventyret) - Was on my first call with BIM and also aided the tutorial on event listeners. Simen has repeatedly stepped in to guide me along the way and I am lucky to have such a skilled alumini on my side. 
+* [Simen Daehlin](https://github.com/Eventyret) - Simen has repeatedly stepped in to guide me along the way, and I am lucky to have such a skilled alumni on my side. 
 
-* [Matt Bodden](https://github.com/MattBCoding) - A true friend and confidant. Matt is always close to the keyboard if I need him. His webinar of CSS positioning gave me the aha moment I needed when trying to work out how to fan the playing cards. Since I first met Matt in a random slack call I lnew he was someone I would be able to relate too easily. This man is turely one to watch in the realm of coding. 
+* [Matt Bodden](https://github.com/MattBCoding) - A true friend and confidant. Matt is always close to the keyboard if I need him. His webinar on CSS positioning gave me the aha moment I needed to work out how to fan the playing cards. Since I first met Matt in a random slack call, I knew he was someone I could easily relate to. 
   
-* [Daisy Mc Girr](https://github.com/Daisy-McG) - Within seconds of me posting the question about the W3C assesability guidelines for accordion menus she jump into a call with me and helped me rubber duck it out. She is truely a super women with a keyboard and I am luck to have had her be to willing to assist me. 
+* [Daisy Mc Girr](https://github.com/Daisy-McG) - Within seconds of my posting the question about the W3C assessability guidelines for accordion menus, she jumped into a call with me and helped me rubber duck it out. She is truly a superwoman with a keyboard, and I am lucky to have had her be so willing to assist me. 
 
-* [Niki Tester](https://github.com/Niki-Tester) - Nik was a shock to me, I posted a radnom question on a problem which had me stumped. I went to bed and in the morning I woke up to a notification and nik's solution. This was Nik's first day of the course and he spent over and hour debugging my code whilst I slept. This man is one to watch going forward.
+* [Niki Tester](https://github.com/Niki-Tester) - Nik was a shock to me; I posted a random question and went to bed. In the morning, I woke up to a notification and Nik's solution. Nik was on his first day of the course, and he spent over an hour debugging my code while I slept. This man is one to watch going forward.
 
-### **General Reference:**
+### **General reference:**
+* The project was influenced by the Code Institutes code along project called Love maths. While I have tried to deviate as much as possible, the code may have some similarities.
+* I relied upon W3schools, MDN web docs, and stack overflow for general references throughout the project.
+* Accordion menu tutorials - https://www.w3schools.com/howto/howto_js_accordion.asp / https://stackoverflow.com/questions/37745154/only-open-one-accordion-tab-at-one-time
 
 ### **Content:**
+* All content was written by myself.
+* Icons in the footer were taken from [Font Awesome](https://fontawesome.com)
+* The golden gradient colour scheme - [brandgradients.com](http://www.brandgradients.com/gold-gradient).
+* All fonts imported from - [Google Fonts](https://fonts.google.com/)
+* Accessibility checker - [WAVE - Web accessibility evaluation tool](https://wave.webaim.org/)
+  
+### **Media:**
+* All card front card images taken from https://commons.wikimedia.org/wiki/Category:SVG_English_pattern_playing_cards
+* Back of cards taken from - https://commons.wikimedia.org/w/index.php?search=playing+cards+back+svg&title=Special:MediaSearch&go=Go&type=image
+* Logo-start taken from https://www.pngegg.com/en/png-oveak
+* Logo-end https://www.pngegg.com/en/png-bhuxt
+* Image editor https://pinetools.com/rotate-image
+* Image for Favicon - https://datagenetics.com/blog/march62020/index.html
