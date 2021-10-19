@@ -1,9 +1,32 @@
 #Table of Contents
 
+* [**During Development Testing:**](#during-development-testing)
+  * [***Manual Testing:***](#manual-testing)
+* [**During Development Testing**](#during-development-testing-1)
+  * [***Bugs and Fixes:***](#bugs-and-fixes)
+* [**Post Development Testing**](#post-development-testing)
+  * [**Validators**](#validators)
+    * [***HTML*** - https://validator.w3.org/nu/](#html---httpsvalidatorw3orgnu)
+    * [***CSS*** - https://jigsaw.w3.org/css-validator/](#css---httpsjigsaww3orgcss-validator)
+    * [***JSHint*** - https://jshint.com/](#jshint---httpsjshintcom)
+  * [**Lighthouse Scores**](#lighthouse-scores)
+    * [**Test conditions**](#test-conditions)
+    * [***Desktop Version:***](#desktop-version)
+    * [***Mobile Version:***](#mobile-version)
+  * [**Accessability**](#accessability)
+
 ## **During Development Testing:**
 
 ### ***Manual Testing:***
+## **During Development Testing**
+During the development process, I was manually testing in the following ways:-
 
+1. Manually testing each element for appearance and responsiveness via a simulated live server using an extension in VSCode.
+    
+1. Published the page via GitHub pages and shared with fellow students to test and provide feedback. 
+
+1. Created a post on linked in and asked my network of over 500 developers to review the site and report any issues. The post was viewed more than 900 times and no issues were reported back in the comments.
+   
 ### ***Bugs and Fixes:***
 
 1. **Intended Outcome** - A gameplay that looped continuously once initiated and takes the appropriate actions based on the user's input
@@ -108,7 +131,7 @@
 
 #### ***HTML*** - [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdnlbowers.github.io%2Fblackjack%2F)
 
-No errors returned when checking the HTML document.
+Returned no errors when checking the HTML document.
 
 ![Validator result](docs/screenshots/html-validator.jpg)
 
@@ -120,14 +143,14 @@ All pages tested, no issues found via URL or file upload.
 
 #### ***JSHint*** - [https://jshint.com/](https://jshint.com/)
 
-Besides the occasional missing semi colon the only thing shown by JsHint was the below two warnings: -
+Besides the occasional missing semicolon, the only thing shown by JsHint was the below two warnings: -
 
 ![JSHint Warnings](docs/screenshots/jshint-errors.png)
 
 Some research into this error revealed just a cautionary warning and not an error. The use of forEach resolved this warning.
 
 ### **Lighthouse Scores**
-### **Test conditions**
+#### **Test conditions**
 * I did all lighthouse tests in incognito mode to avoid interference from browser extensions. 
 * I ran the tests for both mobile and desktop. 
 
@@ -141,6 +164,8 @@ Some research into this error revealed just a cautionary warning and not an erro
 
 ### **Accessability**
 
-In addition to the accessability score on light house I also used [WAVE - Web accessability evaluation tool](https://wave.webaim.org/report#/https://dnlbowers.github.io/blackjack/) to check my pages for accessability and no errors were returned.
+In addition to the lighthouse accessibility score, I also used [WAVE - Web accessibility evaluation tool](https://wave.webaim.org/report#/https://dnlbowers.github.io/blackjack/) to check my pages for accessibility, and the site returned no errors.
+
+***
 
 [return to README.md](README.md)
