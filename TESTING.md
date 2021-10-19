@@ -126,3 +126,21 @@ Besides the occasional missing semi colon the only thing shown by JsHint was the
 
 Some research into this error revealed just a cautionary warning and not an error. The use of forEach resolved this warning.
 
+### **Lighthouse Scores**
+### **Test conditions**
+* I did all lighthouse tests in incognito mode to avoid interference from browser extensions. 
+* I ran the tests for both mobile and desktop. 
+
+#### ***Desktop Version:***
+
+![Desktop Lighthouse Score](docs/screenshots/desktop-lighthouse-score.png)
+
+#### ***Mobile Version:***
+
+![Mobile Lighthouse Score](docs/screenshots/mobile-lighthouse-score.png)
+
+### **Accessability**
+
+In addition to the accessability score on light house I also used [WAVE - Web accessability evaluation tool](https://wave.webaim.org/report#/https://dnlbowers.github.io/blackjack/) to check my pages for accessability and no errors were returned.
+
+[return to README.md](README.md)

@@ -1,5 +1,5 @@
 /*retake screenshots due to font change*/
-/* Make sure to get a screenshot of the results modal for both house blackjack, player black jack and draw results */
+/* Make sure to get a screenshot of the results modal for both house blackjack, player blackjack and draw results */
 
 # **Blackjack**
 ## **Site Overview**
@@ -248,7 +248,7 @@ This game became a bit of a passion project, but due to the steep learning curve
   * Neon color theme, which changes even the button color and the gold surround.
   * Create a deck as an array of objects to include the card image, value, and card description (suit and value). Creating a whole deck in this way would also allow me to control the number of decks in the stack rather than having an infinite deck. 
   * Give the player a choice over ace high or low.
-  * Auto time out on the results modal could be introduced. The timeout would save the user having to click re-deal every time, and they could wait for the specified period for the pop-up to close by itself.
+  * Auto timeout on the results modal could be introduced. The timeout would save the user having to click re-deal every time, and they could wait for the specified period for the pop-up to close by itself.
   * Fun money - the ability to wager and chosen stake amount, potentially replacing the scoreboard as a way of the user gauging their progress.
 
 Once the Code Institute Diploma is complete, I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
