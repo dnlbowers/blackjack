@@ -110,10 +110,19 @@
 
 No errors returned when checking the HTML document.
 
-![Validator result](docs/screenshots/hmtl-validator.jpg)
+![Validator result](docs/screenshots/html-validator.jpg)
 
 #### ***CSS*** - [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdnlbowers.github.io%2Fblackjack%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 All pages tested, no issues found via URL or file upload.  
   
 ![CSS validator result](docs/screenshots/css-validator.jpg)
+
+#### ***JSHint*** - [https://jshint.com/](https://jshint.com/)
+
+Besides the occasional missing semi colon the only thing shown by JsHint was the below two warnings: -
+
+![JSHint Warnings](docs/screenshots/jshint-errors.png)
+
+Some research into this error revealed just a cautionary warning and not an error. The use of forEach resolved this warning.
+

@@ -38,7 +38,7 @@ const accessTableBtnRef = document.getElementById("play-game-btn");
 const menuBtnRef = document.getElementById("menu-btn-wrap");
 const responsibleBtnRef = document.getElementById("rg-btn");
 // Sub-menu references
-const colorThemeRef = document.getElementsByClassName('color-theme');
+const colorThemeRef = document.querySelectorAll('.color-theme');
 const ruleSegment = document.querySelectorAll(".rule-segment");
 const exitOptionsRef = document.getElementById("exit-options");
 const ruleHeading = document.querySelectorAll(".rule-heading");
@@ -607,15 +607,15 @@ document.addEventListener("DOMContentLoaded", function () {
      * Gives the accordion menu the functionality
      */
     function ruleMenuFunctionality() {
-        for (let i = 0; i < ruleHeading.length; i++) {
-            ruleHeading[i].addEventListener("click", function () {
+        ruleHeading.forEach (ruleBtn => {
+            ruleBtn.addEventListener("click", function () {
                 if (this.nextElementSibling.style.maxHeight) {
                     hideRulePanels();
                 } else {
                     extendRulePanel(this);
                 }
             });
-        }
+        });
     } 
 
     /**
@@ -656,7 +656,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * give functionality to the color theme selection buttons
      */
     function colorTheme(){
-        for (let theme of colorThemeRef ) {
+        colorThemeRef.forEach (theme => {
             theme.addEventListener('click', function() {
                 if (this.getAttribute('data-type') === 'blue') {
                     theme.classList.add("active-theme");
@@ -669,7 +669,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     purpleTheme(this);
                 }
             });
-        }
+        });
     }
 
     /**
