@@ -106,7 +106,7 @@ header {
     cursor: pointer;
     display: flex;
     font-family: 'Acme', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     justify-content: space-between;
     outline: none;
@@ -118,14 +118,14 @@ header {
   
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .rule-heading:hover {
-background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7);
-text-shadow: 3px 2px 2px #fbf5b7;
+    background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7);
+    text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 .rule-heading:after {
     color: #000;
     content: '\02660'; 
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 5px;
 }
   
@@ -139,11 +139,12 @@ text-shadow: 3px 2px 2px #fbf5b7;
     max-height: 0;
     overflow: hidden;
     padding: 0 5px;
-    text-align: left;
+    text-align: justify;
     transition: max-height 0.4s ease-out;
 }
 
 .rule-segment > p {
+    font-size: 14px;
     padding-bottom: 5px;
 }
 
@@ -350,6 +351,21 @@ footer {
         height: 625px;
     }
 
+    .rule-heading {
+        font-size: 20px;
+    }
+
+    .rule-heading:after {
+        font-size: 20px;
+    }
+
+    .rule-segment > p {
+        font-size: 15px;
+        margin: 0 auto;
+        padding-bottom: 7px;
+        width: 95%;
+    }
+
     .rg-content {
         font-size: 15px;
         padding: 15px 10%;
@@ -387,14 +403,14 @@ footer {
     }
 
     .rule-heading {
-       font-size: 18px; 
-    }
+       font-size: 22px; 
+    }   
 
     .rule-heading:after {
-        font-size: 28px;
+        font-size: 22px;
     }
 
-    .rule-segment > p {
+    .rule-segment {
         font-size: 15px;
     }
 
@@ -402,11 +418,34 @@ footer {
         font-size: 15px;
         padding: 15px 10%;
     }
+
+    .social-icon {
+        font-size: 45px;
+        margin: 4%;
+    }
+    
+    #copyright {
+        font-size: 12px;
+    }
 }
 
 @media (min-width: 600px) {
     #modal-surround {
         height: 160px;
+    }
+
+    .rule-heading {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .rule-heading:after {
+        font-size: 28px;
+    }
+
+    .rg-content {
+        font-size: 20px;
+        padding: 15px 15%;
     }
 
     #result-modal {
@@ -420,14 +459,18 @@ footer {
     #description {
         font-size: 16px;
     }
-
-    .rg-content {
-        font-size: 20px;
-        padding: 15px 15%;
-    }
 }
 
 @media (min-width: 700px) {
+    
+    .back-to-menu {
+        bottom: 15px;
+    }
+
+    .rule-heading:after {
+        font-size: 33px;
+    }
+    
     #modal-surround {
         height: 165px;
     }

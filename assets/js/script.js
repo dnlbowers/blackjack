@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Creates the img of a card back for the first house card dealt
      */
     function createCardBack() {
-        let cardBack = document.createElement("img");
+        const cardBack = document.createElement("img");
         cardBack.src = "assets/images/decks/darkred.svg";
         cardBack.className = "card card-back";
         cardBack.alt = "The houses first card face down on the table";
@@ -86,9 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
      **/
     function firstTwoCards() { 
         resetHands();
-        let firstHouseCard = createCardBack();
-        // let shuffledSuits = shuffleSuits();
-        // let shuffledValues = shuffleValues();
+        const firstHouseCard = createCardBack();
         
         // if implement a shuffle then add shuffledSuits, shuffledValues as parameters to the deal card call function below
         for (let i = 0; i < 2; i++) {
@@ -228,10 +226,10 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (hand === playerHand && handValue >= 22) {
             playerBust(handValue);
             return (handValue);
-        } else {
-            return handValue;
         }
+        return handValue;
     }
+
     /**
      * ends players ability to play and triggers computers turn before comparing the hands
      */
@@ -640,6 +638,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     //Results modal button
                     case 'redeal':
                         reDeal();
+                        break;
+                    default:
                         break;
                 }
             });
