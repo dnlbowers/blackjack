@@ -339,6 +339,8 @@ The project broke me many times over. Without the support of the following peopl
 
 * [Niki Tester](https://github.com/Niki-Tester) - Nik was a shock to me; I posted a random question and went to bed. In the morning, I woke up to a notification and Nik's solution. Nik was on his first day of the course, and he spent over an hour debugging my code while I slept. This man is one to watch going forward.
 
+* [Dave Horrocks](https://github.com/daveyjh) - Took the time to break down several topics for me and provide example. Dave pops out form nowhere when I least expect him, and I am eternally grateful for his explanations and code pens.
+
 ### **General reference:**
 * The project was influenced by the Code Institutes code along project called Love maths. While I have tried to deviate as much as possible, the code may have some similarities.
 * I relied upon W3schools, MDN web docs, and stack overflow for general references throughout the project.

@@ -32,18 +32,12 @@ const resultModalBtnRef = document.getElementById("redeal-btn");
 const resultContentRef = document.getElementById("description");
 const resultHeadingRef = document.getElementById("result");
 //Main menu option button references
-const gameRulesBtnRef = document.getElementById("game-rules-btn");
-const optionsBtnRef = document.getElementById("game-options-btn");
-const accessTableBtnRef = document.getElementById("play-game-btn");
+// const accessTableBtnRef = document.getElementById("play-game-btn");
 const menuBtnRef = document.getElementById("menu-btn-wrap");
-const responsibleBtnRef = document.getElementById("rg-btn");
 // Sub-menu references
 const colorThemeRef = document.querySelectorAll('.color-theme');
 const ruleSegment = document.querySelectorAll(".rule-segment");
-const exitOptionsRef = document.getElementById("exit-options");
 const ruleHeading = document.querySelectorAll(".rule-heading");
-const exitRulesRef = document.getElementById("exit-rules");
-const exitRgRef = document.getElementById("exit-rg");
 // Reference to all modals acting as the centre display area,
 const mainWindowRef = document.querySelectorAll('.main-window');
 //game table elements references
@@ -58,86 +52,50 @@ const drawTallyRef = document.getElementById("draws");
 const loseTallyRef = document.getElementById("losses");
 const winTallyRef = document.getElementById("wins");
 const hitBtnRef = document.getElementById("hit-btn");
+// button reference
+const allBtnRef = document.querySelectorAll('.btn-bg');
 
 document.addEventListener("DOMContentLoaded", function () {
     let playerHand = [];
     let dealerHand = [];
     let canPlay = false;
     // Call functions to give sub-menus functionality
+    clickEventListeners()
     ruleMenuFunctionality();
     colorTheme();
     
-    //Menu button event listeners
-    accessTableBtnRef.addEventListener("click", function () {
-        displayGameTable();
-    });
-
-    //rule related event listeners
-    //Main Menu Rules button
-    gameRulesBtnRef.addEventListener("click", function () {
-        rulesContainerRef.style.display = "block";
-        mainMenuRef.style.display = "none";
-    });
-    
-    //Games table anchor for the game rules
+    // Games table anchor for the game rules
     gameRuleAnchorRef.addEventListener("click", function () {
         rulesContainerRef.style.display = "block";
         gameTableRef.style.display = "none";
         menuBtnRef.style.display = "none";
     });
 
-    //Main Menu button for options page
-    optionsBtnRef.addEventListener("click", function () {
-        optionsContainerRef.style.display = "block";
-        mainMenuRef.style.display = "none";
-    });
     
-    //Main Menu button for RG page
-    responsibleBtnRef.addEventListener("click", function () {
-        responsibleGamingMenu();
-    });
 
-    // return to main menu from sub menu buttons
-    exitRulesRef.addEventListener("click", function () {
-        rulesContainerRef.style.display = "none";
-        mainMenuRef.style.display = "block";
-    });
 
-    exitOptionsRef.addEventListener("click", function () {
-        optionsContainerRef.style.display = "none";
-        mainMenuRef.style.display = "block";
-    });
-
-    exitRgRef.addEventListener("click", function () {
-        responsibleContainerRef.style.display = "none";
-        mainMenuRef.style.display = "block";
-    });
-
-    //Menu btn for access from the game table
-    menuBtnRef.addEventListener("click", function () {
-        accessMenu();
-    });
+    // menuBtnRef.addEventListener("click", function () {
+        
+    // });
 
     //Game table button event listeners
-    hitBtnRef.addEventListener("click", function () {
-        if (canPlay) {
-            hit(playerHand);
-        }
-    });
+    // hitBtnRef.addEventListener("click", function () {
+        
+    // });
 
-    standBtnRef.addEventListener("click", function() {
-        if (canPlay) {
-            computerTurn();
-        } 
-    });
+    // standBtnRef.addEventListener("click", function() {
+    //     if (canPlay) {
+    //         computerTurn();
+    //     } 
+    // });
     
-    resultModalBtnRef.addEventListener("click", function () {
-        reDeal();
-    });
+    // resultModalBtnRef.addEventListener("click", function () {
+        
+    // });
 
-    resetScoreRef.addEventListener("click", function () {
-        clearTally();
-    });
+    // resetScoreRef.addEventListener("click", function () {
+        
+    // });
 
 
     //Keyboard controls for on the game table
@@ -239,46 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
             playerBlackjack();
         }
     }
-
-
-//shuffle functions ready to go
-    // function shuffleSuits() {
-    //     let allSuits = ["hearts", "clubs", "spades", "diamonds"];
-    //     for(let i = allSuits.length - 1; i > 0; i--){
-    //         const j = Math.floor(Math.random() * i)
-    //         const temp = allSuits[i]
-    //         allSuits[i] = allSuits[j]
-    //         allSuits[j] = temp
-    //     }
-    //     return allSuits;
-    // }
-
-    // function shuffleValues() {
-    //     let allCardValues = [
-    //         2,
-    //         3,
-    //         4,
-    //         5,
-    //         6,
-    //         7,
-    //         8,
-    //         9,
-    //         10,
-    //         "jack",
-    //         "queen",
-    //         "king",
-    //         "ace",
-    //     ];
-    //     for(let i = allCardValues.length - 1; i > 0; i--){
-    //         const j = Math.floor(Math.random() * i)
-    //         const temp = allCardValues[i]
-    //         allCardValues[i] = allCardValues[j]
-    //         allCardValues[j] = temp
-    //     }
-    //     return allCardValues;
-    // }
-
-    //if decide to go for the shuffle may need to add  suits, cardValues as parameters
 
     /**
      * Deals a random card on to the table and assigns it a value.
@@ -677,9 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function removeActiveTheme() {
         for (let i = 0; i < colorThemeRef.length; i++) {
-            console.log("first" +colorThemeRef[i].classList);
             colorThemeRef[i].classList.remove("active-theme");
-            console.log("second" + colorThemeRef[i].classList);
         } 
     }
 
@@ -720,5 +636,66 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#300640";
         }
+    }
+    /**
+     * Loads all button related event listeners
+     */
+    function clickEventListeners() {
+        allBtnRef.forEach(button => {
+            button.addEventListener('click', function (){
+                switch (this.getAttribute('data-type')){
+                    // Main menu buttons
+                    case 'play-game':
+                        displayGameTable();
+                        break;
+                    case 'game-rules':
+                        rulesContainerRef.style.display = "block";
+                        mainMenuRef.style.display = "none";
+                        break;
+                    case 'game-options':
+                        optionsContainerRef.style.display = "block";
+                        mainMenuRef.style.display = "none";
+                        break;
+                    case 'responsible-gaming':
+                        responsibleGamingMenu();
+                        break;
+                    //Sub-menu exit buttons
+                    case 'exit-rules':
+                        rulesContainerRef.style.display = "none";
+                        mainMenuRef.style.display = "block";
+                        break;
+                    case 'exit-options':
+                        optionsContainerRef.style.display = "none";
+                        mainMenuRef.style.display = "block";
+                        break;
+                    case 'exit-rg':
+                        responsibleContainerRef.style.display = "none";
+                        mainMenuRef.style.display = "block"; 
+                        break;    
+                    //Menu btn for access from the game table
+                    case 'menu-btn':
+                        accessMenu();
+                        break;
+                    //Buttons on the card table
+                    case 'reset-tally':
+                        clearTally();
+                        break;
+                    case 'hit':
+                        if (canPlay) {
+                            hit(playerHand);
+                        }
+                        break;
+                    case 'stand':
+                        if (canPlay) {
+                            computerTurn();
+                        }
+                        break;
+                    //Results modal button
+                    case 'redeal':
+                        reDeal();
+                        break;
+                }
+            });
+        });
     }
 });

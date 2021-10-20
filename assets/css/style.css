@@ -82,13 +82,6 @@ header {
 }
 
 /* Menu styling */
-/* #main-menu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;  
-} */
-
 .menu-heading {
     font-family: 'Acme', sans-serif;
     font-size: 32px;
@@ -386,10 +379,6 @@ footer {
     .menu-heading {
         font-size: 45px;
     }
-
-    /* #dealer-side, #player-side {
-        width: 145px;
-    } */
 
     .rule-heading {
        font-size: 18px; 

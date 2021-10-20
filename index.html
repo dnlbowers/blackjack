@@ -20,7 +20,7 @@
 
         <!-- Menu button in the header visible only from the game table to navigate to the menu -->
         <nav id="menu-btn-wrap" class ="text-align-centre">
-            <button id="menu-btn" class="btn center-margin btn-bg"><span class="key-control-indicator">M</span>ENU</button>
+            <button data-type="menu-btn" class="btn center-margin btn-bg"><span class="key-control-indicator">M</span>ENU</button>
         </nav>
     </header>
     <!-- Background div acting as a boarder for the main area -->
@@ -28,10 +28,10 @@
         <!-- Menu navigation (Main menu) -->
         <nav id="main-menu" class="center-margin main-window txt-white">
             <h2 class="text-align-centre menu-heading">Main Menu</h2>
-            <button id="play-game-btn" class="menu-opt-btn btn-bg">CARD <span class="key-control-indicator">T</span>ABLE</button>
-            <button id="game-rules-btn" class="menu-opt-btn btn-bg">GAME <span class="key-control-indicator">R</span>ULES</button>
-            <button id="game-options-btn" class="menu-opt-btn btn-bg"><span class="key-control-indicator">O</span>PTIONS</button>
-            <button id="rg-btn" class="menu-opt-btn btn-bg">RESPONSIBLE <span class="key-control-indicator">G</span>AMING</button>
+            <button data-type="play-game" class="menu-opt-btn btn-bg">CARD <span class="key-control-indicator">T</span>ABLE</button>
+            <button data-type="game-rules" class="menu-opt-btn btn-bg">GAME <span class="key-control-indicator">R</span>ULES</button>
+            <button data-type="game-options" class="menu-opt-btn btn-bg"><span class="key-control-indicator">O</span>PTIONS</button>
+            <button data-type="responsible-gaming" class="menu-opt-btn btn-bg">RESPONSIBLE <span class="key-control-indicator">G</span>AMING</button>
         </nav>
         <!-- Sub Menu Containers -->
         <!-- Game Rules Sub Menu -->
@@ -114,7 +114,7 @@
             </div> 
             <!-- Button to navigate back to the navigation menu -->
             <nav>
-                <button id="exit-rules" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
+                <button data-type="exit-rules" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
         <!-- Options Sub Menu -->
@@ -126,7 +126,7 @@
             <button id="purple" data-type="purple" class="color-theme alt-theme-border" aria-label="purple/pink theme"></button>
 
             <nav>
-                <button id="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
+                <button data-type="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
         <!-- Responsible Gaming sub Menu -->
@@ -144,7 +144,7 @@
                 With that said, this game is free to play, so please enjoy it responsibly.
             </p>
             <nav>
-                <button id="exit-rg" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
+                <button data-type="exit-rg" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>
         </section>
         <!-- Game area -->
@@ -170,7 +170,7 @@
                         Draws: <span id="draws">0</span>
                     </li>
                 </ul>
-                <button class="btn btn-bg" id="reset-btn"><span class="key-control-indicator">C</span>LEAR TALLY</button>
+                <button data-type="reset-tally" class="btn btn-bg"><span class="key-control-indicator">C</span>LEAR TALLY</button>
             </section>
             <!-- Results Modal surround with golden back gorund -->
             <div id="modal-surround">
@@ -182,7 +182,7 @@
                         Then click the button and lets get going!
                     </p>
                     <div>
-                        <button class="btn btn-bg center-margin" id="redeal-btn"><span class="key-control-indicator">D</span>eal Me In</button>
+                        <button id="redeal-btn" data-type="redeal" class="btn btn-bg center-margin"><span class="key-control-indicator">D</span>eal Me In</button>
                     </div>
                 </section>   
             </div>
@@ -197,10 +197,10 @@
             <!-- Users control section -->
             <section id="controls" class="line-break-below">
                 <h3 class="line-break-below">Player Controls</h3>
-                <button class="btn btn-bg" id="hit-btn"><span class= "key-control-indicator">H</span>IT ME!</button>
+                <button id="hit-btn" data-type="hit" class="btn btn-bg"><span class= "key-control-indicator">H</span>IT ME!</button>
                 <!-- how do I make this a pop up modal? -->
                 <a id="rules-anchor" aria-label = "Takes you to the game rules">Game Rules</a>
-                <button class="btn btn-bg" id="stand-btn"><span class= "key-control-indicator">S</span>TAND</button>
+                <button id="stand-btn" data-type="stand" class="btn btn-bg" ><span class= "key-control-indicator">S</span>TAND</button>
             </section>
         </main>
     </div>
