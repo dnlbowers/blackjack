@@ -1,4 +1,4 @@
-#Table of Contents
+# Table of Contents
 
 * [**During Development Testing:**](#during-development-testing)
   * [***Manual Testing:***](#manual-testing)
