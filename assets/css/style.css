@@ -86,7 +86,7 @@ header {
     font-family: 'Acme', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    padding: 3px 0 2px;
+    padding: 3px 10px 2px;
 }
 
 .menu-sub-heading {
@@ -285,8 +285,9 @@ text-shadow: 3px 2px 2px #fbf5b7;
 }
 
 .rg-content {
-    padding-bottom: 15px;
-    text-align: left;
+    font-size: 14px;
+    padding: 15px 10%;
+    text-align: justify;
 }
 
 /* Styling for the results pop up */
@@ -348,6 +349,11 @@ footer {
     #main-surround {
         height: 625px;
     }
+
+    .rg-content {
+        font-size: 15px;
+        padding: 15px 10%;
+    }
     
     #hit-btn {
         margin-right: 18.75px;
@@ -394,6 +400,7 @@ footer {
 
     .rg-content {
         font-size: 15px;
+        padding: 15px 10%;
     }
 }
 
@@ -412,6 +419,11 @@ footer {
 
     #description {
         font-size: 16px;
+    }
+
+    .rg-content {
+        font-size: 20px;
+        padding: 15px 15%;
     }
 }
 

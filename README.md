@@ -74,7 +74,6 @@ As a user, I want to: -
   * Use keyboard shortcuts instead of the mouse.
   * Track the progress of each round in some way.
   * Find a clear explanation of the game rules and how to play.
-  * Be able to toggle the sound on and off.
   * Adjust the color settings of the game table and surrounding area.
 
 ### **Site Aims:**
