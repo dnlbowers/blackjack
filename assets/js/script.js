@@ -46,12 +46,9 @@ const dealerCardContainerRef = document.getElementById("dealer-card-container");
 const houseCardsRef = document.getElementById("dealer-card-container").children;
 const gameRuleAnchorRef = document.getElementById("rules-anchor");
 const playerTotalRef = document.getElementById("player-total");
-const resetScoreRef = document.getElementById("reset-btn");
-const standBtnRef = document.getElementById("stand-btn");
 const drawTallyRef = document.getElementById("draws");
 const loseTallyRef = document.getElementById("losses");
 const winTallyRef = document.getElementById("wins");
-const hitBtnRef = document.getElementById("hit-btn");
 // button reference
 const allBtnRef = document.querySelectorAll('.btn-bg');
 
@@ -60,76 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let dealerHand = [];
     let canPlay = false;
     // Call functions to give sub-menus functionality
-    clickEventListeners()
-    ruleMenuFunctionality();
-    colorTheme();
-    
-    // Games table anchor for the game rules
-    gameRuleAnchorRef.addEventListener("click", function () {
-        rulesContainerRef.style.display = "block";
-        gameTableRef.style.display = "none";
-        menuBtnRef.style.display = "none";
-    });
-
-    
-
-
-    // menuBtnRef.addEventListener("click", function () {
-        
-    // });
-
-    //Game table button event listeners
-    // hitBtnRef.addEventListener("click", function () {
-        
-    // });
-
-    // standBtnRef.addEventListener("click", function() {
-    //     if (canPlay) {
-    //         computerTurn();
-    //     } 
-    // });
-    
-    // resultModalBtnRef.addEventListener("click", function () {
-        
-    // });
-
-    // resetScoreRef.addEventListener("click", function () {
-        
-    // });
-
-
-    //Keyboard controls for on the game table
-    window.addEventListener("keydown", function (event) {
-        if (document.querySelector('#main-menu').style.display !== "none") {
-            if (event.key.toLowerCase() === "t") {
-                displayGameTable();
-            } else if (event.key.toLowerCase() === "r") {
-                rulesContainerRef.style.display = "block";
-                mainMenuRef.style.display = "none";
-            } else if (event.key.toLowerCase() === "o"){
-                optionsContainerRef.style.display = "block";
-                mainMenuRef.style.display = "none";
-            } else if (event.key.toLowerCase() === "g") {
-                responsibleGamingMenu();
-            }
-        } else if (modalSurroundRef.style.display !== "none") {
-            if (event.key.toLowerCase() === "d") {
-                reDeal();   
-            } else if (event.key.toLowerCase() === "m") {
-                accessMenu();
-            }
-        } else if (canPlay) {
-            if (event.key.toLowerCase() === "h") {
-                hit(playerHand);
-            } else if (event.key.toLowerCase() === "s") {
-                computerTurn();
-            } else if (event.key.toLowerCase() === "m") {
-                accessMenu();
-            } else if (event.key.toLowerCase() === "c") {
-                clearTally();
-            } 
-        }      
-    });
+    loadEventListeners();
+    subMenuFunction();
 
     /**
      * Resets both hands on the table to zero
@@ -522,6 +451,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Menu pages
     /**
+     * Loads events relating to sub menus
+     */
+    function subMenuFunction() {
+        ruleMenuFunctionality();
+        colorTheme();
+    }
+
+    /**
      * Gives the accordion menu the functionality
      */
     function ruleMenuFunctionality() {
@@ -560,14 +497,6 @@ document.addEventListener("DOMContentLoaded", function () {
             ruleHeading[i].setAttribute("aria-expanded", "false"); 
             ruleHeading[i].classList.remove("active");
         } 
-    }
-    
-    /**
-     * hides main menu and reveals the responsible gaming sub menu
-     */
-    function responsibleGamingMenu() {
-        mainMenuRef.style.display = "none";
-        responsibleContainerRef.style.display = "block";
     }
 
     /**
@@ -637,10 +566,28 @@ document.addEventListener("DOMContentLoaded", function () {
             mainWindowRef[i].style.backgroundColor = "#300640";
         }
     }
+  
     /**
-     * Loads all button related event listeners
+     * hides main menu and reveals the responsible gaming sub menu
      */
-    function clickEventListeners() {
+     function responsibleGamingMenu() {
+        mainMenuRef.style.display = "none";
+        responsibleContainerRef.style.display = "block";
+    }
+    
+    /**
+     * Loads all event listeners for the page
+     */
+    function loadEventListeners() {
+        EventListeners();
+        ruleAnchorEventListeners();
+        keyboardControls();
+    }
+
+    /**
+     * Loads button click event listeners
+     */
+    function EventListeners() {
         allBtnRef.forEach(button => {
             button.addEventListener('click', function (){
                 switch (this.getAttribute('data-type')){
@@ -696,6 +643,55 @@ document.addEventListener("DOMContentLoaded", function () {
                         break;
                 }
             });
+        });
+    }
+    
+    /**
+     * click event that loads the rule sub-menu from the card table
+     */
+    function ruleAnchorEventListeners() {
+        // Games table anchor for the game rules
+        gameRuleAnchorRef.addEventListener("click", function () {
+            rulesContainerRef.style.display = "block";
+            gameTableRef.style.display = "none";
+            menuBtnRef.style.display = "none";
+        });
+    }
+
+    /**
+     * Loads event listeners and gives keyboard control
+     */
+    function keyboardControls() {
+        window.addEventListener("keydown", function (event) {
+            if (document.querySelector('#main-menu').style.display !== "none") {
+                if (event.key.toLowerCase() === "t") {
+                    displayGameTable();
+                } else if (event.key.toLowerCase() === "r") {
+                    rulesContainerRef.style.display = "block";
+                    mainMenuRef.style.display = "none";
+                } else if (event.key.toLowerCase() === "o"){
+                    optionsContainerRef.style.display = "block";
+                    mainMenuRef.style.display = "none";
+                } else if (event.key.toLowerCase() === "g") {
+                    responsibleGamingMenu();
+                }
+            } else if (modalSurroundRef.style.display !== "none") {
+                if (event.key.toLowerCase() === "d") {
+                    reDeal();   
+                } else if (event.key.toLowerCase() === "m") {
+                    accessMenu();
+                }
+            } else if (canPlay) {
+                if (event.key.toLowerCase() === "h") {
+                    hit(playerHand);
+                } else if (event.key.toLowerCase() === "s") {
+                    computerTurn();
+                } else if (event.key.toLowerCase() === "m") {
+                    accessMenu();
+                } else if (event.key.toLowerCase() === "c") {
+                    clearTally();
+                } 
+            }      
         });
     }
 });
