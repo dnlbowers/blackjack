@@ -251,8 +251,8 @@ The player control section comprises of three controls: -
 
 ## **Game Initiation/Results Modal**
 ### **Game Initiation Modal:**
-I included this to allow for all actions first to be initiated by the user. The user is greeted with the below modal hen first accessing the card table:  
-![Game Inititation Modal](docs/screenshots/deal-me-in.JPG)
+I included this to allow for all actions first to be initiated by the user. The user is greeted with the below modal when first accessing the card table:  
+![Game Initiation Modal](docs/screenshots/deal-me-in.JPG)
 
 ### **Results Modals:**
 Results get displayed after each round in a modal with a summary of the outcome. 
@@ -282,7 +282,7 @@ Each card is placed on top of the other, spaced 15px from the left edge to the l
 ![Card positioning](docs/screenshots/card-fan.jpg)
 
 ### **Deck of cards:**
-My game uses a method called an infinite. An infinite deck means no limit to the number of times either player can draw a card of the same suit and value from the deck of cards. In other words, duplicates are possible.
+My game uses an infinite deck. An infinite deck means there is no limit to the number of times either player can draw a card of the same suit and value from the deck. In other words, duplicate cards are possible.
 
 # **Footer**
   * Includes links to connect to my GitHub and LinkedIn accounts. Purposely kept to the more professional social platforms for the portfolio project.  
