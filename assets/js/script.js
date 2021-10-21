@@ -1,23 +1,3 @@
-
-//MUST DO's
-// REMOVE ALL CONSOLE LOGS, COMMENTED OUT CODE AND BLANK LINES
-
-// break up the how to play section in the game rules
-
-//mention infinite deck in the game rules and that if player hits 21 exactly when drawing card the computer turn is automatically initiated
-
-// refactor code to make sure every segment is in a function doing as little as possible and call that in the global scope to run the game
-
-// !! above the MVP plan !!
-//animate cards with keyframes
-//consider a slight delay when computer turn is triggered automatically and before the result modal appearing
-// add sound- default off
-//add player choice for ace high or low
-// if time look into shuffle 
-//consider adding more decks and shuffle function
-//change score board to stake and pot with a double your stake on win (fun money;)
-
-
 //Global constant references for elements in the DOM
 //reference to the module window frame
 const responsibleContainerRef = document.getElementById("responsible-sub-menu");

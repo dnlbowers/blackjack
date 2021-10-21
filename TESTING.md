@@ -147,7 +147,15 @@ Besides the occasional missing semicolon, the only thing shown by JsHint was the
 
 ![JSHint Warnings](docs/screenshots/jshint-errors.png)
 
-Some research into this error revealed just a cautionary warning and not an error. The use of forEach resolved this warning.
+Some research into this error revealed just a cautionary warning and not an error and the use of forEach resolved this warning. The final metrics returned by JSHint were:
+
+* There are 48 functions in this file.
+
+* Function with the largest signature take 3 arguments, while the median is 0.
+
+* Largest function has 44 statements in it, while the median is 5.
+
+* The most complex function has a cyclomatic complexity value of 15 while the median is 1.
 
 ### **Lighthouse Scores**
 #### **Test conditions**
