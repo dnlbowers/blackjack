@@ -2,7 +2,6 @@
 
 * [**During Development Testing:**](#during-development-testing)
   * [***Manual Testing:***](#manual-testing)
-* [**During Development Testing**](#during-development-testing-1)
   * [***Bugs and Fixes:***](#bugs-and-fixes)
 * [**Post Development Testing**](#post-development-testing)
   * [**Validators**](#validators)
@@ -15,9 +14,7 @@
     * [***Mobile Version:***](#mobile-version)
   * [**Accessability**](#accessability)
 
-## **During Development Testing:**
 
-### ***Manual Testing:***
 ## **During Development Testing**
 During the development process, I was manually testing in the following ways:-
 
@@ -26,7 +23,18 @@ During the development process, I was manually testing in the following ways:-
 1. Published the page via GitHub pages and shared with fellow students to test and provide feedback. 
 
 1. Created a post on linked in and asked my network of over 500 developers to review the site and report any issues. The post was viewed more than 900 times and no issues were reported back in the comments.
-   
+
+### ***Manual Testing:***
+* During testing, I used four different browsers to ensure cross-compatibility. The desktop browsers used by myself were:
+
+  1. Chrome
+  2. Firefox  
+  3. Opera
+  4. Edge
+
+* I then used the devtools to simulate different screen sizes/devices down to 320 px in width. 
+* In addition to this, I also asked several people to test using iPhones and Apple Mac laptops/desktops using safari. These users reported no issues or bugs only style suggestions.
+ 
 ### ***Bugs and Fixes:***
 
 1. **Intended Outcome** - A gameplay that looped continuously once initiated and takes the appropriate actions based on the user's input
@@ -94,7 +102,7 @@ During the development process, I was manually testing in the following ways:-
     * ***Issue Found:***
         * Every time the player went bust, the losses would increase by 2.
     * ***Causes:***
-        * This was a side effect of solution 7.2 above. Calling the function twice when a player went over 21.
+        * This was a side effect of solution 7b above. Calling the function twice when a player went over 21.
     * ***Solution Found:***
         * By refactoring the Ace conversion code, I made the for loop look for the first Ace in the hand with a value higher than 21. Upon finding an Ace, the code would convert the value from high to low and use a return statement to terminate the loop. Negating the need for the additional function call in the click and key down event. 
 1. **Intended Outcome** - Large chunks of HTML rendered in the HTML file upon loading and visibility toggled with CSS rather than inserted with the JS file using event listeners.       
