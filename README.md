@@ -2,7 +2,7 @@
 ## **Site Overview**
 Blackjack is a classic game dating back to around the 1700s. My first introduction to it was as pontoon (a common name for blackjack in the UK). My mum and I would spend hours playing short rounds for fun while traveling or simply sitting around watching TV. 
 
-My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me during my childhood, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
+My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
 
 ![Demonstration of Site Responsiveness](docs/screenshots/responsive.JPG)
 
@@ -146,7 +146,7 @@ I have created the below color grid using [https://contrast-grid.eightshapes.com
 # **Typography**
 I imported all fonts using the google fonts.    
   * The primary font used throughout was Acme. I chose this font because it was bold and had a strong presence for the title, headings, and buttons.    
-  * For the smaller text of the sub-menus content and the card table, Open Sans was used. My reasoning behind this was because Acme looked unclear when using Acme and these two styles compliment each other well.
+  * For the text of the sub-menus content and the card table, Open Sans was used. My reasoning behind this was that Acme looked unclear when writing a text block in smaller font sizes. 
 
 # **Current Features**
 ##  ***Header Element***
@@ -234,8 +234,8 @@ The card table consists of multiple elements and provides a space for the game l
 
 ### **Player Side of the Table**
 The player side of the table consists of two sections: -
-  * Player hand.
-   *Player controls.
+  * Player hand.    
+  * Player controls.
 
 #### ***Player Hand:***
 Underneath the player's hand, there is a running total to help the user make quick decisions based on the total hand value of their current hand.  
@@ -249,7 +249,7 @@ The player control section comprises of three controls: -
 
 ![Player Controls Section](docs/screenshots/player-controls.JPG)
 
-### **Game Table Pop up Modal**
+## **Game Initiation/Results Modal**
 ### **Game Initiation Modal:**
 I included this to allow for all actions first to be initiated by the user. The user is greeted with the below modal hen first accessing the card table:  
 ![Game Inititation Modal](docs/screenshots/deal-me-in.JPG)
@@ -300,8 +300,6 @@ This game became a bit of a passion project, but due to the steep learning curve
   * Give the player a choice over ace high or low.
   * Auto timeout on the results modal could be introduced. The timeout would save the user having to click re-deal every time, and they could wait for the specified period for the pop-up to close by itself.
   * Fun money - the ability to wager and chosen stake amount, potentially replacing the scoreboard as a way of the user gauging their progress.
-
-Once the Code Institute Diploma is complete, I intend to come back to this project and devote the time and energy required to make this a competitor in the market of social blackjack apps.
 
 ***
 
@@ -358,7 +356,6 @@ The project broke me many times over. Without the support of the following peopl
 ### **Media:**
 * All card front card images taken from https://commons.wikimedia.org/wiki/Category:SVG_English_pattern_playing_cards
 * Back of cards taken from - https://commons.wikimedia.org/w/index.php?search=playing+cards+back+svg&title=Special:MediaSearch&go=Go&type=image
-* Logo-start taken from https://www.pngegg.com/en/png-oveak
+* Logo-start/favicon taken from https://www.pngegg.com/en/png-oveak
 * Logo-end https://www.pngegg.com/en/png-bhuxt
 * Image editor https://pinetools.com/rotate-image
-* Image for Favicon - https://datagenetics.com/blog/march62020/index.html
