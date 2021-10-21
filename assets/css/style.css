@@ -144,13 +144,13 @@ header {
 }
 
 .rule-segment > p {
-    font-size: 14px;
+    font-size: 0.875rem;
     padding-bottom: 5px;
 }
 
 /** options sub menu **/
 #green, #blue, #purple {
-    border-radius: 20px;
+    border-radius: 1.25rem;
     display: block;
     height: 6.25rem;
     margin: 1.375rem auto;
@@ -180,7 +180,7 @@ header {
 /* Button styling */
 /* Menu buttons */
 .back-to-menu {
-    bottom: 9px;
+    bottom: 0.5625rem;
     position: absolute;
     right: 50%;
     transform: translateX(50%);
@@ -191,7 +191,7 @@ header {
     border-radius: 0.9375rem;
     box-shadow: 2px 2px 0.75rem 0px #bf953f;
     display: block;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     height: 4.375rem;
     margin: 2.5rem auto;
@@ -254,7 +254,7 @@ header {
 }
 
 .card {
-    border-radius: 7px;
+    border-radius: 0.4375rem;
     height: 7.5rem;
     width: 5.25rem;
 }
@@ -342,7 +342,7 @@ footer {
 
 #copyright {
     font-family: 'Acme', sans-serif;
-    font-size: 0.625rem;
+    font-size: 0.875rem;
 }
 
 /* Media queries */
@@ -362,7 +362,7 @@ footer {
     .rule-segment > p {
         font-size: 0.9375rem;
         margin: 0 auto;
-        padding-bottom: 7px;
+        padding-bottom: 0.4375rem;
         width: 95%;
     }
 

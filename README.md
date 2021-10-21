@@ -2,7 +2,7 @@
 ## **Site Overview**
 Blackjack is a classic game dating back to around the 1700s. My first introduction to it was as pontoon (a common name for blackjack in the UK). My mum and I would spend hours playing short rounds for fun while traveling or simply sitting around watching TV. 
 
-My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me, this game intends to be a bit of harmless fun. Played to pass the time by strategically, drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
+My current line of work is in the online casino industry. Hence, I wanted to create something relevant to my daily life. As it was for my mother and me, this game intends to be a bit of harmless fun for those who enjoy this traditional game. Used to pass the time by strategically drawing cards, thinking quickly, and trying to beat the opposition (in this case, a computer).
 
 ![Demonstration of Site Responsiveness](docs/screenshots/responsive.JPG)
 
@@ -324,7 +324,7 @@ You  can find the live site via the following URL - [Live Blackjack game](https:
 
 The project broke me many times over. Without the support of the following people, I would not have made it through. The below list is in no specific order.
 
-* [Richard Wells](https://github.com/D0nni387) - Code Institute Mentor who gave me faith in myself throughout and calmed me down in moments of panic. He saw I was struggling and took the time to help me work through the logic.
+* [Richard Wells](https://github.com/D0nni387) - Code Institute Mentor who gave me faith in myself throughout and calmed me down in moments of panic. He saw I was struggling and took the time to help me work through the logic. 
 
 * [Mark Cutajar](https://github.com/markcutajar) Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped my family and me in more ways than I could ever describe. I am proud to have him as a brother-in-law. 
   

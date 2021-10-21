@@ -12,7 +12,6 @@ const resultModalBtnRef = document.getElementById("redeal-btn");
 const resultContentRef = document.getElementById("description");
 const resultHeadingRef = document.getElementById("result");
 //Main menu option button references
-// const accessTableBtnRef = document.getElementById("play-game-btn");
 const menuBtnRef = document.getElementById("menu-btn-wrap");
 // Sub-menu references
 const colorThemeRef = document.querySelectorAll('.color-theme');
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let playerHand = [];
     let dealerHand = [];
     let canPlay = false;
-    // Call functions to give sub-menus functionality
     loadEventListeners();
     subMenuFunction();
 
@@ -72,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));
-            // for (let child of houseCardsRef) {
             if (houseCardsRef[0]) {
                 houseCardsRef[0].style.display = "none";
                 dealerCardContainerRef.insertBefore(
@@ -82,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 firstHouseCard.style.position = "absolute";
                 firstHouseCard.style.left = "15px";
             }
-            // }
         }
         
         let playerTotal = checkHandValue(playerHand);
@@ -372,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
         drawTallyRef.innerText = ++drawn;
     }
 
-    //event related functions
+   
     /**
      * Makes card table visible, hides all other elements
     */
@@ -386,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }    
     
     /**
-     * Make amin menu visible and hides all other modals
+     * Make main menu visible and hides all other modals
      */
     function accessMenu() {
         gameTableRef.style.display = "none";
@@ -427,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     }
 
-    //Menu pages
+
     /**
      * Loads events relating to sub menus
      */
@@ -558,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function loadEventListeners() {
         EventListeners();
-        ruleAnchorEventListeners();
+        ruleAnchor();
         keyboardControls();
     }
 
@@ -567,8 +563,8 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function EventListeners() {
         allBtnRef.forEach(button => {
-            button.addEventListener('click', function (){
-                switch (this.getAttribute('data-type')){
+            button.addEventListener('click', function () {
+                switch (this.getAttribute('data-type')) {
                     // Main menu buttons
                     case 'play-game':
                         displayGameTable();
@@ -629,7 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * click event that loads the rule sub-menu from the card table
      */
-    function ruleAnchorEventListeners() {
+    function ruleAnchor() {
         // Games table anchor for the game rules
         gameRuleAnchorRef.addEventListener("click", function () {
             rulesContainerRef.style.display = "block";
