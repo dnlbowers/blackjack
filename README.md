@@ -16,6 +16,7 @@ My current line of work is in the online casino industry. Hence, I wanted to cre
     * [**How Will This Be Achieved:**](#how-will-this-be-achieved)
     * [**Wireframes:**](#wireframes)
     * [**Color Scheme:**](#color-scheme)
+    * [**Typography**](#typography)
 * [**Current Features**](#current-features)
   * [***Header Element***](#header-element)
     * [***Title:***](#title)
@@ -49,7 +50,6 @@ My current line of work is in the online casino industry. Hence, I wanted to cre
       * [***Player Blackjack:***](#player-blackjack)
     * [**Card Positioning**](#card-positioning)
 * [**Footer**](#footer)
-* [**Typography**](#typography)
   * [**Future-Enhancements**](#future-enhancements)
   * [**Testing Phase**](#testing-phase)
   * [**Deployment**](#deployment)
@@ -142,6 +142,11 @@ When deciding the app's color scheme, I first began with the classic green table
 I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=FFF%0D%0A000%0D%0ABF953F%0D%0AFCF6BA%0D%0AB38728%0D%0AFBF5B7%0D%0AD3D3D3%0D%0A8B0000%0D%0AFF0000%0D%0AFFD700%0D%0A00008B%0D%0A4682B4%0D%0A00BFFF%0D%0A312B50%0D%0AEE82EE%0D%0A300640%0D%0A008080%0D%0A00FFBF%0D%0A006400%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
+
+# **Typography**
+I imported all fonts using the google fonts.    
+  * The primary font used throughout was Acme. I chose this font because it was bold and had a strong presence for the title, headings, and buttons.    
+  * For the smaller text of the sub-menus content and the card table, Open Sans was used. My reasoning behind this was because Acme looked unclear when using Acme and these two styles compliment each other well.
 
 # **Current Features**
 ##  ***Header Element***
@@ -281,11 +286,6 @@ Each card is placed on top of the other, spaced 15px from the left edge to the l
     ![Social Brands](docs/screenshots/social-brands.jpg)
   * Includes copyright/created by statement.  
     ![Created By](docs/screenshots/copyright.jpg)
-   
-# **Typography**
-I imported all fonts using the google fonts API.
-  *The primary font used throughout was Acme. I chose this font because it was bold and had a strong presence for the title, headings, and buttons.
-  *For the smaller text of the sub-menus content and the card table, Open Sans was used. My reasoning behind this was because Acme looked unclear when using Acme and these two styles compliment each other well.
 
 ## **Future-Enhancements**
 This game became a bit of a passion project, but due to the steep learning curve involved with learning Javascript in a short amount of time and the fast-approaching deadline, I deemed the below to be above and beyond the required MVP needed to release the game into the public domain initially: -
@@ -310,7 +310,7 @@ I have included details of testing both during development and post development 
 ## **Deployment**
 I deployed the page on GitHub pages via the following procedure: -
 
-1. From the project's [repository](https://github.com/dnlbowers/modern-buddhism), go to the **Settings** tab.
+1. From the project's [repository](https://github.com/dnlbowers/blackjack), go to the **Settings** tab.
 1. From the left-hand menu, select the **Pages** tab.
 1. Under the **Source** section, select the **Main** branch from the drop-down menu and click **Save**.
 1. A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
