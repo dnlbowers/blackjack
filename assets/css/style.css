@@ -27,7 +27,7 @@ header {
 }
 
 .line-break-below {
-    padding-bottom: 14px;
+    padding-bottom: 0.875rem;
 }
 
 .underline {
@@ -40,7 +40,7 @@ header {
     display: flex;
     flex-direction: row;
     font-family: 'Acme', sans-serif;
-    font-size: 23px;
+    font-size: 1.4375rem;
     justify-content: center;
     padding-top: 0.625rem;
 }
@@ -52,30 +52,30 @@ header {
 
 #menu-btn-wrap {
     display: none;
-    padding: 5px;
+    padding: 0.3125rem;
 }
 
 /* Golden surround to the main game area */
 #main-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-    border: 3px solid #000;
-    border-radius: 40px;
+    border: 0.1875rem solid #000;
+    border-radius: 2.5rem;
     box-sizing: border-box;
     display: flex;
-    height: 595px;
-    max-width: 875px;
-    padding: 15px;
+    height: 37.1875rem;
+    max-width: 54.6875rem;
+    padding: 0.9375rem;
     width: 95vw;
 }    
 
 /* Class to set the height of each module the same when it opens */
 .main-window {
     background-color: #006400;
-    border: 3px solid #000;
-    border-radius: 25px;
+    border: 0.1875rem solid #000;
+    border-radius: 1.5625rem;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 0.8125rem;
     letter-spacing: 0.5px;
     padding: 0.625rem;
     width: 95vw;
@@ -84,13 +84,13 @@ header {
 /* Menu styling */
 .menu-heading {
     font-family: 'Acme', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 700;
-    padding: 3px 10px 2px;
+    padding: 3px 0.625rem 2px;
 }
 
 .menu-sub-heading {
-    padding-bottom: 14px;
+    padding-bottom: 0.875rem;
 }
 
 #responsible-sub-menu, #options-sub-menu, #rules-sub-menu {
@@ -106,11 +106,11 @@ header {
     cursor: pointer;
     display: flex;
     font-family: 'Acme', sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     justify-content: space-between;
     outline: none;
-    padding: 1px 7px;
+    padding: 1px 0.4375rem;
     width: 100%;
     text-align: left;
     transition: 0.4s;
@@ -125,7 +125,7 @@ header {
 .rule-heading:after {
     color: #000;
     content: '\02660'; 
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-right: 5px;
 }
   
@@ -152,9 +152,9 @@ header {
 #green, #blue, #purple {
     border-radius: 20px;
     display: block;
-    height: 100px;
-    margin: 22px auto;
-    width: 100px;
+    height: 6.25rem;
+    margin: 1.375rem auto;
+    width: 6.25rem;
 }
 
 .alt-theme-border {
@@ -188,14 +188,14 @@ header {
 
 .menu-opt-btn {
     border: 2px solid #000;
-    border-radius: 15px;
-    box-shadow: 2px 2px 12px 0px #bf953f;
+    border-radius: 0.9375rem;
+    box-shadow: 2px 2px 0.75rem 0px #bf953f;
     display: block;
     font-size: 18px;
     font-weight: bold;
     height: 4.375rem;
-    margin: 40px auto;
-    padding: 10px;
+    margin: 2.5rem auto;
+    padding: 0.625rem;
     width: 80%;
 }
 
@@ -218,10 +218,10 @@ header {
 /* universal button styles */
 .btn {
     border: 1px solid #b38728;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     box-shadow: 1px 1px 0px 1px #bf953f;
-    font-size: 17px;
-    padding: 5px 10px;   
+    font-size: 1.0625rem;
+    padding: 5px 0.625rem;   
 }
 
 .btn:hover {
@@ -245,18 +245,18 @@ header {
 
 .card-container {
     position: relative;
-    height: 130px;
+    height: 8.125rem;
     width: 100%;
 }
 
 #dealer-side, #player-side {
-    width: 170px;
+    width: 10.625rem;
 }
 
 .card {
     border-radius: 7px;
-    height: 120px;
-    width: 84px;
+    height: 7.5rem;
+    width: 5.25rem;
 }
 
 /* Scoreboard style */
@@ -286,30 +286,30 @@ header {
 }
 
 .rg-content {
-    font-size: 14px;
-    padding: 15px 10%;
+    font-size: 0.875rem;
+    padding: 0.9375rem 10%;
     text-align: justify;
 }
 
 /* Styling for the results pop up */
 #modal-surround {
     background: linear-gradient(to top left, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-    border-radius: 25px;
-    height: 150px;
-    padding: 5px;
+    border-radius: 1.5625rem;
+    height: 9.375rem;
+    padding: 0.3125rem;
     position: absolute;
-    top: 330px;
+    top: 20.625rem;
     width: 70%;
-    max-width: 600px;
+    max-width: 37.5rem;
     z-index: 5;
 }
 
 #result-modal { 
     background-color: #008080;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     display: flex;
     flex-direction: column;
-    height: 150px;
+    height: 9.375rem;
     justify-content: space-evenly;
     width: 100%;
     z-index: 10;
@@ -318,13 +318,13 @@ header {
 #result {
     border-bottom: 2px solid #d3d3d3;
     font-family: 'Acme', sans-serif;
-    padding-bottom: 13px;
+    padding-bottom: 0.8125rem;
 }
 
 /*footer styling*/
 /*style for the social media links*/
 footer {
-    padding-top: 15px;
+    padding-top: 0.9375rem;
     width: 100%;
  }
 
@@ -335,103 +335,103 @@ footer {
 
 .social-icon {
     color: #000;
-    font-size: 35px;
+    font-size: 2.1875rem;
     margin: 1%;
     padding: 0.3125rem;
 }
 
 #copyright {
     font-family: 'Acme', sans-serif;
-    font-size: 10px;
+    font-size: 0.625rem;
 }
 
 /* Media queries */
 @media (min-width: 360px) {
     #main-surround {
-        height: 625px;
+        height: 39.0625rem;
     }
 
     .rule-heading {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .rule-heading:after {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .rule-segment > p {
-        font-size: 15px;
+        font-size: 0.9375rem;
         margin: 0 auto;
         padding-bottom: 7px;
         width: 95%;
     }
 
     .rg-content {
-        font-size: 15px;
-        padding: 15px 10%;
+        font-size: 0.9375rem;
+        padding: 0.9375rem 10%;
     }
     
     #hit-btn {
-        margin-right: 18.75px;
+        margin-right: 1.1719rem;
     }
 
     #stand-btn {
-        margin-left: 18.75px;
+        margin-left: 1.1719rem;
     }
 }
 
 @media (min-width: 420px) {
     
     header {
-        height: 150px;
+        height: 9.375rem;
     }
     
     #title {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     #menu-btn-wrap {
-        padding: 10px;
+        padding: 0.625rem;
     }
 
     .menu-opt-btn {
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
 
     .menu-heading {
-        font-size: 45px;
+        font-size: 2.8125rem;
     }
 
     .rule-heading {
-       font-size: 22px; 
+       font-size: 1.375rem; 
     }   
 
     .rule-heading:after {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     .rule-segment {
-        font-size: 15px;
+        font-size: 0.9375rem;
     }
 
     .rg-content {
-        font-size: 15px;
-        padding: 15px 10%;
+        font-size: 0.9375rem;
+        padding: 0.9375rem 10%;
     }
 
     .social-icon {
-        font-size: 45px;
+        font-size: 2.8125rem;
         margin: 4%;
     }
     
     #copyright {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 }
 
 @media (min-width: 600px) {
     #modal-surround {
-        height: 160px;
+        height: 10rem;
     }
 
     .rule-heading {
@@ -440,50 +440,50 @@ footer {
     }
 
     .rule-heading:after {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     .rg-content {
-        font-size: 15px;
-        padding: 30px 15%;
+        font-size: 0.9375rem;
+        padding: 1.875rem 15%;
     }
 
     #result-modal {
-        height: 160px;
+        height: 10rem;
     }
     
     #result {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     #description {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 700px) {
     
     .back-to-menu {
-        bottom: 15px;
+        bottom: 0.9375rem;
     }
 
     .rule-heading:after {
-        font-size: 33px;
+        font-size: 2.0625rem;
     }
     
     #modal-surround {
-        height: 165px;
+        height: 10.3125rem;
     }
 
     #result-modal {
-        height: 165px;
+        height: 10.3125rem;
     }
     
     #result {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     #description {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
 }
