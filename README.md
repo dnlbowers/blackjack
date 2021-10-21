@@ -341,6 +341,10 @@ The project broke me many times over. Without the support of the following peopl
 
 * [Dave Horrocks](https://github.com/daveyjh) - Took the time to break down several topics for me and provide examples. Dave pops out form nowhere when I least expect him, and I am eternally grateful for his explanations and code pens.
 
+* The code institute Slack community as a whole who tested and supported throughout. There have been too many to mention everyone who provided encouragement along the way, but they are all superstars.
+
+* And the biggest thanks goes to my wife and child, who have had to deal with me face to face through it all. Oliver has been my reason for the change and Analise my inspiration. 
+
 ### **General reference:**
 * The project was influenced by the Code Institutes code along project called Love maths. While I have tried to deviate as much as possible, the code may have some similarities.
 * I relied upon W3schools, MDN web docs, and stack overflow for general references throughout the project.
