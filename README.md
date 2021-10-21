@@ -281,6 +281,9 @@ Results get displayed after each round in a modal with a summary of the outcome.
 Each card is placed on top of the other, spaced 15px from the left edge to the left edge. Fanning the cards allow the suit and value to be visible while minimizing the required space for the hand. It also looks neater and simulates how a casino croupier would deal a hand.  
 ![Card positioning](docs/screenshots/card-fan.jpg)
 
+### **Deck of cards:**
+My game uses a method called an infinite. An infinite deck means no limit to the number of times either player can draw a card of the same suit and value from the deck of cards. In other words, duplicates are possible.
+
 # **Footer**
   * Includes links to connect to my GitHub and LinkedIn accounts. Purposely kept to the more professional social platforms for the portfolio project.  
     ![Social Brands](docs/screenshots/social-brands.jpg)
