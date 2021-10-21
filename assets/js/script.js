@@ -1,8 +1,11 @@
+//Add eventlistner to the rule from anchor. so has two buttons
+
 //Global constant references for elements in the DOM
-//reference to the module window frame
+//reference different page windows
 const responsibleContainerRef = document.getElementById("responsible-sub-menu");
 const optionsContainerRef = document.getElementById("options-sub-menu");
 const rulesContainerRef = document.getElementById("rules-sub-menu");
+const mainWindowRef = document.querySelectorAll('.main-window');
 const gameTableRef = document.getElementById("game-table");
 const mainMenuRef = document.getElementById("main-menu");
 //In game pop up references
@@ -11,14 +14,15 @@ const resultSurroundRef = document.getElementById("result-modal");
 const resultModalBtnRef = document.getElementById("redeal-btn");
 const resultContentRef = document.getElementById("description");
 const resultHeadingRef = document.getElementById("result");
-//Main menu option button references
+// Button references
 const menuBtnRef = document.getElementById("menu-btn-wrap");
-// Sub-menu references
+const ruleAnchorExit = document.getElementById("to-table-btn");
+const ruleMenuExit = document.getElementById("to-menu-btn");
+const allBtnRef = document.querySelectorAll('.btn-bg');
+// Sub-menu features references
 const colorThemeRef = document.querySelectorAll('.color-theme');
 const ruleSegment = document.querySelectorAll(".rule-segment");
 const ruleHeading = document.querySelectorAll(".rule-heading");
-// Reference to all modals acting as the centre display area,
-const mainWindowRef = document.querySelectorAll('.main-window');
 //game table elements references
 const playerCardContainerRef = document.getElementById("player-card-container");
 const dealerCardContainerRef = document.getElementById("dealer-card-container");
@@ -28,8 +32,6 @@ const playerTotalRef = document.getElementById("player-total");
 const drawTallyRef = document.getElementById("draws");
 const loseTallyRef = document.getElementById("losses");
 const winTallyRef = document.getElementById("wins");
-// button reference
-const allBtnRef = document.querySelectorAll('.btn-bg');
 
 document.addEventListener("DOMContentLoaded", function () {
     let playerHand = [];
@@ -379,6 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gameTableRef.style.flexDirection = "column";
         gameTableRef.style.alignItems = "center";
         menuBtnRef.style.display = "block";
+        rulesContainerRef.style.display = "none";
     }    
     
     /**
@@ -592,7 +595,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     case 'exit-rg':
                         responsibleContainerRef.style.display = "none";
                         mainMenuRef.style.display = "block"; 
-                        break;    
+                        break; 
+                    case 'exit-to-table':
+                        displayGameTable();
+                        ruleAnchorExit.style.display = "none";
+                        ruleMenuExit.style.display = "block";
+                        break;
                     //Menu btn for access from the game table
                     case 'menu-btn':
                         accessMenu();
@@ -631,6 +639,8 @@ document.addEventListener("DOMContentLoaded", function () {
             rulesContainerRef.style.display = "block";
             gameTableRef.style.display = "none";
             menuBtnRef.style.display = "none";
+            ruleAnchorExit.style.display = "block";
+            ruleMenuExit.style.display = "none";
         });
     }
 
@@ -656,6 +666,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     reDeal();   
                 } else if (event.key.toLowerCase() === "m") {
                     accessMenu();
+                } else if (event.key.toLowerCase() === "c") {
+                    displayGameTable();
+                    ruleAnchorExit.style.display = "none";
+                    ruleMenuExit.style.display = "block";
                 }
             } else if (canPlay) {
                 if (event.key.toLowerCase() === "h") {

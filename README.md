@@ -329,7 +329,7 @@ The project broke me many times over. Without the support of the following peopl
 * [Mark Cutajar](https://github.com/markcutajar) Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped my family and me in more ways than I could ever describe. I am proud to have him as a brother-in-law. 
   
 
-* Mr_Bim_alumni (No GitHub provided) - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue without taking over. Bim's teaching style is skillful and caring! I could not have managed to get through this project without him seeing my distress and keeping an eye on me from thereon. He even pressured me into avoiding my avoidance, and I am so glad he did.
+* Mr_Bim_alumni (No GitHub provided) - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue without taking over. Bim's teaching style is skillful and caring. I could not have managed to get through this project without him seeing my distress and keeping an eye on me from thereon. He even pressured me into avoiding my avoidance, and I am so glad he did.
 
 * [Simen Daehlin](https://github.com/Eventyret) - Simen has repeatedly stepped in to guide me along the way, and I am lucky to have such a skilled alumni on my side. 
 
@@ -339,7 +339,7 @@ The project broke me many times over. Without the support of the following peopl
 
 * [Niki Tester](https://github.com/Niki-Tester) - Nik was a shock to me; I posted a random question and went to bed. In the morning, I woke up to a notification and Nik's solution. Nik was on his first day of the course, and he spent over an hour debugging my code while I slept. This man is one to watch going forward.
 
-* [Dave Horrocks](https://github.com/daveyjh) - Took the time to break down several topics for me and provide example. Dave pops out form nowhere when I least expect him, and I am eternally grateful for his explanations and code pens.
+* [Dave Horrocks](https://github.com/daveyjh) - Took the time to break down several topics for me and provide examples. Dave pops out form nowhere when I least expect him, and I am eternally grateful for his explanations and code pens.
 
 ### **General reference:**
 * The project was influenced by the Code Institutes code along project called Love maths. While I have tried to deviate as much as possible, the code may have some similarities.

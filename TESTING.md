@@ -163,7 +163,7 @@ Some research into this error revealed just a cautionary warning and not an erro
 
 * Largest function has 44 statements in it, while the median is 5.
 
-* The most complex function has a cyclomatic complexity value of 15 while the median is 1.
+* The most complex function has a cyclomatic complexity value of 16 while the median is 1.
 
 ### **Lighthouse Scores**
 #### **Test conditions**
