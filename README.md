@@ -141,7 +141,7 @@ Since this for this project, wireframes are not required and were used only to s
 ### **Color Scheme:**
 When deciding the app's color scheme, I first began with the classic green table then worked outwards from there. I wanted the app to feel regal like a casino while keeping my contrast scores as high as possible for accessibility purposes.
  
-I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=FFF%0D%0A000%0D%0ABF953F%0D%0AFCF6BA%0D%0AB38728%0D%0AFBF5B7%0D%0AD3D3D3%0D%0A8B0000%0D%0AFF0000%0D%0AFFD700%0D%0A00008B%0D%0A4682B4%0D%0A00BFFF%0D%0A312B50%0D%0AEE82EE%0D%0A300640%0D%0A008080%0D%0A00FFBF%0D%0A006400%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
+I have created the below color grid using [https://contrast-grid.eightshapes.com](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=FFF%0D%0A000%0D%0ABF953F%0D%0AFCF6BA%0D%0AB38728%0D%0AFBF5B7%0D%0AD3D3D3%0D%0A8B0000%0D%0AFF0000%0D%0AFFD700%0D%0A00008B%0D%0A315A7D%0D%0A00BFFF%0D%0A312B50%0D%0AEE82EE%0D%0A300640%0D%0A008080%0D%0A00FFBF%0D%0A006400%0D%0A%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 ![Color Contrast Grid](docs/screenshots/color-grid.png)
 

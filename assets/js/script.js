@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
         removeActiveTheme();
         target.classList.add("active-theme");
         document.body.style.backgroundColor = "#87CEFA";
-        resultSurroundRef.style.backgroundColor = "#4682B4";
+        resultSurroundRef.style.backgroundColor = "#315A7D";
         for (let i = 0; i < mainWindowRef.length; i++) {
             mainWindowRef[i].style.backgroundColor = "#00008B";
         }
