@@ -56,7 +56,7 @@ During the development process, I was manually testing in the following ways:-
         * By giving the single HTML container a button loading with the DOM, the event listener worked without issue to hide the sub-menu and bring the main menu back into view. Leaving the javascript file to insert the sub-menu content only. 
 1. **Intended Outcome** - Divided sections for the Game Rules that fit within the space available for the sub-menu.          
     * ***Issue Found:***
-        * While keeping the font large enough to be readable, the text extended past the modals edge on smaller screens.
+        * While keeping the font large enough to be readable, the text extended past the modals bottom edge on smaller screens.
     * ***Causes:***
         * Larger volume of text on a narrow screen. 
     * ***Solution Found:***

@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-/*temporary to combat chrome dark theme*/
 body {
     background-color: 	#98FB98;
 }
@@ -178,7 +177,6 @@ header {
     background: #300640;
 }
 
-/* Button styling */
 /* Menu buttons */
 .back-to-menu {
     bottom: 0.5625rem;
@@ -327,12 +325,12 @@ header {
 }
 
 /*footer styling*/
-/*style for the social media links*/
 footer {
     padding-top: 0.9375rem;
     width: 100%;
  }
 
+/*style for the social media links*/
 .social-media-li {
     display: inline;
     list-style-type: none;
