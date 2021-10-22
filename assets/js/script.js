@@ -1,5 +1,3 @@
-//Add eventlistner to the rule from anchor. so has two buttons
-
 //Global constant references for elements in the DOM
 //reference different page windows
 const responsibleContainerRef = document.getElementById("responsible-sub-menu");
