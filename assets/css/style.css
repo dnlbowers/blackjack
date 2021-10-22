@@ -213,11 +213,11 @@ header {
 
 /* Game board control buttons */
 #hit-btn {
-    margin-right: 3.25px;
+    margin-right: 3px;
 }
 
 #stand-btn {
-    margin-left: 3.25px;
+    margin-left: 3px;
 }
 
 /* universal button styles */
