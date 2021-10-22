@@ -1,8 +1,10 @@
 # **Blackjack**
 ## **Site Overview**
-Blackjack is a classic game dating back to around the 1700s. My first introduction to it was as pontoon (a common name for blackjack in the UK). My mum and I would spend hours playing short rounds for fun while traveling or simply sitting around watching TV. 
+Blackjack is a classic game dating back to around the 1700s. My first introduction to it was as pontoon (a common name for blackjack in the UK). My mum and I would spend hours playing short rounds for fun while traveling or simply sitting around watching TV.
 
-As it was for my mother and me, this game intends to be a bit of harmless fun for the user.  Used by those who enjoy this traditional game to pass the time strategically, drawing cards while thinking quickly, and trying to beat the opposition (in this case, a computer).
+As it was for my mother and me, this game intends to be a bit of harmless fun for the user for those who enjoy this traditional game. 
+
+The game's simplicity makes it the perfect break from more concentrated tasks and can be used to pass the time strategically drawing cards while thinking quickly to beat the opposition (in this case, a computer).
 
 ![Demonstration of Site Responsiveness](docs/screenshots/responsive.JPG)
 
