@@ -40,7 +40,7 @@ header {
     display: flex;
     flex-direction: row;
     font-family: 'Acme', sans-serif;
-    font-size: 1.4375rem;
+    font-size: 1.375rem;
     justify-content: center;
     padding-top: 0.625rem;
 }
@@ -212,11 +212,11 @@ header {
 
 /* Game board control buttons */
 #hit-btn {
-    margin-right: 3.5px;
+    margin-right: 3.25px;
 }
 
 #stand-btn {
-    margin-left: 3.5px;
+    margin-left: 3.25px;
 }
 
 /* universal button styles */
