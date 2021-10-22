@@ -23,7 +23,7 @@ The game's simplicity makes it the perfect break from more concentrated tasks an
   * [***Header Element***](#header-element)
     * [***Title:***](#title)
     * [***Main Menu button (navigation tag):***](#main-menu-button-navigation-tag)
-* [**Main Window:**](#main-window)
+  * [**Main Window:**](#main-window)
   * [**Main Menu (navigation tag):**](#main-menu-navigation-tag)
   * [**Sub Menus**](#sub-menus)
     * [***Game Rules***](#game-rules)
@@ -40,7 +40,6 @@ The game's simplicity makes it the perfect break from more concentrated tasks an
     * [**Player Side of the Table**](#player-side-of-the-table)
       * [***Player Hand:***](#player-hand)
       * [***Player Controls***](#player-controls)
-    * [**Game Table Pop up Modal**](#game-table-pop-up-modal)
     * [**Game Initiation Modal:**](#game-initiation-modal)
     * [**Results Modals:**](#results-modals)
       * [***Win:***](#win)
@@ -100,7 +99,7 @@ As a user, I want to: -
 
 1. Ensuring the use of semantic elements, alternate text, and aria labels where appropriate.
 
-1. The landing page will be the main menu. Access to the main menu can also be done throughout the game using the menu button or pressing m on the keyboard. This menu will contain links to:
+1. The landing page will be the main menu. Access to the main menu can also be done throughout the game using the menu button or pressing the "m" key on the keyboard. This menu will contain links to:
     * Game rules.
     * Game options menu. 
     * Card table.
@@ -131,7 +130,7 @@ Along the way, the design and menu options have changed slightly to improve the 
 
   * User controls and scoreboard switched positions to make the game control more accessible for the user.
   * The removal of the contact form option in the menu. This feature was not necessary since I decided to add the social links in the footer.
-  * All game elements moved within the app's central area. The only exceptions to the were: 
+  * All game elements moved within the app's central area. The only exceptions to this were: 
       * Social media links to GitHub and linked in.
       * The title and surrounding images.
       * Menu button visible from the game table but hidden when within the menu itself.
@@ -184,7 +183,7 @@ I decided to use an accordion menu for this sub-menu to separate and display the
   * Prevents the user getting lost in large reams of text. 
   * With only one section being open at a time, this made sure that on smaller screen sizes, the game rules did not spill over the edge of the main window.
   * The accordion buttons show spades pointing up when closed and hearts pointing down when open.
-  * Fully accessible with the relevant Aria tags and role assigned and toggled as the user interacts with the relevant sections.
+  * Fully accessible with the relevant Aria tags and roles assigned and toggled as the user interacts with the relevant sections.
 
 ![Rules Sub-Menu](docs/screenshots/rules-sub-menu.jpg)
 
@@ -231,7 +230,7 @@ The card table consists of multiple elements and provides a space for the game l
 #### ***Scoreboard:***
   * The scoreboard keeps a tally of all wins, losses, and draws. 
   * The user can reset the tally at any time with the "Clear Tally" button.
-  * It gives the user something to gauge their progress without a pot of fun money (See future developments.).   
+  * It gives the user something to gauge their progress without a pot of fun money ([Future-Enhancements](#future-enhancements)).   
 ![Scoreboard](docs/screenshots/scoreboard.JPG)
 
 ### **Player Side of the Table**
@@ -250,11 +249,10 @@ Underneath the player's hand, there is a running total to help the user make qui
 The player control section comprises of three controls: -
   * Hit Me Button - Draws a random card from the deck and adds it to the player's hand.
   * Stand Button - End the player's turn and initiate the computer's turn.
-  * Game rules anchor tag - Takes the user directly to the game rules. From accessing the rules via the table anchor tag, the user will see a different button to return to his current game rather than the main menu.
+  * Game rules anchor tag - Takes the user directly to the game rules. When accessing the rules via the table anchor tag, the user will see a different button to return to his current game rather than the main menu.
 
 ![Player Controls Section](docs/screenshots/rules-anchor.jpg)
 
-## **Game Initiation/Results Modal**
 ### **Game Initiation Modal:**
 I included this to allow for all actions first to be initiated by the user. The user is greeted with the below modal when first accessing the card table:  
 ![Game Initiation Modal](docs/screenshots/deal-me-in.JPG)
@@ -331,10 +329,11 @@ The project broke me many times over. Without the support of the following peopl
 
 * [Richard Wells](https://github.com/D0nni387) - Code Institute Mentor who gave me faith in myself throughout and calmed me down in moments of panic. He saw I was struggling and took the time to help me work through the logic. 
 
-* [Mark Cutajar](https://github.com/markcutajar) Mark - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped my family and me in more ways than I could ever describe. I am proud to have him as a brother-in-law. 
+* [Mark Cutajar](https://github.com/markcutajar) - Helped me calm down enough to plan my basic flow. Mark is a man who has repeatedly helped my family and me in more ways than I could ever describe. I am proud to have him as a brother-in-law. 
   
-
 * Mr_Bim_alumni (No GitHub provided) - Explained event listeners to me in a context I understood and gave me hope when it was lost. He was also constantly willing to lend an ear and help me beat out any issue without taking over. Bim's teaching style is skillful and caring. I could not have managed to get through this project without him seeing my distress and keeping an eye on me from thereon. He even pressured me into avoiding my avoidance, and I am so glad he did.
+
+* [Sean Murphy](https://github.com/nazarja) - Sean was quick to jump to my aid when he saw me struggle and reviewed my code on a few occasions. Not only did he help me find ways to improve, but he also helped me see the strengths I already possessed. His encouragement came at a time where I needed it most.
 
 * [Simen Daehlin](https://github.com/Eventyret) - Simen has repeatedly stepped in to guide me along the way, and I am lucky to have such a skilled alumni on my side. 
 
