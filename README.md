@@ -242,12 +242,15 @@ Underneath the player's hand, there is a running total to help the user make qui
 ![Player Hand](docs/screenshots/player-hand.JPG)
 
 #### ***Player Controls***
+
+![Player Controls Section](docs/screenshots/player-controls.JPG)
+
 The player control section comprises of three controls: -
   * Hit Me Button - Draws a random card from the deck and adds it to the player's hand.
   * Stand Button - End the player's turn and initiate the computer's turn.
-  * Game rules anchor tag - Takes the user directly to the game rules.
+  * Game rules anchor tag - Takes the user directly to the game rules. From accessing the rules via the table anchor tag, the user will see a different button to return to his current game rather than the main menu.
 
-![Player Controls Section](docs/screenshots/player-controls.JPG)
+![Player Controls Section](docs/screenshots/rules-anchor.jpg)
 
 ## **Game Initiation/Results Modal**
 ### **Game Initiation Modal:**

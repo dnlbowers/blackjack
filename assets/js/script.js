@@ -666,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     reDeal();   
                 } else if (event.key.toLowerCase() === "m") {
                     accessMenu();
-                } else if (event.key.toLowerCase() === "c") {
+                } else if (event.key.toLowerCase() === "b") {
                     displayGameTable();
                     ruleAnchorExit.style.display = "none";
                     ruleMenuExit.style.display = "block";
