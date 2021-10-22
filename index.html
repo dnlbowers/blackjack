@@ -40,9 +40,8 @@
         <!-- Game Rules Sub Menu -->
         <section id="rules-sub-menu" class="main-window center-margin text-align-centre txt-white sub-menu-container">
             <h2 class="menu-heading">Game Rules</h2>
-            
+            <!-- Accordion menu -->
             <button id="objective-accordion" class="rule-heading" aria-controls="game-objective-section" aria-expanded="false">Game Objective:</button>
-            
             <div id="game-objective-section" class="rule-segment" aria-hidden="true" aria-labelledby="objective-accordion" role="region">   
                 <p>
                     The aim of the game is simple, get as close to 21 as possible without going over.
@@ -53,7 +52,6 @@
             </div> 
             
             <button id="how-to-accordion" class="rule-heading" aria-controls="how-to-play-section" aria-expanded="false">How To Play:</button>
-            
             <div id="how-to-play-section" class="rule-segment" aria-hidden="true" aria-labelledby="how-to-accordion" role="region">
                 <p>
                     To draw another card from the deck, click the "HIT ME!" button on the game table.
@@ -70,7 +68,6 @@
             </div> 
             
             <button id="card-value-accordion" class="rule-heading" aria-controls="card-values-section" aria-expanded="false">Card Values:</button>
-            
             <div id="card-values-section" class="rule-segment" aria-hidden="true" aria-labelledby="card-value-accordion" role="region">
                 <p>
                     Each card is worth the same value as the number printed on it.
@@ -85,7 +82,6 @@
             </div> 
             
             <button id="blackjack-accordion" class="rule-heading" aria-controls="blackjack-rules-section" aria-expanded="false">Blackjack:</button>
-            
             <div id="blackjack-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="blackjack-accordion" role="region">
                 <p>
                     Blackjack is when either the player or the house has a value of 21 with just the initial two cards dealt. 
@@ -97,13 +93,11 @@
             </div>
 
             <button id="scoreboard-accordion" class="rule-heading" aria-controls="scoreboard-rules-section" aria-expanded="false">Scoreboard:</button>
-
             <div id="scoreboard-rules-section" class="rule-segment" aria-hidden="true" aria-labelledby="scoreboard-accordion" role="region">
                 <p>The scoreboard keeps a tally of your wins, loses, and draws. At any point, you can reset this tally with the "CLEAR TALLY" button or the "C" key on the keyboard.</p>
             </div> 
 
             <button id="keyboard-controls-accordion" class="rule-heading" aria-controls="keyboard-controls-section" aria-expanded="false">Keyboard Controls:</button>
-            
             <div id="keyboard-controls-section" class="rule-segment" aria-hidden="true" aria-labelledby="keyboard-controls-accordion" role="region">
                 <p>
                     The player can play the game from the keyboard without the need for a mouse.
@@ -115,8 +109,6 @@
                     The control keys will only work while the relevant control button is visible on the screen.
                 </p>
             </div> 
-
-            <!-- Button to navigate back to the navigation menu -->
             <nav>
                 <button id ="to-menu-btn" data-type="exit-rules" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
                 <button id="to-table-btn" data-type="exit-to-table" class="back-to-menu btn-bg btn"><span class="key-control-indicator">B</span>ACK TO GAME</button>
@@ -130,7 +122,6 @@
             <button id="green" data-type="green" class="color-theme alt-theme-border active-theme" aria-label="green/default theme"></button>
             <button id="blue" data-type="blue" class="color-theme alt-theme-border" aria-label="blue theme"></button>
             <button id="purple" data-type="purple" class="color-theme alt-theme-border" aria-label="purple/pink theme"></button>
-
             <nav>
                 <button data-type="exit-options" class="back-to-menu btn-bg btn">MAIN <span class="key-control-indicator">M</span>ENU</button>
             </nav>

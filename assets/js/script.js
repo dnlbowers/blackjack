@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function firstTwoCards() { 
         resetHands();
         const firstHouseCard = createCardBack();
-        
-        // if implement a shuffle then add shuffledSuits, shuffledValues as parameters to the deal card call function below
         for (let i = 0; i < 2; i++) {
             playerHand.push(dealCard("player"));
             dealerHand.push(dealCard("dealer"));

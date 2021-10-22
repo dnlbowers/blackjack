@@ -68,7 +68,7 @@ header {
     width: 95vw;
 }    
 
-/* Class to set the height of each module the same when it opens */
+/* Class for all main display areas (menu, sub-menu, card table) */
 .main-window {
     background-color: #006400;
     border: 0.1875rem solid #000;
@@ -99,7 +99,7 @@ header {
 }
 
 /* Rule sub menu style */
-/* Accordion style menu on game rules page taken from https://www.w3schools.com/howto/howto_js_accordion.asp */
+/* Accordion style menu on game rules page adapted from https://www.w3schools.com/howto/howto_js_accordion.asp */
 .rule-heading {
     align-items: center;
     background: linear-gradient(to top left, #fbf5b7, #b38728, #fcf6ba, #bf953f);
@@ -122,6 +122,7 @@ header {
     text-shadow: 3px 2px 2px #fbf5b7;
 }
 
+/* Accordion icons */
 .rule-heading:after {
     color: #000;
     content: '\02660'; 
@@ -134,7 +135,7 @@ header {
     color: 	#ff0000;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+/* Style the accordion panel. */
 .rule-segment {
     max-height: 0;
     overflow: hidden;
